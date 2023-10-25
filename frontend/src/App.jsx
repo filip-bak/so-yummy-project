@@ -4,11 +4,13 @@ import MainPage from "pages/MainPage";
 import WelcomePage from "pages/WelcomePage";
 import AuthSharedLayout from "components/AuthSharedLayout";
 import NotFoundPage from "pages/NotFoundPage";
+import SearchPage from "pages/SearchPage/SearchPage";
 
 export const App = () => {
   return (
     <Routes>
       <Route path="/welcome" element={<WelcomePage />} />
+      <Route path="/search" element={<SearchPage />} />
 
       <Route path="/" element={<AuthSharedLayout />}>
         <Route path="/register" />
