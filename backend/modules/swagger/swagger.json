@@ -1,0 +1,24 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "API",
+    "description": "API description",
+    "version": "1.0.0"
+  },
+  "host": "localhost:3000",
+  "schemes": ["https"],
+  "paths": {
+    "/test": {
+      "get": {
+        "summary": "Returns test.",
+        "description": "Description test",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}
