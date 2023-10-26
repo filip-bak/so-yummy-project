@@ -1,4 +1,4 @@
-import styles from "./Text.module.css";
+import styles from "./PolicyandTerms.module.css";
 
 const Text = () => {
   return (
