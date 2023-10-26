@@ -1,4 +1,4 @@
-import styles from "./PolicyandTerms.module.css";
+import styles from "./PolicyAndTerms.module.css";
 
 const PolicyAndTerms = () => {
   return (
