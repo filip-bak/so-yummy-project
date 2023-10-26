@@ -1,6 +1,6 @@
 import styles from "./PolicyandTerms.module.css";
 
-const Text = () => {
+const PolicyAndTerms = () => {
   return (
     <div className={styles.wrapper}>
       <p className={styles.rights}>© 2023 All Rights Reserved.</p>
@@ -9,4 +9,4 @@ const Text = () => {
   );
 };
 
-export default Text;
+export default PolicyAndTerms;
