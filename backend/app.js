@@ -1,9 +1,10 @@
+require('dotenv').config();
 const express = require("express");
 const logger = require("morgan");
 const cors = require("cors");
 
 const swaggerRouter = require("./modules/swagger/swagger.router");
-const recipesRouter = require("./routes/recipes/recipes.router");
+const {recipesRouter} = require("./routes/recipes/recipes.router");
 
 const app = express();
 
