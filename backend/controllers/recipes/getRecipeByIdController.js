@@ -1,13 +1,13 @@
 const { Recipe } = require("../../models/recipesModel");
-const { ObjectId } = require("mongodb");
+const { mongoose } = require("mongoose");
 
 const getRecipeByIdController = async (req, res) => {
   const { id } = req.params;
+  const ObjectId = mongoose.Types.ObjectId;
 
   const recipe = await Recipe.aggregate([
     {
-      $match: {
-        _id: ObjectId(id),
+      $match: { _id: ObjectId(`${id}`),
       },
     },
     {
