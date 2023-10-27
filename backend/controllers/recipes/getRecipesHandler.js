@@ -1,13 +1,13 @@
-const { Recipe } = require("../../models/recipesModel");
+const { Recipe } = require("../../modules/recipes/recipesModel");
 
-const getRecipesController = async (req, res) => {
+const getRecipesHandler = async (req, res) => {
   const result = await Recipe.find({}, "-createdAt -updatedAt");
   res.json(sortRecipes(result));
 };
 
-const sortRecipes = (arr) => {
+const sortRecipes = arr => {
   let list = { Breakfast: [], Miscellaneous: [], Chicken: [], Dessert: [] };
-  arr.forEach((item) => {
+  arr.forEach(item => {
     if (list[item.category] && list[item.category].length < 4) {
       list[item.category].push(item);
     }
@@ -16,5 +16,5 @@ const sortRecipes = (arr) => {
 };
 
 module.exports = {
-  getRecipesController,
+  getRecipesHandler,
 };

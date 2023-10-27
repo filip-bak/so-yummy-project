@@ -1,9 +1,9 @@
 const { getCategories } = require("../../service/recipesService");
 
-const getCategoryController = async (req, res) => {
+const getCategoryHandler = async (req, res) => {
   res.json(getCategories());
 };
 
 module.exports = {
-  getCategoryController,
+  getCategoryHandler,
 };

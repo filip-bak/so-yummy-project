@@ -7,19 +7,21 @@ const express = require("express");
 
 // module.exports = recipesRouter;
 const {
-    getCategoryController,
-    getCategoryPageController,
-    getRecipeByIdController,
-    getRecipesController
-} = require('../../controllers/recipes');
+  getCategoryHandler,
+  getCategoryPageHandler,
+  getRecipeByIdHandler,
+    getRecipesHandler,
+    getPopularRecipesHandler,
+} = require("../../controllers/recipes");
 
 const router = express.Router();
 
-router.get('/main-page', getRecipesController);
-router.get('/categoty-list', getCategoryController);
-router.get('/:category', getCategoryPageController);
-router.get('/recipe/:id', getRecipeByIdController);
+router.get("/", getPopularRecipesHandler);
+router.get("/main-page", getRecipesHandler);
+router.get("/categoty-list", getCategoryHandler);
+router.get("/:category", getCategoryPageHandler);
+router.get("/:id", getRecipeByIdHandler);
 
 module.exports = {
-    recipesRouter:router,
-}
+  recipesRouter: router,
+};

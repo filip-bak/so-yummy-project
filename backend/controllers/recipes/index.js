@@ -1,11 +1,13 @@
-const { getCategoryController } = require('./getCategoryController');
-const { getCategoryPageController } = require('./getCategoryPageController');
-const { getRecipeByIdController } = require('./getRecipeByIdController');
-const { getRecipesController } = require('./getRecipesController');
+const { getCategoryHandler} = require("./getCategoryHandler");
+const { getCategoryPageHandler } = require("./getCategoryPageHandler");
+const { getRecipeByIdHandler } = require("./getRecipeByIdHandler");
+const { getRecipesHandler } = require("./getRecipesHandler");
+const { getPopularRecipesHandler } = require("./getPopularRecipesHandler");
 
 module.exports = {
-    getCategoryController,
-    getCategoryPageController,
-    getRecipeByIdController,
-    getRecipesController
-}
+  getCategoryHandler,
+  getCategoryPageHandler,
+  getRecipeByIdHandler,
+  getRecipesHandler,
+  getPopularRecipesHandler
+};
