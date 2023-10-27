@@ -1,5 +1,9 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore } from "@reduxjs/toolkit";
+import { persistStore } from "redux-persist";
+import { recipesReducer } from "./recipes/slice";
 
 export const store = configureStore({
-  reducer: {},
+  reducer: { recipes: recipesReducer },
 });
+
+export const persistor = persistStore(store);
