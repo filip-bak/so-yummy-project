@@ -4,9 +4,32 @@
   align-items: center;
 }
 
+.image {
+  width: 208px;
+  height: 133px;
+}
+
 .text_info {
   color: #757575;
   font-size: 14px;
   font-style: normal;
+  font-weight: 500;
   margin-top: 24px;
+}
+
+@media screen and (min-width: 768px) {
+  .image {
+    width: 350px;
+    height: 225px;
+  }
+
+  .text_info {
+    font-size: 24px;
+    line-height: 1;
+    margin-top: 32px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  /* Tu wszystko jest tak samo jak w tablet  */
 }

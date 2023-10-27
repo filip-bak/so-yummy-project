@@ -31,7 +31,7 @@
 
 .element_two {
   margin-bottom: 2px;
-  margin-top: 32px;
+  margin-top: 25px;
   margin-left: 333px;
 }
 
@@ -49,10 +49,58 @@
   .container {
     width: 704px;
   }
+
+  .title {
+    font-size: 32px;
+    line-height: 1;
+  }
+
+  .element {
+    width: 14px;
+    height: 14px;
+  }
+
+  .element_one {
+    margin-top: 27px;
+    margin-left: 187px;
+  }
+
+  .element_two {
+    margin-bottom: 2px;
+    margin-left: 694px;
+  }
+
+  .element_three {
+    border-radius: 30%;
+    width: 12px;
+    height: 12px;
+    margin-left: 405px;
+    margin-top: 2px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
   .container {
     width: 1240px;
+  }
+
+  .title {
+    font-size: 44px;
+  }
+
+  .element_one {
+    margin-top: 62px;
+    margin-left: 228px;
+  }
+
+  .element_two {
+    margin-bottom: 15px;
+    margin-left: 1150px;
+    margin-top: 13px;
+  }
+
+  .element_three {
+    margin-left: 707px;
+    margin-top: 1px;
   }
 }
