@@ -7,14 +7,14 @@ import PolicyAndTerms from "components/PolicyAndTerms";
 const SharedLayout = () => {
   return (
     <div className={styles.container}>
-      Header
+      Navigacja
       <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>
       Footer
       <PolicyAndTerms />
-      <div className={styles.backgroundImage1}></div>
-      <div className={styles.backgroundImage2}></div>
+      {/* <div className={styles.backgroundImage1}></div> */}
+      {/* <div className={styles.backgroundImage2}></div> */}
     </div>
   );
 };
