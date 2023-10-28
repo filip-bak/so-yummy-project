@@ -1,21 +1,36 @@
-.containerContentBg {
+.containerMain {
   background-color: var(--main-color-dark);
-  display: flex;
-  justify-content: center;
   width: 100vw;
+  margin-bottom: 28px;
 }
 .containerContent {
-  max-width: 1440px;
-  display: flex;
-  justify-content: center;
-  padding: 64px 100px 50px;
-}
-.containerNavAndMedia {
   display: flex;
   flex-direction: column;
-  margin-right: 214px;
+  justify-content: center;
+  align-items: center;
+  padding: 28px 85px 18px;
 }
-.containerRights {
-  background-color: var(--text-color-lighter);
-  max-width: 1440px;
+.containerNavAndMedia {
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 1440px) {
+  .containerMain {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+  .containerContent {
+    max-width: 1440px;
+    display: flex;
+    justify-content: center;
+    padding: 64px 100px 50px;
+  }
+  .containerNavAndMedia {
+    display: flex;
+    flex-direction: column;
+    margin-right: 214px;
+  }
 }

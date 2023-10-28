@@ -6,8 +6,10 @@ import css from './FooterSubscribeForm.module.css'
 export const FooterSubscribeForm = () => {
     return (
         <div className={css.subscribeContainer}>
-            <h2 className={css.subscribeTitle}>Subscribe to our Newsletter</h2>
-            <p className={css.subscribeDescription}>Subscribe to our newsletter. Be in touch with latest news and special offers, etc.</p>
+            <div className={css.subscribeBox}>
+                <h2 className={css.subscribeTitle}>Subscribe to our Newsletter</h2>
+                <p className={css.subscribeDescription}>Subscribe to our newsletter. Be in touch with latest news and special offers, etc.</p>
+            </div>
 
             <form autocomplete="off" className={css.subscribeForm}>
                 <label for="email" className={css.subscribeLabel}>

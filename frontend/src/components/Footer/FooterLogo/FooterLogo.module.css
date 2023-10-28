@@ -1,26 +1,72 @@
+.logoContainer {
+}
+.logoBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logoIcon {
+  background-color: red;
+  stroke: red;
+  margin-right: 8px;
+}
 .logoTitle {
   color: var(--text-color-lighter);
-  font-family: var(--font-family);
-  font-size: var(--fs-2xl);
-  font-style: normal;
-  font-weight: 700;
-  line-height: 28px; /* 100% */
-  letter-spacing: 0.42px;
-  margin-right: 135px;
-}
-.logoBenefitsList {
-  color: var(--text-color-lighter);
-  font-family: var(--font-family);
   font-size: var(--fs-lg);
   font-style: normal;
-  font-weight: 400;
-  line-height: 24px; /* 133.333% */
-  letter-spacing: -0.36px;
-  margin-right: 135px;
-  padding-inline-start: 0;
+  font-weight: 700;
+  line-height: 18px; /* 100% */
+  letter-spacing: 0.27px;
 }
-.logoBenefitsItem {
+.logoBenefitsBox {
+  position: absolute;
 }
-.logoBenefitsItem:not(:last-child) {
-  margin-bottom: 12px;
+.logoBenefitsList {
+  visibility: hidden;
+  position: relative;
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 1440px) {
+  .logoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .logoBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .logoIcon {
+    stroke: red;
+  }
+  .logoTitle {
+    color: var(--text-color-lighter);
+    font-size: var(--fs-2xl);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px; /* 100% */
+    letter-spacing: 0.42px;
+    margin-right: 135px;
+  }
+  .logoBenefitsList {
+    color: var(--text-color-lighter);
+
+    font-size: var(--fs-lg);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 133.333% */
+    letter-spacing: -0.36px;
+    margin-right: 135px;
+    padding-inline-start: 0;
+  }
+  .logoBenefitsItem {
+  }
+  .logoBenefitsItem:not(:last-child) {
+    margin-bottom: 12px;
+  }
 }
