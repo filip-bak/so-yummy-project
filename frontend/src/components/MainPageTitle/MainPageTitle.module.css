@@ -1,6 +1,8 @@
 .container {
   display: block;
+  position: relative;
   width: 343px;
+  padding-top: 50px;
 }
 
 .section {
@@ -25,14 +27,17 @@
 }
 
 .element_one {
-  margin-top: 15px;
-  margin-left: 104px;
+  margin: 0;
+  position: absolute;
+  left: 105px;
+  top: 15px;
 }
 
 .element_two {
-  margin-bottom: 2px;
-  margin-top: 25px;
-  margin-left: 333px;
+  margin: 0;
+  position: absolute;
+  left: 333px;
+  top: 41px;
 }
 
 .element_three {
@@ -40,13 +45,16 @@
   background-color: var(--main-color-dark);
   width: 6px;
   height: 6px;
-  margin-left: 231px;
-  margin-top: 2px;
+  margin: 0;
+  position: absolute;
+  left: 231px;
+  top: 80px;
   transform: rotate(25deg);
 }
 
 @media screen and (min-width: 768px) {
   .container {
+    padding-top: 72px;
     width: 704px;
   }
 
@@ -61,26 +69,33 @@
   }
 
   .element_one {
-    margin-top: 27px;
-    margin-left: 187px;
+    margin: 0;
+    position: absolute;
+    left: 180px;
+    top: 30px;
   }
 
   .element_two {
-    margin-bottom: 2px;
-    margin-left: 694px;
+    margin: 0;
+    position: absolute;
+    left: 696px;
+    top: 41px;
   }
 
   .element_three {
     border-radius: 30%;
     width: 12px;
     height: 12px;
-    margin-left: 405px;
-    margin-top: 2px;
+    margin: 0;
+    position: absolute;
+    left: 390px;
+    top: 102px;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .container {
+    padding-top: 104px;
     width: 1240px;
   }
 
@@ -89,18 +104,23 @@
   }
 
   .element_one {
-    margin-top: 62px;
-    margin-left: 228px;
+    margin: 0;
+    position: absolute;
+    left: 258px;
+    top: 64px;
   }
 
   .element_two {
-    margin-bottom: 15px;
-    margin-left: 1150px;
-    margin-top: 13px;
+    margin: 0;
+    position: absolute;
+    left: 1170px;
+    top: 70px;
   }
 
   .element_three {
-    margin-left: 707px;
-    margin-top: 1px;
+    margin: 0;
+    position: absolute;
+    left: 710px;
+    top: 140px;
   }
 }

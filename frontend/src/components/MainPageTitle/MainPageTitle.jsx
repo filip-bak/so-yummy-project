@@ -7,6 +7,7 @@ export const MainPageTitle = ({ title }) => {
       <div className={css.container}>
         <div className={css.element + " " + css.element_one} />
         <div className={css.element + " " + css.element_two} />
+        <div className={css.element + " " + css.element_three} />
         <h2 className={css.title}>{title}</h2>
         <div className={css.element_three} />
       </div>
