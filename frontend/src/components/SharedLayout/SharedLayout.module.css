@@ -1,8 +1,64 @@
 .container {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100vw;
   height: 100vh;
   background-color: var(--text-color-lighter);
+}
+.backgroundImage1 {
+  position: absolute;
+  left: -32.66px;
+  top: 331.92px;
+  background: url(../../images/backgrounds/spinach-leaves2_480.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 256px;
+  height: 392px;
+  flex-shrink: 0;
+  transform: rotate(149deg);
+  filter: blur(4.5px);
+}
+
+.backgroundImage2 {
+  position: absolute;
+  left: 233.06px;
+  top: 893.03px;
+  background: url(../../images/backgrounds/spinach-leaves1_480.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 160px;
+  height: 172px;
+  flex-shrink: 0;
+  transform: rotate(-24deg);
+  filter: blur(4.5px);
+}
+@media (min-width: 780px) {
+  .backgroundImage1 {
+    left: -68.15px;
+    top: 443.8px;
+    width: 423px;
+    height: 646px;
+  }
+  .backgroundImage2 {
+    left: 487.12px;
+    top: 1083.49px;
+    width: 290px;
+    height: 313px;
+  }
+}
+@media (min-width: 1200px) {
+  .backgroundImage1 {
+    left: -50.56px;
+    top: 399.54px;
+    width: 558px;
+    height: 852px;
+  }
+  .backgroundImage2 {
+    left: 918px;
+    top: 1151px;
+    width: 438px;
+    height: 474px;
+  }
 }

@@ -13,6 +13,8 @@ const SharedLayout = () => {
       </Suspense>
       Footer
       <PolicyAndTerms />
+      <div className={styles.backgroundImage1}></div>
+      <div className={styles.backgroundImage2}></div>
     </div>
   );
 };
