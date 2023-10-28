@@ -33,6 +33,7 @@ const Button = ({
     short: styles.short,
     fill: styles.fill,
     svg: styles.svg,
+    reverse: styles.reverse,
   };
 
   const variantClass = validVariantss[variant]?.[size] || "";
@@ -48,9 +49,10 @@ const Button = ({
 };
 
 Button.propTypes = {
-  variant: PropTypes.oneOf(["primary", "secondary", "outline"]).isRequired,
+  variant: PropTypes.oneOf(["primary", "secondary", "outline"]),
   size: PropTypes.oneOf(["small", "default", "medium", "large"]),
-  unique: PropTypes.oneOf(["svg", "short"]),
+  unique: PropTypes.oneOf(["svg", "short", "fill", "reverse"]),
+  dark: PropTypes.bool,
   children: PropTypes.node,
 };
 
