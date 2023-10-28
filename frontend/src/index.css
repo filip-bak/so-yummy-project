@@ -28,3 +28,10 @@ h2,
 p {
   margin: 0;
 }
+
+ul {
+  list-style: none;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 0;
+}
