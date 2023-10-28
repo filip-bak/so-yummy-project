@@ -1,4 +1,5 @@
 // import { FooterLogo } from './FooterLogo/FooterLogo';
+import css from './FooterRights.module.css'
 
 
 
@@ -8,9 +9,9 @@
 export const FooterRights = () => {
     return (
         <div>
-            <ul>
-                <li>© 2023 All Rights Reserved.</li>
-                <li>Terms of Service</li>
+            <ul className={css.rightsList}>
+                <li className={css.rightsItem}>© 2023 All Rights Reserved.</li>
+                <li className={css.rightsItem}>Terms of Service</li>
             </ul>
         </div>
 

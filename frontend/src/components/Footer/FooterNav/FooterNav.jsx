@@ -1,4 +1,5 @@
 // import { FooterLogo } from './FooterLogo/FooterLogo';
+import css from './FooterNav.module.css'
 
 
 
@@ -8,21 +9,21 @@
 export const FooterNav = () => {
     return (
         <div>
-            <ul>
-                <li>
-                    <a href="idk">Ingredients</a>
+            <ul className={css.navList}>
+                <li className={css.navItem}>
+                    <a href="idk" className={css.navLink}>Ingredients</a>
                 </li>
-                <li>
-                    <a href="idk">Add recipes</a>
+                <li className={css.navItem}>
+                    <a href="idk" className={css.navLink}>Add recipes</a>
                 </li>
-                <li>
-                    <a href="idk">My recipes</a>
+                <li className={css.navItem}>
+                    <a href="idk" className={css.navLink}>My recipes</a>
                 </li>
-                <li>
-                    <a href="idk">Favorite</a>
+                <li className={css.navItem}>
+                    <a href="idk" className={css.navLink}>Favorite</a>
                 </li>
-                <li>
-                    <a href="idk">Shopping list</a>
+                <li className={css.navItem}>
+                    <a href="idk" className={css.navLink}>Shopping list</a>
                 </li>
             </ul>
         </div>

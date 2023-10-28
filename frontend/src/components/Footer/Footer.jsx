@@ -4,18 +4,21 @@ import { FooterSubscribeForm } from './FooterSubscribeForm/FooterSubscribeForm';
 import { FooterRights } from './FooterRights/FooterRights';
 // import { FooterFollowUs } from './FooterFollowUs/FooterFollowUs';
 
+import css from './Footer.module.css'
+
 
 
 export const Footer = () => {
     return (
-        <div>
-            <FooterLogo />
-            <FooterNav />
-            {/* <FooterFollowUs /> */}
-            <FooterSubscribeForm />
-            <FooterRights />
-
-        </div>
-   
+            <div className={css.containerContentBg}>
+                <div className={css.containerContent}>
+                    <FooterLogo />
+                    <div className={css.containerNavAndMedia}>
+                        <FooterNav />
+                        {/* <FooterFollowUs /> */}
+                    </div>
+                <FooterSubscribeForm />
+                </div>
+            </div>  
     );
   };

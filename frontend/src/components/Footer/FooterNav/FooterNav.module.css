@@ -1,0 +1,21 @@
+.navList {
+  list-style: none;
+  padding-inline-start: 0;
+  width: 89px;
+}
+.navItem:not(:last-child) {
+  margin-bottom: 24px;
+}
+.navItem {
+}
+
+.navLink {
+  color: var(--text-color-lighter);
+  font-family: var(--font-family);
+  font-size: var(--fs-md);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px; /* 128.571% */
+  letter-spacing: -0.28px;
+  text-decoration: none;
+}
