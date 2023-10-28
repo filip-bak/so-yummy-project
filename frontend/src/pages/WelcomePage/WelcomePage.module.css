@@ -64,7 +64,7 @@
     justify-content: center;
     border-radius: 12px;
     margin-bottom: 28px;
-    background-color: #8baa36;
+  background-color: var(--accent-color-darker);
   
     @media screen and (min-width: 768px) {
       width: 68px;
@@ -91,8 +91,7 @@
 }
 
 .title {
-  /* color: --text-color-lighter; */
-  color: #fafafa;
+color: var(--text-color-lighter);
     font-feature-settings: "liga" off;
     letter-spacing: -2%;
     align-self: center;
@@ -100,14 +99,14 @@
     font: 600 28px/100% Poppins, -apple-system, Roboto, Helvetica, sans-serif;
   
     @media screen and (min-width: 768px) {
-      font-size: 28px;
+      font-size: var(--fs-2xl);
       margin-bottom: 18px;
     }
   }
 
 .description {
   /* color: --text-color-lighter; */
-    color: #fafafa;
+  color: var(--text-color-lighter);
     margin-bottom: 44px;
       max-width: 305px;
       text-align: center;
@@ -120,7 +119,7 @@
            margin-bottom: 40px;
            width: 540px;
            max-width: 540px;
-           font-size: 18px;
-           line-height: 1.33;
+           font-size: var(--fs-lg);
+           line-height: var(--lh-600);
 }
 }
