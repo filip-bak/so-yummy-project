@@ -1,0 +1,95 @@
+.label {
+  display: flex;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--section-title-color);
+  justify-content: space-between;
+  align-items: center;
+  height: 34px;
+  width: 223px;
+}
+
+.option:hover,
+.option:focus {
+  border: none;
+  outline: none;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.select_box {
+  background-color: var(--text-color-darker);
+  border: none;
+  border-radius: 6px;
+  color: #757575;
+  cursor: pointer;
+  font-size: 12px;
+  height: 34px;
+  padding: 8px 10px;
+  width: 146px;
+}
+
+.select_box:focus,
+.select_box:hover {
+  outline: none;
+}
+
+.select_div {
+  margin-bottom: 50px;
+  margin-top: 24px;
+  position: relative;
+}
+
+.select_div:after {
+  content: ">";
+  font: 17px "Consolas", monospace;
+  color: var(--accent-color-darker);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  right: 10px;
+  top: 7px;
+  position: absolute;
+  pointer-events: none;
+}
+
+@media screen and (min-width: 768px) {
+  .label {
+    font-size: 14px;
+    height: 41px;
+    width: 265px;
+  }
+
+  .select_box {
+    font-size: 14px;
+    height: 41px;
+    padding: 10px 12px;
+    width: 175px;
+  }
+
+  .select_div {
+    margin-top: 28px;
+  }
+
+  .select_div:after {
+    font: 20px "Consolas", monospace;
+    top: 9px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .label {
+    font-size: 18px;
+    height: 47px;
+    width: 310px;
+  }
+
+  /* .select_div {
+    Tak samo
+  } */
+}
