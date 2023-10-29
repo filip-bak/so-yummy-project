@@ -10,7 +10,6 @@ export const SearchedRecipesList = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log("Effect");
     dispatch(fetchRecipes());
   }, [dispatch]);
 

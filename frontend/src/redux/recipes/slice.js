@@ -1,10 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchRecipes } from "./actions";
+import { fetchNewPage, fetchRecipes, setCurrentPage } from "./actions";
 
 const initialState = {
   items: [],
   isLoading: false,
   error: null,
+  currentPage: 1,
 };
 
 const handlePending = state => {
@@ -16,6 +17,12 @@ const handleRejected = (state, action) => {
   state.error = action.payload;
 };
 
+const recipesAppState = {
+  result: [],
+  error: null,
+  isLoading: false,
+};
+
 const recipesSlice = createSlice({
   name: "recipes",
   initialState: initialState,
@@ -24,9 +31,18 @@ const recipesSlice = createSlice({
     [fetchRecipes.fulfilled](state, action) {
       state.isLoading = false;
       state.error = null;
-      state.items = action.payload;
+      state.items = action.payload.recipes;
+      state.currentPage = action.payload.currentPage;
     },
     [fetchRecipes.rejected]: handleRejected,
+    [fetchNewPage.pending]: handlePending,
+    [fetchNewPage.fulfilled](state, action) {
+      state.isLoading = false;
+      state.error = null;
+      state.result = action.payload.recipes;
+      state.currentPage = action.payload.currentPage;
+    },
+    [fetchNewPage.rejected]: handleRejected,
   },
 });
 
