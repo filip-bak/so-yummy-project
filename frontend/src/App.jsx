@@ -10,7 +10,6 @@ export const App = () => {
   return (
     <Routes>
       <Route path="/welcome" element={<WelcomePage />} />
-      <Route path="/search" element={<SearchPage />} />
 
       <Route path="/" element={<AuthSharedLayout />}>
         <Route path="/register" />
@@ -20,6 +19,7 @@ export const App = () => {
       <Route path="/" element={<SharedLayout />}>
         <Route index element={<MainPage />} />
         {/* OTHER ROUTES */}
+        <Route path="/search" element={<SearchPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
