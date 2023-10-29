@@ -6,8 +6,10 @@ const Button = ({
   variant = "primary",
   size = "default",
   unique,
+  type = "button",
   dark = false,
   children,
+  ...props
 }) => {
   const validVariantss = {
     primary: {
@@ -43,8 +45,22 @@ const Button = ({
   const classes = [variantClass, colorClass, uniqueClass];
   const classNames = classes.filter(Boolean).join(" ");
 
+  const svgExists = children?.[0].type === "svg" && unique === "svg";
+
   return (
-    <button className={`${styles.container} ${classNames}`}>{children}</button>
+    <>
+      {type === "button" && (
+        <button className={`${styles.container} ${classNames}`} {...props}>
+          {children}
+        </button>
+      )}
+      {type === "input" && (
+        <label className={`${styles.container} ${classNames} ${styles.input}`}>
+          {svgExists && children[0]}
+          <input placeholder={svgExists ? children[1] : children} {...props} />
+        </label>
+      )}
+    </>
   );
 };
 
@@ -52,6 +68,7 @@ Button.propTypes = {
   variant: PropTypes.oneOf(["primary", "secondary", "outline"]),
   size: PropTypes.oneOf(["small", "default", "medium", "large"]),
   unique: PropTypes.oneOf(["svg", "short", "fill", "reverse"]),
+  type: PropTypes.oneOf(["button", "input"]),
   dark: PropTypes.bool,
   children: PropTypes.node,
 };
