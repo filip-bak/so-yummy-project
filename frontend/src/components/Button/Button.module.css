@@ -93,11 +93,16 @@
   --_height: 38px;
   --_font-size: var(--fs-md);
 }
+.secondary-medium:hover,
+.secondary-medium:focus {
+  --_background-color: var(--accent-color-darker);
+  --_color: var(--main-color-dark);
+}
 .secondary-medium.svg {
   --_border: 1px solid rgb(250 250 250 / 0.157);
   --_background-color: transparent;
   --_font-size: var(--fs-sm);
-  --_gap: 1rem;
+  --_gap: 0.875rem;
   justify-content: flex-start;
   --_padding: 0 0 0 14px;
   letter-spacing: -0.2px;
@@ -105,8 +110,33 @@
 .secondary-medium > svg {
   fill: transparent;
   stroke: var(--text-color-lighter);
-  width: 16px;
-  height: 12px;
+  width: 25px;
+  height: 20px;
+}
+.secondary-medium.input {
+  --_border: 1px solid rgb(250 250 250 / 0.157);
+  --_background-color: transparent;
+}
+.secondary-medium.input > input {
+  background-color: transparent;
+  padding: 0;
+  outline: 0;
+  width: 75%;
+  height: 100%;
+  border: 0;
+  color: var(--text-color-lighter);
+}
+.secondary-medium.input:focus-within {
+  outline: 1px solid var(--main-color-light);
+}
+.secondary-medium.input:hover {
+  background-color: initial;
+}
+.secondary-medium.input > input:focus {
+  outline: 0;
+}
+.secondary-medium.input > input::placeholder {
+  color: var(--text-color-lighter);
 }
 .secondary-large {
   --_width: 282px;
@@ -212,9 +242,12 @@
   .secondary-medium {
     --_font-size: var(--fs-base);
   }
+  .secondary-medium.svg {
+    --_gap: 1rem;
+  }
   .secondary-medium > svg {
-    width: 20px;
-    height: 16px;
+    width: 28px;
+    height: 25px;
   }
   .container.secondary-large {
     --_width: 400px;
@@ -264,7 +297,7 @@
   .secondary-medium.svg {
     --_width: 259px;
     --_font-size: 14px;
-    padding-left: 15px;
+
     letter-spacing: -0.28px;
   }
 
