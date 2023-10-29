@@ -11,16 +11,16 @@ const {
   getCategoryPageHandler,
   getRecipeByIdHandler,
     getRecipesHandler,
-    getPopularRecipesHandler,
-} = require("../../controllers/recipes");
+} = require("./recipes.controller");
+const {asyncWrapper}=require('../../helpers/asyncWrapper')
 
 const router = express.Router();
 
-router.get("/", getPopularRecipesHandler);
-router.get("/main-page", getRecipesHandler);
-router.get("/categoty-list", getCategoryHandler);
-router.get("/:category", getCategoryPageHandler);
-router.get("/:id", getRecipeByIdHandler);
+
+router.get("/main-page",asyncWrapper( getRecipesHandler));
+router.get("/categoty-list", asyncWrapper(getCategoryHandler));
+router.get("/:category", asyncWrapper(getCategoryPageHandler));
+router.get("/recipe/:id", asyncWrapper(getRecipeByIdHandler));
 
 module.exports = {
   recipesRouter: router,
