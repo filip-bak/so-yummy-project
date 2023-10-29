@@ -13,13 +13,13 @@ export const FooterSubscribeForm = () => {
             </div>
 
             <form autocomplete="off" className={css.subscribeForm}>
-                    <Button variant="secondary" size="medium" unique="svg" type="input">
+                    <Button variant="secondary" size="medium" unique="svg" element="input">
                         <svg>
                             <use href={`${icons}#icon-input-envelope`} />
                         </svg>
                         Enter your email address
                     </Button>
-                <Button variant="secondary" size="medium" type="element">Subscribe</Button>
+                <Button variant="secondary" size="medium" type="submit">Subscribe</Button>
             </form>
         </div>
     );
