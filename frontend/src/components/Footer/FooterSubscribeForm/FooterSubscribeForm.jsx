@@ -1,5 +1,6 @@
 import css from './FooterSubscribeForm.module.css'
 import  Button  from '../../Button/index'
+import icons from '../../../images/icons.svg'
 
 
 
@@ -12,15 +13,12 @@ export const FooterSubscribeForm = () => {
             </div>
 
             <form autocomplete="off" className={css.subscribeForm}>
-                <label for="email" className={css.subscribeLabel}>
-                    {/* <input className={css.subscribeInput} type="email" id="email" name="email" placeholder="Enter your email address" required /> */}
-                    <Button variant="secondary" size="medium" unique="svg" >
+                    <Button variant="secondary" size="medium" unique="svg" type="input">
                         <svg>
-                            <use href="<path-to-icons.svg>#id-ikony"/>
+                            <use href={`${icons}#icon-input-envelope`} />
                         </svg>
-                        TEXT
+                        Enter your email address
                     </Button>
-                </label>
                 <Button variant="secondary" size="medium">Subscribe</Button>
             </form>
         </div>

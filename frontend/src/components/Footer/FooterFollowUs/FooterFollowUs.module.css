@@ -7,11 +7,21 @@
   margin-block-end: 0;
 }
 .followUsItem {
-  background-color: red;
+  display: flex;
+  align-items: center;
+}
+.followUsLink {
+  text-decoration: none;
+  fill: var(--accent-color-darker);
+}
+.followUsLink:hover,
+.followUsLink:active,
+.followUsLink:focus {
+  fill: var(--text-color-lighter);
+  transition-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .followUsIcon {
-  fill: black;
-  stroke: blue;
 }
 
 @media screen and (min-width: 768px) {
@@ -20,11 +30,8 @@
     margin: 0 317px;
   }
   .followUsItem {
-    background-color: red;
   }
   .followUsIcon {
-    fill: black;
-    stroke: blue;
   }
 }
 

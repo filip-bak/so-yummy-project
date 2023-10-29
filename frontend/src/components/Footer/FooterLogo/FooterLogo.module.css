@@ -6,8 +6,9 @@
   align-items: center;
 }
 .logoIcon {
-  background-color: red;
-  stroke: red;
+  fill: var(--text-color-lighter);
+  stroke: var(--accent-color-darker);
+  stroke-width: 2px;
   margin-right: 8px;
   width: 30px;
   height: 30px;

@@ -24,6 +24,13 @@
   letter-spacing: -0.28px;
   text-decoration: none;
 }
+.navLink:hover,
+.navLink:active,
+.navLink:focus {
+  color: var(--accent-color-darker);
+  transition-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
 @media screen and (min-width: 768px) {
   .navList {
     margin-block-end: 0px;

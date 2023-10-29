@@ -1,11 +1,12 @@
 import css from './FooterLogo.module.css'
+import icons from "../../../images/icons.svg";
 
 export const FooterLogo = () => {
     return (
         <div className={css.logoContainer}>
             <div className={css.logoBox}>
                 <svg className={css.logoIcon}>
-                    <use href="../../../images/icons.svg#youtube"></use>
+                    <use href={`${icons}#icon-logo`} />
                 </svg>
                 <h2 className={css.logoTitle}>So Yummy</h2>
             </div>

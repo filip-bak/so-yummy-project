@@ -1,10 +1,4 @@
-// import { FooterLogo } from './FooterLogo/FooterLogo';
 import css from './FooterNav.module.css'
-
-
-
-
-
 
 export const FooterNav = () => {
     return (
