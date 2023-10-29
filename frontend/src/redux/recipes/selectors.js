@@ -1,5 +1,3 @@
-// import { createSelector } from "@reduxjs/toolkit";
-
 export const selectRecipes = state => {
   return state.recipes.items;
 };
