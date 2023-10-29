@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import css from "./SearchResults.module.css";
 import { selectRecipes } from "redux/recipes/selectors";
-import { SearchResultItem } from "components/SearchResultItem/SearchResultItem";
+import { SearchResultItem } from "pages/SearchPage/components/SearchResultItem/SearchResultItem";
 import { Pagination } from "components/Pagination/Pagination";
 import { useEffect, useState } from "react";
 

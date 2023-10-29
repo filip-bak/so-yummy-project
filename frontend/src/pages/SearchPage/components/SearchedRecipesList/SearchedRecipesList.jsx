@@ -1,5 +1,5 @@
 import { NoContent } from "components/NoContent/NoContent";
-import { SearchResults } from "components/SearchResults/SearchResults";
+import { SearchResults } from "pages/SearchPage/components/SearchResults/SearchResults";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchRecipes } from "redux/recipes/actions";

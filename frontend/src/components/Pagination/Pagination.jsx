@@ -44,13 +44,9 @@ export const Pagination = ({ recipesCount, resultsPerPage }) => {
         <button
           key={i}
           onClick={() => handleCurrentPageChange(i)}
-          className={
-            css.page_number +
-            " " +
-            css.button +
-            " " +
-            (currentPage === i ? " " + css.current_page : "")
-          }
+          className={`${css.page_number} ${css.button} ${
+            currentPage === i ? ` ${css.current_page}` : ""
+          }`}
         >
           {i}
         </button>
