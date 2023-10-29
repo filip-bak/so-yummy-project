@@ -28,7 +28,7 @@
 }
 .containerMain {
   background-color: var(--main-color-dark);
-  width: 100vw;
+  width: 100%;
   margin-bottom: 28px;
 }
 .containerContent {
