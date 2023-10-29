@@ -1,16 +1,3 @@
-.button {
-  background-color: var(--accent-color-darker);
-  border: 0;
-  color: var(--text-color-lighter);
-  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
-  box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.3;
-  width: 113px;
-  border-radius: 35px 5em 50%;
-  padding: 16px 31.7px;
-}
-
 .container {
   background-color: var(--main-color-ligh);
   box-sizing: border-box;

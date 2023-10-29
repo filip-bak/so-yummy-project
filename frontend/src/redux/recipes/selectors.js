@@ -1,7 +1,7 @@
 // import { createSelector } from "@reduxjs/toolkit";
 
 export const selectRecipes = state => {
-  return state.recipes.result;
+  return state.recipes.items;
 };
 export const selectIsLoading = state => state.recipes.isLoading;
 export const selectError = state => state.recipes.error;
