@@ -22,7 +22,7 @@
 
   @media screen and (min-width: 376px) {
       background-image: url("../../images/tablet/bg-welcome.jpg");
-  
+
       @media (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
@@ -34,8 +34,8 @@
 
   @media screen and (min-width: 769px) {
       background-image: url("../../images/desktop/bg-welcome.jpg");
-    
-  
+
+
       @media (min-device-pixel-ratio: 2),
           (min-resolution: 192dpi),
           (min-resolution: 2dppx) {
@@ -58,33 +58,23 @@
 .logoContainer {
   width: 54px;
     height: 54px;
-    padding: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 12px;
   background-color: var(--accent-color-darker);
-  
-    @media screen and (min-width: 768px) {
-      width: 68px;
-      height: 68px;
-      padding: 7px;
- 
-      
+  }
+  @media screen and (min-width: 768px) {
+    .logoContainer {
+    width: 68px;
+    height: 68px;
     }
   }
-
   .logo {
-    width: 28px;
-    height: 28px;
-
-@media screen and (min-width: 768px) {
-    width: 44px;
-    height: 44px;
-  
-  }
-
-
+    width: 100%;
+    height: 100%;
+    fill: #8baa36;
+    stroke: #fafafa;
   }
 
 .content {
@@ -109,7 +99,7 @@ color: var(--text-color-lighter);
     align-self: center;
     text-wrap: nowrap;
     font: 600 28px/100% Poppins, -apple-system, Roboto, Helvetica, sans-serif;
-  
+
     @media screen and (min-width: 768px) {
       font-size: var(--fs-2xl);
       margin-bottom: 18px;
@@ -125,8 +115,8 @@ color: var(--text-color-lighter);
       letter-spacing: -2%;
       margin-top: 14px;
       font: 400 18px/133.333% Poppins, -apple-system, Roboto, Helvetica, sans-serif;
-    
-    
+
+
          @media screen and (min-width: 768px) {
            margin-bottom: 40px;
            width: 540px;
