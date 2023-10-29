@@ -4,7 +4,7 @@ export const FooterLogo = () => {
     return (
         <div className={css.logoContainer}>
             <div className={css.logoBox}>
-                <svg className={css.logoIcon} width="30" height="30">
+                <svg className={css.logoIcon}>
                     <use href="../../../images/icons.svg#youtube"></use>
                 </svg>
                 <h2 className={css.logoTitle}>So Yummy</h2>

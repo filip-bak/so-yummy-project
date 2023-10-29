@@ -10,10 +10,26 @@
   background-color: red;
 }
 .followUsIcon {
+  fill: black;
+  stroke: blue;
 }
 
 @media screen and (min-width: 768px) {
+  .followUsList {
+    gap: 18px;
+    margin: 0 317px;
+  }
+  .followUsItem {
+    background-color: red;
+  }
+  .followUsIcon {
+    fill: black;
+    stroke: blue;
+  }
 }
 
 @media screen and (min-width: 1440px) {
+  .followUsList {
+    margin: 41px 653px 0;
+  }
 }

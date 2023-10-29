@@ -6,7 +6,7 @@ export const FooterFollowUs = () => {
             <ul className={css.followUsList}>
                 <li className={css.followUsItem}>
                     <svg className={css.followUsIcon} width="20" height="20">
-                        <use href="../../../images/icons.svg#icon-facebook"></use>
+                        <use href="./frontend/src/images/icons.svg#icon-facebook"></use>
                     </svg>
                 </li>
                 <li className={css.followUsItem}>

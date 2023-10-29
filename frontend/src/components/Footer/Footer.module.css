@@ -10,27 +10,26 @@
   align-items: center;
   padding: 28px 85px 18px;
 }
-.containerNavAndMedia {
-}
 
 @media screen and (min-width: 768px) {
+  .containerMain {
+    margin-bottom: 32px;
+  }
+  .containerContent {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding: 50px 94px 24px 32px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
   .containerMain {
-    display: flex;
-    justify-content: center;
     margin-bottom: 50px;
   }
   .containerContent {
     max-width: 1440px;
-    display: flex;
     justify-content: center;
     padding: 64px 100px 50px;
-  }
-  .containerNavAndMedia {
-    display: flex;
-    flex-direction: column;
-    margin-right: 214px;
   }
 }
