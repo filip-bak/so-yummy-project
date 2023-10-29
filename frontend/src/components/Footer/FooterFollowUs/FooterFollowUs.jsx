@@ -7,34 +7,34 @@ export const FooterFollowUs = () => {
         <div>
             <ul className={css.followUsList}>
                 <li className={css.followUsItem}>
-                <Link to="/facebook" className={css.followUsLink}>
+                <Link to="#" className={css.followUsLink}>
                         <svg className={css.followUsIcon} width="20" height="20">
                             <use href={`${icons}#icon-facebook`} />
                         </svg>
                     </Link>
                 </li>
                 <li className={css.followUsItem}>
-                    <Link to="/youtube" className={css.followUsLink}>
+                    <Link to="#" className={css.followUsLink}>
                         <svg className={css.followUsIcon} width="20" height="15">
                             <use href={`${icons}#icon-youtube`}/>
                         </svg>
                     </Link>
                 </li>
                 <li className={css.followUsItem}>
-                    <Link to="/twitter" className={css.followUsLink}>
+                    <Link to="#" className={css.followUsLink}>
                         <svg className={css.followUsIcon} width="20" height="16">
                             <use href={`${icons}#icon-twitter`}/>
                         </svg>
                     </Link>
                 </li>
                 <li className={css.followUsItem}>
-                    <Link to="/intagram" className={css.followUsLink}>
+                    <Link to="#" className={css.followUsLink}>
                         <svg className={css.followUsIcon} width="20" height="20">
                             <use href={`${icons}#icon-instagram`}/>
                         </svg>
                     </Link>
                 </li>
-            </ul>    
+            </ul>
         </div>
 
     );
