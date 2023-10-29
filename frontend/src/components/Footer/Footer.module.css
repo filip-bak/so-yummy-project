@@ -1,5 +1,6 @@
 .containerFooter {
   z-index: 2;
+  position: relative;
 }
 .bg {
   background-image: url(../../images/mobile/footer-pasta1-mob.png);

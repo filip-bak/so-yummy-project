@@ -1,37 +1,38 @@
 import css from './FooterFollowUs.module.css'
 import icons from '../../../images/icons.svg'
+import {  Link } from 'react-router-dom';
 
 export const FooterFollowUs = () => {
     return (
         <div>
             <ul className={css.followUsList}>
                 <li className={css.followUsItem}>
-                    <a href="facebook" className={css.followUsLink}>
+                <Link to="/facebook" className={css.followUsLink}>
                         <svg className={css.followUsIcon} width="20" height="20">
                             <use href={`${icons}#icon-facebook`} />
                         </svg>
-                    </a>
+                    </Link>
                 </li>
                 <li className={css.followUsItem}>
-                    <a href="facebook" className={css.followUsLink}>
+                    <Link to="/youtube" className={css.followUsLink}>
                         <svg className={css.followUsIcon} width="20" height="15">
                             <use href={`${icons}#icon-youtube`}/>
                         </svg>
-                    </a>
+                    </Link>
                 </li>
                 <li className={css.followUsItem}>
-                    <a href="facebook" className={css.followUsLink}>
+                    <Link to="/twitter" className={css.followUsLink}>
                         <svg className={css.followUsIcon} width="20" height="16">
                             <use href={`${icons}#icon-twitter`}/>
                         </svg>
-                    </a>
+                    </Link>
                 </li>
                 <li className={css.followUsItem}>
-                    <a href="facebook" className={css.followUsLink}>
+                    <Link to="/intagram" className={css.followUsLink}>
                         <svg className={css.followUsIcon} width="20" height="20">
                             <use href={`${icons}#icon-instagram`}/>
                         </svg>
-                    </a>
+                    </Link>
                 </li>
             </ul>    
         </div>

@@ -1,23 +1,24 @@
 import css from './FooterNav.module.css'
+import { Link } from 'react-router-dom';
 
 export const FooterNav = () => {
     return (
         <div>
             <ul className={css.navList}>
                 <li className={css.navItem}>
-                    <a href="Ingredients" className={css.navLink}>Ingredients</a>
+                <Link to="/search" className={css.navLink}>Ingredients</Link>
                 </li>
                 <li className={css.navItem}>
-                    <a href="recipes" className={css.navLink}>Add recipes</a>
+                <Link to="/add" className={css.navLink}>Add recipes</Link>
                 </li>
                 <li className={css.navItem}>
-                    <a href="ecipes" className={css.navLink}>My recipes</a>
+                <Link to="/my" className={css.navLink}>My recipes</Link>
                 </li>
                 <li className={css.navItem}>
-                    <a href="Favorite" className={css.navLink}>Favorite</a>
+                <Link to="/favorite" className={css.navLink}>Favorite</Link>
                 </li>
                 <li className={css.navItem}>
-                    <a href="list" className={css.navLink}>Shopping list</a>
+                <Link to="/shopping-list" className={css.navLink}>Shopping list</Link>
                 </li>
             </ul>
         </div>

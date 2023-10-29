@@ -19,7 +19,7 @@ export const FooterSubscribeForm = () => {
                         </svg>
                         Enter your email address
                     </Button>
-                <Button variant="secondary" size="medium">Subscribe</Button>
+                <Button variant="secondary" size="medium" type="element">Subscribe</Button>
             </form>
         </div>
     );
