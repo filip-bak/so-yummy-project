@@ -12,7 +12,7 @@ export const FooterSubscribeForm = () => {
                 <p className={css.subscribeDescription}>Subscribe to our newsletter. Be in touch with latest news and special offers, etc.</p>
             </div>
 
-            <form autocomplete="off" className={css.subscribeForm}>
+            <form autoComplete="off" className={css.subscribeForm}>
                     <Button variant="secondary" size="medium" unique="svg" element="input">
                         <svg>
                             <use href={`${icons}#icon-input-envelope`} />
