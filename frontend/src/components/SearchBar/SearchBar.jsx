@@ -1,3 +1,4 @@
+import Button from "components/Button";
 import css from "./SearchBar.module.css";
 import PropTypes from "prop-types";
 
@@ -14,9 +15,7 @@ export const SearchBar = ({ handleSubmit, children }) => {
             placeholder="Search..."
             name="searchFilter"
           ></input>
-          <button type="submit" className={css.button}>
-            Search
-          </button>
+          <Button>Search</Button>
         </div>
         {children}
       </form>
