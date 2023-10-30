@@ -6,4 +6,4 @@ export const store = configureStore({
   reducer: { recipes: recipesReducer },
 });
 
-export const persistor = persistStore(store);
+export const persistor = store;
