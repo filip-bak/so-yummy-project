@@ -50,11 +50,7 @@ const recipeSchema = Schema(
   { versionKey: false, timestamps: true }
 );
 
-
-
-
 const Recipe = model("Recipe", recipeSchema);
-
 
 module.exports = {
   Recipe,

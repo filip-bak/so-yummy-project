@@ -1,15 +1,15 @@
-require('dotenv').config();
+require("dotenv").config();
 const express = require("express");
 const logger = require("morgan");
 const cors = require("cors");
 
 const swaggerRouter = require("./modules/swagger/swagger.router");
+const { recipesRouter } = require("./routes/recipes/recipes.router");
+const { favoriteRouter } = require("./routes/favorite/favorite.router");
+const { popularRecipesRouter } = require("./routes/popular/popular.router");
 const {
-  recipesRouter } = require("./routes/recipes/recipes.router");
-const { favoriteRouter } = require('./routes/favorite/favorite.router');
-const { popularRecipesRouter } = require('./routes/popular/popular.router');
-const { ingredientsRouter } = require('./routes/ingredients/ingredients.router');
-
+  ingredientsRouter,
+} = require("./routes/ingredients/ingredients.router");
 
 const app = express();
 

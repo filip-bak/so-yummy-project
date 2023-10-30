@@ -1,12 +1,12 @@
-const express = require('express');
+const express = require("express");
 const {
-    getFavoritesHandler,
-    addFavoriteHandler,
-    deleteFavoriteHandler,
-    getFavoritePaginationHandler
-} = require('./favorite.controller');
+  getFavoritesHandler,
+  addFavoriteHandler,
+  deleteFavoriteHandler,
+  getFavoritePaginationHandler,
+} = require("./favorite.controller");
 
-const { asyncWrapper } = require('../../helpers/asyncWrapper');
+const { asyncWrapper } = require("../../helpers/asyncWrapper");
 
 const router = express.Router();
 
@@ -16,5 +16,5 @@ router.post("/:id", asyncWrapper(addFavoriteHandler));
 router.delete("/:id", asyncWrapper(deleteFavoriteHandler));
 
 module.exports = {
-    favoriteRouter:router,
-}
+  favoriteRouter: router,
+};

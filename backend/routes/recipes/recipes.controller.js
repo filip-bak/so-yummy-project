@@ -1,8 +1,7 @@
 const { getCategories } = require("./recipes.service");
 const { getCategoryPage } = require("./recipes.service");
 const { Recipe } = require("./recipes.model");
-const { RequestError } = require("../../helpers/RequestError");
-const { mongoose } = require("mongoose");
+const { ObjectId } = require("mongodb");
 
 const getCategoryHandler = async (req, res) => {
   res.json(getCategories());
@@ -40,19 +39,20 @@ const getCategoryPageHandler = async (req, res) => {
   });
 };
 
-
 const getRecipeByIdHandler = async (req, res) => {
   const { id } = req.params;
   // Extracts the 'id' parameter from the request
 
-  const ObjectId = mongoose.Types.ObjectId;
+  // const ObjectId = mongoose.Types.ObjectId;
   // Provides a way to convert a string to a MongoDB ObjectId
 
   try {
     const recipe = await Recipe.aggregate([
       // Executes an aggregation pipeline on the Recipe collection
       {
-        $match: { _id: ObjectId(id) },
+        $match: {
+          _id: new ObjectId(id),
+        },
         // Matches documents where the '_id' field matches the provided 'id'
       },
       {
