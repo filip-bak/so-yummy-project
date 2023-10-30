@@ -1,18 +1,16 @@
 import React from 'react';
 import AuthNav from './AuthNav';
 import css from "./WelcomePage.module.css"
-// import svg
+import icons from "../../images/icons.svg";
 
 const WelcomePage = () => {
   return (
    <div className={css.container}>
         <div className={css.logoContainer}>
-          <img
-          className={css.logo}
-          loading="lazy"
-           // src={}
-            alt="Logo"
-          />
+        {/* <Logo/> */}
+          <svg className={css.logo}>
+          <use href={`${icons}#icon-logo`} />
+        </svg>
         </div>
       <div className={css.content}>
         <div className={css.title}>
