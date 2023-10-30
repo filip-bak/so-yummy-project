@@ -1,6 +1,7 @@
 .container {
   display: block;
   width: 343px;
+  margin-bottom: 100px;
 }
 
 .section {
@@ -11,11 +12,13 @@
 @media screen and (min-width: 768px) {
   .container {
     width: 704px;
+    margin-bottom: 200px;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .container {
     width: 1240px;
+    margin-bottom: 100px;
   }
 }

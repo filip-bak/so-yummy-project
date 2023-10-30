@@ -1,0 +1,42 @@
+.container {
+  background-color: var(--main-color-light);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 26px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+  margin-top: 40px;
+}
+
+.button {
+  background-color: var(--main-color-light);
+  border: none;
+  cursor: pointer;
+  margin: 0 5px;
+  padding: 6px 10px;
+}
+
+.page_number {
+  color: #656565;
+  font-weight: 600;
+}
+
+.current_page {
+  background-color: var(--accent-color-lighter);
+  border-radius: 50%;
+  color: var(--main-color-dark);
+}
+
+@media screen and (min-width: 768px) {
+  .button {
+    margin: 0 10px;
+  }
+
+  .container {
+    margin-top: 50px;
+    padding: 14px 20px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  /* Tu wszystko jest tak samo jak w tablet  */
+}

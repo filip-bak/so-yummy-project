@@ -1,0 +1,117 @@
+.subscribeBox {
+  position: absolute;
+}
+.subscribeTitle {
+  position: relative;
+  visibility: hidden;
+}
+.subscribeDescription {
+  position: relative;
+  visibility: hidden;
+}
+.subscribeForm {
+  display: flex;
+  flex-direction: column;
+}
+.subscribeLabel {
+  margin-bottom: 8px;
+  max-width: 204px;
+  width: 100%;
+  flex-grow: 1;
+}
+.subscribeInput {
+  border-color: var(--text-color-lighter);
+  border-radius: 6px;
+  padding: 11.5px 20px;
+  flex-grow: 1;
+}
+.subscribeInput:placeholder-shown {
+  color: var(--text-color-lighter);
+  font-size: var(--fs-sm);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.2px;
+  background-color: var(--main-color-dark);
+}
+
+@media screen and (min-width: 768px) {
+  .subscribeForm {
+    flex-direction: row;
+    margin: 72px 155px 38px;
+  }
+  .subscribeLabel {
+    margin-bottom: 12px;
+  }
+  .subscribeInput {
+    border-color: var(--text-color-lighter);
+    border-radius: 6px;
+    padding: 11.5px 20px;
+    flex-grow: 1;
+  }
+  .subscribeInput:placeholder-shown {
+    color: var(--text-color-lighter);
+    font-size: var(--fs-sm);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.2px;
+    background-color: var(--main-color-dark);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .subscribeContainer {
+    max-width: 339px;
+    margin-left: 235px;
+  }
+  .subscribeBox {
+    position: unset;
+  }
+  .subscribeDescription {
+    position: unset;
+    visibility: hidden;
+  }
+  .subscribeTitle {
+    color: var(--text-color-lighter);
+    font-size: var(--fs-lg);
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 14px;
+    position: unset;
+    visibility: visible;
+  }
+  .subscribeDescription {
+    color: var(--text-color-lighter);
+    font-size: var(--fs-md);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px; /* 128.571% */
+    letter-spacing: -0.28px;
+    margin-bottom: 28px;
+    position: unset;
+    visibility: visible;
+  }
+  .subscribeForm {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+  .subscribeLabel {
+    margin-bottom: 16px;
+    max-width: 338px;
+    width: 100%;
+    flex-grow: 1;
+  }
+  .subscribeInput {
+    border-color: var(--text-color-lighter);
+    border-radius: 6px;
+    padding: 17.5px 20px;
+    flex-grow: 1;
+  }
+  .subscribeInput:placeholder-shown {
+    font-size: var(--fs-lg);
+    letter-spacing: -0.36px;
+  }
+}
