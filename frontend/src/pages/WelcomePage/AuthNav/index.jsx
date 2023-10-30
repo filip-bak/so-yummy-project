@@ -1,21 +1,30 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; 
+import Button from '../../../components/Button';
+import css from "./AuthNav.module.css";
+//import { useState } from 'react';
 
+const AuthNav = () => {
+  const navigate = useNavigate(); 
 
-export const AuthNav = () => {
+  const clickRegister = () => {
+    navigate("/register");
+  }
+
+  const clickSignin = () => {
+    navigate("/signin");
+  }
+
   return (
-    <nav>
-        <button>
-          <a href="/register">
-            <div>Registration</div>
-          </a>
-      </button>
-      <button>
-          <a href="/signin">
-            <div>Sign in</div>
-          </a>
-   </button>
+    <nav className={css.nav}>
+      <Button variant="outline" size="medium" unique="fill" onClick={clickRegister}>
+        Register
+      </Button>
+        <Button variant="outline" onClick={clickSignin}>
+        Sign in
+      </Button>
     </nav>
   );
 };
 
-export default AuthNav
+export default AuthNav;
