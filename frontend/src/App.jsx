@@ -6,6 +6,7 @@ import AuthSharedLayout from "components/AuthSharedLayout";
 import NotFoundPage from "pages/NotFoundPage";
 import SearchPage from "pages/SearchPage/SearchPage";
 
+
 export const App = () => {
   return (
     <Routes>
