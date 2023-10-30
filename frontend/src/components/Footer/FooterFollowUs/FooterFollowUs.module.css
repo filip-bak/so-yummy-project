@@ -1,0 +1,39 @@
+.followUsList {
+  display: flex;
+  list-style: none;
+  gap: 14px;
+  margin-top: 44px;
+  padding-inline-start: 0;
+}
+.followUsItem {
+  display: flex;
+  align-items: center;
+}
+.followUsLink {
+  text-decoration: none;
+  fill: var(--accent-color-darker);
+}
+.followUsLink:hover,
+.followUsLink:active,
+.followUsLink:focus {
+  fill: var(--text-color-lighter);
+  transition-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.followUsIcon {
+}
+
+@media screen and (min-width: 768px) {
+  .followUsList {
+    gap: 18px;
+  }
+  .followUsItem {
+  }
+  .followUsIcon {
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .followUsList {
+  }
+}

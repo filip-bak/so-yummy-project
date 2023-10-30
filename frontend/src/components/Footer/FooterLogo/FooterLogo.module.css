@@ -1,0 +1,91 @@
+.logoContainer {
+}
+.logoBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logoIcon {
+  fill: var(--text-color-lighter);
+  stroke: var(--accent-color-darker);
+  stroke-width: 2px;
+  margin-right: 8px;
+  width: 30px;
+  height: 30px;
+}
+.logoTitle {
+  color: var(--text-color-lighter);
+  font-size: var(--fs-lg);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px; /* 100% */
+  letter-spacing: 0.27px;
+}
+.logoBenefitsBox {
+  position: absolute;
+}
+.logoBenefitsList {
+  visibility: hidden;
+  position: relative;
+}
+
+@media screen and (min-width: 768px) {
+  .logoContainer {
+  }
+  .logoBox {
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .logoIcon {
+    margin-right: 12px;
+    width: 44px;
+    height: 44px;
+  }
+  .logoTitle {
+    font-size: var(--fs-2xl);
+    line-height: 28px; /* 100% */
+    letter-spacing: 0.42px;
+  }
+  .logoBenefitsBox {
+    position: unset;
+  }
+  .logoBenefitsList {
+    visibility: visible;
+    position: unset;
+    color: var(--text-color-lighter);
+    font-size: var(--fs-md);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px; /* 128.571% */
+    letter-spacing: -0.28px;
+    margin-right: 175px;
+    padding-inline-start: 18px;
+    max-width: 380px;
+    margin-block-end: 0;
+    margin-block-start: 24px;
+  }
+  .logoBenefitsItem:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .logoContainer {
+  }
+  .logoBox {
+  }
+  .logoIcon {
+  }
+  .logoTitle {
+  }
+  .logoBenefitsList {
+    margin-right: 159px;
+    margin-block-start: 40px;
+    max-width: 418px;
+  }
+  .logoBenefitsItem {
+  }
+  .logoBenefitsItem:not(:last-child) {
+    margin-bottom: 12px;
+  }
+}
