@@ -1,25 +1,86 @@
+import React, { useState } from 'react';
 import css from './FooterSubscribeForm.module.css'
 import  Button  from '../../Button/index'
 import icons from '../../../images/icons.svg'
+import Loader from '../../Loader/index'
 
 
 
 export const FooterSubscribeForm = () => {
+
+    const [email, setEmail] = useState('');
+    const [isEmailValid, setIsEmailValid] = useState(false);
+    const [isInputClicked, setIsInputClicked] = useState(false);
+
+    const handleEmailChange = (event) => {
+        const newEmail = event.target.value;
+        setEmail(newEmail);
+        setIsEmailValid(validateEmail(newEmail));
+      };
+    
+      const validateEmail = (email) => {
+        const validetedEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return validetedEmail.test(email);
+      };
+
+      const handleInputClick = () => {
+        setIsInputClicked(true);
+      };
+    
+    
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (isEmailValid) {
+          if (Notification.permission !== "granted") {
+            Notification.requestPermission().then(permission => {
+            //   if (permission === "granted") {
+            //     // Utwórz i wyślij powiadomienie push
+            //     const notificationOptions = {
+            //       body: body: "Thank you for subscribing! 🧡",
+            //     };
+            //     new Notification("Subscription notification", notificationOptions);
+            //   }
+            });
+          } else {
+            const notificationOptions = {
+              body: "Thank you for subscribing! 🧡",
+            };
+            new Notification("Subscription notification`", notificationOptions);
+            setEmail('');
+          }
+        }
+      };
+
     return (
         <div className={css.subscribeContainer}>
             <div className={css.subscribeBox}>
                 <h2 className={css.subscribeTitle}>Subscribe to our Newsletter</h2>
-                <p className={css.subscribeDescription}>Subscribe to our newsletter. Be in touch with latest news and special offers, etc.</p>
+                <p className={css.subscribeDescription}>
+                    Subscribe to our newsletter. Be in touch with latest news and special offers, etc.
+                </p>
             </div>
 
-            <form autoComplete="off" className={css.subscribeForm}>
-                    <Button variant="secondary" size="medium" unique="svg" element="input">
-                        <svg>
-                            <use href={`${icons}#icon-input-envelope`} />
-                        </svg>
-                        Enter your email address
-                    </Button>
-                <Button variant="secondary" size="medium" type="submit">Subscribe</Button>
+            <form autoComplete="off" className={css.subscribeForm} onSubmit={handleSubmit}>
+                <Button  id="email" 
+                variant="secondary" 
+                size="medium" 
+                unique="svg" 
+                element="input"
+                type="email"
+                minLength="12"
+                value={email}
+                onChange={handleEmailChange}
+                onClick={handleInputClick}
+                required>
+                    <svg>
+                        <use href={`${icons}#icon-input-envelope`} />
+                    </svg>
+                    Enter your email address
+                </Button>
+                {isInputClicked && !isEmailValid && <div  className={css.subscribeError}>Incorrect e-mail address</div>}
+                <Button  variant="secondary" size="medium" type="submit"  
+                disabled={!isEmailValid}
+                >Subscribe</Button>
             </form>
         </div>
     );
