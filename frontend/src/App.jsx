@@ -6,6 +6,7 @@ import AuthSharedLayout from "components/AuthSharedLayout";
 import NotFoundPage from "pages/NotFoundPage";
 import SearchPage from "pages/SearchPage/SearchPage";
 import MyRecipesPage from "pages/MyRecipesPage/MyRecipesPage";
+import Favorite from "pages/Favorite/Favorite";
 import CategoriesPage from "pages/CategoriesPage";
 import CategoriesDetails from "components/CategoriesDetails";
 
@@ -26,7 +27,7 @@ export const App = () => {
         <Route path="/my" element={<MyRecipesPage />} />
         <Route path="/add" />
         <Route path="/search" element={<SearchPage />} />
-        <Route path="/favorite" />
+        <Route path="/favorite" element={<Favorite />} />
         <Route path="/shopping-list" />
         <Route path="/categories/:categoryName" />
         <Route path="*" element={<NotFoundPage />} />
