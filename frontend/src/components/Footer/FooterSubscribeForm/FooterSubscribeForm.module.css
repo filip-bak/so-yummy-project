@@ -13,6 +13,13 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+  position: relative;
+}
+.subscribeError {
+  font-size: var(--fs-sm);
+  color: red;
+  position: absolute;
+  top: -14px;
 }
 /* .subscribeLabel {
   margin-bottom: 8px;
