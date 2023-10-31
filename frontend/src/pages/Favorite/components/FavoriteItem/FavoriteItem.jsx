@@ -17,7 +17,7 @@ export const FavoriteItem = ({ image, title, id, description, time }) => {
             <use href={`${icons}#icon-trash`} />
           </svg>
           <div className={css.button}>
-            <Button size="small" dark>
+            <Button size="small" unique="short" dark>
               See recipe
             </Button>
           </div>
