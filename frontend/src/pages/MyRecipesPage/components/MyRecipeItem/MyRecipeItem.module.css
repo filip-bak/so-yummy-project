@@ -123,7 +123,7 @@
 
   .dish_time {
     font-size: 14px;
-    margin-left: 16px;
+    padding-left: 16px;
   }
 
   .icon {
@@ -133,4 +133,50 @@
 }
 
 @media screen and (min-width: 1440px) {
+  .button {
+    margin-right: 40px;
+  }
+
+  .container {
+    padding: 40px 0 40px 40px;
+    height: 404px;
+    width: 1240px;
+  }
+
+  .item:not(:last-child) {
+    margin-bottom: 50px;
+  }
+
+  .image_container,
+  .image {
+    height: 324px;
+    width: 318px;
+  }
+
+  .info_container {
+    height: 324px;
+    padding-left: 40px;
+    position: relative;
+    width: 868px;
+  }
+
+  .dish_title {
+    width: 828px;
+  }
+
+  .dish_description {
+    font-size: 18px;
+    margin-top: 40px;
+    width: 806px;
+  }
+
+  .dish_time {
+    padding-left: 40px;
+  }
+
+  .icon {
+    height: 44px;
+    width: 44px;
+    margin-right: 40px;
+  }
 }
