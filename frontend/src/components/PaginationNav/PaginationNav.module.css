@@ -1,0 +1,25 @@
+.icon {
+  fill: var(--main-color-light);
+  stroke: #a6a4a4;
+  width: 10px;
+  height: 10px;
+}
+
+.button {
+  background-color: var(--main-color-light);
+  border: none;
+  padding: 1px 7px;
+  cursor: pointer;
+}
+
+.rotated {
+  transform: rotate(180deg);
+}
+
+@media screen and (min-width: 768px) {
+  /* Tu wszystko jest tak samo jak w mobile  */
+}
+
+@media screen and (min-width: 1440px) {
+  /* Tu wszystko jest tak samo jak w mobile  */
+}

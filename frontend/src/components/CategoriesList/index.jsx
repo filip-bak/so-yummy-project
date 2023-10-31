@@ -1,16 +1,27 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
+import styles from "./CategoriesList.module.css";
 
 const CategoriesList = ({ categories }) => {
+  const location = useLocation();
   return (
-    <div>
-      <ul>
-        {categories.map(val => (
-          <Link key={val._id} to={`/categories/${val.title}`}>
-            {val.title}
-          </Link>
-        ))}
-      </ul>
+    <div className={styles.container}>
+      <div className={styles.box}>
+        <div className={styles.wrapper}>
+          {categories.map(val => (
+            <NavLink
+              className={`${styles.link} ${
+                location.pathname.includes(val.title) ? styles.active : ""
+              }`}
+              key={val._id}
+              to={`/categories/${val.title}`}
+            >
+              {val.title}
+            </NavLink>
+          ))}
+        </div>
+        <span className={styles.borderLine}></span>
+      </div>
     </div>
   );
 };

@@ -1,8 +1,8 @@
 import css from "./SearchPage.module.css";
 import { MainPageTitle } from "components/MainPageTitle/MainPageTitle";
 import { SearchBar } from "components/SearchBar/SearchBar";
-import { SearchType } from "components/SearchType/SearchType";
-import { SearchedRecipesList } from "components/SearchedRecipesList/SearchedRecipesList";
+import { SearchType } from "pages/SearchPage/components/SearchType/SearchType";
+import { SearchedRecipesList } from "pages/SearchPage/components/SearchedRecipesList/SearchedRecipesList";
 
 const SearchPage = () => {
   return (

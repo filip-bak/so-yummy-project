@@ -13,10 +13,7 @@
     "time": "45",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=-gF8d-fitkU",
-    "tags": [
-      "Pasta",
-      "Meat"
-    ],
+    "tags": ["Pasta", "Meat"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733240"
@@ -116,11 +113,7 @@
     "time": "85",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=1ahpSTf_Pvk",
-    "tags": [
-      "Tart",
-      "Baking",
-      "Alcoholic"
-    ],
+    "tags": ["Tart", "Baking", "Alcoholic"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733239"
@@ -208,10 +201,7 @@
     "time": "75",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=4aZr5hZXP_s",
-    "tags": [
-      "Meat",
-      "Casserole"
-    ],
+    "tags": ["Meat", "Casserole"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733240"
@@ -293,11 +283,7 @@
     "time": "60",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=EtVkwVKLc_M",
-    "tags": [
-      "Casserole",
-      "Cheasy",
-      "Meat"
-    ],
+    "tags": ["Casserole", "Cheasy", "Meat"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733240"
@@ -349,11 +335,7 @@
     "time": "25",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=4MpYuaJsvRw",
-    "tags": [
-      "Fish",
-      "Breakfast",
-      "DateNight"
-    ],
+    "tags": ["Fish", "Breakfast", "DateNight"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733240"
@@ -411,10 +393,7 @@
     "time": "27",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=e52IL8zYmaE",
-    "tags": [
-      "Pasta",
-      "Baking"
-    ],
+    "tags": ["Pasta", "Baking"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733240"
@@ -496,10 +475,7 @@
     "time": "50",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=VU8cXvlGbvc",
-    "tags": [
-      "Vegan",
-      "Pasta"
-    ],
+    "tags": ["Vegan", "Pasta"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733240"
@@ -593,13 +569,7 @@
     "time": "20",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=43WgiNq54L8",
-    "tags": [
-      "Dairy",
-      "Fruity",
-      "Desert",
-      "Treat",
-      "Speciality"
-    ],
+    "tags": ["Dairy", "Fruity", "Desert", "Treat", "Speciality"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733240"
@@ -657,9 +627,7 @@
     "time": "20",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=Ohy1DELF4is",
-    "tags": [
-      "Pasta"
-    ],
+    "tags": ["Pasta"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733240"
@@ -759,10 +727,7 @@
     "time": "160",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=kYH2qJXnSMo",
-    "tags": [
-      "Stew",
-      "Meat"
-    ],
+    "tags": ["Stew", "Meat"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733240"
@@ -868,10 +833,7 @@
     "time": "50",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=UhQPwO4uymo",
-    "tags": [
-      "Tart",
-      "Savory"
-    ],
+    "tags": ["Tart", "Savory"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733240"
@@ -971,12 +933,7 @@
     "time": "75",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=dsJtgmAhFF4",
-    "tags": [
-      "Cake",
-      "Chocolate",
-      "Desert",
-      "Pudding"
-    ],
+    "tags": ["Cake", "Chocolate", "Desert", "Pudding"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733240"
@@ -1040,10 +997,7 @@
     "time": "35",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=zxBzwJvTK4g",
-    "tags": [
-      "Vegetarian",
-      "Spicy"
-    ],
+    "tags": ["Vegetarian", "Spicy"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733240"
@@ -1261,11 +1215,7 @@
     "time": "50",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=rp8Slv4INLk",
-    "tags": [
-      "Tart",
-      "Baking",
-      "Fruity"
-    ],
+    "tags": ["Tart", "Baking", "Fruity"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733240"
@@ -1429,9 +1379,7 @@
     "time": "90",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=vaZb1MnFBgA",
-    "tags": [
-      ""
-    ],
+    "tags": [""],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733240"
@@ -1543,10 +1491,7 @@
     "time": "25",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=1IszT_guI08",
-    "tags": [
-      "Pasta",
-      "Curry"
-    ],
+    "tags": ["Pasta", "Curry"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733240"
@@ -1622,9 +1567,7 @@
     "time": "90",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=pKmqawK2Tqs",
-    "tags": [
-      "Pulse"
-    ],
+    "tags": ["Pulse"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733240"
@@ -1766,12 +1709,7 @@
     "time": "75",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=2sX4fCgg-UI",
-    "tags": [
-      "Fish",
-      "Pie",
-      "Breakfast",
-      "Baking"
-    ],
+    "tags": ["Fish", "Pie", "Breakfast", "Baking"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733240"
@@ -1883,11 +1821,7 @@
     "time": "40",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=qCIbq8HywpQ",
-    "tags": [
-      "Pasta",
-      "Meat",
-      "Dairy"
-    ],
+    "tags": ["Pasta", "Meat", "Dairy"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733240"
@@ -2017,10 +1951,7 @@
     "time": "90",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=FS8u1RBdf6I",
-    "tags": [
-      "Meat",
-      "Stew"
-    ],
+    "tags": ["Meat", "Stew"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733240"
@@ -2096,11 +2027,7 @@
     "time": "20",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=UVAMAoA2_WU",
-    "tags": [
-      "UnHealthy",
-      "Speciality",
-      "HangoverFood"
-    ],
+    "tags": ["UnHealthy", "Speciality", "HangoverFood"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733240"
@@ -2152,10 +2079,7 @@
     "time": "90",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=r7SYVSG5nxo",
-    "tags": [
-      "Curry",
-      "Meat"
-    ],
+    "tags": ["Curry", "Meat"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733241"
@@ -2297,10 +2221,7 @@
     "time": "80",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=-CKvt1KNU74",
-    "tags": [
-      "Spicy",
-      "Meat"
-    ],
+    "tags": ["Spicy", "Meat"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733241"
@@ -2400,12 +2321,7 @@
     "time": "340",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=N1aJ3nEYXyg",
-    "tags": [
-      "Chocolate",
-      "Snack",
-      "Sweet",
-      "Baking"
-    ],
+    "tags": ["Chocolate", "Snack", "Sweet", "Baking"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733240"
@@ -2463,11 +2379,7 @@
     "time": "40",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=-84Zz2EP4h4",
-    "tags": [
-      "Spicy",
-      "Bun",
-      "Calorific"
-    ],
+    "tags": ["Spicy", "Bun", "Calorific"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733241"
@@ -2537,11 +2449,7 @@
     "time": "90",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=NZVo32n7iS8",
-    "tags": [
-      "Curry",
-      "Spicy",
-      "Alcoholic"
-    ],
+    "tags": ["Curry", "Spicy", "Alcoholic"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733241"
@@ -2641,10 +2549,7 @@
     "time": "105",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=FXtCris37nE",
-    "tags": [
-      "Fish",
-      "Spicy"
-    ],
+    "tags": ["Fish", "Spicy"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733241"
@@ -2744,11 +2649,7 @@
     "time": "90",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=J4D855Q9-jg",
-    "tags": [
-      "Curry",
-      "Vegetarian",
-      "Cake"
-    ],
+    "tags": ["Curry", "Vegetarian", "Cake"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733241"
@@ -2860,9 +2761,7 @@
     "time": "55",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=BiQUYTBb6eQ",
-    "tags": [
-      "Vegetarian"
-    ],
+    "tags": ["Vegetarian"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733241"
@@ -2962,9 +2861,7 @@
     "time": "300",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=gh48wM6bPWQ",
-    "tags": [
-      "Meat"
-    ],
+    "tags": ["Meat"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733241"
@@ -3058,10 +2955,7 @@
     "time": "40",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=LIbKVpBQKJI",
-    "tags": [
-      "Curry",
-      "Mild"
-    ],
+    "tags": ["Curry", "Mild"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733241"
@@ -3161,10 +3055,7 @@
     "time": "60",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=PTUxCvCz8Bc",
-    "tags": [
-      "Meat",
-      "Spicy"
-    ],
+    "tags": ["Meat", "Spicy"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733241"
@@ -3294,11 +3185,7 @@
     "time": "75",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=HkywCtna9t0",
-    "tags": [
-      "Vegetarian",
-      "Pulse",
-      "Nutty"
-    ],
+    "tags": ["Vegetarian", "Pulse", "Nutty"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733241"
@@ -3416,9 +3303,7 @@
     "time": "35",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=uYB-1xJp4lg",
-    "tags": [
-      "Vegetarian"
-    ],
+    "tags": ["Vegetarian"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733241"
@@ -3488,10 +3373,7 @@
     "time": "25",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=N4EdUt0Ou48",
-    "tags": [
-      "Spicy",
-      "Fish"
-    ],
+    "tags": ["Spicy", "Fish"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733241"
@@ -3585,11 +3467,7 @@
     "time": "40",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=bwTSmLTZKNg",
-    "tags": [
-      "Pasta",
-      "Cheasy",
-      "Meat"
-    ],
+    "tags": ["Pasta", "Cheasy", "Meat"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733241"
@@ -3689,10 +3567,7 @@
     "time": "45",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=MWzxDFRtVbc",
-    "tags": [
-      "Curry",
-      "Meat"
-    ],
+    "tags": ["Curry", "Meat"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733241"
@@ -3804,10 +3679,7 @@
     "time": "20",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=OcarztU8cYo",
-    "tags": [
-      "Shellfish",
-      "Seafood"
-    ],
+    "tags": ["Shellfish", "Seafood"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733241"
@@ -3959,9 +3831,7 @@
     "time": "45",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=2l3-dBdNehY",
-    "tags": [
-      "MainMeal"
-    ],
+    "tags": ["MainMeal"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733241"
@@ -4037,11 +3907,7 @@
     "time": "45",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=C3pAgB7pync",
-    "tags": [
-      "Vegan",
-      "Chocolate",
-      "Cake"
-    ],
+    "tags": ["Vegan", "Chocolate", "Cake"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733241"
@@ -4111,9 +3977,7 @@
     "time": "130",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=mVxgZSCU9_g",
-    "tags": [
-      "Curry"
-    ],
+    "tags": ["Curry"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733241"
@@ -4219,12 +4083,7 @@
     "time": "75",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=hKq6RbxJHBo",
-    "tags": [
-      "Pudding",
-      "Desert",
-      "Cake",
-      "Dairy"
-    ],
+    "tags": ["Pudding", "Desert", "Cake", "Dairy"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733241"
@@ -4330,9 +4189,7 @@
     "time": "63",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=UIcuiU1kV8I",
-    "tags": [
-      "Snack"
-    ],
+    "tags": ["Snack"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733240"
@@ -4408,9 +4265,7 @@
     "time": "75",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=45dpOfESxr8",
-    "tags": [
-      "Pasta"
-    ],
+    "tags": ["Pasta"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733241"
@@ -4834,10 +4689,7 @@
     "time": "80",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=Vz5W1-BmOE4",
-    "tags": [
-      "Pudding",
-      "Brunch"
-    ],
+    "tags": ["Pudding", "Brunch"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733240"
@@ -5607,9 +5459,7 @@
     "time": "40",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=V2PMvBv52IE",
-    "tags": [
-      "Fish"
-    ],
+    "tags": ["Fish"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733241"
@@ -5821,9 +5671,7 @@
     "time": "75",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=mTvlmY4vCug",
-    "tags": [
-      "Alcoholic"
-    ],
+    "tags": ["Alcoholic"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733242"
@@ -6669,10 +6517,7 @@
     "time": "350",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=oJvbsVSblfk",
-    "tags": [
-      "Snack",
-      "Chocolate"
-    ],
+    "tags": ["Snack", "Chocolate"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733240"
@@ -6736,11 +6581,7 @@
     "time": "15",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=kSKtb2Sv-_U",
-    "tags": [
-      "Breakfast",
-      "Desert",
-      "Sweet"
-    ],
+    "tags": ["Breakfast", "Desert", "Sweet"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733242"
@@ -6810,12 +6651,7 @@
     "time": "205",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=fDpoT0jvg4Y",
-    "tags": [
-      "Pie",
-      "Desert",
-      "Sweet",
-      "Nutty"
-    ],
+    "tags": ["Pie", "Desert", "Sweet", "Nutty"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733242"
@@ -6909,13 +6745,7 @@
     "time": "195",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=tspdJ6hxqnc",
-    "tags": [
-      "Desert",
-      "Dairy",
-      "Pudding",
-      "Cake",
-      "Breakfast"
-    ],
+    "tags": ["Desert", "Dairy", "Pudding", "Cake", "Breakfast"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733242"
@@ -6991,13 +6821,7 @@
     "time": "211",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=q4Rz7tUkX9A",
-    "tags": [
-      "Cake",
-      "Pie",
-      "Desert",
-      "Fruity",
-      "Sour"
-    ],
+    "tags": ["Cake", "Pie", "Desert", "Fruity", "Sour"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733242"
@@ -7067,11 +6891,7 @@
     "time": "105",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=hpapqEeb36k",
-    "tags": [
-      "Halloween",
-      "Pie",
-      "Desert"
-    ],
+    "tags": ["Halloween", "Pie", "Desert"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733242"
@@ -7165,10 +6985,7 @@
     "time": "40",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=oHmKE9mWtWM",
-    "tags": [
-      "Casserole",
-      "Vegetarian"
-    ],
+    "tags": ["Casserole", "Vegetarian"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733242"
@@ -7280,11 +7097,7 @@
     "time": "50",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=SNeO28BCpsc",
-    "tags": [
-      "Desert",
-      "Pudding",
-      "Fruity"
-    ],
+    "tags": ["Desert", "Pudding", "Fruity"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733242"
@@ -7372,10 +7185,7 @@
     "time": "25",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=wlseYNqwLNs",
-    "tags": [
-      "Curry",
-      "Vegetarian"
-    ],
+    "tags": ["Curry", "Vegetarian"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733242"
@@ -7469,10 +7279,7 @@
     "time": "90",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=GNN7_ZSJ5YE",
-    "tags": [
-      "Vegetarian",
-      "Nutty"
-    ],
+    "tags": ["Vegetarian", "Nutty"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733242"
@@ -7572,10 +7379,7 @@
     "time": "55",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=xHZ-PoGwTLQ",
-    "tags": [
-      "Pasta",
-      "Light"
-    ],
+    "tags": ["Pasta", "Light"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733242"
@@ -7633,9 +7437,7 @@
     "time": "30",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=D0bFRVH_EqU",
-    "tags": [
-      "Chilli"
-    ],
+    "tags": ["Chilli"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733242"
@@ -7687,9 +7489,7 @@
     "time": "30",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=Tp_PMWvIKzo",
-    "tags": [
-      "Curry"
-    ],
+    "tags": ["Curry"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733242"
@@ -7783,13 +7583,7 @@
     "time": "30",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=QSTsturcyL0",
-    "tags": [
-      "Cake",
-      "Desert",
-      "Treat",
-      "UnHealthy",
-      "Speciality"
-    ],
+    "tags": ["Cake", "Desert", "Treat", "UnHealthy", "Speciality"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733242"
@@ -7877,10 +7671,7 @@
     "time": "140",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=6NgheY-r5t0",
-    "tags": [
-      "Stew",
-      "Baking"
-    ],
+    "tags": ["Stew", "Baking"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733242"
@@ -8122,9 +7913,7 @@
     "time": "25",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=8kRlmz8pW0I",
-    "tags": [
-      "Pulse"
-    ],
+    "tags": ["Pulse"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733242"
@@ -8212,9 +8001,7 @@
     "time": "35",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=LGY3V7EGpT0",
-    "tags": [
-      "Vegetarian"
-    ],
+    "tags": ["Vegetarian"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733242"
@@ -8314,10 +8101,7 @@
     "time": "60",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=JceGMNG7rpU",
-    "tags": [
-      "Egg",
-      "Light"
-    ],
+    "tags": ["Egg", "Light"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733242"
@@ -8399,9 +8183,7 @@
     "time": "35",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=5Iy0MCowSvA",
-    "tags": [
-      "LowCalorie"
-    ],
+    "tags": ["LowCalorie"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733242"
@@ -8489,10 +8271,7 @@
     "time": "210",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=nMyBC9staMU",
-    "tags": [
-      "Meat",
-      "Pie"
-    ],
+    "tags": ["Meat", "Pie"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733242"
@@ -8610,9 +8389,7 @@
     "time": "40",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=CrlTS1mJQMA",
-    "tags": [
-      "Pulse"
-    ],
+    "tags": ["Pulse"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733241"
@@ -8812,10 +8589,7 @@
     "time": "70",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=QY47h-uqq5g",
-    "tags": [
-      "Pie",
-      "Meat"
-    ],
+    "tags": ["Pie", "Meat"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733242"
@@ -8903,10 +8677,7 @@
     "time": "90",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=xr-CpPE_lNk",
-    "tags": [
-      "Pie",
-      "Meat"
-    ],
+    "tags": ["Pie", "Meat"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733242"
@@ -9018,9 +8789,7 @@
     "time": "100",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=NCyPaaUNYUk",
-    "tags": [
-      "Pie"
-    ],
+    "tags": ["Pie"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733242"
@@ -9102,9 +8871,7 @@
     "time": "210",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=ONX74yP6JnI",
-    "tags": [
-      "Pie"
-    ],
+    "tags": ["Pie"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733242"
@@ -9222,10 +8989,7 @@
     "time": "75",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=tiG-xlmeyjg",
-    "tags": [
-      "Meat",
-      "Dairy"
-    ],
+    "tags": ["Meat", "Dairy"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733242"
@@ -9343,9 +9107,7 @@
     "time": "140",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=oTw5tPt4KmA",
-    "tags": [
-      "Pie"
-    ],
+    "tags": ["Pie"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733242"
@@ -9445,9 +9207,7 @@
     "time": "158",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=1nArqhRyszw",
-    "tags": [
-      "Pie"
-    ],
+    "tags": ["Pie"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733242"
@@ -9565,12 +9325,7 @@
     "time": "70",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=Ds1Jb8H5Sg8",
-    "tags": [
-      "Fish",
-      "Seafood",
-      "Dairy",
-      "Pie"
-    ],
+    "tags": ["Fish", "Seafood", "Dairy", "Pie"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733242"
@@ -9670,11 +9425,7 @@
     "time": "50",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=Wytv3bjqJII",
-    "tags": [
-      "Pudding",
-      "Cake",
-      "Desert"
-    ],
+    "tags": ["Pudding", "Cake", "Desert"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733242"
@@ -9850,10 +9601,7 @@
     "time": "12",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=etbJ9ssgsWY",
-    "tags": [
-      "SideDish",
-      "Speciality"
-    ],
+    "tags": ["SideDish", "Speciality"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733242"
@@ -9999,11 +9747,7 @@
     "time": "90",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=fu15XOF-ros",
-    "tags": [
-      "Fruity",
-      "Pudding",
-      "Desert"
-    ],
+    "tags": ["Fruity", "Pudding", "Desert"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733242"
@@ -10279,10 +10023,7 @@
     "time": "50",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=OaqvGvEiwzU",
-    "tags": [
-      "Snack",
-      "Cake"
-    ],
+    "tags": ["Snack", "Cake"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733240"
@@ -10416,12 +10157,7 @@
     "time": "60",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=kniRGjDLFrQ",
-    "tags": [
-      "Desert",
-      "Summer",
-      "Fruity",
-      "Dairy"
-    ],
+    "tags": ["Desert", "Summer", "Fruity", "Dairy"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733242"
@@ -10515,9 +10251,7 @@
     "time": "60",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=YMmgKCNcqwI",
-    "tags": [
-      "Tart"
-    ],
+    "tags": ["Tart"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733242"
@@ -10663,10 +10397,7 @@
     "time": "60",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=aB41Q7kDZQ0",
-    "tags": [
-      "Cake",
-      "Sweet"
-    ],
+    "tags": ["Cake", "Sweet"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733243"
@@ -10766,9 +10497,7 @@
     "time": "51",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=FXjYU2Ensck",
-    "tags": [
-      "Breakfast"
-    ],
+    "tags": ["Breakfast"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733243"
@@ -10921,10 +10650,7 @@
     "time": "20",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=tY3taZO3Aro",
-    "tags": [
-      "Baking",
-      "Cake"
-    ],
+    "tags": ["Baking", "Cake"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733243"
@@ -11000,11 +10726,7 @@
     "time": "125",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=4hEXsfpeMQE",
-    "tags": [
-      "heavy",
-      "Nutty",
-      "Fruity"
-    ],
+    "tags": ["heavy", "Nutty", "Fruity"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733243"
@@ -11110,12 +10832,7 @@
     "time": "40",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=-YDh4WEmK_E",
-    "tags": [
-      "Cake",
-      "Light",
-      "Baking",
-      "Desert"
-    ],
+    "tags": ["Cake", "Light", "Baking", "Desert"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733243"
@@ -11185,11 +10902,7 @@
     "time": "75",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=asjZ7iTrGKA",
-    "tags": [
-      "Cake",
-      "Treat",
-      "Sweet"
-    ],
+    "tags": ["Cake", "Treat", "Sweet"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733243"
@@ -11289,11 +11002,7 @@
     "time": "115",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=i_zemP3yBKw",
-    "tags": [
-      "Bun",
-      "Baking",
-      "Treat"
-    ],
+    "tags": ["Bun", "Baking", "Treat"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733243"
@@ -11387,9 +11096,7 @@
     "time": "70",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=-DLDMQucqDI",
-    "tags": [
-      "Soup"
-    ],
+    "tags": ["Soup"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733243"
@@ -11477,9 +11184,7 @@
     "time": "60",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=k1lG4vk2MQA",
-    "tags": [
-      "Caramel"
-    ],
+    "tags": ["Caramel"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733243"
@@ -11561,10 +11266,7 @@
     "time": "80",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=xV0QCJ0GD5w",
-    "tags": [
-      "Snack",
-      "Treat"
-    ],
+    "tags": ["Snack", "Treat"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733242"
@@ -11658,12 +11360,7 @@
     "time": "10",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=FWqfkUEWOTg",
-    "tags": [
-      "DinnerParty",
-      "Desert",
-      "Pudding",
-      "Chocolate"
-    ],
+    "tags": ["DinnerParty", "Desert", "Pudding", "Chocolate"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733243"
@@ -11739,9 +11436,7 @@
     "time": "57",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=vT0q5c880Rg",
-    "tags": [
-      "Tart"
-    ],
+    "tags": ["Tart"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733243"
@@ -11835,11 +11530,7 @@
     "time": "35",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=Pi89PqsAaAg",
-    "tags": [
-      "Chocolate",
-      "Desert",
-      "Snack"
-    ],
+    "tags": ["Chocolate", "Desert", "Snack"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733243"
@@ -11915,10 +11606,7 @@
     "time": "70",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=5dAW9HQgtCk",
-    "tags": [
-      "Tart",
-      "Baking"
-    ],
+    "tags": ["Tart", "Baking"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733243"
@@ -12076,9 +11764,7 @@
     "time": "70",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=mS_gbQpBvZo",
-    "tags": [
-      "Baking"
-    ],
+    "tags": ["Baking"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733243"
@@ -12178,12 +11864,7 @@
     "time": "80",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=8xDM8U6h9Pw",
-    "tags": [
-      "Treat",
-      "Tart",
-      "Desert",
-      "DinnerParty"
-    ],
+    "tags": ["Treat", "Tart", "Desert", "DinnerParty"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733243"
@@ -12247,9 +11928,7 @@
     "time": "60",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=gcXPruv1Mjg",
-    "tags": [
-      "SideDish"
-    ],
+    "tags": ["SideDish"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733243"
@@ -12307,9 +11986,7 @@
     "time": "15",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=qXPhVYpQLPA",
-    "tags": [
-      "Egg"
-    ],
+    "tags": ["Egg"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733243"
@@ -12373,11 +12050,7 @@
     "time": "42",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=8U1tKWKDeWA",
-    "tags": [
-      "Tart",
-      "Glazed",
-      "Baking"
-    ],
+    "tags": ["Tart", "Glazed", "Baking"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733243"
@@ -12453,11 +12126,7 @@
     "time": "40",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=LmJ0lsPLHDc",
-    "tags": [
-      "Desert",
-      "DinnerParty",
-      "Pudding"
-    ],
+    "tags": ["Desert", "DinnerParty", "Pudding"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733243"
@@ -12515,10 +12184,7 @@
     "time": "50",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=tXBzZm2kkh8",
-    "tags": [
-      "Pie",
-      "SideDish"
-    ],
+    "tags": ["Pie", "SideDish"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733243"
@@ -12658,12 +12324,7 @@
     "time": "60",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=A96hbwobKKs",
-    "tags": [
-      "Pie",
-      "MainMeal",
-      "BBQ",
-      "Cake"
-    ],
+    "tags": ["Pie", "MainMeal", "BBQ", "Cake"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733243"
@@ -12757,12 +12418,7 @@
     "time": "55",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=4thpMbDakgM",
-    "tags": [
-      "Soup",
-      "Warm",
-      "Seafood",
-      "Shellfish"
-    ],
+    "tags": ["Soup", "Warm", "Seafood", "Shellfish"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733243"
@@ -12980,9 +12636,7 @@
     "time": "40",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=lBhwjjUiFk4",
-    "tags": [
-      "Baking"
-    ],
+    "tags": ["Baking"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733242"
@@ -13088,11 +12742,7 @@
     "time": "45",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=fp9Lqx2EUco",
-    "tags": [
-      "Fish",
-      "Seafood",
-      "Shellfish"
-    ],
+    "tags": ["Fish", "Seafood", "Shellfish"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733243"
@@ -13228,11 +12878,7 @@
     "time": "140",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=MMrE4I1ZtWo",
-    "tags": [
-      "Treat",
-      "Snack",
-      "Dairy"
-    ],
+    "tags": ["Treat", "Snack", "Dairy"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733243"
@@ -13332,10 +12978,7 @@
     "time": "150",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=qdhWz7qAaCU",
-    "tags": [
-      "Soup",
-      "Warm"
-    ],
+    "tags": ["Soup", "Warm"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733243"
@@ -13411,9 +13054,7 @@
     "time": "60",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=B7isFo2uP2k",
-    "tags": [
-      "Egg"
-    ],
+    "tags": ["Egg"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733243"
@@ -13519,12 +13160,7 @@
     "time": "35",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=WUpaOGghOdo",
-    "tags": [
-      "Speciality",
-      "Snack",
-      "Desert",
-      "Pudding"
-    ],
+    "tags": ["Speciality", "Snack", "Desert", "Pudding"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733243"
@@ -13600,10 +13236,7 @@
     "time": "25",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=fFLn1h80AGQ",
-    "tags": [
-      "Snack",
-      "Treat"
-    ],
+    "tags": ["Snack", "Treat"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733243"
@@ -13679,11 +13312,7 @@
     "time": "420",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=g5oCDoyxbBk",
-    "tags": [
-      "Speciality",
-      "Snack",
-      "StrongFlavor"
-    ],
+    "tags": ["Speciality", "Snack", "StrongFlavor"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733243"
@@ -13907,9 +13536,7 @@
     "time": "35",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=WFvj71RZYPc",
-    "tags": [
-      "Pudding"
-    ],
+    "tags": ["Pudding"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733243"
@@ -13997,10 +13624,7 @@
     "time": "45",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=QRFqnLkEv3I",
-    "tags": [
-      "MainMeal",
-      "Alcoholic"
-    ],
+    "tags": ["MainMeal", "Alcoholic"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733244"
@@ -14088,12 +13712,7 @@
     "time": "30",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=LWuuCndtJr0",
-    "tags": [
-      "Breakfast",
-      "Desert",
-      "Sweet",
-      "Fruity"
-    ],
+    "tags": ["Breakfast", "Desert", "Sweet", "Fruity"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733242"
@@ -14163,9 +13782,7 @@
     "time": "85",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=Ys2kZnTVXAM",
-    "tags": [
-      "Pie"
-    ],
+    "tags": ["Pie"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733244"
@@ -14235,11 +13852,7 @@
     "time": "35",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=FzNPPD8lbWg",
-    "tags": [
-      "SideDish",
-      "Treat",
-      "Baking"
-    ],
+    "tags": ["SideDish", "Treat", "Baking"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733243"
@@ -14315,9 +13928,7 @@
     "time": "85",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=emfm6TwsVhg",
-    "tags": [
-      "Meat"
-    ],
+    "tags": ["Meat"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733244"
@@ -14459,13 +14070,7 @@
     "time": "30",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=9rWZNHkrsNg",
-    "tags": [
-      "DateNight",
-      "Expensive",
-      "Meat",
-      "MainMeal",
-      "Cheasy"
-    ],
+    "tags": ["DateNight", "Expensive", "Meat", "MainMeal", "Cheasy"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733244"
@@ -14589,9 +14194,7 @@
     "time": "590",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=nbfNyZbdn2I",
-    "tags": [
-      "Speciality"
-    ],
+    "tags": ["Speciality"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733244"
@@ -14709,10 +14312,7 @@
     "time": "70",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=qfchrS2D_v4",
-    "tags": [
-      "Chilli",
-      "Curry"
-    ],
+    "tags": ["Chilli", "Curry"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733244"
@@ -14830,10 +14430,7 @@
     "time": "90",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=ypQjoiZiTac",
-    "tags": [
-      "Snack",
-      "Spicy"
-    ],
+    "tags": ["Snack", "Spicy"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733244"
@@ -14951,9 +14548,7 @@
     "time": "28",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=4vhcOwVBDO4",
-    "tags": [
-      "Pudding"
-    ],
+    "tags": ["Pudding"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733244"
@@ -15023,11 +14618,7 @@
     "time": "35",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=DIhxk-98Hz8",
-    "tags": [
-      "Heavy",
-      "MainMeal",
-      "Speciality"
-    ],
+    "tags": ["Heavy", "MainMeal", "Speciality"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733244"
@@ -15127,9 +14718,7 @@
     "time": "30",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=bCr3GasJWwE",
-    "tags": [
-      "Savory"
-    ],
+    "tags": ["Savory"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733244"
@@ -15217,12 +14806,7 @@
     "time": "22",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=nF6DOtGE6k8",
-    "tags": [
-      "Seafood",
-      "Spicy",
-      "Speciality",
-      "Easter"
-    ],
+    "tags": ["Seafood", "Spicy", "Speciality", "Easter"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733244"
@@ -15458,10 +15042,7 @@
     "time": "205",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=1ogCfDXotMw",
-    "tags": [
-      "Soup",
-      "SideDish"
-    ],
+    "tags": ["Soup", "SideDish"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733244"
@@ -15573,10 +15154,7 @@
     "time": "56",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=H5SmjR-fxUs",
-    "tags": [
-      "Vegan",
-      "Paella"
-    ],
+    "tags": ["Vegan", "Paella"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733244"
@@ -15694,9 +15272,7 @@
     "time": "20",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=ysiuZm9FIxs",
-    "tags": [
-      "BBQ"
-    ],
+    "tags": ["BBQ"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733244"
@@ -15796,9 +15372,7 @@
     "time": "30",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=9h9No18ZyCI",
-    "tags": [
-      "MainMeal"
-    ],
+    "tags": ["MainMeal"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733244"
@@ -16016,9 +15590,7 @@
     "time": "20",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=mdaBIhgEAMo",
-    "tags": [
-      "Sweet"
-    ],
+    "tags": ["Sweet"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733244"
@@ -16378,10 +15950,7 @@
     "time": "40",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=BFdQUgAFtGU",
-    "tags": [
-      "Vegetables",
-      "SideDish"
-    ],
+    "tags": ["Vegetables", "SideDish"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733243"
@@ -16747,13 +16316,7 @@
     "time": "25",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=xvPR2Tfw5k0",
-    "tags": [
-      "Paleo",
-      "Keto",
-      "HighFat",
-      "Baking",
-      "LowCarbs"
-    ],
+    "tags": ["Paleo", "Keto", "HighFat", "Baking", "LowCarbs"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733244"
@@ -16823,11 +16386,7 @@
     "time": "10",
     "favorites": [],
     "youtube": "",
-    "tags": [
-      "Breakfast",
-      "UnHealthy",
-      "BBQ"
-    ],
+    "tags": ["Breakfast", "UnHealthy", "BBQ"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733245"
@@ -16955,9 +16514,7 @@
     "time": "15",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=KgV9Zq3aSTo",
-    "tags": [
-      "Soup"
-    ],
+    "tags": ["Soup"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733245"
@@ -17075,11 +16632,7 @@
     "time": "15",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=9XpzHm9QpZg",
-    "tags": [
-      "Soup",
-      "Baking",
-      "Calorific"
-    ],
+    "tags": ["Soup", "Baking", "Calorific"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733245"
@@ -17231,11 +16784,7 @@
     "time": "35",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=BoD0TIO9nE4",
-    "tags": [
-      "Breakfast",
-      "Brunch",
-      ""
-    ],
+    "tags": ["Breakfast", "Brunch", ""],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733245"
@@ -17411,14 +16960,7 @@
     "time": "40",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=6dzd6Ra6sb4",
-    "tags": [
-      "Cake",
-      "Baking",
-      "Desert",
-      "Sweet",
-      "Alcoholic",
-      "Calorific"
-    ],
+    "tags": ["Cake", "Baking", "Desert", "Sweet", "Alcoholic", "Calorific"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733245"
@@ -17564,9 +17106,7 @@
     "time": "40",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=VVnZd8A84z4",
-    "tags": [
-      "Soup"
-    ],
+    "tags": ["Soup"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733246"
@@ -17672,14 +17212,7 @@
     "time": "30",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=qsk_At_gjv0",
-    "tags": [
-      "Sweet",
-      "Snack",
-      "Treat",
-      "Tart",
-      "Alcoholic",
-      "BBQ"
-    ],
+    "tags": ["Sweet", "Snack", "Treat", "Tart", "Alcoholic", "BBQ"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733245"
@@ -17815,11 +17348,7 @@
     "time": "25",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=QqdzDCWS4gQ",
-    "tags": [
-      "Brunch",
-      "Fish",
-      "Fusion"
-    ],
+    "tags": ["Brunch", "Fish", "Fusion"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733245"
@@ -17919,9 +17448,7 @@
     "time": "60",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=BgRifcCwinY",
-    "tags": [
-      "Soup"
-    ],
+    "tags": ["Soup"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733246"
@@ -18085,11 +17612,7 @@
     "time": "120",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=2G07UOqU2e8",
-    "tags": [
-      "Treat",
-      "Pudding",
-      "Speciality"
-    ],
+    "tags": ["Treat", "Pudding", "Speciality"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733246"
@@ -18277,9 +17800,7 @@
     "time": "30",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=IEDEtZ4UVtI",
-    "tags": [
-      "SideDish"
-    ],
+    "tags": ["SideDish"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733246"
@@ -18343,9 +17864,7 @@
     "time": "40",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=w1qgTQmLRe4",
-    "tags": [
-      "Soup"
-    ],
+    "tags": ["Soup"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733246"
@@ -18533,10 +18052,7 @@
     "time": "70",
     "favorites": [],
     "youtube": "",
-    "tags": [
-      "BBQ",
-      "Meat"
-    ],
+    "tags": ["BBQ", "Meat"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733245"
@@ -18606,10 +18122,7 @@
     "time": "20",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=Woiiet4vQ58",
-    "tags": [
-      "Bun",
-      "Brunch"
-    ],
+    "tags": ["Bun", "Brunch"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733245"
@@ -18791,13 +18304,7 @@
     "time": "55",
     "favorites": [],
     "youtube": "",
-    "tags": [
-      "Baking",
-      "Breakfast",
-      "Egg",
-      "Warm",
-      "Snack"
-    ],
+    "tags": ["Baking", "Breakfast", "Egg", "Warm", "Snack"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733246"
@@ -18849,11 +18356,7 @@
     "time": "40",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=q8AKfYUtDuM",
-    "tags": [
-      "DinnerParty",
-      "HangoverFood",
-      "Alcoholic"
-    ],
+    "tags": ["DinnerParty", "HangoverFood", "Alcoholic"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733246"
@@ -18947,9 +18450,7 @@
     "time": "380",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=akJIO6UhXtA",
-    "tags": [
-      "Summer"
-    ],
+    "tags": ["Summer"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733242"
@@ -19013,10 +18514,7 @@
     "time": "90",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=5YV0sJLtLt8",
-    "tags": [
-      "Soup",
-      "Cake"
-    ],
+    "tags": ["Soup", "Cake"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733246"
@@ -19110,11 +18608,7 @@
     "time": "35",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=_T6jkRvhlkk",
-    "tags": [
-      "Pasta",
-      "BBQ",
-      "Breakfast"
-    ],
+    "tags": ["Pasta", "BBQ", "Breakfast"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733246"
@@ -19178,9 +18672,7 @@
     "time": "15",
     "favorites": [],
     "youtube": "",
-    "tags": [
-      "Sandwich"
-    ],
+    "tags": ["Sandwich"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733246"
@@ -19262,9 +18754,7 @@
     "time": "15",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=jRfyNQs5qhU",
-    "tags": [
-      "Christmas"
-    ],
+    "tags": ["Christmas"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733246"
@@ -19346,9 +18836,7 @@
     "time": "175",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=34yeL8TstO0",
-    "tags": [
-      "Christmas"
-    ],
+    "tags": ["Christmas"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733246"
@@ -19472,9 +18960,7 @@
     "time": "480",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=Pb_lJxL1vtk",
-    "tags": [
-      "Christmas"
-    ],
+    "tags": ["Christmas"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733246"
@@ -19662,9 +19148,7 @@
     "time": "20",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=PnXft7lQNJE",
-    "tags": [
-      "Christmas"
-    ],
+    "tags": ["Christmas"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733246"
@@ -19828,9 +19312,7 @@
     "time": "150",
     "favorites": [],
     "youtube": "",
-    "tags": [
-      "Alcoholic"
-    ],
+    "tags": ["Alcoholic"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733247"
@@ -20160,9 +19642,7 @@
     "time": "80",
     "favorites": [],
     "youtube": "",
-    "tags": [
-      ""
-    ],
+    "tags": [""],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733247"
@@ -20542,13 +20022,7 @@
     "time": "170",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=tGw5Pwm4YA0",
-    "tags": [
-      "Pudding",
-      "Pie",
-      "Baking",
-      "Fruity",
-      "Glazed"
-    ],
+    "tags": ["Pudding", "Pie", "Baking", "Fruity", "Glazed"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733247"
@@ -20648,9 +20122,7 @@
     "time": "90",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=_gFB1fkNhXs",
-    "tags": [
-      "Stew"
-    ],
+    "tags": ["Stew"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733247"
@@ -21692,11 +21164,7 @@
     "time": "25",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=C-3_jYrfdBU",
-    "tags": [
-      "Egg",
-      "Brunch",
-      "Breakfast"
-    ],
+    "tags": ["Egg", "Brunch", "Breakfast"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733247"
@@ -24306,9 +23774,7 @@
     "time": "70",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=_MpSxSgS7f8",
-    "tags": [
-      "Sausages"
-    ],
+    "tags": ["Sausages"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733248"
@@ -24514,11 +23980,7 @@
     "time": "30",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=mrjnQal3S1A",
-    "tags": [
-      "Warming",
-      " Soup",
-      " Beans"
-    ],
+    "tags": ["Warming", " Soup", " Beans"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733248"
@@ -24588,9 +24050,7 @@
     "time": "135",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=ipEz5u2T7KM",
-    "tags": [
-      "Soup"
-    ],
+    "tags": ["Soup"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733248"
@@ -24690,10 +24150,7 @@
     "time": "30",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=M1ok7mG9-Qc",
-    "tags": [
-      "Warming",
-      " Soup"
-    ],
+    "tags": ["Warming", " Soup"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733248"
@@ -24781,10 +24238,7 @@
     "time": "30",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=YsJXZwE5pdY",
-    "tags": [
-      "Streetfood",
-      " Onthego"
-    ],
+    "tags": ["Streetfood", " Onthego"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733248"
@@ -24848,9 +24302,7 @@
     "time": "15",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=DDaZoXP1Mdc",
-    "tags": [
-      "Fresh"
-    ],
+    "tags": ["Fresh"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733248"
@@ -25170,10 +24622,7 @@
     "time": "50",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=uVQ66jiL-Dc",
-    "tags": [
-      "Pie",
-      "Desert"
-    ],
+    "tags": ["Pie", "Desert"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733243"
@@ -25337,10 +24786,7 @@
     "time": "20",
     "favorites": [],
     "youtube": "",
-    "tags": [
-      "Breakfast",
-      "Summer"
-    ],
+    "tags": ["Breakfast", "Summer"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733247"
@@ -25498,10 +24944,7 @@
     "time": "40",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=hTrSXryX31A",
-    "tags": [
-      "Savory",
-      "Breakfast"
-    ],
+    "tags": ["Savory", "Breakfast"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733246"
@@ -25653,9 +25096,7 @@
     "time": "175",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=Q_akngSJVrQ",
-    "tags": [
-      "Nutty"
-    ],
+    "tags": ["Nutty"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733248"
@@ -26313,10 +25754,7 @@
     "time": "",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=-gF8d-fitkU",
-    "tags": [
-      "Pasta",
-      "Meat"
-    ],
+    "tags": ["Pasta", "Meat"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733240"
@@ -26416,10 +25854,7 @@
     "time": "45",
     "favorites": [],
     "youtube": "https://www.youtube.com/watch?v=uO0ejc85zSE",
-    "tags": [
-      "Seafood",
-      "Shellfish"
-    ],
+    "tags": ["Seafood", "Shellfish"],
     "createdAt": {
       "$date": {
         "$numberLong": "1678562733239"

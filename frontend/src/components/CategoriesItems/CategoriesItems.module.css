@@ -1,0 +1,74 @@
+.container {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.images {
+  border-radius: 8px;
+  width: 343px;
+  height: 323px;
+  flex-shrink: 0;
+}
+.wrapper {
+  padding-top: 32px;
+  padding-bottom: 100px;
+  gap: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.description {
+  position: absolute;
+  top: 245px;
+  left: 18px;
+  border-radius: 8px;
+  width: 307px;
+  height: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  background-color: var(--background-color-lighter);
+}
+
+.description__item {
+  padding-left: 16px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  color: var(--subtitle-color);
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.24px;
+}
+.link {
+  position: relative;
+  text-decoration: none;
+}
+@media (min-width: 780px) {
+  .wrapper {
+    padding-top: 50px;
+    padding-bottom: 198px;
+  }
+}
+@media (min-width: 1440px) {
+  .images {
+    width: 300px;
+  }
+  .description {
+    width: 268px;
+    top: 247px;
+    left: 16px;
+  }
+  .wrapper {
+    gap: 14px;
+    padding-bottom: 200px;
+    width: 1440px;
+  }
+  .link {
+    padding-bottom: 100px;
+  }
+}

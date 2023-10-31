@@ -1,0 +1,110 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 60px;
+}
+
+.wrapper {
+  width: 429px;
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 28px;
+  overflow: hidden;
+}
+.box {
+  position: relative;
+}
+
+.link {
+  text-decoration: none;
+  color: #e0e0e0;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+  display: inline-block;
+}
+
+.link:hover,
+.link:focus {
+  color: var(--accent-color-darker);
+  outline: none;
+}
+
+.link:hover::after,
+.link:focus::after {
+  background: var(--accent-color-darker);
+  height: 2px;
+  width: calc(2px + 100% + 2px);
+}
+.borderLine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-flex;
+  width: 360px;
+  height: 1px;
+  background: #e0e0e0;
+  margin-left: 16px;
+}
+.active {
+  color: var(--accent-color-darker);
+}
+.link::after {
+  content: "";
+  display: block;
+  width: 100%; /* Pseudo-element zajmuje całą szerokość linku */
+  height: 2px;
+  background: #e0e0e0;
+  position: absolute; /* Ustawienie pozycji na absolute */
+  top: 0; /* Przesunięcie do góry, aby pokryć borderLine */
+  left: 0; /* Początek od lewej krawędzi linku */
+  transform: scaleX(0); /* Domyślnie pseudo-element jest niewidoczny */
+  transform-origin: left; /* Skalowanie od lewej krawędzi */
+  transition: transform 0.3s; /* Dodajemy płynne przejście dla efektu */
+}
+
+.link.active::after {
+  background: var(--accent-color-darker);
+  transform: scaleX(1); /* Rozszerzamy pseudo-element na całą szerokość linku */
+}
+@media (min-width: 780px) {
+  .wrapper {
+    padding-left: 30px;
+    gap: 55px;
+    width: 780px;
+    overflow: hidden;
+  }
+  .link::after {
+    margin-top: 28px;
+  }
+  .link {
+    font-size: 18px;
+    line-height: 18px;
+  }
+  .borderLine {
+    width: 1240px;
+    overflow: hidden;
+    margin-left: 0;
+  }
+  .container {
+    padding-left: 32px;
+    min-width: 780px;
+  }
+}
+@media (min-width: 1440px) {
+  .wrapper {
+    width: 1640px;
+    gap: 55px;
+  }
+
+  .borderLine {
+    width: 100%;
+  }
+  .container {
+    padding-left: 100px;
+    padding-top: 110px;
+  }
+}
