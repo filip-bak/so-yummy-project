@@ -82,8 +82,55 @@
   right: 0;
 }
 
-/* .button:focus,
-.button:hover {
-  background-color: var(--main-color-dark);
-  cursor: pointer;
-} */
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 28px 24px;
+    height: 288px;
+    width: 704px;
+  }
+
+  .item:not(:last-child) {
+    margin-bottom: 40px;
+  }
+
+  .image_container,
+  .image {
+    height: 232px;
+    width: 228px;
+  }
+
+  .info_container {
+    height: 232px;
+    padding-left: 16px;
+    position: relative;
+    width: 420px;
+  }
+
+  .dish_title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1;
+    margin-top: 0;
+    width: 404px;
+  }
+
+  .dish_description {
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 28px;
+    width: 353px;
+  }
+
+  .dish_time {
+    font-size: 14px;
+    margin-left: 16px;
+  }
+
+  .icon {
+    height: 38px;
+    width: 38px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+}

@@ -14,7 +14,7 @@ export const MyRecipeItem = ({ image, title, id, description, time }) => {
           <p className={css.dish_description}>{description}</p>
           <p className={css.dish_time}>{`${time} min`}</p>
           <svg className={css.icon}>
-            <use href={`${icons}#icon-trash`} width="19" height="19" />
+            <use href={`${icons}#icon-trash`} />
           </svg>
           <div className={css.button}>
             <Button size="small">See recipe</Button>
