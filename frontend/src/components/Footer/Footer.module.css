@@ -1,4 +1,5 @@
 .containerFooter {
+  margin-top: 100px;
   z-index: 2;
   position: relative;
 }
@@ -47,6 +48,10 @@
 }
 
 @media screen and (min-width: 768px) {
+  .containerFooter {
+    margin-top: 200px;
+  }
+
   .bg {
     background-image: url(../../images/tablet/footer-pasta1-tab.png);
     top: -400px;

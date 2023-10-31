@@ -5,7 +5,7 @@ import WelcomePage from "pages/WelcomePage";
 import AuthSharedLayout from "components/AuthSharedLayout";
 import NotFoundPage from "pages/NotFoundPage";
 import SearchPage from "pages/SearchPage/SearchPage";
-
+import MyRecipesPage from "pages/MyRecipesPage/MyRecipesPage";
 
 export const App = () => {
   return (
@@ -19,8 +19,12 @@ export const App = () => {
 
       <Route path="/" element={<SharedLayout />}>
         <Route index element={<MainPage />} />
-        {/* OTHER ROUTES */}
+        <Route path="/my" element={<MyRecipesPage />} />
+        <Route path="/add" />
         <Route path="/search" element={<SearchPage />} />
+        <Route path="/favorite" />
+        <Route path="/shopping-list" />
+        <Route path="/categories/:categoryName" />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
