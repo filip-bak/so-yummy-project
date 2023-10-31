@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import css from './FooterSubscribeForm.module.css'
 import  Button  from '../../Button/index'
 import icons from '../../../images/icons.svg'
-import Loader from '../../Loader/index'
 
 
 
@@ -17,7 +16,7 @@ export const FooterSubscribeForm = () => {
         setEmail(newEmail);
         setIsEmailValid(validateEmail(newEmail));
       };
-    
+
       const validateEmail = (email) => {
         const validetedEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         return validetedEmail.test(email);
@@ -26,8 +25,8 @@ export const FooterSubscribeForm = () => {
       const handleInputClick = () => {
         setIsInputClicked(true);
       };
-    
-    
+
+
     const handleSubmit = (e) => {
         e.preventDefault();
         if (isEmailValid) {
@@ -61,10 +60,10 @@ export const FooterSubscribeForm = () => {
             </div>
 
             <form autoComplete="off" className={css.subscribeForm} onSubmit={handleSubmit}>
-                <Button  id="email" 
-                variant="secondary" 
-                size="medium" 
-                unique="svg" 
+                <Button  id="email"
+                variant="secondary"
+                size="medium"
+                unique="svg"
                 element="input"
                 type="email"
                 minLength="12"
@@ -78,7 +77,7 @@ export const FooterSubscribeForm = () => {
                     Enter your email address
                 </Button>
                 {isInputClicked && !isEmailValid && <div  className={css.subscribeError}>Incorrect e-mail address</div>}
-                <Button  variant="secondary" size="medium" type="submit"  
+                <Button  variant="secondary" size="medium" type="submit"
                 disabled={!isEmailValid}
                 >Subscribe</Button>
             </form>
