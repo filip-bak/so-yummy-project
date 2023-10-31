@@ -5,7 +5,7 @@ import WelcomePage from "pages/WelcomePage";
 import AuthSharedLayout from "components/AuthSharedLayout";
 import NotFoundPage from "pages/NotFoundPage";
 import SearchPage from "pages/SearchPage/SearchPage";
-
+import MyRecipesPage from "pages/MyRecipesPage/MyRecipesPage";
 
 export const App = () => {
   return (
@@ -21,6 +21,7 @@ export const App = () => {
         <Route index element={<MainPage />} />
         {/* OTHER ROUTES */}
         <Route path="/search" element={<SearchPage />} />
+        <Route path="/my" element={<MyRecipesPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
