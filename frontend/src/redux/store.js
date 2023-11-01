@@ -16,7 +16,7 @@ import { myRecipesReducer } from "./myRecipes/slice";
 import { favoriteReducer } from "./favorite/slice";
 import { authReducer } from "./auth/slice";
 
-axios.defaults.baseURL = "http://localhost:3200/api/";
+axios.defaults.baseURL = process.env.REACT_APP_BACKEND_URL;
 
 const persistConfig = {
   key: "auth",
