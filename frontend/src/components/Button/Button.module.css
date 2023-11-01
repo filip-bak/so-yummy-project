@@ -34,6 +34,12 @@
 .container.dark:hover {
   --_background-color: var(--accent-color-darker);
 }
+.container:disabled {
+  filter: opacity(80%);
+  cursor: auto;
+  background-color: var(--accent-color-darker);
+  color: rgb(224, 224, 224);
+}
 
 /* PRIMARY */
 .primary-small {

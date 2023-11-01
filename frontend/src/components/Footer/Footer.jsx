@@ -11,11 +11,11 @@ export const Footer = () => {
                 <div className={css.bg}></div>
                 <div className={css.containerMain}>
                     <div className={css.containerContent}>
-                    <FooterLogo />  
-                    <FooterNav />   
-                    <FooterSubscribeForm />
-                    <FooterFollowUs />
+                        <FooterLogo />  
+                        <FooterNav /> 
+                        <FooterSubscribeForm />
                     </div>
+                    <FooterFollowUs />
                 </div>  
                 <div className={css.bg2}></div>
             </div>

@@ -1,5 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchNewPage, fetchRecipes } from "./actions";
+import {
+  fetchRecipes,
+  fetchRecipesByCategory,
+  fetchRecipesById,
+  fetchRecipesCategoryList,
+  fetchRecipesForMainPage,
+  fetchRecipesNewPage,
+} from "./actions";
 
 const initialState = {
   items: [],
@@ -20,23 +27,57 @@ const handleRejected = (state, action) => {
 const recipesSlice = createSlice({
   name: "recipes",
   initialState: initialState,
-  extraReducers: {
-    [fetchRecipes.pending]: handlePending,
-    [fetchRecipes.fulfilled](state, action) {
-      state.isLoading = false;
-      state.error = null;
-      state.items = action.payload.recipes;
-      state.currentPage = action.payload.currentPage;
-    },
-    [fetchRecipes.rejected]: handleRejected,
-    [fetchNewPage.pending]: handlePending,
-    [fetchNewPage.fulfilled](state, action) {
-      state.isLoading = false;
-      state.error = null;
-      state.result = action.payload.recipes;
-      state.currentPage = action.payload.currentPage;
-    },
-    [fetchNewPage.rejected]: handleRejected,
+  extraReducers: builder => {
+    builder
+      .addCase(fetchRecipes.pending, handlePending)
+      .addCase(fetchRecipes.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        state.items = action.payload.recipes;
+        state.currentPage = action.payload.currentPage;
+      })
+      .addCase(fetchRecipes.rejected, handleRejected)
+
+      .addCase(fetchRecipesNewPage.pending, handlePending)
+      .addCase(fetchRecipesNewPage.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        state.items = action.payload.recipes;
+        state.currentPage = action.payload.currentPage;
+      })
+      .addCase(fetchRecipesNewPage.rejected, handleRejected)
+
+      .addCase(fetchRecipesForMainPage.pending, handlePending)
+      .addCase(fetchRecipesForMainPage.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        state.items = action.payload;
+      })
+      .addCase(fetchRecipesForMainPage.rejected, handleRejected)
+
+      .addCase(fetchRecipesById.pending, handlePending)
+      .addCase(fetchRecipesById.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        state.items = action.payload;
+      })
+      .addCase(fetchRecipesById.rejected, handleRejected)
+
+      .addCase(fetchRecipesByCategory.pending, handlePending)
+      .addCase(fetchRecipesByCategory.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        state.items = action.payload;
+      })
+      .addCase(fetchRecipesByCategory.rejected, handleRejected)
+
+      .addCase(fetchRecipesCategoryList.pending, handlePending)
+      .addCase(fetchRecipesCategoryList.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        state.items = action.payload;
+      })
+      .addCase(fetchRecipesCategoryList.rejected, handleRejected);
   },
 });
 

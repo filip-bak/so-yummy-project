@@ -4,7 +4,7 @@ import {  Link } from 'react-router-dom';
 
 export const FooterFollowUs = () => {
     return (
-        <div>
+        <div className={css.followUsBox}>
             <ul className={css.followUsList}>
                 <li className={css.followUsItem}>
                 <Link to="#" className={css.followUsLink}>

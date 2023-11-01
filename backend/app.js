@@ -1,11 +1,16 @@
 const express = require("express");
 const logger = require("morgan");
 const cors = require("cors");
+const path = require("path");
 
 const swaggerRouter = require("./modules/swagger/swagger.router");
-const recipesRouter = require("./routes/recipes/recipes.router");
 const { usersRouter } = require("./modules/users/users.router");
-const path = require("path");
+const { recipesRouter } = require("./routes/recipes/recipes.router");
+const { favoriteRouter } = require("./routes/favorite/favorite.router");
+const { popularRecipesRouter } = require("./routes/popular/popular.router");
+const {
+  ingredientsRouter,
+} = require("./routes/ingredients/ingredients.router");
 
 const app = express();
 
@@ -14,12 +19,15 @@ app.use(logger(formatsLogger));
 app.use(cors());
 app.use(express.json());
 app.use(express.static("public"));
-
 app.use("/", express.static(path.join(__dirname, "public")));
 
 app.use("/api/docs", swaggerRouter);
-app.use("/api/recipes", recipesRouter);
 app.use("/api/users", usersRouter);
+
+app.use("/api/recipes", recipesRouter);
+app.use("/api/favorite", favoriteRouter);
+app.use("/api/popular-recipes", popularRecipesRouter);
+app.use("/api/ingredients", ingredientsRouter);
 
 app.use((req, res) => {
   res.status(404).json({ message: "Not found" });
