@@ -12,8 +12,16 @@
 .subscribeForm {
   display: flex;
   flex-direction: column;
+  gap: 8px;
+  position: relative;
 }
-.subscribeLabel {
+.subscribeError {
+  font-size: var(--fs-sm);
+  color: red;
+  position: absolute;
+  top: -14px;
+}
+/* .subscribeLabel {
   margin-bottom: 8px;
   max-width: 204px;
   width: 100%;
@@ -33,14 +41,15 @@
   line-height: normal;
   letter-spacing: -0.2px;
   background-color: var(--main-color-dark);
-}
+} */
 
 @media screen and (min-width: 768px) {
   .subscribeForm {
     flex-direction: row;
-    margin: 72px 155px 38px;
+    margin: 72px 155px 0;
+    gap: 12px;
   }
-  .subscribeLabel {
+  /* .subscribeLabel {
     margin-bottom: 12px;
   }
   .subscribeInput {
@@ -57,7 +66,7 @@
     line-height: normal;
     letter-spacing: -0.2px;
     background-color: var(--main-color-dark);
-  }
+  } */
 }
 
 @media screen and (min-width: 1440px) {
@@ -97,8 +106,9 @@
     display: flex;
     flex-direction: column;
     margin: 0;
+    gap: 16px;
   }
-  .subscribeLabel {
+  /* .subscribeLabel {
     margin-bottom: 16px;
     max-width: 338px;
     width: 100%;
@@ -113,5 +123,5 @@
   .subscribeInput:placeholder-shown {
     font-size: var(--fs-lg);
     letter-spacing: -0.36px;
-  }
+  } */
 }

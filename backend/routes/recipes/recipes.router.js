@@ -17,7 +17,7 @@ const { asyncWrapper } = require("../../helpers/asyncWrapper");
 const router = express.Router();
 
 router.get("/main-page", asyncWrapper(getRecipesHandler));
-router.get("/categoty-list", asyncWrapper(getCategoryHandler));
+router.get("/category-list", asyncWrapper(getCategoryHandler));
 router.get("/:category", asyncWrapper(getCategoryPageHandler));
 router.get("/recipe/:id", asyncWrapper(getRecipeByIdHandler));
 
