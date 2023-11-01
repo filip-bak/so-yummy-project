@@ -15,6 +15,7 @@ import { recipesReducer } from "./recipes/slice";
 import { myRecipesReducer } from "./myRecipes/slice";
 import { favoriteReducer } from "./favorite/slice";
 import { authReducer } from "./auth/slice";
+import { categoriesReducer } from "./categories/slice";
 
 axios.defaults.baseURL = "http://localhost:3200/api/";
 
@@ -30,6 +31,7 @@ export const store = configureStore({
     recipes: recipesReducer,
     myRecipes: myRecipesReducer,
     favorite: favoriteReducer,
+    categories: categoriesReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
