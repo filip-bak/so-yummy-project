@@ -1,7 +1,7 @@
 import css from "./SearchResults.module.css";
 import { SearchResultItem } from "pages/SearchPage/components/SearchResultItem/SearchResultItem";
 import { Pagination } from "components/Pagination/Pagination";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectRecipes } from "redux/recipes/selectors";
 import { setResultsPerPage } from "redux/recipes/slice";
@@ -9,10 +9,16 @@ import { setResultsPerPage } from "redux/recipes/slice";
 export const SearchResults = () => {
   const dispatch = useDispatch();
   const { items, totalCount, resultsPerPage } = useSelector(selectRecipes);
+  const prevResultsPerPage = useRef(6);
 
   useEffect(() => {
     const updateDimension = () => {
-      dispatch(setResultsPerPage(window.innerWidth < 1440 ? 6 : 12));
+      const updatedResultsPerPage = window.innerWidth < 1440 ? 6 : 12;
+
+      if (prevResultsPerPage.current !== updatedResultsPerPage) {
+        prevResultsPerPage.current = updatedResultsPerPage;
+        dispatch(setResultsPerPage(updatedResultsPerPage));
+      }
     };
     window.addEventListener("resize", updateDimension);
 

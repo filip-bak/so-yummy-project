@@ -24,6 +24,7 @@ export const SearchBar = ({ children }) => {
             autoComplete="off"
             autoFocus
             required
+            minLength={3}
             placeholder="Search..."
             name="query"
             defaultValue={searchParams.get("query")}

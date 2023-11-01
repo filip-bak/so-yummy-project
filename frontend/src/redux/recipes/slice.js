@@ -11,7 +11,7 @@ const initialState = {
   items: [],
   isLoading: false,
   error: null,
-  resultsPerPage: 6,
+  resultsPerPage: 12,
   totalCount: 0,
 };
 
