@@ -15,7 +15,7 @@ export const App = () => {
 
       <Route path="/" element={<AuthSharedLayout />}>
         <Route path="/register" />
-        <Route path="/login" />
+        <Route path="/signin" />
       </Route>
 
       <Route path="/" element={<SharedLayout />}>
