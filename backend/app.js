@@ -10,7 +10,7 @@ const { popularRecipesRouter } = require("./routes/popular/popular.router");
 const {
   ingredientsRouter,
 } = require("./routes/ingredients/ingredients.router");
-
+const { shoppingRouter } = require('./routes/shopping/shopping.router');
 const app = express();
 
 const formatsLogger = app.get("env") === "development" ? "dev" : "short";
@@ -23,7 +23,7 @@ app.use("/api/recipes", recipesRouter);
 app.use("/api/favorite", favoriteRouter);
 app.use("/api/popular-recipes", popularRecipesRouter);
 app.use("/api/ingredients", ingredientsRouter);
-
+app.use("/api/shopping-list", shoppingRouter);
 app.use((req, res) => {
   res.status(404).json({ message: "Not found" });
 });
