@@ -4,8 +4,7 @@ import {
   fetchRecipesByCategory,
   fetchRecipesById,
   fetchRecipesCategoryList,
-  fetchRecipesForMainPage,
-  fetchRecipesNewPage,
+  fetchRecipesForMainPage
 } from "./actions";
 
 const initialState = {
@@ -13,6 +12,10 @@ const initialState = {
   isLoading: false,
   error: null,
   currentPage: 1,
+  query: "",
+  queryType: "query",
+  resultsPerPage: 6,
+  totalCount: 0,
 };
 
 const handlePending = state => {
@@ -27,6 +30,32 @@ const handleRejected = (state, action) => {
 const recipesSlice = createSlice({
   name: "recipes",
   initialState: initialState,
+  reducers: {
+    setQueryType: {
+      reducer(state, action) {
+        return {
+          ...state,
+          queryType: action.payload,
+        };
+      },
+    },
+    setCurrentPage: {
+      reducer(state, action) {
+        return {
+          ...state,
+          currentPage: action.payload,
+        };
+      },
+    },
+    setResultsPerPage: {
+      reducer(state, action) {
+        return {
+          ...state,
+          resultsPerPage: action.payload,
+        };
+      },
+    },
+  },
   extraReducers: builder => {
     builder
       .addCase(fetchRecipes.pending, handlePending)
@@ -34,19 +63,9 @@ const recipesSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         state.items = action.payload.recipes;
-        state.currentPage = action.payload.currentPage;
+        state.totalCount = action.payload.totalCount;
       })
       .addCase(fetchRecipes.rejected, handleRejected)
-
-      .addCase(fetchRecipesNewPage.pending, handlePending)
-      .addCase(fetchRecipesNewPage.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.error = null;
-        state.items = action.payload.recipes;
-        state.currentPage = action.payload.currentPage;
-      })
-      .addCase(fetchRecipesNewPage.rejected, handleRejected)
-
       .addCase(fetchRecipesForMainPage.pending, handlePending)
       .addCase(fetchRecipesForMainPage.fulfilled, (state, action) => {
         state.isLoading = false;
@@ -81,4 +100,6 @@ const recipesSlice = createSlice({
   },
 });
 
+export const { setQueryType, setCurrentPage, setResultsPerPage } =
+  recipesSlice.actions;
 export const recipesReducer = recipesSlice.reducer;
