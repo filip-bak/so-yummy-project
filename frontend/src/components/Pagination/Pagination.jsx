@@ -1,15 +1,14 @@
 import { PaginationNav } from "components/PaginationNav/PaginationNav";
 import css from "./Pagination.module.css";
 import PropTypes from "prop-types";
-import { selectCurrentPage } from "redux/recipes/selectors";
-import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { setCurrentPage } from "redux/recipes/slice";
+import { useSearchParams } from "react-router-dom";
 
 export const Pagination = ({ recipesCount, resultsPerPage }) => {
-  const dispatch = useDispatch();
+  const [searchParams, setSearchParams] = useSearchParams();
   const numberOfPages = Math.ceil(recipesCount / resultsPerPage);
-  const currentPage = useSelector(selectCurrentPage);
+  const paramWithCurrentPage = searchParams.get("currentPage");
+  const currentPage = paramWithCurrentPage ? parseInt(paramWithCurrentPage) : 1;
   const limit = 5;
 
   let startPage = Math.max(currentPage - Math.floor(limit / 2), 1);
@@ -26,7 +25,10 @@ export const Pagination = ({ recipesCount, resultsPerPage }) => {
 
   const handleCurrentPageChange = newCurrentPage => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-    dispatch(setCurrentPage(newCurrentPage));
+    setSearchParams(params => {
+      params.set("currentPage", newCurrentPage);
+      return params;
+    });
   };
 
   useEffect(() => {
@@ -37,7 +39,7 @@ export const Pagination = ({ recipesCount, resultsPerPage }) => {
     <div className={css.container}>
       <PaginationNav
         increasePage={false}
-        handlePageChange={handleCurrentPageChange}
+        handlePageChange={() => handleCurrentPageChange(currentPage - 1)}
         disabled={currentPage === 1}
       />
       {pageNumbers.map(i => (
@@ -53,7 +55,7 @@ export const Pagination = ({ recipesCount, resultsPerPage }) => {
       ))}
       <PaginationNav
         increasePage={true}
-        handlePageChange={handleCurrentPageChange}
+        handlePageChange={() => handleCurrentPageChange(currentPage + 1)}
         disabled={currentPage === numberOfPages}
       />
     </div>

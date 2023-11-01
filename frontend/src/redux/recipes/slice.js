@@ -4,16 +4,13 @@ import {
   fetchRecipesByCategory,
   fetchRecipesById,
   fetchRecipesCategoryList,
-  fetchRecipesForMainPage
+  fetchRecipesForMainPage,
 } from "./actions";
 
 const initialState = {
   items: [],
   isLoading: false,
   error: null,
-  currentPage: 1,
-  query: "",
-  queryType: "query",
   resultsPerPage: 6,
   totalCount: 0,
 };
@@ -36,14 +33,6 @@ const recipesSlice = createSlice({
         return {
           ...state,
           queryType: action.payload,
-        };
-      },
-    },
-    setCurrentPage: {
-      reducer(state, action) {
-        return {
-          ...state,
-          currentPage: action.payload,
         };
       },
     },
@@ -100,6 +89,5 @@ const recipesSlice = createSlice({
   },
 });
 
-export const { setQueryType, setCurrentPage, setResultsPerPage } =
-  recipesSlice.actions;
+export const { setQueryType, setResultsPerPage } = recipesSlice.actions;
 export const recipesReducer = recipesSlice.reducer;

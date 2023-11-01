@@ -8,11 +8,12 @@ import { selectRecipes } from "redux/recipes/selectors";
 
 export const SearchedRecipesList = () => {
   const dispatch = useDispatch();
-  const { items, currentPage, resultsPerPage } = useSelector(selectRecipes);
+  const { items, resultsPerPage } = useSelector(selectRecipes);
   const [searchParams] = useSearchParams();
 
   const query = searchParams.get("query");
   const queryType = searchParams.get("queryType");
+  const currentPage = searchParams.get("currentPage") ?? 1;
 
   const noContentMessage =
     query !== null && query.length > 0
