@@ -1,5 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchNewPage, fetchFavorite } from "./actions";
+import {
+  addToFavorite,
+  fetchFavorite,
+  fetchNewFavoritePage,
+  removeFromFavorite,
+} from "./actions";
 
 const initialState = {
   items: [],
@@ -9,6 +14,7 @@ const initialState = {
 };
 
 const handlePending = state => {
+  state.error = null;
   state.isLoading = true;
 };
 
@@ -20,23 +26,45 @@ const handleRejected = (state, action) => {
 const favoriteSlice = createSlice({
   name: "favorite",
   initialState: initialState,
-  extraReducers: {
-    [fetchFavorite.pending]: handlePending,
-    [fetchFavorite.fulfilled](state, action) {
-      state.isLoading = false;
-      state.error = null;
-      state.items = action.payload.favorite;
-      state.currentPage = action.payload.currentPage;
-    },
-    [fetchFavorite.rejected]: handleRejected,
-    [fetchNewPage.pending]: handlePending,
-    [fetchNewPage.fulfilled](state, action) {
-      state.isLoading = false;
-      state.error = null;
-      state.items = action.payload.favorite;
-      state.currentPage = action.payload.currentPage;
-    },
-    [fetchNewPage.rejected]: handleRejected,
+  extraReducers: builder => {
+    builder
+      .addCase(fetchFavorite.pending, handlePending)
+      .addCase(fetchFavorite.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        state.items = action.payload.favorite;
+        state.currentPage = action.payload.currentPage;
+      })
+      .addCase(fetchFavorite.rejected, handleRejected)
+
+      .addCase(fetchNewFavoritePage.pending, handlePending)
+      .addCase(fetchNewFavoritePage.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        state.items = action.payload.favorite;
+        state.currentPage = action.payload.currentPage;
+      })
+      .addCase(fetchNewFavoritePage.rejected, handleRejected)
+
+      .addCase(addToFavorite.pending, handlePending)
+      .addCase(addToFavorite.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        state.items.push(action.payload);
+      })
+      .addCase(addToFavorite.rejected, handleRejected)
+
+      .addCase(removeFromFavorite.pending, handlePending)
+      .addCase(removeFromFavorite.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+
+        const index = state.items.findIndex(
+          recipe => recipe._id === action.payload._id
+        );
+        state.items.splice(index, 1);
+      })
+      .addCase(removeFromFavorite.rejected, handleRejected);
   },
 });
 
