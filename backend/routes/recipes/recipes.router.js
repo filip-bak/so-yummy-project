@@ -1,11 +1,5 @@
 const express = require("express");
-// const { categoryListHandler } = require("./recipes.controller");
 
-// const recipesRouter = express.Router();
-
-// recipesRouter.get("/category-list", categoryListHandler);
-
-// module.exports = recipesRouter;
 const {
   getCategoryHandler,
   getCategoryPageHandler,
@@ -13,9 +7,11 @@ const {
   getRecipesHandler,
 } = require("./recipes.controller");
 const { asyncWrapper } = require("../../helpers/asyncWrapper");
+const { getSearchRecipesHandler } = require("../search/search.controller");
 
 const router = express.Router();
 
+router.get("/", asyncWrapper(getSearchRecipesHandler));
 router.get("/main-page", asyncWrapper(getRecipesHandler));
 router.get("/category-list", asyncWrapper(getCategoryHandler));
 router.get("/:category", asyncWrapper(getCategoryPageHandler));
