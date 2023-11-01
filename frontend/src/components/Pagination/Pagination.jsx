@@ -3,7 +3,7 @@ import css from "./Pagination.module.css";
 import PropTypes from "prop-types";
 import { selectCurrentPage } from "redux/recipes/selectors";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchNewPage } from "redux/recipes/actions";
+import { fetchRecipesNewPage } from "redux/recipes/actions";
 import { useEffect } from "react";
 
 export const Pagination = ({ recipesCount, resultsPerPage }) => {
@@ -26,7 +26,7 @@ export const Pagination = ({ recipesCount, resultsPerPage }) => {
 
   const handleCurrentPageChange = newCurrentPage => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-    dispatch(fetchNewPage({ newCurrentPage }));
+    dispatch(fetchRecipesNewPage({ newCurrentPage }));
   };
 
   useEffect(() => {

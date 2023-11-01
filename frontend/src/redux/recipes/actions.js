@@ -1,4 +1,4 @@
-// import axios from "axios";
+import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 const testData = [
@@ -193,7 +193,7 @@ export const fetchRecipes = createAsyncThunk(
   }
 );
 
-export const fetchNewPage = createAsyncThunk(
+export const fetchRecipesNewPage = createAsyncThunk(
   "recipes/fetchNewPage",
   async ({ newCurrentPage }, thunkAPI) => {
     try {
@@ -207,6 +207,54 @@ export const fetchNewPage = createAsyncThunk(
         currentPage: newCurrentPage,
         recipes,
       };
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+);
+
+export const fetchRecipesForMainPage = createAsyncThunk(
+  "recipes/fetchRecipesForMainPage",
+  async (_, thunkAPI) => {
+    try {
+      const res = await axios.get("/recipes/main-page");
+      return res.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+);
+
+export const fetchRecipesById = createAsyncThunk(
+  "recipes/fetchRecipesById",
+  async (recipeId, thunkAPI) => {
+    try {
+      const res = await axios.get(`/recipes/recipe/${recipeId}`);
+      return res.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+);
+
+export const fetchRecipesByCategory = createAsyncThunk(
+  "recipes/fetchRecipesByCategory",
+  async (category, thunkAPI) => {
+    try {
+      const res = await axios.get(`/recipes/${category}`);
+      return res.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+);
+
+export const fetchRecipesCategoryList = createAsyncThunk(
+  "recipes/fetchRecipesCategoryList",
+  async (_, thunkAPI) => {
+    try {
+      const res = await axios.get(`/recipes/category-list`);
+      return res.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
     }
