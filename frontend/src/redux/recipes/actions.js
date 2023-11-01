@@ -11,9 +11,12 @@ export const fetchRecipes = createAsyncThunk(
         page: currentPage,
         resultsPerPage,
       };
-      const response = await axios.get(`/recipes`, {
-        params,
-      });
+      const response = await axios.get(
+        `${process.env.REACT_APP_BACKEND_URI}/recipes`,
+        {
+          params,
+        }
+      );
 
       const recipes = response.data.recipes.map(item => ({
         title: item.title,
