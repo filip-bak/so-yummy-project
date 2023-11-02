@@ -1,8 +1,8 @@
-import css from "./Favorite.module.css";
+import css from "./FavoritePage.module.css";
 import { MainPageTitle } from "components/MainPageTitle/MainPageTitle";
 import { FavoriteList } from "./components/FavoriteList/FavoriteList";
 
-const Favorite = () => {
+const FavoritePage = () => {
   return (
     <section className={css.section}>
       <div className={css.container}>
@@ -13,4 +13,4 @@ const Favorite = () => {
   );
 };
 
-export default Favorite;
+export default FavoritePage;

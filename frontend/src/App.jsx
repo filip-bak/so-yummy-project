@@ -6,7 +6,8 @@ import AuthSharedLayout from "components/AuthSharedLayout";
 import NotFoundPage from "pages/NotFoundPage";
 import SearchPage from "pages/SearchPage/SearchPage";
 import MyRecipesPage from "pages/MyRecipesPage/MyRecipesPage";
-import Favorite from "pages/Favorite/Favorite";
+import FavoritePage from "pages/Favorite/FavoritePage";
+import ShoppingListPage from "pages/ShoppingListPage/ShoppingListPage";
 import { useSelector } from "react-redux";
 import { selectTheme } from "redux/theme/selectors";
 import { useEffect } from "react";
@@ -32,8 +33,8 @@ export const App = () => {
         <Route path="/my" element={<MyRecipesPage />} />
         <Route path="/add" />
         <Route path="/search" element={<SearchPage />} />
-        <Route path="/favorite" element={<Favorite />} />
-        <Route path="/shopping-list" />
+        <Route path="/favorite" element={<FavoritePage />} />
+        <Route path="/shopping-list" element={<ShoppingListPage />} />
         <Route path="/categories/:categoryName" />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
