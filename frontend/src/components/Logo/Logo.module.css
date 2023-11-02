@@ -1,0 +1,9 @@
+.logo {
+  fill: var(--logo-main);
+  stroke: var(--logo-stroke);
+}
+
+.logo-reverse {
+  fill: var(--logo-main-revert);
+  stroke: var(--logo-stroke-revert);
+}
