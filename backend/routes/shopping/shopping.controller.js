@@ -16,6 +16,32 @@ const getShoppingList = async (req, res) => {
   }
 };
 
+const addShoppingItem = async (req, res) => {
+  try {
+    const owner = req.user._id;
+    const isExisting = await ShoppingList.findOne({ owner });
+    let newCollection;
+    if (isExisting) {
+      newCollection = await ShoppingList.findOneAndUpdate(
+        { owner },
+        { $push: { ingredients: req.body } },
+        { returnDocument: "after" }
+      );
+    } else {
+      newCollection = await ShoppingList.create({
+        owner,
+        ingredients: [req.body],
+      });
+    }
+
+    res.status(201).json({ status: 201, data: newCollection });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
+
 module.exports = {
   getShoppingList,
+  addShoppingItem,
 };
