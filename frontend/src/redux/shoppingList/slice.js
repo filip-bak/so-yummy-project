@@ -1,5 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { addRecipeToShoppingList, removeRecipieFromShoppingList } from "./action";
+import {
+  addRecipeToShoppingList,
+  removeRecipieFromShoppingList,
+} from "./action";
 
 const testItems = [
   {
@@ -102,9 +105,9 @@ const shoppingListSlice = createSlice({
     builder
       .addCase(addRecipeToShoppingList.pending, handlePending)
       .addCase(addRecipeToShoppingList.fulfilled, (state, action) => {
-        state.items.push(action.payload)
+        state.items.push(action.payload);
       })
-      .addCase(addRecipeToShoppingList.rejected, handleRejected);
+      .addCase(addRecipeToShoppingList.rejected, handleRejected)
 
       .addCase(removeRecipieFromShoppingList.pending, handlePending)
       .addCase(removeRecipieFromShoppingList.fulfilled, (state, action) => {
