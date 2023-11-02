@@ -14,6 +14,13 @@
   --text-color-darker: #d9d9d9;
   --description-color: #23262a;
 
+  --logo-main: #8baa36;
+  --logo-stroke: #fafafa;
+  --logo-main-revert: #ebf3d4;
+  --logo-stroke-revert: #8baa36;
+
+  --hover-green: #8baa36;
+
   /* FONTS */
   --font-family: "Poppins", sans-serif;
 

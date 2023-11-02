@@ -7,8 +7,17 @@ import NotFoundPage from "pages/NotFoundPage";
 import SearchPage from "pages/SearchPage/SearchPage";
 import MyRecipesPage from "pages/MyRecipesPage/MyRecipesPage";
 import Favorite from "pages/Favorite/Favorite";
+import { useSelector } from "react-redux";
+import { selectTheme } from "redux/theme/selectors";
+import { useEffect } from "react";
 
 export const App = () => {
+  const theme = useSelector(selectTheme);
+
+  useEffect(() => {
+    document.querySelector("body").setAttribute("data-theme", theme);
+  }, [theme]);
+
   return (
     <Routes>
       <Route path="/welcome" element={<WelcomePage />} />

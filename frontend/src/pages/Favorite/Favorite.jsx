@@ -6,7 +6,7 @@ const Favorite = () => {
   return (
     <section className={css.section}>
       <div className={css.container}>
-        <MainPageTitle title="My recipes" />
+        <MainPageTitle title="Favorites" />
         <FavoriteList />
       </div>
     </section>
