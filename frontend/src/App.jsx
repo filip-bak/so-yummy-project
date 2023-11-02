@@ -6,7 +6,7 @@ import AuthSharedLayout from "components/AuthSharedLayout";
 import NotFoundPage from "pages/NotFoundPage";
 import SearchPage from "pages/SearchPage/SearchPage";
 import MyRecipesPage from "pages/MyRecipesPage/MyRecipesPage";
-import FavoritePage from "pages/Favorite/FavoritePage";
+import FavoritePage from "pages/FavoritePage/FavoritePage";
 import ShoppingListPage from "pages/ShoppingListPage/ShoppingListPage";
 import { useSelector } from "react-redux";
 import { selectTheme } from "redux/theme/selectors";
