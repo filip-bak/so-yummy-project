@@ -15,6 +15,7 @@ import { recipesReducer } from "./recipes/slice";
 import { myRecipesReducer } from "./myRecipes/slice";
 import { favoriteReducer } from "./favorite/slice";
 import { authReducer } from "./auth/slice";
+import { themeReducer } from "./theme/slice";
 
 axios.defaults.baseURL = process.env.REACT_APP_BACKEND_URL;
 
@@ -23,10 +24,16 @@ const persistConfig = {
   storage,
   whitelist: ["token"],
 };
+const persistThemeConfig = {
+  key: "theme",
+  storage,
+  whitelist: ["status"],
+};
 
 export const store = configureStore({
   reducer: {
     auth: persistReducer(persistConfig, authReducer),
+    theme: persistReducer(persistThemeConfig, themeReducer),
     recipes: recipesReducer,
     myRecipes: myRecipesReducer,
     favorite: favoriteReducer,
