@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {
   addRecipeToShoppingList,
-  removeRecipieFromShoppingList,
+  removeRecipeFromShoppingList,
 } from "./action";
 
 const testItems = [
@@ -109,13 +109,13 @@ const shoppingListSlice = createSlice({
       })
       .addCase(addRecipeToShoppingList.rejected, handleRejected)
 
-      .addCase(removeRecipieFromShoppingList.pending, handlePending)
-      .addCase(removeRecipieFromShoppingList.fulfilled, (state, action) => {
+      .addCase(removeRecipeFromShoppingList.pending, handlePending)
+      .addCase(removeRecipeFromShoppingList.fulfilled, (state, action) => {
         state.items = state.items.filter(
           item => item._id !== action.payload._id
         );
       })
-      .addCase(removeRecipieFromShoppingList.rejected, handleRejected);
+      .addCase(removeRecipeFromShoppingList.rejected, handleRejected);
   },
 });
 

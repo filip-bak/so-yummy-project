@@ -2,7 +2,7 @@ import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 export const addRecipeToShoppingList = createAsyncThunk(
-  "shoppingList/removeRecipieFromShoppingList",
+  "shoppingList/addRecipeToShoppingList",
   async (recipeId, thunkAPI) => {
     try {
       const res = await axios.post(`/shopping-list/${recipeId}`);
@@ -12,8 +12,8 @@ export const addRecipeToShoppingList = createAsyncThunk(
     }
   }
 );
-export const removeRecipieFromShoppingList = createAsyncThunk(
-  "shoppingList/removeRecipieFromShoppingList",
+export const removeRecipeFromShoppingList = createAsyncThunk(
+  "shoppingList/removeRecipeFromShoppingList",
   async (recipeId, thunkAPI) => {
     try {
       const res = await axios.delete(`/shopping-list/${recipeId}`);
