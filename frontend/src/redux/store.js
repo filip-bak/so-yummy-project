@@ -15,6 +15,7 @@ import { recipesReducer } from "./recipes/slice";
 import { myRecipesReducer } from "./myRecipes/slice";
 import { favoriteReducer } from "./favorite/slice";
 import { authReducer } from "./auth/slice";
+import { shoppingListReducer } from "./shoppingList/slice";
 import { themeReducer } from "./theme/slice";
 
 axios.defaults.baseURL = process.env.REACT_APP_BACKEND_URL;
@@ -37,6 +38,7 @@ export const store = configureStore({
     recipes: recipesReducer,
     myRecipes: myRecipesReducer,
     favorite: favoriteReducer,
+    shoppingList: shoppingListReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
