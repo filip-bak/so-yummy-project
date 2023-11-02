@@ -1,7 +1,7 @@
 import css from "./ShoppingListItem.module.css";
 import icons from "../../../../images/icons.svg";
 import { useDispatch } from "react-redux";
-import { removeFromShoppingList } from "redux/shoppingList/actions";
+import { removeFromShoppingList } from "redux/shoppingList/slice";
 
 export const ShoppingListItem = ({ itemId, image, name, measure }) => {
   const dispatch = useDispatch();
