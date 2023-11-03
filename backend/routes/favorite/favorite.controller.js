@@ -1,3 +1,4 @@
+const { User } = require("../../modules/users/users.model");
 const { Recipe } = require("../recipes/recipes.model");
 
 const addFavoriteHandler = async (req, res) => {
