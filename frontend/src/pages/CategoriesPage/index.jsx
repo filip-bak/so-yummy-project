@@ -1,6 +1,6 @@
 import css from "./CategoriesPage.module.css";
 import { MainPageTitle } from "components/MainPageTitle/MainPageTitle";
-import { CategoryRecipes } from "components/CategoriesPage/CategoryRecipes/CategoryRecipes";
+import { CategoryRecipes } from "./components/CategoryRecipes/CategoryRecipes";
 /*import { CategoryList } from "components/CategoriesPage/CategoryList/CategoryList";*/
 
 const CategoriesPage = () => {
