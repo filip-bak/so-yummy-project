@@ -4,11 +4,12 @@ import Loader from "components/Loader";
 import styles from "./SharedLayout.module.css";
 import PolicyAndTerms from "components/PolicyAndTerms";
 import { Footer } from "components/Footer/Footer";
+import Navigation from "./Navigation";
 
 const SharedLayout = () => {
   return (
     <div className={styles.container}>
-      Navigacja
+      <Navigation />
       <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>

@@ -1,0 +1,139 @@
+.container {
+  border-bottom: 1px solid #e0e0e0;
+  display: block;
+  position: relative;
+  height: 84px;
+  width: 343px;
+}
+
+.item:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.image_container {
+  background-color: var(--accent-color-lighter);
+  border-radius: 6px;
+  height: 60px;
+  margin: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  height: 48px;
+  width: 48;
+}
+
+.ingredient {
+  color: var(--subtitle-color);
+  font-size: 10px;
+  font-weight: 500;
+  margin: 0;
+  position: absolute;
+  left: 70px;
+  top: 0;
+}
+
+.measure_container {
+  background-color: var(--accent-color-darker);
+  border-radius: 4px;
+  inline-size: min-content;
+  margin: 0;
+  padding: 4px;
+  position: absolute;
+  top: 0;
+  left: 210px;
+}
+
+.measure {
+  color: var(--text-color-lighter);
+  font-size: 10px;
+  font-weight: 500;
+  margin: auto;
+}
+
+.remove_button {
+  border: none;
+  background: none;
+  height: 14px;
+  margin: 0;
+  padding-block: 0;
+  padding-inline: 0;
+  position: absolute;
+  left: 310px;
+  top: 0;
+  width: 14px;
+}
+
+.icon {
+  cursor: pointer;
+  stroke: #1f242e;
+  height: 14px;
+  width: 14px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    height: 140px;
+    width: 704px;
+  }
+
+  .item:not(:last-child) {
+    margin-bottom: 44px;
+  }
+
+  .image_container {
+    border-radius: 8px;
+    height: 97px;
+    width: 93px;
+  }
+
+  .image {
+    height: 81px;
+    width: 81;
+  }
+
+  .ingredient {
+    font-size: 16px;
+    left: 109px;
+  }
+
+  .measure_container {
+    left: 450px;
+    padding: 5px;
+  }
+
+  .measure {
+    font-size: 18px;
+  }
+
+  .remove_button {
+    height: 20px;
+    left: 639px;
+    width: 20px;
+  }
+
+  .icon {
+    height: 20px;
+    width: 20px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    width: 1160px;
+  }
+
+  .measure_container {
+    left: 860px;
+  }
+
+  .remove_button {
+    left: 1112px;
+  }
+}

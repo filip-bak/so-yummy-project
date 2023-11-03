@@ -9,9 +9,10 @@ import {
 
 const initialState = {
   items: [],
+  categories: [],
   isLoading: false,
   error: null,
-  resultsPerPage: 6,
+  resultsPerPage: 12,
   totalCount: 0,
 };
 
@@ -83,7 +84,7 @@ const recipesSlice = createSlice({
       .addCase(fetchRecipesCategoryList.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.items = action.payload;
+        state.categories = action.payload;
       })
       .addCase(fetchRecipesCategoryList.rejected, handleRejected);
   },

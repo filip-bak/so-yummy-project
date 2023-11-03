@@ -15,23 +15,30 @@ import { recipesReducer } from "./recipes/slice";
 import { myRecipesReducer } from "./myRecipes/slice";
 import { favoriteReducer } from "./favorite/slice";
 import { authReducer } from "./auth/slice";
-import { categoriesReducer } from "./categories/slice";
+import { shoppingListReducer } from "./shoppingList/slice";
+import { themeReducer } from "./theme/slice";
 
-axios.defaults.baseURL = "http://localhost:3200/api/";
+axios.defaults.baseURL = process.env.REACT_APP_BACKEND_URL;
 
 const persistConfig = {
   key: "auth",
   storage,
   whitelist: ["token"],
 };
+const persistThemeConfig = {
+  key: "theme",
+  storage,
+  whitelist: ["status"],
+};
 
 export const store = configureStore({
   reducer: {
     auth: persistReducer(persistConfig, authReducer),
+    theme: persistReducer(persistThemeConfig, themeReducer),
     recipes: recipesReducer,
     myRecipes: myRecipesReducer,
     favorite: favoriteReducer,
-    categories: categoriesReducer,
+    shoppingList: shoppingListReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

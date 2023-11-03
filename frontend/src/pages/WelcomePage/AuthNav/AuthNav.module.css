@@ -1,9 +1,10 @@
-.nav { 
-display: flex;
-gap: 12px
+.nav {
+  display: flex;
+  gap: 12px;
 }
 
 @media screen and (min-width: 768px) {
-    .nav {
-    gap: 18px;}
+  .nav {
+    gap: 18px;
+  }
 }
