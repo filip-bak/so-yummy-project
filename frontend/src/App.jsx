@@ -1,3 +1,4 @@
+import axios from "axios";
 import { Route, Routes } from "react-router-dom";
 import SharedLayout from "components/SharedLayout";
 import MainPage from "pages/MainPage";
@@ -11,6 +12,10 @@ import ShoppingListPage from "pages/ShoppingListPage/ShoppingListPage";
 import { useSelector } from "react-redux";
 import { selectTheme } from "redux/theme/selectors";
 import { useEffect } from "react";
+
+const baseUrl = process.env.REACT_APP_BACKEND_URL;
+
+axios.defaults.baseURL = baseUrl;
 
 export const App = () => {
   const theme = useSelector(selectTheme);
