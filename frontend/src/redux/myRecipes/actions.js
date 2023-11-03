@@ -1,4 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 
 const testData = [
   {
@@ -77,7 +78,6 @@ export const fetchMyRecipes = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const response = testData;
-      console.log("here");
       const myRecipes = response.map(item => ({
         title: item.title,
         image: item.thumb,
@@ -95,7 +95,7 @@ export const fetchMyRecipes = createAsyncThunk(
   }
 );
 
-export const fetchNewPage = createAsyncThunk(
+export const fetchMyRecipesNewPage = createAsyncThunk(
   "myRecipes/fetchNewPage",
   async ({ newCurrentPage }, thunkAPI) => {
     try {
@@ -111,6 +111,30 @@ export const fetchNewPage = createAsyncThunk(
         currentPage: newCurrentPage,
         myRecipes,
       };
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+);
+
+export const addMyRecipe = createAsyncThunk(
+  "favorite/addMyRecipe",
+  async (recipieData, thunkAPI) => {
+    try {
+      const res = await axios.post(`/ownRecipes`, recipieData);
+      return res.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+);
+
+export const removeMyRecipe = createAsyncThunk(
+  "favorite/removeMyRecipe",
+  async (myRecipeId, thunkAPI) => {
+    try {
+      const res = await axios.delete(`/ownRecipes/${myRecipeId}`);
+      return res.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
     }

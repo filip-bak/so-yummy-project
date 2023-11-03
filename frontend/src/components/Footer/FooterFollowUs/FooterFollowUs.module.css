@@ -1,9 +1,12 @@
+.followUsBox {
+  display: flex;
+  justify-content: center;
+  margin-top: 44px;
+}
 .followUsList {
   display: flex;
   list-style: none;
   gap: 14px;
-  margin-top: 44px;
-  padding-inline-start: 0;
 }
 .followUsItem {
   display: flex;
@@ -24,6 +27,9 @@
 }
 
 @media screen and (min-width: 768px) {
+  .followUsBox {
+    margin-top: 38px;
+  }
   .followUsList {
     gap: 18px;
   }
@@ -34,6 +40,9 @@
 }
 
 @media screen and (min-width: 1440px) {
+  .followUsBox {
+    margin-top: 41px;
+  }
   .followUsList {
   }
 }
