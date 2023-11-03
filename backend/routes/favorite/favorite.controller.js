@@ -7,7 +7,7 @@ const addFavoriteHandler = async (req, res) => {
   const { id } = req.params; // Assuming that id is the unique identifier of the recipe
 
   // Find the recipe with the provided id
-  const recipe = await Recipe.findOne({ id });
+  const recipe = await Recipe.findOne({ _id: id });
 
   // If the recipe with the provided id is not found, throw an error
   if (!recipe) {
@@ -16,13 +16,17 @@ const addFavoriteHandler = async (req, res) => {
   }
 
   // Check if the recipe is already in the user's favorites
-  if (user.favorites.includes(id)) {
+  // if (user.favorites.includes(id)) {
+  //   // Throwing a custom error if the recipe is already in favorites
+  //   throw new Error("This recipe has already been added to favorites");
+  // }
+  if (recipe.favorites.includes(user._id)) {
     // Throwing a custom error if the recipe is already in favorites
     throw new Error("This recipe has already been added to favorites");
   }
 
   // Add the recipe id to the user's favorites and the user id to the recipe's favorites
-  user.favorites.push(id);
+  // user.favorites.push(id);
   recipe.favorites.push(user._id);
 
   // Save both the user and recipe in the database
@@ -37,7 +41,7 @@ const deleteFavoriteHandler = async (req, res) => {
   const { id } = req.params; // Get the ID of the recipe to be removed from favorites
 
   // Find the recipe with the specified ID
-  const recipe = await Recipe.findOne({ id });
+  const recipe = await Recipe.findOne({ _id: id });
 
   // If the recipe with the specified ID is not found, throw a custom error
   if (!recipe) {
