@@ -51,7 +51,7 @@ const Navigation = () => {
           )}
           <span className={styles.name}>Olena</span>
         </div>
-        <Switch className={styles["theme-switch"]} />
+        <Switch id="switch" className={styles["theme-switch"]} />
 
         <button className={styles["btn-mobile-nav"]} onClick={handleClick}>
           <svg className={styles["burger-menu-icon"]}>
