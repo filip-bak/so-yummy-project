@@ -128,8 +128,11 @@ export const RegisterForm = () => {
             >
               Sign up
             </Button>
-            {isError === "registerError" && (
-              <p className={`error`}>Incorrect credentials.</p>
+            {isError === `Invalid email` && (
+              <p className={`error`}>Incorrect email.</p>
+            )}
+            {isError === "Email conflict" && (
+              <p className={`error`}>This email address is already in use.</p>
             )}
           </form>
         )}
