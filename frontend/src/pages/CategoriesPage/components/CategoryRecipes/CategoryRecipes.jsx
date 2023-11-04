@@ -72,8 +72,6 @@ export const CategoryRecipes = () => {
   const onMouseLeave = () => {
     setFlag(false);
   };
-  console.log("recipes from component categoryrecipes", items.recipes);
-  console.log(categoryName);
 
   return (
     <div className={styles.container}>
