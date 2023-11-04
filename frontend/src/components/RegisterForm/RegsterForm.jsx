@@ -6,7 +6,6 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { register } from "redux/auth/actions";
 import * as Yup from "yup";
-import Input from "components/Input";
 import { selectError } from "redux/auth/selectors";
 
 const initialValue = {
