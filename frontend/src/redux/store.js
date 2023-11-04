@@ -16,6 +16,7 @@ import { favoriteReducer } from "./favorite/slice";
 import { authReducer } from "./auth/slice";
 import { shoppingListReducer } from "./shoppingList/slice";
 import { themeReducer } from "./theme/slice";
+import { recipeReducer } from "./recipe/slice";
 
 const persistConfig = {
   key: "auth",
@@ -32,6 +33,7 @@ export const store = configureStore({
   reducer: {
     auth: persistReducer(persistConfig, authReducer),
     theme: persistReducer(persistThemeConfig, themeReducer),
+    recipe: recipeReducer,
     recipes: recipesReducer,
     myRecipes: myRecipesReducer,
     favorite: favoriteReducer,

@@ -1,0 +1,31 @@
+import { useSelector } from "react-redux";
+import css from "./RecipeIngredientsList.module.css";
+import { selectRecipe } from "redux/recipe/selectors";
+import { Ingredient } from "pages/RecipePage/components/Ingredient/Ingredient";
+
+export const RecipeIngredientsList = () => {
+  const recipe = useSelector(selectRecipe);
+
+  return (
+    <div className={css.container}>
+      <div className={css.header_container}>
+        <p className={css.ingredients}>Ingredients</p>
+        <ul className={css.properties}>
+          <li className={css.property_item}>Number</li>
+          <li className={css.property_item}>Add to list</li>
+        </ul>
+      </div>
+      <ul className={css.results}>
+        {recipe.ingredients.map(({ _id, ttl, measure, thb }) => (
+          <Ingredient
+            ingredientId={_id}
+            image={thb}
+            key={_id}
+            name={ttl}
+            measure={measure}
+          />
+        ))}
+      </ul>
+    </div>
+  );
+};
