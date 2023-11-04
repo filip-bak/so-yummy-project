@@ -55,6 +55,7 @@ const recipesSlice = createSlice({
         state.totalCount = action.payload.totalCount;
       })
       .addCase(fetchRecipes.rejected, handleRejected)
+
       .addCase(fetchRecipesForMainPage.pending, handlePending)
       .addCase(fetchRecipesForMainPage.fulfilled, (state, action) => {
         state.isLoading = false;
@@ -67,6 +68,7 @@ const recipesSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         state.items = action.payload;
+        state.totalCount = action.payload.totalCount;
       })
       .addCase(fetchRecipesByCategory.rejected, handleRejected)
 

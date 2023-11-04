@@ -8,7 +8,7 @@ const NavList = ({ mobile = false }) => {
   return (
     <ul className={`${styles.list}  ${mobile && styles.column}`}>
       <li>
-        <Link className={styles.link} to="/categories/Beaf">
+        <Link className={styles.link} to="/categories/Beef">
           Categories
         </Link>
       </li>
