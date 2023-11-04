@@ -2,7 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 import {
   fetchRecipes,
   fetchRecipesByCategory,
-  fetchRecipesById,
   fetchRecipesCategoryList,
   fetchRecipesForMainPage,
 } from "./actions";
@@ -13,7 +12,7 @@ const initialState = {
   isLoading: false,
   error: null,
   resultsPerPage: 12,
-  totalCount: 0
+  totalCount: 0,
 };
 
 const handlePending = state => {
