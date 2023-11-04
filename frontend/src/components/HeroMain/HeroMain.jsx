@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useScreenWidth } from "../../hooks";
 
 import Container from "../Container";
-import { CommonSearchForm } from "../CommonSearchForm/CommonSearchForm.styled";
+import { CommonSearchForm } from "../CommonSearchForm/CommonSearchForm";
 
 import {
   Section,
