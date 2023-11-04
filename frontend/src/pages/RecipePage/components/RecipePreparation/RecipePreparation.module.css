@@ -20,6 +20,7 @@
   display: flex;
   flex-direction: column;
   gap: 14px;
+  width: 343px;
 }
 
 .instruction {
@@ -63,11 +64,40 @@
   .instructions_container {
     margin-bottom: 50px;
   }
+
+  .title {
+    margin-bottom: 32px;
+  }
+
+  .instructions {
+    gap: 18px;
+    width: 704px;
+  }
+
+  .index {
+    font-size: 14px;
+  }
+
+  .sentence {
+    font-size: 14px;
+  }
+
+  .image {
+    width: 433px;
+    height: 332px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
   .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
     margin-top: 100px;
     width: 1240px;
+  }
+
+  .instructions {
+    width: 757px;
   }
 }
