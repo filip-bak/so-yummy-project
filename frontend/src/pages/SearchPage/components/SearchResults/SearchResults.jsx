@@ -39,7 +39,12 @@ export const SearchResults = () => {
     <div className={css.container}>
       <ul className={css.results}>
         {items.map(({ image, id, title }) => (
-          <SearchResultItem image={image} key={id} title={title} />
+          <SearchResultItem
+            image={image}
+            key={id}
+            title={title}
+            recipeId={id}
+          />
         ))}
       </ul>
       {totalCount > resultsPerPage && (
