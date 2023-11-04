@@ -1,0 +1,134 @@
+.title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: var(--fs-xl);
+  line-height: 28px;
+  letter-spacing: -0.02em;
+  font-feature-settings: "liga" off;
+  margin-bottom: 40px;
+  color: var(--main-color-light);
+}
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.field {
+  outline: none;
+  width: 100%;
+  border: 1px solid;
+  border-color: rgba(250, 250, 250, 0.3);
+  border-radius: 6px;
+  padding: 12px 40px;
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  color: var(--main-color-dark);
+  background-color: transparent;
+  color: var(--main-color-light);
+}
+.field::placeholder {
+  color: var(--main-color-light);
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: var(-fs-md);
+  line-height: auto;
+  letter-spacing: -0.02em;
+  opacity: 0.8;
+}
+
+.field:hover,
+.field:focus {
+  border-color: var(--main-color-light);
+  background-color: transparent;
+
+  + svg {
+    color: var(--text-color-lighter);
+  }
+}
+
+.registerLink {
+  font-size: var(--fs-md);
+  line-height: auto;
+  text-decoration-line: underline;
+  color: var(--text-color-lighter);
+  transition: color 250ms ease;
+  position: relative;
+  top: 58px;
+  left: 100px;
+}
+
+.background {
+  width: 285px;
+  height: 250px;
+  background-image: url("../../images/Order-food-pana.svg");
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 100% 250px;
+  position: absolute;
+  top: -220px;
+  left: 32px;
+}
+
+@media screen and (min-width: 768px) {
+  .background {
+    width: 409px;
+    height: 359px;
+    background-size: 100% 359px;
+  }
+
+  .registerLink {
+    font-size: var(--fs-base);
+    position: relative;
+    top: 120px;
+    left: 150px;
+  }
+  .registerLink:hover {
+    color: var(--accent-color-darker);
+  }
+
+  .title {
+    font-size: var(--fs-2xl);
+    line-height: 30px;
+    margin-bottom: 32px;
+    letter-spacing: -0.02em;
+  }
+  .field {
+    font-size: var(--fs-lg);
+  }
+
+  .field::placeholder {
+    font-size: var(--fs-lg);
+    letter-spacing: -0.02em;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .background {
+    top: -345px;
+    left: 50px;
+  }
+  .fields {
+    gap: 24px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .background {
+    width: 532px;
+    height: 468px;
+    background-size: 100% 468px;
+    background-image: url("../../images/Order-panaDesk.svg");
+    display: flex;
+    position: absolute;
+    left: -400px;
+    top: 20px;
+  }
+
+  .fields {
+    width: 400px;
+    margin-bottom: 44px;
+  }
+}

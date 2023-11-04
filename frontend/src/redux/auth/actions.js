@@ -15,9 +15,14 @@ export const register = createAsyncThunk(
     try {
       const res = await axios.post("/users/signup", registerData);
       setToken(res.data.token);
-
       return res.data;
     } catch (err) {
+      if (err.response.status === 409) {
+        return thunkApi.rejectWithValue("Email conflict");
+      }
+      if (err.response.data.error === '"email" must be a valid email') {
+        return thunkApi.rejectWithValue("Invalid email");
+      }
       return thunkApi.rejectWithValue(err.message);
     }
   }
@@ -32,7 +37,9 @@ export const login = createAsyncThunk(
 
       return res.data;
     } catch (err) {
-      return thunkApi.rejectWithValue(err.message);
+      return thunkApi.rejectWithValue({
+        message: err.response.data.message,
+      });
     }
   }
 );
