@@ -56,9 +56,16 @@ export const fetchRecipesById = createAsyncThunk(
 
 export const fetchRecipesByCategory = createAsyncThunk(
   "recipes/fetchRecipesByCategory",
-  async (category, thunkAPI) => {
+  async ({ category, currentPage }, thunkAPI) => {
     try {
-      const res = await axios.get(`/recipes/${category}`);
+      const params = {
+        page: currentPage,
+      };
+
+      const res = await axios.get(`/recipes/${category}`, {
+        params,
+      });
+
       return res.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);

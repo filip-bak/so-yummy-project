@@ -10,7 +10,7 @@ import {
 } from "redux/recipes/selectors";
 import { setResultsPerPage } from "redux/recipes/slice";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useSearchParams } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 import { Box, Tab, Tabs, ThemeProvider, createTheme } from "@mui/material";
 import { CardMeal } from "../CardMeal/CardMeal";
@@ -29,42 +29,34 @@ const localTheme = createTheme({
 });
 
 export const CategoryRecipes = () => {
+  const [searchParams] = useSearchParams();
   const totalCount = useSelector(selectTotalPages);
   const resultsPerPage = useSelector(selectResultsPerPage);
-  const prevResultsPerPage = useRef(6);
   const dispatch = useDispatch();
   const { categoryName } = useParams();
   const categoryList = useSelector(selectCategories);
   const items = useSelector(selectRecipes);
   const navigate = useNavigate();
   const [flag, setFlag] = useState(false);
+  const currentPage = searchParams.get("currentPage") ?? 1;
 
   useEffect(() => {
     dispatch(fetchRecipesCategoryList());
-    dispatch(fetchRecipesByCategory(categoryName));
-  }, [dispatch, categoryName]);
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(
+      fetchRecipesByCategory({
+        category: categoryName,
+        currentPage: currentPage,
+      })
+    );
+    dispatch(setResultsPerPage(8));
+  }, [dispatch, currentPage, categoryName]);
 
   const handleChange = (event, newValue) => {
     navigate(`/categories/${newValue}`);
   };
-
-  useEffect(() => {
-    const updateDimension = () => {
-      const updatedResultsPerPage = window.innerWidth < 1440 ? 6 : 12;
-
-      if (prevResultsPerPage.current !== updatedResultsPerPage) {
-        prevResultsPerPage.current = updatedResultsPerPage;
-        dispatch(setResultsPerPage(updatedResultsPerPage));
-      }
-    };
-    window.addEventListener("resize", updateDimension);
-
-    updateDimension();
-
-    return () => {
-      window.removeEventListener("resize", updateDimension);
-    };
-  }, [dispatch]);
 
   const onMouseEnter = () => {
     setFlag(true);
@@ -162,7 +154,6 @@ export const CategoryRecipes = () => {
           <CardMeal meal={meal} key={meal._id} />
         ))}
       </ul>
-
       {totalCount > resultsPerPage && (
         <Pagination recipesCount={totalCount} resultsPerPage={resultsPerPage} />
       )}
