@@ -1,13 +1,15 @@
 import css from "./Ingredient.module.css";
 import icons from "../../../../images/icons.svg";
-// import { useDispatch } from "react-redux";
-// import { addToShoppingList } from "redux/shoppingList/slice";
+import { useDispatch } from "react-redux";
+import { fetchRecipeById } from "redux/recipe/actions";
+import { addIngredientToShoppingList } from "redux/shoppingList/action";
 
-export const Ingredient = ({ ingredientId, image, name, measure }) => {
-  // const dispatch = useDispatch();
+export const Ingredient = ({ recipeId, image, name, measure }) => {
+  const dispatch = useDispatch();
 
   const handleClick = () => {
-    // dispatch(addToShoppingList(ingredientId, measure));
+    dispatch(addIngredientToShoppingList({ name, image, measure }));
+    dispatch(fetchRecipeById(recipeId));
   };
 
   return (

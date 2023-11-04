@@ -11,7 +11,7 @@ export const RecipePreparation = () => {
         <h4 className={css.title}>Recipe Preparation</h4>
         <ul className={css.instructions}>
           {recipe.instructions.split("\r\n").map((sentence, index) => (
-            <li className={css.instruction}>
+            <li className={css.instruction} key={index}>
               <div className={css.index_container}>
                 <p className={css.index}>{index + 1}</p>
               </div>

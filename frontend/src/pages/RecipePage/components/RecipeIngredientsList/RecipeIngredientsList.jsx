@@ -18,7 +18,8 @@ export const RecipeIngredientsList = () => {
       <ul className={css.results}>
         {recipe.ingredients.map(({ _id, ttl, measure, thb }) => (
           <Ingredient
-            ingredientId={_id}
+            recipeId={recipe._id}
+            itemId={_id}
             image={thb}
             key={_id}
             name={ttl}
