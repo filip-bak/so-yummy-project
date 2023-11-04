@@ -4,6 +4,7 @@ const userSchema = Joi.object({
   name: Joi.string().required(),
   email: Joi.string().email().required(),
   password: Joi.string().required(),
+  avatar: Joi.string().required(),
  });
 
 const loginSchema = Joi.object({
@@ -53,8 +54,10 @@ const userNameValidator = (req, res, next) => {
   return next();
 };
 
+
 module.exports = {
   userValidationMiddleware,
   userNameValidator,
   userLoginValidator,
+  
 };
