@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import SharedLayout from "components/SharedLayout";
-import MainPage from "pages/MainPage";
+import MainPage from "pages/MainPage/MainPage";
 import WelcomePage from "pages/WelcomePage";
 import AuthSharedLayout from "components/AuthSharedLayout";
 import NotFoundPage from "pages/NotFoundPage";
