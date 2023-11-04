@@ -4,7 +4,6 @@ import mobileStyles from "../MobileNavigation/MobileNavigation.module.css";
 import icon from "../../../images/icons.svg";
 import Switch from "components/Switch";
 import NavList from "../NavList";
-import { useState } from "react";
 import MobileNavigation from "../MobileNavigation";
 
 const Navigation = () => {
