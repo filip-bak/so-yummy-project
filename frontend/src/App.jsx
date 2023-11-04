@@ -12,6 +12,8 @@ import ShoppingListPage from "pages/ShoppingListPage/ShoppingListPage";
 import { useSelector } from "react-redux";
 import { selectTheme } from "redux/theme/selectors";
 import { useEffect } from "react";
+import RegisterPage from "pages/RegisterPage/RegisterPage";
+import SigninPage from "pages/SigninPage/SigninPage";
 
 const baseUrl = process.env.REACT_APP_BACKEND_URL;
 
@@ -29,8 +31,8 @@ export const App = () => {
       <Route path="/welcome" element={<WelcomePage />} />
 
       <Route path="/" element={<AuthSharedLayout />}>
-        <Route path="/register" />
-        <Route path="/signin" />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/signin" element={<SigninPage />} />
       </Route>
 
       <Route path="/" element={<SharedLayout />}>

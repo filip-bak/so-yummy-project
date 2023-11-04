@@ -21,6 +21,12 @@
 
   --hover-green: #8baa36;
 
+  /* INPUT STATE COLOR */
+  --white-color: #ffffff;
+  --ocean-green-color: #3cbc81;
+  --cinnabar-color: #e74a3b;
+  --saffron-color: #f6c23e;
+
   /* FONTS */
   --font-family: "Poppins", sans-serif;
 
