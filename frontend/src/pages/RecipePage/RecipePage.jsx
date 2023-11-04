@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { fetchRecipeById } from "redux/recipe/actions";
 import { RecipePageHero } from "./components/RecipePageHero/RecipePageHero";
 import { RecipeIngredientsList } from "./components/RecipeIngredientsList/RecipeIngredientsList.jsx";
-// import { RecipePreparation } from "./components/RecipePreparation/RecipePreparation";
+import { RecipePreparation } from "./components/RecipePreparation/RecipePreparation";
 
 export const RecipePage = () => {
   const { recipeId } = useParams();
@@ -29,7 +29,7 @@ export const RecipePage = () => {
               time={recipe.time}
             />
             <RecipeIngredientsList />
-            {/* <RecipePreparation /> */}
+            <RecipePreparation />
           </div>
         </section>
       )}
