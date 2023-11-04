@@ -18,7 +18,7 @@ export const register = createAsyncThunk(
 
       return res.data;
     } catch (err) {
-      return thunkApi.rejectWithValue(err.message);
+      return thunkApi.rejectWithValue("registerError");
     }
   }
 );

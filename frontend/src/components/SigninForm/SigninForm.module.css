@@ -85,7 +85,7 @@
     top: 120px;
     left: 150px;
   }
-  :hover {
+  .registerLink:hover {
     color: var(--accent-color-darker);
   }
 

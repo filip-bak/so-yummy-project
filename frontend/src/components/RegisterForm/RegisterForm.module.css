@@ -43,10 +43,16 @@
 .field:focus {
   border-color: var(--background-color-lighter);
   background-color: transparent;
-
-  + svg {
-    color: var(--main-color-light);
-  }
+}
+.field:hover + svg,
+.field:focus + svg {
+  color: var(--main-color-light);
+}
+.field-error {
+  border: 1px solid var(--error-invalid);
+}
+.error {
+  top: 0;
 }
 
 .signInLink {
@@ -85,7 +91,7 @@
     top: 70px;
     left: 160px;
   }
-  :hover {
+  .signInLink:hover {
     color: var(--accent-color-darker);
   }
 
@@ -126,7 +132,7 @@
     background-image: url("../../images/Order-panaDesk.svg");
     display: flex;
     position: absolute;
-    left: -400px;
+    left: -647px;
     top: 20px;
   }
 
