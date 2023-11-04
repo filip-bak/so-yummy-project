@@ -24,6 +24,8 @@
   /* FONTS */
   --font-family: "Poppins", sans-serif;
 
+  --mobile-nav-bg: #ebf3d4;
+
   /* Font size */
   --fs-8xl: 6.25rem; /* 100px */
   --fs-7xl: 4.5rem; /* 72px */
@@ -65,6 +67,8 @@
   --text-color-lighter: #fafafa;
   --text-color-darker: #d9d9d9;
   --description-color: rgba(250, 250, 250, 0.6);
+
+  --mobile-nav-bg: #1e1f28;
 }
 
 body {
