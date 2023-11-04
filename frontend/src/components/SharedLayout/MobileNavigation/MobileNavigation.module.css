@@ -13,13 +13,12 @@
     "theme ... ....";
   z-index: 1000;
 
-  transition: transform 400ms cubic-bezier(0, 0, 0.31, 1.01);
+  transition: transform 700ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.mobile-open {
-  transform: translateY(100%);
-}
-.mobile-close {
-  transform: translateY(0);
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 18px 32px;
+  }
 }
 @media screen and (min-width: 1440px) {
   .container {
@@ -51,6 +50,10 @@
   width: 32px;
   height: 32px;
 }
+.close:hover .close-icon,
+.close:focus .close-icon {
+  stroke: var(--accent-color-darker);
+}
 .close-icon {
   stroke: var(--main-color-dark);
   width: 100%;
@@ -62,4 +65,11 @@
 .switch {
   grid-area: theme;
   align-self: flex-end;
+}
+
+.mobile-open {
+  transform: translateY(100%);
+}
+.mobile-close {
+  transform: translateY(0);
 }
