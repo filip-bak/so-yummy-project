@@ -1,11 +1,11 @@
 .container {
   --_width: 113px;
   --_height: 53px;
-  --_color: var(--text-color-lighter);
+  --_color: var(--button-color);
   --_font-size: var(--fs-md);
   --_border: 0;
   --_border-radius: 24px 44px;
-  --_background-color: var(--accent-color-darker);
+  --_background-color: var(--button-bg);
   --_gap: unset;
   --_padding: 0;
 
@@ -28,11 +28,13 @@
 }
 .container:focus,
 .container:hover {
-  --_background-color: var(--main-color-dark);
+  --_background-color: var(--button-bg-hover);
+  border: var(--button-border);
 }
 .container.dark:focus,
 .container.dark:hover {
-  --_background-color: var(--accent-color-darker);
+  --_background-color: var(--button-dark-bg-hover);
+  border: var(--button-border);
 }
 .container:disabled {
   filter: opacity(80%);
@@ -222,7 +224,7 @@
 }
 
 .dark {
-  --_background-color: var(--main-color-dark);
+  --_background-color: var(--button-dark-bg);
 }
 
 @media screen and (min-width: 768px) {
