@@ -6,7 +6,7 @@ import { MainPageTitle } from "../../components/MainPageTitle/MainPageTitle";
 const NotFoundPage = () => {
   return (
     <div className={styles.container}>
-      <MainPageTitle />
+      <MainPageTitle title="" />
       <img
         className={styles.image}
         src={pageNotFoundImage}

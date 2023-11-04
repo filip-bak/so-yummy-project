@@ -8,6 +8,7 @@
     align-items: center;
     column-gap: 30px;
     display: flex;
+    position: relative;
   }
 }
 .list.column {
@@ -53,7 +54,7 @@
 .link:hover {
   color: var(--hover-green);
   /* font-weight: 600; */
-  text-shadow: 1px 0px 0px var(--hover-green);
+  text-shadow: 0.4px 0px 0px var(--hover-green);
 }
 .column .link:hover {
   color: var(--hover-green);

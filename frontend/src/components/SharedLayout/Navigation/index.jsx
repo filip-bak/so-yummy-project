@@ -1,11 +1,37 @@
 import Logo from "components/Logo";
 import styles from "./Navigation.module.css";
+import mobileStyles from "../MobileNavigation/MobileNavigation.module.css";
 import icon from "../../../images/icons.svg";
 import Switch from "components/Switch";
-import NavList from "./NavList";
+import NavList from "../NavList";
+import MobileNavigation from "../MobileNavigation";
 
 const Navigation = () => {
   const isProfileImg = false;
+
+  const handleClick = () => {
+    document
+      ?.querySelector(`.${mobileStyles.container}`)
+      ?.classList.add(mobileStyles["mobile-open"]);
+    document
+      ?.querySelector(`.${mobileStyles.container}`)
+      ?.classList.remove(mobileStyles["mobile-close"]);
+
+    // const scrollBarCompensation = window.innerWidth - document.body.offsetWidth;
+    // document.body.style.overflow = "hidden";
+    // document.body.style.paddingRight = scrollBarCompensation;
+  };
+  const handleClose = () => {
+    document
+      ?.querySelector(`.${mobileStyles.container}`)
+      ?.classList.add(mobileStyles["mobile-close"]);
+    document
+      ?.querySelector(`.${mobileStyles.container}`)
+      ?.classList.remove(mobileStyles["mobile-open"]);
+
+    // document.body.style.overflow = "";
+    // document.body.style.paddingRight = "";
+  };
 
   return (
     <nav className={styles.container}>
@@ -25,14 +51,16 @@ const Navigation = () => {
           )}
           <span className={styles.name}>Olena</span>
         </div>
-        <Switch className={styles["theme-switch"]} />
+        <Switch id="switch" className={styles["theme-switch"]} />
 
-        <button className={styles["btn-mobile-nav"]}>
+        <button className={styles["btn-mobile-nav"]} onClick={handleClick}>
           <svg className={styles["burger-menu-icon"]}>
             <use href={`${icon}#icon-burger-menu`}></use>
           </svg>
         </button>
       </div>
+
+      <MobileNavigation handleClose={handleClose} />
     </nav>
   );
 };

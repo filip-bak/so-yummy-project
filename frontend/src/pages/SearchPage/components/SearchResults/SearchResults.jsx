@@ -3,15 +3,22 @@ import { SearchResultItem } from "pages/SearchPage/components/SearchResultItem/S
 import { Pagination } from "components/Pagination/Pagination";
 import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectRecipes } from "redux/recipes/selectors";
+import {
+  selectRecipes,
+  selectResultsPerPage,
+  selectTotalPages,
+} from "redux/recipes/selectors";
 import { setResultsPerPage } from "redux/recipes/slice";
 
 export const SearchResults = () => {
   const dispatch = useDispatch();
-  const { items, totalCount, resultsPerPage } = useSelector(selectRecipes);
+  const items = useSelector(selectRecipes);
+  const totalCount = useSelector(selectTotalPages);
+  const resultsPerPage = useSelector(selectResultsPerPage);
   const prevResultsPerPage = useRef(6);
 
   useEffect(() => {
+    dispatch(setResultsPerPage(12));
     const updateDimension = () => {
       const updatedResultsPerPage = window.innerWidth < 1440 ? 6 : 12;
 
@@ -33,7 +40,12 @@ export const SearchResults = () => {
     <div className={css.container}>
       <ul className={css.results}>
         {items.map(({ image, id, title }) => (
-          <SearchResultItem image={image} key={id} title={title} />
+          <SearchResultItem
+            image={image}
+            key={id}
+            title={title}
+            recipeId={id}
+          />
         ))}
       </ul>
       {totalCount > resultsPerPage && (

@@ -30,6 +30,14 @@
   --ocean-green-color: #3cbc81;
   --cinnabar-color: #e74a3b;
   --saffron-color: #f6c23e;
+  --mobile-nav-bg: #ebf3d4;
+
+  /* BUTTON */
+  --button-bg: #8baa36;
+  --button-bg-hover: #22252a;
+  --button-color: #fafafa;
+  --button-dark-bg: #22252a;
+  --button-dark-bg-hover: #8baa36;
 
   /* FONTS */
   --font-family: "Poppins", sans-serif;
@@ -75,6 +83,16 @@
   --text-color-lighter: #fafafa;
   --text-color-darker: #d9d9d9;
   --description-color: rgba(250, 250, 250, 0.6);
+
+  /* BUTTON */
+  --button-bg: #8baa36;
+  --button-bg-hover: #22252a;
+  --button-border: 1px solid #8baa36;
+  --button-color: #fafafa;
+  --button-dark-bg: #8baa36;
+  --button-dark-bg-hover: #22252a;
+
+  --mobile-nav-bg: #1e1f28;
 }
 
 body {

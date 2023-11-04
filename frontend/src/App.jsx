@@ -14,6 +14,8 @@ import { selectTheme } from "redux/theme/selectors";
 import { useEffect } from "react";
 import RegisterPage from "pages/RegisterPage/RegisterPage";
 import SigninPage from "pages/SigninPage/SigninPage";
+import RecipePage from "pages/RecipePage/RecipePage";
+import CategoriesPage from "pages/CategoriesPage";
 
 const baseUrl = process.env.REACT_APP_BACKEND_URL;
 
@@ -41,8 +43,9 @@ export const App = () => {
         <Route path="/add" />
         <Route path="/search" element={<SearchPage />} />
         <Route path="/favorite" element={<FavoritePage />} />
+        <Route path="/recipes/:recipeId" element={<RecipePage />} />
         <Route path="/shopping-list" element={<ShoppingListPage />} />
-        <Route path="/categories/:categoryName" />
+        <Route path="/categories/:categoryName" element={<CategoriesPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
