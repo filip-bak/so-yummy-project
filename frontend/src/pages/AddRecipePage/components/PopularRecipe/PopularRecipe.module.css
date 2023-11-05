@@ -52,3 +52,40 @@
   line-height: 1;
   width: 213px;
 }
+
+@media screen and (min-width: 768px) {
+  .container {
+    margin-top: 100px;
+    width: 704px;
+  }
+
+  .popular_recipes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-top: 40px;
+    width: 704px;
+  }
+
+  .popular_recipe:not(:last-child) {
+    margin-bottom: 0;
+  }
+
+  .popular_recipe {
+    height: 98px;
+    width: 336px;
+    padding: 0 13px 13px 0;
+  }
+
+  .image_container,
+  .image {
+    width: 102px;
+  }
+
+  .info_container {
+    width: 208px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+}

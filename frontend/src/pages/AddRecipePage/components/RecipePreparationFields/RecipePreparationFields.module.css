@@ -29,3 +29,20 @@
   color: #424242;
   font-size: 14px;
 }
+
+@media screen and (min-width: 768px) {
+  .text_area {
+    height: 224px;
+    padding: 22px;
+    margin-bottom: 32px;
+    margin-top: 32px;
+    width: 505px;
+  }
+
+  .text_area::placeholder {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+}

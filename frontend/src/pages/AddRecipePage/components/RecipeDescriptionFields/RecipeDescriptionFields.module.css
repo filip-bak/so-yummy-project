@@ -5,7 +5,7 @@
   margin-bottom: 44px;
 }
 
-.input_container {
+.photo_container {
   position: relative;
   display: block;
   width: 279px;
@@ -115,4 +115,45 @@
   top: 5px;
   position: absolute;
   pointer-events: none;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    display: flex;
+    justify-content: space-between;
+    width: 704px;
+    height: 268px;
+    margin-bottom: 100px;
+  }
+
+  .photo_container {
+    margin: 0;
+  }
+
+  .labels_container {
+    margin-top: 0;
+    width: 393px;
+  }
+
+  .recipe_input {
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
+
+  .label {
+    width: 393px;
+  }
+
+  .label {
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
+
+  .select_box {
+    font-size: 14px;
+    width: 94px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
 }

@@ -30,7 +30,7 @@ export const RecipeDescriptionFields = () => {
 
   return (
     <div className={css.container}>
-      <div className={css.input_container}>
+      <div className={css.photo_container}>
         <input
           className={css.photo_input}
           type="file"
