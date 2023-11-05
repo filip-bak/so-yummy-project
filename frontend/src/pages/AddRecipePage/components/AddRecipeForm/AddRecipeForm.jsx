@@ -1,5 +1,6 @@
 import { RecipeDescriptionFields } from "../RecipeDescriptionFields/RecipeDescriptionFields";
 import { RecipeIngredientsFields } from "../RecipeIngredientsFields/RecipeIngredientsFields";
+import { RecipePreparationFields } from "../RecipePreparationFields/RecipePreparationFields";
 import css from "./AddRecipeForm.module.css";
 import Button from "components/Button";
 
@@ -13,6 +14,7 @@ export const AddRecipeForm = () => {
       <div className={css.button}>
         <RecipeDescriptionFields />
         <RecipeIngredientsFields />
+        <RecipePreparationFields />
         <Button size="large" dark type="submit">
           Add
         </Button>

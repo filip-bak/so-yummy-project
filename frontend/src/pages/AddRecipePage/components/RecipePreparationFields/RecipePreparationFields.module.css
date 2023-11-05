@@ -1,0 +1,31 @@
+.title {
+  color: var(--subtitle-color);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.text_area {
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  height: 154px;
+  overflow: scroll;
+  overflow-x: hidden;
+  padding: 16px;
+  margin-bottom: 18px;
+  margin-top: 24px;
+  scrollbar-color: #969595;
+  width: 343px;
+}
+
+.text_area:focus,
+.text_area:hover {
+  outline: none;
+}
+
+.text_area::placeholder {
+  color: #424242;
+  font-size: 14px;
+}
