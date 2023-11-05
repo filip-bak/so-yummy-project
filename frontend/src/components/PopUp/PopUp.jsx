@@ -2,17 +2,21 @@ import styles from "./PopUp.module.css";
 import Button from "components/Button";
 import icons from "../../images/icons.svg";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { logout } from "redux/auth/actions";
 
 export function PopUp(props) {
   let navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const routeProfile = () => {
     let path = `#`;
     navigate(path);
   };
 
   const routLogOut = () => {
-    let path = `#`;
-    navigate(path);
+    dispatch(logout());
+    navigate("/welcome");
   };
   return props.trigger ? (
     <div className={styles.container}>
@@ -24,8 +28,8 @@ export function PopUp(props) {
       </Button>
       <Button
         onClick={routLogOut}
-        className={styles.logoutBtn}
-        size="small"
+        // className={styles.logoutBtn}
+        size="medium"
         unique="svg"
       >
         Log out
