@@ -6,14 +6,15 @@ import Switch from "components/Switch";
 import NavList from "../NavList";
 import MobileNavigation from "../MobileNavigation";
 import { useSelector } from "react-redux";
-import { selectIsRefreshing } from "redux/auth/selectors";
+import { selectIsRefreshing, selectUser } from "redux/auth/selectors";
 import Loader from "components/Loader";
 
 const Navigation = () => {
   const isProfileImg = false;
 
   const isRefreshing = useSelector(selectIsRefreshing);
-
+  const user = useSelector(selectUser);
+  console.log(user);
   const handleClick = () => {
     document
       ?.querySelector(`.${mobileStyles.container}`)
@@ -60,7 +61,7 @@ const Navigation = () => {
               </svg>
             </div>
           )}
-          <span className={styles.name}>Olena</span>
+          <span className={styles.name}>{user?.name}</span>
         </div>
         <Switch id="switch" className={styles["theme-switch"]} />
 
