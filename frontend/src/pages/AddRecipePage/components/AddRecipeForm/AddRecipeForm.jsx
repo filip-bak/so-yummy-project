@@ -10,6 +10,7 @@ export const AddRecipeForm = () => {
       className={css.form_container}
       name="addrecipe_form"
       autoComplete="on"
+      method="POST"
     >
       <div className={css.button}>
         <RecipeDescriptionFields />

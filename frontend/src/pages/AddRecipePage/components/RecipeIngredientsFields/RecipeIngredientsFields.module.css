@@ -168,6 +168,8 @@
   overflow-x: hidden;
   scrollbar-color: #969595;
   width: 194px;
+  z-index: 1;
+  position: relative;
 }
 
 .cross_button {
