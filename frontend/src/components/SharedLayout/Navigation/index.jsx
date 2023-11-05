@@ -5,6 +5,7 @@ import icon from "../../../images/icons.svg";
 import Switch from "components/Switch";
 import NavList from "../NavList";
 import MobileNavigation from "../MobileNavigation";
+import UserEditModal from "components/UserEditModal";
 
 const Navigation = () => {
   const isProfileImg = false;
@@ -58,6 +59,9 @@ const Navigation = () => {
             <use href={`${icon}#icon-burger-menu`}></use>
           </svg>
         </button>
+      </div>
+      <div>
+        <UserEditModal />
       </div>
 
       <MobileNavigation handleClose={handleClose} />
