@@ -2,13 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import styles from "./NavList.module.css";
-import icon from "../../../../images/icons.svg";
+import icon from "../../../images/icons.svg";
 
 const NavList = ({ mobile = false }) => {
   return (
     <ul className={`${styles.list}  ${mobile && styles.column}`}>
       <li>
-        <Link className={styles.link} to="/categories/Beaf">
+        <Link className={styles.link} to="/categories/Beef">
           Categories
         </Link>
       </li>

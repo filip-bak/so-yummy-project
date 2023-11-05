@@ -7,6 +7,10 @@ const path = require("path");
 const fs = require("fs/promises");
 const User = require("./users.model");
 const { sendUserVerificationMail } = require("./users-mailer.service");
+const { CloudinaryStorage } = require("multer-storage-cloudinary");
+const { cloudinary } = require("./users.cloudinary");
+
+const multer = require("multer");
 
 const signupHandler = async (req, res, next) => {
   try {
@@ -22,7 +26,7 @@ const signupHandler = async (req, res, next) => {
       user: {
         name: createdUser.name,
         email: createdUser.email,
-        // avatarURL: createdUser.avatarURL,
+        avatarURL: createdUser.avatarURL,
         verify: createdUser.verify,
       },
     });
@@ -40,7 +44,7 @@ const signupHandler = async (req, res, next) => {
 const loginHandler = async (req, res, next) => {
   try {
     const userEntity = await userDao.getUser({ email: req.body.email });
-    const userPasswordValidate = await userEntity.validatePassword(
+    const userPasswordValidate = await userEntity?.validatePassword(
       req.body.password
     );
 
@@ -82,8 +86,8 @@ const logoutHandler = async (req, res, next) => {
 
 const currentHandler = async (req, res, next) => {
   try {
-    const { name, email } = req.user;
-    return res.status(200).send({ user: { name, email } });
+    const { name, email, avatarURL } = req.user;
+    return res.status(200).send({ user: { name, email, avatarURL } });
   } catch (e) {
     return next(e);
   }
@@ -101,37 +105,13 @@ const updateUserNameHandler = async (req, res, next) => {
   }
 };
 
-// const updateUserAvatarHandler = async (req, res, next) => {
-//   try {
-//     const { email } = req.body;
-//     const avatarImage = await jimp.read(req.file.path);
-//     const resizedAvatar = avatarImage.resize(250, 250);
-//     await resizedAvatar.writeAsync(req.file.path);
-//     const fileName = `${email}_${v4()}.${mimetypes.extension(
-//       req.file.mimetype
-//     )}`;
-//     await fs.rename(
-//       req.file.path,
-//       path.join(__dirname, "..", "public/avatars", fileName)
-//     );
+const storage = multer.diskStorage({
+  filename: function (req, file, cb) {
+    cb(null, file.originalname);
+  },
+});
 
-//     const updatedUser = await User.findOneAndUpdate(
-//       { email },
-//       {
-//         avatarURL: `${req.protocol}://${req.headers.host}/avatars/${fileName}`,
-//       },
-//       { new: true }
-//     );
-//     if (updatedUser) {
-//       return res.status(200).send({ result: updatedUser.avatarURL });
-//     } else {
-//       return res.status(401).send({ message: "Not authorized" });
-//     }
-//   } catch (e) {
-//     console.error(e);
-//     next(e);
-//   }
-// };
+const upload = multer({ storage });
 
 const verifyHandler = async (req, res, next) => {
   try {
@@ -184,8 +164,8 @@ module.exports = {
   loginHandler,
   logoutHandler,
   currentHandler,
- updateUserNameHandler,
-  // updateUserAvatarHandler,
+  updateUserNameHandler,
   verifyHandler,
   resendVerificationHandler,
+  upload,
 };
