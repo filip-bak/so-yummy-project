@@ -44,7 +44,7 @@ const signupHandler = async (req, res, next) => {
 const loginHandler = async (req, res, next) => {
   try {
     const userEntity = await userDao.getUser({ email: req.body.email });
-    const userPasswordValidate = await userEntity.validatePassword(
+    const userPasswordValidate = await userEntity?.validatePassword(
       req.body.password
     );
 
