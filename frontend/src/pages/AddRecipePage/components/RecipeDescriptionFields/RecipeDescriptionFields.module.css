@@ -156,4 +156,22 @@
 }
 
 @media screen and (min-width: 1440px) {
+  .container {
+    width: 800px;
+    height: 344px;
+  }
+
+  .photo_container {
+    width: 357px;
+    height: 344px;
+    margin: 0p;
+  }
+
+  .recipe_input {
+    margin-bottom: 40px;
+  }
+
+  .label {
+    margin-bottom: 40px;
+  }
 }

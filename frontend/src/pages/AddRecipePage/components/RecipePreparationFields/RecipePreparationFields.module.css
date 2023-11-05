@@ -45,4 +45,7 @@
 }
 
 @media screen and (min-width: 1440px) {
+  .text_area {
+    height: 280px;
+  }
 }

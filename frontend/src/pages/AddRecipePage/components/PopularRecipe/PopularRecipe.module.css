@@ -88,4 +88,29 @@
 }
 
 @media screen and (min-width: 1440px) {
+  .container {
+    width: 319px;
+  }
+
+  .popular_recipes {
+    display: block;
+    width: 319px;
+  }
+
+  .popular_recipe {
+    width: 319px;
+  }
+
+  .popular_recipe:not(:last-child) {
+    margin-bottom: 24px;
+  }
+
+  .image_container,
+  .image {
+    width: 97px;
+  }
+
+  .info_container {
+    width: 198px;
+  }
 }

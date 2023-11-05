@@ -25,9 +25,13 @@ const AddRecipesPage = () => {
     <section className={css.section}>
       <div className={css.container}>
         <MainPageTitle title="Add recipe" />
-        <AddRecipeForm />
-        {showFollowUs && <FollowUs />}
-        <PopularRecipe />
+        <div className={css.page_container}>
+          <AddRecipeForm />
+          <div className={css.common_container}>
+            {showFollowUs && <FollowUs />}
+            <PopularRecipe />
+          </div>
+        </div>
       </div>
     </section>
   );

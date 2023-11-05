@@ -287,4 +287,21 @@
   .container {
     width: 609px;
   }
+
+  .ingredient_container {
+    margin-right: 32px;
+    width: 398px;
+  }
+
+  .ingredient {
+    width: 609px;
+  }
+
+  .amount_container {
+    width: 99px;
+  }
+
+  .cross_button {
+    margin-left: 60px;
+  }
 }

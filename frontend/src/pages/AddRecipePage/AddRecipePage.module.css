@@ -18,5 +18,15 @@
   .container {
     width: 1240px;
   }
-}
 
+  .page_container {
+    width: 1240px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 121px;
+  }
+
+  .common_container {
+    width: 319px;
+  }
+}

@@ -9,5 +9,7 @@
 }
 
 @media screen and (min-width: 1440px) {
-  /* Tak samo, jak na tablet */
+  .form_container {
+    width: 800px;
+  }
 }
