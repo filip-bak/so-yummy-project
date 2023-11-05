@@ -18,7 +18,6 @@ export const SearchResults = () => {
   const prevResultsPerPage = useRef(6);
 
   useEffect(() => {
-    dispatch(setResultsPerPage(12));
     const updateDimension = () => {
       const updatedResultsPerPage = window.innerWidth < 1440 ? 6 : 12;
 
