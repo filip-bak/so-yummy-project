@@ -6,12 +6,13 @@ import { useSearchParams } from "react-router-dom";
 export const SearchBar = ({ children }) => {
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const handleSubmit = async evt => {
+  const handleSubmit = evt => {
+    evt.preventDefault();
     setSearchParams(params => {
-      params.set("query", evt.query.value);
+      params.set("query", evt.target.query.value);
+      params.set("queryType", evt.target.queryType.value);
       return params;
     });
-    evt.preventDefault();
   };
 
   return (

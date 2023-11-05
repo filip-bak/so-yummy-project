@@ -1,4 +1,3 @@
-import axios from "axios";
 import storage from "redux-persist/lib/storage";
 import persistStore from "redux-persist/es/persistStore";
 import persistReducer from "redux-persist/es/persistReducer";
@@ -17,8 +16,7 @@ import { favoriteReducer } from "./favorite/slice";
 import { authReducer } from "./auth/slice";
 import { shoppingListReducer } from "./shoppingList/slice";
 import { themeReducer } from "./theme/slice";
-
-axios.defaults.baseURL = process.env.REACT_APP_BACKEND_URL;
+import { recipeReducer } from "./recipe/slice";
 
 const persistConfig = {
   key: "auth",
@@ -35,6 +33,7 @@ export const store = configureStore({
   reducer: {
     auth: persistReducer(persistConfig, authReducer),
     theme: persistReducer(persistThemeConfig, themeReducer),
+    recipe: recipeReducer,
     recipes: recipesReducer,
     myRecipes: myRecipesReducer,
     favorite: favoriteReducer,
