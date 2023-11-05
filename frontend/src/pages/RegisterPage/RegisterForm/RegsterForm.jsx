@@ -1,4 +1,4 @@
-import css from "../../components/RegisterForm/RegisterForm.module.css";
+import css from "./RegisterForm.module.css";
 import { ErrorMessage, Field, Formik } from "formik";
 import { Link } from "react-router-dom";
 import Button from "components/Button";
@@ -47,7 +47,6 @@ export const RegisterForm = () => {
 
   return (
     <div className={css.wrapper}>
-      <div className={css.background}></div>
       <Formik
         initialValues={initialValue}
         onSubmit={handleSubmit}
@@ -57,6 +56,8 @@ export const RegisterForm = () => {
       >
         {({ handleSubmit, errors, touched }) => (
           <form autoComplete="off" noValidate onSubmit={handleSubmit}>
+            <div className={css.background}></div>
+            <div className={css["background-t"]}></div>
             <div className={css.title}>Registration</div>
             <div className={css.fields}>
               <label className={css.label} htmlFor="register-name">

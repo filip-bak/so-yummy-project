@@ -5,7 +5,7 @@
   line-height: 28px;
   letter-spacing: -0.02em;
   font-feature-settings: "liga" off;
-  margin-bottom: 40px;
+  margin-bottom: 18px;
   color: var(--main-color-light);
 }
 .fields {
@@ -25,7 +25,7 @@
   font-size: 14px;
   line-height: 1.5;
   letter-spacing: -0.02em;
-  color: var(--main-color-dark);
+  color: rgb(42, 44, 54);
   background-color: transparent;
   color: var(--main-color-light);
 }
@@ -33,7 +33,7 @@
   color: var(--main-color-light);
   font-family: "Poppins", sans-serif;
   font-weight: 400;
-  font-size: var(-fs-md);
+  font-size: var(--fs-md);
   line-height: auto;
   letter-spacing: -0.02em;
   opacity: 0.8;
@@ -41,37 +41,43 @@
 
 .field:hover,
 .field:focus {
-  border-color: var(--main-color-light);
+  border-color: var(--background-color-lighter);
   background-color: transparent;
-
-  + svg {
-    color: var(--text-color-lighter);
-  }
+}
+.field:hover + svg,
+.field:focus + svg {
+  color: var(--main-color-light);
+}
+.field-error {
+  border: 1px solid var(--error-invalid);
+}
+.error {
+  top: 0;
 }
 
-.registerLink {
+.signInLink {
   font-size: var(--fs-md);
   line-height: auto;
   text-decoration-line: underline;
   color: var(--text-color-lighter);
+  transform: translateX(-50%);
   transition: color 250ms ease;
   position: relative;
   top: 58px;
-  left: 100px;
+  left: 120px;
 }
-
 .background {
   width: 285px;
   height: 250px;
-  background-image: url("../../images/Order-food-pana.svg");
+  background-image: url("/src/images/Order-food-pana.svg");
   background-repeat: no-repeat;
   background-position: left bottom;
   background-size: 100% 250px;
   position: absolute;
   top: -220px;
   left: 32px;
+  z-index: -1;
 }
-
 @media screen and (min-width: 768px) {
   .background {
     width: 409px;
@@ -79,18 +85,18 @@
     background-size: 100% 359px;
   }
 
-  .registerLink {
+  .signInLink {
     font-size: var(--fs-base);
     position: relative;
-    top: 120px;
-    left: 150px;
+    top: 75px;
+    left: 160px;
   }
-  .registerLink:hover {
+  .signInLink:hover {
     color: var(--accent-color-darker);
   }
 
   .title {
-    font-size: var(--fs-2xl);
+    font-size: 28px;
     line-height: 30px;
     margin-bottom: 32px;
     letter-spacing: -0.02em;
@@ -103,15 +109,18 @@
     font-size: var(--fs-lg);
     letter-spacing: -0.02em;
   }
+  .fields {
+    gap: 24px;
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1439px) {
   .background {
-    top: -345px;
+    top: -340px;
     left: 50px;
   }
   .fields {
-    gap: 24px;
+    margin-bottom: 50px;
   }
 }
 
@@ -120,11 +129,11 @@
     width: 532px;
     height: 468px;
     background-size: 100% 468px;
-    background-image: url("../../images/Order-panaDesk.svg");
+    background-image: url("/src/images/Order-food-pana.svg");
     display: flex;
     position: absolute;
-    left: -400px;
-    top: 20px;
+    left: -647px;
+    top: 0%;
   }
 
   .fields {

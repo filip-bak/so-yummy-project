@@ -1,11 +1,13 @@
 import { Outlet } from "react-router-dom";
+import css from "./AuthSharedLayout.module.css";
 
 const AuthSharedLayout = () => {
   return (
-    <div>
-      {/* <p>background</p> */}
-      <Outlet />
-    </div>
+    <section className={css.section}>
+      <div className={css.container}>
+        <Outlet />
+      </div>
+    </section>
   );
 };
 
