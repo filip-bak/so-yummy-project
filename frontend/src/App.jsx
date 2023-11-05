@@ -18,8 +18,6 @@ import { Route, Routes } from "react-router-dom";
 import { refreshUser } from "redux/auth/actions";
 import { selectTheme } from "redux/theme/selectors";
 // import { selectIsRefreshing } from "redux/auth/selectors";
-import { useEffect } from "react";
-import CategoriesPage from "pages/CategoriesPage";
 import AddRecipePage from "pages/AddRecipePage/AddRecipePage";
 
 const baseUrl = process.env.REACT_APP_BACKEND_URL;

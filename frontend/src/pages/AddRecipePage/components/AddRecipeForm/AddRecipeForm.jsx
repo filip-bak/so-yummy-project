@@ -1,4 +1,5 @@
 import { RecipeDescriptionFields } from "../RecipeDescriptionFields/RecipeDescriptionFields";
+import { RecipeIngredientsFields } from "../RecipeIngredientsFields/RecipeIngredientsFields";
 import css from "./AddRecipeForm.module.css";
 import Button from "components/Button";
 
@@ -7,10 +8,11 @@ export const AddRecipeForm = () => {
     <form
       className={css.form_container}
       name="addrecipe_form"
-      autocomplete="on"
+      autoComplete="on"
     >
       <div className={css.button}>
         <RecipeDescriptionFields />
+        <RecipeIngredientsFields />
         <Button size="large" dark type="submit">
           Add
         </Button>
