@@ -1,13 +1,15 @@
 const { User } = require("../../modules/users/users.model");
 const { Recipe } = require("../recipes/recipes.model");
 
+
 const addFavoriteHandler = async (req, res) => {
   // Extracting user and recipe id from the request
   const user = req.user; // Assuming that req.user contains information about the logged-in user
   const { id } = req.params; // Assuming that id is the unique identifier of the recipe
 
+
   // Find the recipe with the provided id
-  const recipe = await Recipe.findOne({ id });
+  const recipe = await Recipe.findOne({ _id:id });
 
   // If the recipe with the provided id is not found, throw an error
   if (!recipe) {
@@ -37,7 +39,7 @@ const deleteFavoriteHandler = async (req, res) => {
   const { id } = req.params; // Get the ID of the recipe to be removed from favorites
 
   // Find the recipe with the specified ID
-  const recipe = await Recipe.findOne({ id });
+  const recipe = await Recipe.findOne({ _id:id });
 
   // If the recipe with the specified ID is not found, throw a custom error
   if (!recipe) {
