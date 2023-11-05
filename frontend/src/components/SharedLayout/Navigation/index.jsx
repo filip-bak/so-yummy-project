@@ -8,6 +8,8 @@ import MobileNavigation from "../MobileNavigation";
 import { useSelector } from "react-redux";
 import { selectIsRefreshing, selectUser } from "redux/auth/selectors";
 import Loader from "components/Loader";
+import { PopUp } from "components/PopUp/PopUp";
+import { useState } from "react";
 
 const Navigation = () => {
   const isProfileImg = false;
@@ -38,7 +40,10 @@ const Navigation = () => {
     // document.body.style.overflow = "";
     // document.body.style.paddingRight = "";
   };
-
+  const [btnPopUp, setBtnPopUp] = useState(false);
+  const popUpOpen = () => {
+    setBtnPopUp(true);
+  };
   return (
     <nav className={styles.container}>
       <Logo className={styles.logo} />
@@ -51,7 +56,7 @@ const Navigation = () => {
           height={"100%"}
           visible={isRefreshing}
         />
-        <div className={styles.profile}>
+        <div onClick={popUpOpen} className={styles.profile}>
           {isProfileImg ? (
             <img className={styles.img} src="" alt="Profile" />
           ) : (
@@ -63,6 +68,7 @@ const Navigation = () => {
           )}
           <span className={styles.name}>{user?.name}</span>
         </div>
+
         <Switch id="switch" className={styles["theme-switch"]} />
 
         <button className={styles["btn-mobile-nav"]} onClick={handleClick}>
@@ -72,6 +78,7 @@ const Navigation = () => {
         </button>
       </div>
       <MobileNavigation handleClose={handleClose} />
+      <PopUp trigger={btnPopUp} />
     </nav>
   );
 };
