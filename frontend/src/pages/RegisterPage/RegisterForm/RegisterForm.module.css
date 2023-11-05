@@ -51,20 +51,23 @@
 .field-error {
   border: 1px solid var(--error-invalid);
 }
+/* .field-success {
+  border: 1px solid var(--error-invalid);
+} */
 .error {
   top: 0;
 }
 
 .signInLink {
   font-size: var(--fs-md);
-  line-height: auto;
   text-decoration-line: underline;
+  display: inline-block;
   color: var(--text-color-lighter);
   transform: translateX(-50%);
   transition: color 250ms ease;
   position: relative;
   top: 58px;
-  left: 120px;
+  left: 50%;
 }
 .background {
   width: 285px;
@@ -89,7 +92,6 @@
     font-size: var(--fs-base);
     position: relative;
     top: 75px;
-    left: 160px;
   }
   .signInLink:hover {
     color: var(--accent-color-darker);
@@ -133,11 +135,26 @@
     display: flex;
     position: absolute;
     left: -647px;
-    top: 0%;
+    top: 4%;
   }
 
   .fields {
     width: 400px;
     margin-bottom: 44px;
+  }
+}
+
+.loader {
+  position: absolute;
+  top: 20px;
+  right: 50px;
+  width: 50px;
+  height: 50px;
+}
+@media screen and (min-width: 1440px) {
+  .loader {
+    top: 20px;
+    width: 70px;
+    height: 70px;
   }
 }

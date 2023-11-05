@@ -48,16 +48,20 @@
 .field:focus + svg {
   color: var(--text-color-lighter);
 }
+.field-error {
+  border: 1px solid var(--error-invalid);
+}
 
 .registerLink {
   font-size: var(--fs-md);
-  line-height: auto;
   text-decoration-line: underline;
+  display: inline-block;
   color: var(--text-color-lighter);
   transition: color 250ms ease;
   position: relative;
+  transform: translateX(-50%);
   top: 58px;
-  left: 100px;
+  left: 50%;
 }
 
 @media screen and (min-width: 768px) {
@@ -65,7 +69,6 @@
     font-size: var(--fs-base);
     position: relative;
     top: 75px;
-    left: 150px;
   }
   .registerLink:hover {
     color: var(--accent-color-darker);
@@ -135,6 +138,21 @@
     display: flex;
     position: absolute;
     left: -647px;
-    top: -11.35%;
+    top: -5%;
+  }
+}
+
+.loader {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  width: 50px;
+  height: 50px;
+}
+@media screen and (min-width: 1440px) {
+  .loader {
+    top: 20px;
+    width: 70px;
+    height: 70px;
   }
 }

@@ -29,12 +29,12 @@
 .container:focus,
 .container:hover {
   --_background-color: var(--button-bg-hover);
-  border: var(--button-border);
+  border: var(--_border);
 }
 .container.dark:focus,
 .container.dark:hover {
   --_background-color: var(--button-dark-bg-hover);
-  border: var(--button-border);
+  border: var(--_border);
 }
 .container:disabled {
   filter: opacity(80%);
