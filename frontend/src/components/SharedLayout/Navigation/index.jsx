@@ -5,9 +5,14 @@ import icon from "../../../images/icons.svg";
 import Switch from "components/Switch";
 import NavList from "../NavList";
 import MobileNavigation from "../MobileNavigation";
+import { useSelector } from "react-redux";
+import { selectIsRefreshing } from "redux/auth/selectors";
+import Loader from "components/Loader";
 
 const Navigation = () => {
   const isProfileImg = false;
+
+  const isRefreshing = useSelector(selectIsRefreshing);
 
   const handleClick = () => {
     document
@@ -39,6 +44,12 @@ const Navigation = () => {
       <NavList />
 
       <div className={styles.box}>
+        <Loader
+          refresh={true}
+          width={"100%"}
+          height={"100%"}
+          visible={isRefreshing}
+        />
         <div className={styles.profile}>
           {isProfileImg ? (
             <img className={styles.img} src="" alt="Profile" />
@@ -59,7 +70,6 @@ const Navigation = () => {
           </svg>
         </button>
       </div>
-
       <MobileNavigation handleClose={handleClose} />
     </nav>
   );

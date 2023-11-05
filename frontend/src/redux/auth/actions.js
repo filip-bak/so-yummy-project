@@ -37,6 +37,9 @@ export const login = createAsyncThunk(
 
       return res.data;
     } catch (err) {
+      if (err.response.data.message === '"email" must be a valid email') {
+        return thunkApi.rejectWithValue("Invalid email");
+      }
       return thunkApi.rejectWithValue({
         message: err.response.data.message,
       });
@@ -80,8 +83,14 @@ export const refreshUser = createAsyncThunk(
 
     try {
       setToken(token);
-      const res = await axios.get("/users/current");
-      return res.data;
+      const { data } = await axios.get("/users/current");
+
+      const info = {
+        user: { name: data.user.name, email: data.user.email },
+        avatar: data.user.avatarURL,
+      };
+
+      return info;
     } catch (err) {
       return thunkApi.rejectWithValue(err.message);
     }

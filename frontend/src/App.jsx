@@ -1,32 +1,50 @@
 import axios from "axios";
-import { Route, Routes } from "react-router-dom";
-import SharedLayout from "components/SharedLayout";
-import MainPage from "pages/MainPage";
-import WelcomePage from "pages/WelcomePage";
 import AuthSharedLayout from "components/AuthSharedLayout";
-import NotFoundPage from "pages/NotFoundPage";
-import SearchPage from "pages/SearchPage/SearchPage";
-import MyRecipesPage from "pages/MyRecipesPage/MyRecipesPage";
-import FavoritePage from "pages/FavoritePage/FavoritePage";
-import ShoppingListPage from "pages/ShoppingListPage/ShoppingListPage";
-import { useSelector } from "react-redux";
-import { selectTheme } from "redux/theme/selectors";
-import { useEffect } from "react";
-import RegisterPage from "pages/RegisterPage/RegisterPage";
-import SigninPage from "pages/SigninPage/SigninPage";
-import RecipePage from "pages/RecipePage/RecipePage";
+import SharedLayout from "components/SharedLayout";
 import CategoriesPage from "pages/CategoriesPage";
+import FavoritePage from "pages/FavoritePage/FavoritePage";
+import MainPage from "pages/MainPage";
+import MyRecipesPage from "pages/MyRecipesPage/MyRecipesPage";
+import NotFoundPage from "pages/NotFoundPage";
+import RecipePage from "pages/RecipePage/RecipePage";
+import RegisterPage from "pages/RegisterPage/RegisterPage";
+import SearchPage from "pages/SearchPage/SearchPage";
+import ShoppingListPage from "pages/ShoppingListPage/ShoppingListPage";
+import SigninPage from "pages/SigninPage/SigninPage";
+import WelcomePage from "pages/WelcomePage";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Route, Routes } from "react-router-dom";
+import { refreshUser } from "redux/auth/actions";
+import { selectTheme } from "redux/theme/selectors";
+// import { selectIsRefreshing } from "redux/auth/selectors";
 
 const baseUrl = process.env.REACT_APP_BACKEND_URL;
 
 axios.defaults.baseURL = baseUrl;
 
 export const App = () => {
+  const dispatch = useDispatch();
   const theme = useSelector(selectTheme);
+  // const isRefreshing = useSelector(selectIsRefreshing);
+
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
 
   useEffect(() => {
     document.querySelector("body").setAttribute("data-theme", theme);
   }, [theme]);
+
+  // if (isRefreshing)
+  //   return (
+  //     <Loader
+  //       wrapperClass={"main-loader"}
+  //       height={200}
+  //       width={200}
+  //       visible={true}
+  //     />
+  //   );
 
   return (
     <Routes>
