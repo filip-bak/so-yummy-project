@@ -41,8 +41,9 @@ const Navigation = () => {
     // document.body.style.paddingRight = "";
   };
   const [btnPopUp, setBtnPopUp] = useState(false);
-  const popUpOpen = () => {
-    setBtnPopUp(true);
+
+  const togglePopUp = () => {
+    setBtnPopUp(!btnPopUp);
   };
   return (
     <nav className={styles.container}>
@@ -56,7 +57,7 @@ const Navigation = () => {
           height={"100%"}
           visible={isRefreshing}
         />
-        <div onClick={popUpOpen} className={styles.profile}>
+        <div onClick={togglePopUp} className={styles.profile}>
           {isProfileImg ? (
             <img className={styles.img} src="" alt="Profile" />
           ) : (
