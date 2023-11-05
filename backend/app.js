@@ -11,7 +11,7 @@ const { popularRecipesRouter } = require("./routes/popular/popular.router");
 const {
   ingredientsRouter,
 } = require("./routes/ingredients/ingredients.router");
-const { shoppingRouter } = require('./routes/shopping/shopping.router');
+const { shoppingRouter } = require("./routes/shopping/shopping.router");
 const app = express();
 
 const formatsLogger = app.get("env") === "development" ? "dev" : "short";
