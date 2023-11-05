@@ -19,7 +19,7 @@ const AddRecipesPage = () => {
     return () => {
       window.removeEventListener("resize", updateDimension);
     };
-  }, [window.innerWidth]);
+  }, []);
 
   return (
     <section className={css.section}>

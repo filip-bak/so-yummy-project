@@ -4,11 +4,11 @@ import { useDispatch } from "react-redux";
 import { fetchRecipeById } from "redux/recipe/actions";
 import { addIngredientToShoppingList } from "redux/shoppingList/action";
 
-export const Ingredient = ({ recipeId, image, name, measure }) => {
+export const Ingredient = ({ recipeId, itemId, image, name, measure }) => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
-    dispatch(addIngredientToShoppingList({ name, image, measure }));
+    dispatch(addIngredientToShoppingList({ recipeId, ingredientId: itemId }));
     dispatch(fetchRecipeById(recipeId));
   };
 
