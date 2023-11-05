@@ -3,7 +3,7 @@
   --_height: 53px;
   --_color: var(--button-color);
   --_font-size: var(--fs-md);
-  --_border: 0;
+  --_border: var(--button-border);
   --_border-radius: 24px 44px;
   --_background-color: var(--button-bg);
   --_gap: unset;
