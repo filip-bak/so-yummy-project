@@ -19,7 +19,7 @@ const MobileNavigation = ({ handleClose }) => {
         </svg>
       </button>
 
-      <Switch className={styles.switch} />
+      <Switch id="switch-mobile" className={styles.switch} />
     </div>
   );
 };

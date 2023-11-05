@@ -11,7 +11,7 @@ import {
 import { setResultsPerPage } from "redux/recipes/slice";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useNavigate, useSearchParams } from "react-router-dom";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { Box, Tab, Tabs, ThemeProvider, createTheme } from "@mui/material";
 import { CardMeal } from "../CardMeal/CardMeal";
 import { Pagination } from "components/Pagination/Pagination";
@@ -39,10 +39,14 @@ export const CategoryRecipes = () => {
   const navigate = useNavigate();
   const [flag, setFlag] = useState(false);
   const currentPage = searchParams.get("currentPage") ?? 1;
+  const isValidCategory = categoryList?.includes(categoryName);
 
   useEffect(() => {
-    dispatch(fetchRecipesCategoryList());
-  }, [dispatch]);
+    if (!isValidCategory) {
+      navigate(`/categories/Beef`);
+      dispatch(fetchRecipesCategoryList());
+    }
+  }, [dispatch, isValidCategory, navigate]);
 
   useEffect(() => {
     dispatch(
@@ -142,7 +146,7 @@ export const CategoryRecipes = () => {
                   fontStyle: "normal",
                 }}
                 key={categ}
-                value={categ.toLowerCase()}
+                value={categ}
                 label={categ}
               />
             ))}
