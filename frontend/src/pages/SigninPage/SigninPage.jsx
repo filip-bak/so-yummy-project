@@ -1,14 +1,11 @@
 import React from "react";
-import css from "./SigninPage.module.css";
-import { SigninForm } from "components/SigninForm/SigninForm";
+import { SigninForm } from "./SigninForm/SigninForm";
 
 const SigninPage = () => {
   return (
-    <section className={css.section}>
-      <div className={css.container}>
-        <SigninForm />
-      </div>
-    </section>
+    <>
+      <SigninForm />
+    </>
   );
 };
 

@@ -44,7 +44,7 @@ const signupHandler = async (req, res, next) => {
 const loginHandler = async (req, res, next) => {
   try {
     const userEntity = await userDao.getUser({ email: req.body.email });
-    const userPasswordValidate = await userEntity.validatePassword(
+    const userPasswordValidate = await userEntity?.validatePassword(
       req.body.password
     );
 
@@ -86,8 +86,8 @@ const logoutHandler = async (req, res, next) => {
 
 const currentHandler = async (req, res, next) => {
   try {
-    const { name, email } = req.user;
-    return res.status(200).send({ user: { name, email } });
+    const { name, email, avatarURL } = req.user;
+    return res.status(200).send({ user: { name, email, avatarURL } });
   } catch (e) {
     return next(e);
   }

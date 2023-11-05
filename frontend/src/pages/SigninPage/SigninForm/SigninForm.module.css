@@ -43,47 +43,32 @@
 .field:focus {
   border-color: var(--main-color-light);
   background-color: transparent;
-
-  + svg {
-    color: var(--text-color-lighter);
-  }
+}
+.field:hover + svg,
+.field:focus + svg {
+  color: var(--text-color-lighter);
+}
+.field-error {
+  border: 1px solid var(--error-invalid);
 }
 
 .registerLink {
   font-size: var(--fs-md);
-  line-height: auto;
   text-decoration-line: underline;
+  display: inline-block;
   color: var(--text-color-lighter);
   transition: color 250ms ease;
   position: relative;
+  transform: translateX(-50%);
   top: 58px;
-  left: 100px;
-}
-
-.background {
-  width: 285px;
-  height: 250px;
-  background-image: url("../../images/Order-food-pana.svg");
-  background-repeat: no-repeat;
-  background-position: left bottom;
-  background-size: 100% 250px;
-  position: absolute;
-  top: -220px;
-  left: 32px;
+  left: 50%;
 }
 
 @media screen and (min-width: 768px) {
-  .background {
-    width: 409px;
-    height: 359px;
-    background-size: 100% 359px;
-  }
-
   .registerLink {
     font-size: var(--fs-base);
     position: relative;
-    top: 120px;
-    left: 150px;
+    top: 75px;
   }
   .registerLink:hover {
     color: var(--accent-color-darker);
@@ -106,29 +91,68 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 1439px) {
-  .background {
-    top: -345px;
-    left: 50px;
-  }
   .fields {
     gap: 24px;
   }
 }
 
 @media screen and (min-width: 1440px) {
+  .fields {
+    width: 400px;
+    margin-bottom: 44px;
+  }
+}
+
+.background {
+  width: 285px;
+  height: 250px;
+  background-image: url("/src/images/Order-food-pana.svg");
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 100% 250px;
+  position: absolute;
+  top: -220px;
+  left: 32px;
+  z-index: -1;
+}
+
+@media screen and (min-width: 768px) {
+  .background {
+    width: 409px;
+    height: 359px;
+    background-size: 100% 359px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .background {
+    top: -340px;
+    left: 50px;
+  }
+}
+@media screen and (min-width: 1440px) {
   .background {
     width: 532px;
     height: 468px;
     background-size: 100% 468px;
-    background-image: url("../../images/Order-panaDesk.svg");
+    background-image: url("/src/images/Order-food-pana.svg");
     display: flex;
     position: absolute;
-    left: -400px;
-    top: 20px;
+    left: -647px;
+    top: -5%;
   }
+}
 
-  .fields {
-    width: 400px;
-    margin-bottom: 44px;
+.loader {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  width: 50px;
+  height: 50px;
+}
+@media screen and (min-width: 1440px) {
+  .loader {
+    top: 20px;
+    width: 70px;
+    height: 70px;
   }
 }

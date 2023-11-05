@@ -103,6 +103,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.main-loader {
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* ERRORS */
 .error {
   margin-top: 8px;
   font-size: 12px;

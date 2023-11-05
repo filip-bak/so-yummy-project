@@ -51,25 +51,28 @@
 .field-error {
   border: 1px solid var(--error-invalid);
 }
+/* .field-success {
+  border: 1px solid var(--error-invalid);
+} */
 .error {
   top: 0;
 }
 
 .signInLink {
   font-size: var(--fs-md);
-  line-height: auto;
   text-decoration-line: underline;
+  display: inline-block;
   color: var(--text-color-lighter);
   transform: translateX(-50%);
   transition: color 250ms ease;
   position: relative;
   top: 58px;
-  left: 120px;
+  left: 50%;
 }
 .background {
   width: 285px;
   height: 250px;
-  background-image: url("../../images/Order-food-pana.svg");
+  background-image: url("/src/images/Order-food-pana.svg");
   background-repeat: no-repeat;
   background-position: left bottom;
   background-size: 100% 250px;
@@ -88,8 +91,7 @@
   .signInLink {
     font-size: var(--fs-base);
     position: relative;
-    top: 70px;
-    left: 160px;
+    top: 75px;
   }
   .signInLink:hover {
     color: var(--accent-color-darker);
@@ -129,15 +131,30 @@
     width: 532px;
     height: 468px;
     background-size: 100% 468px;
-    background-image: url("../../images/Order-panaDesk.svg");
+    background-image: url("/src/images/Order-food-pana.svg");
     display: flex;
     position: absolute;
     left: -647px;
-    top: 20px;
+    top: 4%;
   }
 
   .fields {
     width: 400px;
     margin-bottom: 44px;
+  }
+}
+
+.loader {
+  position: absolute;
+  top: 20px;
+  right: 50px;
+  width: 50px;
+  height: 50px;
+}
+@media screen and (min-width: 1440px) {
+  .loader {
+    top: 20px;
+    width: 70px;
+    height: 70px;
   }
 }
