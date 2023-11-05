@@ -12,6 +12,7 @@ import { PopUp } from "components/PopUp/PopUp";
 import { useState } from "react";
 
 const Navigation = () => {
+  const [btnPopUp, setBtnPopUp] = useState(false);
   const isProfileImg = false;
 
   const isRefreshing = useSelector(selectIsRefreshing);
@@ -40,9 +41,8 @@ const Navigation = () => {
     // document.body.style.overflow = "";
     // document.body.style.paddingRight = "";
   };
-  const [btnPopUp, setBtnPopUp] = useState(false);
-  const popUpOpen = () => {
-    setBtnPopUp(true);
+  const popUpToggle = () => {
+    setBtnPopUp(prev => !prev);
   };
   return (
     <nav className={styles.container}>
@@ -56,17 +56,20 @@ const Navigation = () => {
           height={"100%"}
           visible={isRefreshing}
         />
-        <div onClick={popUpOpen} className={styles.profile}>
-          {isProfileImg ? (
-            <img className={styles.img} src="" alt="Profile" />
-          ) : (
-            <div className={styles.img}>
-              <svg className={styles["user-icon"]}>
-                <use href={`${icon}#icon-user`}></use>
-              </svg>
-            </div>
-          )}
-          <span className={styles.name}>{user?.name}</span>
+        <div>
+          <div onClick={popUpToggle} className={styles.profile}>
+            {isProfileImg ? (
+              <img className={styles.img} src="" alt="Profile" />
+            ) : (
+              <div className={styles.img}>
+                <svg className={styles["user-icon"]}>
+                  <use href={`${icon}#icon-user`}></use>
+                </svg>
+              </div>
+            )}
+            {user?.name ? <span className={styles.name}>{user.name}</span> : ""}
+          </div>
+          <PopUp trigger={btnPopUp} />
         </div>
 
         <Switch id="switch" className={styles["theme-switch"]} />
@@ -78,7 +81,6 @@ const Navigation = () => {
         </button>
       </div>
       <MobileNavigation handleClose={handleClose} />
-      <PopUp trigger={btnPopUp} />
     </nav>
   );
 };
