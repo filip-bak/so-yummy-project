@@ -14,7 +14,7 @@ const Navigation = () => {
 
   const isRefreshing = useSelector(selectIsRefreshing);
   const user = useSelector(selectUser);
-  console.log(user);
+
   const handleClick = () => {
     document
       ?.querySelector(`.${mobileStyles.container}`)
