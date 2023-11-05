@@ -25,6 +25,11 @@
     display: none;
   }
 }
+
+.logo-box {
+  width: 44px;
+  height: 44px;
+}
 .logo {
   align-self: center;
   grid-area: logo;

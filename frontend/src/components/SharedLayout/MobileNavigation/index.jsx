@@ -7,8 +7,9 @@ import icons from "../../../images/icons.svg";
 const MobileNavigation = ({ handleClose }) => {
   return (
     <div className={styles.container}>
-      <Logo className={styles.logo} />
-
+      <div className={styles["logo-box"]}>
+        <Logo className={styles.logo} />
+      </div>
       <div className={styles.modal}>
         <NavList mobile={true} />
       </div>

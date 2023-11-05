@@ -8,7 +8,7 @@ const Logo = ({ reverse = false, className }) => {
   const logoClass = reverse ? styles["logo-reverse"] : styles.logo;
 
   return (
-    <Link to="/">
+    <Link className={styles.container} to="/">
       <svg className={`${logoClass} ${className}`}>
         <use href={`${icon}#icon-logo`}></use>
       </svg>
