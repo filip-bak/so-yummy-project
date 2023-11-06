@@ -65,9 +65,7 @@ export const fetchRecipesCategoryList = createAsyncThunk(
   "recipes/fetchRecipesCategoryList",
   async (_, thunkAPI) => {
     try {
-      console.log("Rozpoczęcie żądania API");
       const res = await axios.get(`/recipes/category-list`);
-      console.log("Odpowiedź z API:", res.data);
       return res.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
