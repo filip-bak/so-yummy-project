@@ -1,12 +1,15 @@
 import Button from "components/Button";
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { updateUser, updateUserAvatar } from "redux/auth/actions";
 import icon from "../../images/icons.svg";
 import css from "./UserEditModal.module.css";
+import { selectAvatarUrl } from "redux/auth/selectors";
 
 const UserEditModal = ({ onClose }) => {
   const disptach = useDispatch();
+
+  const avatarURL = useSelector(selectAvatarUrl);
 
   useEffect(() => {
     const handleKeyDown = e => {
@@ -32,10 +35,6 @@ const UserEditModal = ({ onClose }) => {
     }
   };
 
-  // const handleNameChange = (e) => {
-  //   disptach(updateUser());
-  // };
-
   return (
     <>
       <div className={css.Overlay}>
@@ -52,11 +51,15 @@ const UserEditModal = ({ onClose }) => {
               </svg>
             </button>
 
-            <div className={css.UserAvatar}>
-              <svg className={css.PictureIcon}>
-                <use href={`${icon}#icon-user`}></use>
-              </svg>
-            </div>
+            {avatarURL ? (
+              <img className={css.UserAvatar} src={avatarURL} alt="Profile" />
+            ) : (
+              <div className={css.UserAvatar}>
+                <svg className={css.PictureIcon}>
+                  <use href={`${icon}#icon-user`}></use>
+                </svg>
+              </div>
+            )}
             <form className={css.ModalForm} onSubmit={handleSubmit}>
               <label className={css.ModalForm}>
                 <input
@@ -79,12 +82,7 @@ const UserEditModal = ({ onClose }) => {
                   <use href={`${icon}#icon-input-user`}></use>
                 </svg>
               </label>
-              <Button
-                variant="secondary"
-                size="large"
-                type="submit"
-                // onClick={handleNameChange}
-              >
+              <Button variant="secondary" size="large" type="submit">
                 Save changes
               </Button>
             </form>
