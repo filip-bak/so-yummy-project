@@ -28,7 +28,7 @@
   height: 172px;
 }
 .containerMain {
-  background-color: var(--main-color-dark);
+  background-color: var(--footer-bg);
   width: 100%;
   margin-bottom: 28px;
   padding-bottom: 18px;

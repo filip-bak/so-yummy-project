@@ -1,5 +1,5 @@
 import css from "./SearchResults.module.css";
-import { SearchResultItem } from "pages/SearchPage/components/SearchResultItem/SearchResultItem";
+import { RecipeItem } from "components/RecipeItem/RecipeItem";
 import { Pagination } from "components/Pagination/Pagination";
 import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -39,12 +39,7 @@ export const SearchResults = () => {
     <div className={css.container}>
       <ul className={css.results}>
         {items.map(({ image, id, title }) => (
-          <SearchResultItem
-            image={image}
-            key={id}
-            title={title}
-            recipeId={id}
-          />
+          <RecipeItem image={image} key={id} title={title} recipeId={id} />
         ))}
       </ul>
       {totalCount > resultsPerPage && (

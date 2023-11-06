@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router-dom";
-import css from "./SearchResultItem.module.css";
+import css from "./RecipeItem.module.css";
 
-export const SearchResultItem = ({ recipeId, image, title }) => {
+export const RecipeItem = ({ recipeId, image, title }) => {
   const navigate = useNavigate();
   return (
-    <li className={css.item} key={image}>
+    <li className={css.item}>
       <div
         className={css.container}
         onClick={() => navigate(`/recipes/${recipeId}`)}

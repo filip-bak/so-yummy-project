@@ -1,5 +1,5 @@
 .container {
-  background-color: var(--main-color-ligh);
+  background-color: var(--main-color-light);
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
