@@ -22,12 +22,13 @@ select {
 }
 
 .select_box {
-  background-color: var(--text-color-darker);
+  background-color: #f5f5f5;
   border: none;
   border-radius: 6px;
   color: #757575;
   cursor: pointer;
   font-size: 12px;
+  font-weight: 400;
   height: 34px;
   padding: 8px 10px;
   width: 146px;

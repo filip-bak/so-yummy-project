@@ -1,44 +1,48 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styles from "./NavList.module.css";
 import icon from "../../../images/icons.svg";
 
-const NavList = ({ mobile = false }) => {
+const NavList = ({ mobile = false, dark = false }) => {
   return (
-    <ul className={`${styles.list}  ${mobile && styles.column}`}>
+    <ul
+      className={`${styles.list} ${mobile && styles.column} ${
+        dark && styles.dark
+      }`}
+    >
       <li>
-        <Link className={styles.link} to="/categories/Beef">
+        <NavLink className={styles.link} to="/categories/beef">
           Categories
-        </Link>
+        </NavLink>
       </li>
       <li>
-        <Link className={styles.link} to="/add">
+        <NavLink className={styles.link} to="/add">
           Add recipes
-        </Link>
+        </NavLink>
       </li>
       <li>
-        <Link className={styles.link} to="/my">
+        <NavLink className={styles.link} to="/my">
           My recipes
-        </Link>
+        </NavLink>
       </li>
       <li>
-        <Link className={styles.link} to="/favorite">
+        <NavLink className={styles.link} to="/favorite">
           Favorites
-        </Link>
+        </NavLink>
       </li>
       <li>
-        <Link className={styles.link} to="/shopping-list">
+        <NavLink className={styles.link} to="/shopping-list">
           Shopping list
-        </Link>
+        </NavLink>
       </li>
       <li>
-        <Link className={styles.link} to="/search">
+        <NavLink className={styles.link} to="/search">
           <svg className={styles["search-icon"]}>
             <use href={`${icon}#icon-search`}></use>
           </svg>
           {mobile && "Search"}
-        </Link>
+        </NavLink>
       </li>
     </ul>
   );

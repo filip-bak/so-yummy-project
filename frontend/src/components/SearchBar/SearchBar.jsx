@@ -3,21 +3,25 @@ import css from "./SearchBar.module.css";
 import PropTypes from "prop-types";
 import { useSearchParams } from "react-router-dom";
 
-export const SearchBar = ({ children }) => {
+export const SearchBar = ({ children, onSubmit, dark }) => {
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const handleSubmit = evt => {
+  const handleQuerySubmit = evt => {
     evt.preventDefault();
     setSearchParams(params => {
       params.set("query", evt.target.query.value);
-      params.set("queryType", evt.target.queryType.value);
+      params.set("queryType", evt.target.queryType?.value);
       return params;
     });
+    if (onSubmit) {
+      onSubmit(searchParams);
+      return;
+    }
   };
 
   return (
     <>
-      <form className={css.form} onSubmit={handleSubmit}>
+      <form className={css.form} onSubmit={handleQuerySubmit}>
         <div className={css.container}>
           <input
             className={css.input}
@@ -30,7 +34,9 @@ export const SearchBar = ({ children }) => {
             name="query"
             defaultValue={searchParams.get("query")}
           ></input>
-          <Button>Search</Button>
+          <Button type="submit" dark={dark ? dark : false}>
+            Search
+          </Button>
         </div>
         {children}
       </form>

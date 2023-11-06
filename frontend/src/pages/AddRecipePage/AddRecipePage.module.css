@@ -1,0 +1,32 @@
+.container {
+  display: block;
+  width: 343px;
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 704px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    width: 1240px;
+  }
+
+  .page_container {
+    width: 1240px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 121px;
+  }
+
+  .common_container {
+    width: 319px;
+  }
+}

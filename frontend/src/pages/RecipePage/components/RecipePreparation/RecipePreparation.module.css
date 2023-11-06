@@ -45,6 +45,7 @@
 }
 
 .sentence {
+  color: var(--recipe-sentence);
   font-size: 12px;
   text-align: justify;
 }

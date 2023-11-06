@@ -3,7 +3,7 @@ import AuthSharedLayout from "components/AuthSharedLayout";
 import SharedLayout from "components/SharedLayout";
 import CategoriesPage from "pages/CategoriesPage";
 import FavoritePage from "pages/FavoritePage/FavoritePage";
-import MainPage from "pages/MainPage";
+import MainPage from "pages/MainPage/MainPage";
 import MyRecipesPage from "pages/MyRecipesPage/MyRecipesPage";
 import NotFoundPage from "pages/NotFoundPage";
 import RecipePage from "pages/RecipePage/RecipePage";
@@ -18,6 +18,7 @@ import { Route, Routes } from "react-router-dom";
 import { refreshUser } from "redux/auth/actions";
 import { selectTheme } from "redux/theme/selectors";
 // import { selectIsRefreshing } from "redux/auth/selectors";
+import AddRecipePage from "pages/AddRecipePage/AddRecipePage";
 
 const baseUrl = process.env.REACT_APP_BACKEND_URL;
 
@@ -58,7 +59,7 @@ export const App = () => {
       <Route path="/" element={<SharedLayout />}>
         <Route index element={<MainPage />} />
         <Route path="/my" element={<MyRecipesPage />} />
-        <Route path="/add" />
+        <Route path="/add" element={<AddRecipePage />} />
         <Route path="/search" element={<SearchPage />} />
         <Route path="/favorite" element={<FavoritePage />} />
         <Route path="/recipes/:recipeId" element={<RecipePage />} />

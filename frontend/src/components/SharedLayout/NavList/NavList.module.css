@@ -26,6 +26,12 @@
     display: none;
   }
 }
+.list.dark .link {
+  color: var(--recipe-header-black);
+}
+.list.dark .search-icon {
+  stroke: var(--recipe-header-black);
+}
 .link {
   color: var(--main-color-dark);
   display: inline-block;
@@ -51,7 +57,8 @@
   column-gap: 8px;
   align-items: center;
 }
-.link:hover {
+.link:hover,
+.link[aria-current="page"] {
   color: var(--hover-green);
   /* font-weight: 600; */
   text-shadow: 0.4px 0px 0px var(--hover-green);
@@ -61,7 +68,8 @@
   /* font-weight: 600; */
   text-shadow: none;
 }
-.link:hover .search-icon {
+.link:hover .search-icon,
+.link[aria-current="page"] .search-icon {
   stroke: var(--hover-green);
 }
 
@@ -78,7 +86,6 @@
     height: 24px;
   }
 }
-
 .column {
   flex-direction: column;
 }

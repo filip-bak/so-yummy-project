@@ -13,7 +13,7 @@ const Loader = ({
     <Triangle
       height={height}
       width={width}
-      color={refresh ? "#3cbc81" : color}
+      color={color}
       ariaLabel="triangle-loading"
       visible={visible}
       wrapperClass={refresh ? styles["refresh-loader"] : wrapperClass}

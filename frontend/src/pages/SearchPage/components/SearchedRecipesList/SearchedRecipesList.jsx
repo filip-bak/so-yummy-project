@@ -30,7 +30,7 @@ export const SearchedRecipesList = () => {
 
   return (
     <>
-      {items?.length > 0 ? (
+      {items?.length > 0 && query !== null ? (
         <SearchResults />
       ) : (
         <NoContent infoParagraph={noContentMessage} />
