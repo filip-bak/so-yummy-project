@@ -10,6 +10,7 @@ const initialState = {
   items: [],
   isLoading: false,
   error: null,
+  totalPages: 1,
   currentPage: 1,
 };
 
@@ -33,6 +34,7 @@ const favoriteSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         state.items = action.payload.favorite;
+        state.totalPages = action.payload.totalPages;
         state.currentPage = action.payload.currentPage;
       })
       .addCase(fetchFavorite.rejected, handleRejected)

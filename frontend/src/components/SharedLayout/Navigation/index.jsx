@@ -27,8 +27,6 @@ const Navigation = () => {
   const isDarkMainPage = location.pathname.startsWith("/");
   const avatarURL = useSelector(selectAvatarUrl);
 
-  const isProfileImg = false;
-
   const isRefreshing = useSelector(selectIsRefreshing);
   const isLoading = useSelector(selectGlobalLoading);
 
