@@ -10,8 +10,7 @@ export function PopUp(props) {
   const dispatch = useDispatch();
 
   const routeProfile = () => {
-    let path = `#`;
-    navigate(path);
+    props.userModalEdit(true);
   };
 
   const routLogOut = () => {

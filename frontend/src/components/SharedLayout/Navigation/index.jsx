@@ -14,6 +14,7 @@ import { useState } from "react";
 
 const Navigation = () => {
   const [btnPopUp, setBtnPopUp] = useState(false);
+  const [userModalOpen, setUserModalOpen] = useState(false);
   const isProfileImg = false;
 
   const isRefreshing = useSelector(selectIsRefreshing);
@@ -70,7 +71,7 @@ const Navigation = () => {
             )}
             {user?.name ? <span className={styles.name}>{user.name}</span> : ""}
           </div>
-          <PopUp trigger={btnPopUp} />
+          <PopUp trigger={btnPopUp} userModalEdit={setUserModalOpen} />
         </div>
 
         <Switch id="switch" className={styles["theme-switch"]} />
@@ -81,10 +82,11 @@ const Navigation = () => {
           </svg>
         </button>
       </div>
-      <div>
-        <UserEditModal />
-      </div>
-
+      {userModalOpen && (
+        <div style={{ position: "absolute" }}>
+          <UserEditModal onClose={() => setUserModalOpen(false)} />
+        </div>
+      )}
       <MobileNavigation handleClose={handleClose} />
     </nav>
   );
