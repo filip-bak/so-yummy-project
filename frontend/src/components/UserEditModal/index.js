@@ -1,8 +1,13 @@
-import css from "./UserEditModal.module.css";
+import Button from "components/Button";
 import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { updateUser, updateUserAvatar } from "redux/auth/actions";
 import icon from "../../images/icons.svg";
+import css from "./UserEditModal.module.css";
 
 const UserEditModal = ({ onClose }) => {
+  const disptach = useDispatch();
+
   useEffect(() => {
     const handleKeyDown = e => {
       if (e.code === "Escape") {
@@ -14,6 +19,22 @@ const UserEditModal = ({ onClose }) => {
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [onClose]);
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    const { name, avatar } = e.target.elements;
+    console.log(avatar.files[0]);
+    if (avatar.files[0]) {
+      disptach(updateUserAvatar(avatar));
+    }
+    if (name.value && name.value !== "") {
+      disptach(updateUser(name.value));
+    }
+  };
+
+  // const handleNameChange = (e) => {
+  //   disptach(updateUser());
+  // };
 
   return (
     <>
@@ -36,10 +57,11 @@ const UserEditModal = ({ onClose }) => {
                 <use href={`${icon}#icon-user`}></use>
               </svg>
             </div>
-            <form className={css.ModalForm}>
+            <form className={css.ModalForm} onSubmit={handleSubmit}>
               <label className={css.ModalForm}>
                 <input
                   type={"file"}
+                  name="avatar"
                   accept={"image/jpeg,image/png,image/gif"}
                   className={css.FilesInput}
                 />
@@ -48,7 +70,7 @@ const UserEditModal = ({ onClose }) => {
                 </svg>
               </label>
               <label className={css.UserNameLabel}>
-                <input className={css.UserNameInput} />
+                <input name="name" className={css.UserNameInput} />
 
                 <svg className={css.Pencil}>
                   <use href={`${icon}#icon-pencil`}></use>
@@ -57,7 +79,14 @@ const UserEditModal = ({ onClose }) => {
                   <use href={`${icon}#icon-input-user`}></use>
                 </svg>
               </label>
-              <button className={css.SubmitBtn}>Save changes</button>
+              <Button
+                variant="secondary"
+                size="large"
+                type="submit"
+                // onClick={handleNameChange}
+              >
+                Save changes
+              </Button>
             </form>
           </div>
         </div>
