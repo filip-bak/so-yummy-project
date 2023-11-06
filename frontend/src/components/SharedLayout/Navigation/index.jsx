@@ -24,7 +24,7 @@ const Navigation = () => {
 
   const location = useLocation();
   const isDarkRecipePage = location.pathname.startsWith("/recipes/");
-  const isDarkMainPage = location.pathname.startsWith("/");
+  const isDarkMainPage = location.pathname === "/";
   const avatarURL = useSelector(selectAvatarUrl);
 
   const isRefreshing = useSelector(selectIsRefreshing);
