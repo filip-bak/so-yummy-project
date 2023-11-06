@@ -6,6 +6,7 @@ import css from "./AddRecipeForm.module.css";
 import Button from "components/Button";
 import { useState } from "react";
 import { addRecipe } from "redux/recipe/actions";
+import { toast } from "react-toastify";
 
 export const AddRecipeForm = () => {
   const dispatch = useDispatch();
@@ -38,14 +39,16 @@ export const AddRecipeForm = () => {
         })),
       instructions: form.elements.preparation.value,
     };
-    dispatch(addRecipe(payload));
+    dispatch(addRecipe(payload)).then(() => {
+      toast.success("Your recipe has been created.");
+    });
   };
 
   return (
     <form
       className={css.form_container}
       name="addrecipe_form"
-      autoComplete="on"
+      autoComplete="off"
       onSubmit={handleSubmit}
     >
       <div className={css.button}>

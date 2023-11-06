@@ -2,6 +2,7 @@ import css from "./RecipeIngredientsFields.module.css";
 import icons from "../../../../images/icons.svg";
 import { fetchIngredients } from "redux/recipe/actions";
 import { throttle } from "throttle-debounce";
+import PropTypes from "prop-types";
 
 export const RecipeIngredientsFields = ({
   ingredients,
@@ -111,6 +112,7 @@ export const RecipeIngredientsFields = ({
                   onBlur={() => hideIngredientDropDown(index)}
                   onFocus={evt => showIngredientDropDown(evt, index)}
                   value={ingredient.name}
+                  required
                   onChange={event => handleIngredientNameChange(event, index)}
                 />
               </label>
@@ -135,6 +137,7 @@ export const RecipeIngredientsFields = ({
                   type="text"
                   name="amount"
                   value={ingredient.amount}
+                  required
                   onChange={event =>
                     handleIngredientFieldChange("amount", event, index)
                   }
@@ -145,6 +148,7 @@ export const RecipeIngredientsFields = ({
                 id="amountType"
                 name="amountType"
                 value={ingredient.amountType}
+                required
                 onChange={event =>
                   handleIngredientFieldChange("amountType", event, index)
                 }
@@ -170,4 +174,10 @@ export const RecipeIngredientsFields = ({
       </ul>
     </div>
   );
+};
+
+RecipeIngredientsFields.propTypes = {
+  ingredients: PropTypes.array.isRequired,
+  setIngredients: PropTypes.func.isRequired,
+  defaultValues: PropTypes.object.isRequired,
 };

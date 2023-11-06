@@ -21,4 +21,5 @@ export const MainPageTitle = ({ title, dots = true }) => {
 
 MainPageTitle.propTypes = {
   title: PropTypes.string.isRequired,
+  dots: PropTypes.bool,
 };

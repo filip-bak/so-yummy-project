@@ -2,6 +2,7 @@ import css from "./ShoppingListItem.module.css";
 import icons from "../../../../images/icons.svg";
 import { useDispatch } from "react-redux";
 import { removeIngredientFromShoppingList } from "redux/shoppingList/action";
+import PropTypes from "prop-types";
 
 export const ShoppingListItem = ({
   recipeId,
@@ -38,4 +39,12 @@ export const ShoppingListItem = ({
       </div>
     </li>
   );
+};
+
+ShoppingListItem.propTypes = {
+  recipeId: PropTypes.string.isRequired,
+  itemId: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  measure: PropTypes.string.isRequired,
 };
