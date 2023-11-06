@@ -5,6 +5,7 @@ import {
   addIngredientToShoppingList,
   removeIngredientFromShoppingList,
 } from "redux/shoppingList/action";
+import PropTypes from "prop-types";
 
 export const Ingredient = ({
   recipeId,
@@ -55,4 +56,13 @@ export const Ingredient = ({
       </div>
     </li>
   );
+};
+
+Ingredient.propTypes = {
+  image: PropTypes.string.isRequired,
+  recipeId: PropTypes.string.isRequired,
+  itemId: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  measure: PropTypes.string.isRequired,
+  inShoppingList: PropTypes.bool.isRequired,
 };

@@ -1,10 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchRecipeById } from "./actions";
+import { addRecipe, fetchRecipeById } from "./actions";
 
 const initialState = {
   recipe: null,
   isLoading: false,
   error: null,
+  ingredients: [],
 };
 
 const handlePending = state => {
@@ -27,7 +28,14 @@ const recipeSlice = createSlice({
         state.error = null;
         state.recipe = action.payload;
       })
-      .addCase(fetchRecipeById.rejected, handleRejected);
+      .addCase(fetchRecipeById.rejected, handleRejected)
+      .addCase(addRecipe.pending, handlePending)
+      .addCase(addRecipe.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        state.recipe = action.payload;
+      })
+      .addCase(addRecipe.rejected, handleRejected);
   },
 });
 

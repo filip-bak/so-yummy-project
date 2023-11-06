@@ -1,7 +1,23 @@
-const { getCategories } = require("./recipes.service");
+const { getCategories, addRecipe } = require("./recipes.service");
 const { getCategoryPage } = require("./recipes.service");
 const { Recipe } = require("./recipes.model");
 const { ObjectId } = require("mongodb");
+const Joi = require("joi");
+
+const addRecipeHandler = async (req, res) => {
+  const validationResult = validateAddRecipePayload(req.body);
+
+  if (validationResult.error) {
+    return res.status(400).json(validationResult.error.details[0].message);
+  }
+
+  try {
+    const recipe = await addRecipe(req.body, req.user);
+    return res.status(201).json(recipe);
+  } catch (err) {
+    console.error(err.message);
+  }
+};
 
 const getCategoryHandler = async (req, res) => {
   res.json(getCategories());
@@ -105,9 +121,25 @@ const sortRecipes = arr => {
   return list;
 };
 
+const validateAddRecipePayload = async (req, res) => {
+  const schema = Joi.object({
+    title: Joi.string().required(),
+    description: Joi.string().required(),
+    category: Joi.string().required(),
+    time: Joi.number().required(),
+    ingredients: Joi.array(),
+    thumb: Joi.string().required(),
+    preview: Joi.string().required(),
+    instructions: Joi.string().required(),
+  }).or("title", "ingredient");
+
+  return schema.validate(req.body);
+};
+
 module.exports = {
   getCategoryHandler,
   getCategoryPageHandler,
   getRecipeByIdHandler,
   getRecipesHandler,
+  addRecipeHandler,
 };
