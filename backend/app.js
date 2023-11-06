@@ -12,12 +12,11 @@ const {
   ingredientsRouter,
 } = require("./routes/ingredients/ingredients.router");
 const { shoppingRouter } = require("./routes/shopping/shopping.router");
-const { subscribeRouter } = require("./routes/subscribe/subscribe.router");
 const app = express();
 
 const formatsLogger = app.get("env") === "development" ? "dev" : "short";
 app.use(logger(formatsLogger));
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.static("public"));
 app.use("/", express.static(path.join(__dirname, "public")));

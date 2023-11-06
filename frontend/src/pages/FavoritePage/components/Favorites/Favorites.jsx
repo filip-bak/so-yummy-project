@@ -7,7 +7,7 @@ import { selectFavorite } from "redux/favorite/selectors";
 export const Favorites = () => {
   const favorites = useSelector(selectFavorite);
   const resultsPerPage = 4;
-  console.log(favorites);
+
   return (
     <div className={css.container}>
       <ul className={css.results}>
