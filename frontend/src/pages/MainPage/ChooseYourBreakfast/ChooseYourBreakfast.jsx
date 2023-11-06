@@ -30,7 +30,7 @@ const ChooseYourBreakfast = () => {
           </TextSeeRecipe>
         )}
         <LinkDiv>
-          <TextLink to="/categories/Beef">
+          <TextLink to="/categories/beef">
             See recipes
             <IconSpanTextLink aria-label="go to breakfast" />
           </TextLink>
