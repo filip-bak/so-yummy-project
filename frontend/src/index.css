@@ -31,6 +31,7 @@
   --hero-tag-bg: #fafafa;
   --hero-tag-accent: #8baa36;
   --hero-tag-text: #3e4462;
+  --hero-name-unique: #79991f;
 
   --delete-secondary-bg: #8baa36;
   --delete-secondary-stroke: #fafafa;
@@ -135,10 +136,11 @@
 
   --hero-tag-bg: #2a2c36;
   --hero-tag-text: #fafafa;
+  --hero-name-unique: #79991f;
 
   --recipe-sentence: #fafafa;
 
-  --footer-bg: #8baa36;
+  --footer-bg: #8fb81f;
 }
 
 body {
