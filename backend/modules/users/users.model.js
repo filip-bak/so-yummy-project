@@ -23,7 +23,7 @@ const userSchema = new mongoose.Schema(
     avatarURL: {
       type: String,
       default:
-        "https://res.cloudinary.com/dzumlzedi/image/upload/v1698961349/so-yummy/user-avatar_s5lnvp.png",
+        "https://res.cloudinary.com/dzumlzedi/image/upload/v1699300454/bss5epsed7avbhuqkvd5.png",
     },
     subscription: {
       type: Boolean,
