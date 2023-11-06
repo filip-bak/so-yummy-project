@@ -16,17 +16,16 @@ export const Shopping = () => {
         </ul>
       </div>
       <ul className={css.results}>
-        {shoppingList.map(
-          ({ ingredient: { image, name }, itemId, measure }) => (
-            <ShoppingListItem
-              itemId={itemId}
-              image={image}
-              key={itemId}
-              name={name}
-              measure={measure}
-            />
-          )
-        )}
+        {shoppingList.map(({ image, name, id, measure, recipeId }) => (
+          <ShoppingListItem
+            recipeId={recipeId}
+            itemId={id}
+            image={image}
+            key={id + recipeId}
+            name={name}
+            measure={measure}
+          />
+        ))}
       </ul>
     </div>
   );

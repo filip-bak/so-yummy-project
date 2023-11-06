@@ -1,11 +1,11 @@
 .container {
   --_width: 113px;
   --_height: 53px;
-  --_color: var(--text-color-lighter);
+  --_color: var(--button-color);
   --_font-size: var(--fs-md);
-  --_border: 0;
+  --_border: var(--button-border);
   --_border-radius: 24px 44px;
-  --_background-color: var(--accent-color-darker);
+  --_background-color: var(--button-bg);
   --_gap: unset;
   --_padding: 0;
 
@@ -28,11 +28,13 @@
 }
 .container:focus,
 .container:hover {
-  --_background-color: var(--main-color-dark);
+  --_background-color: var(--button-bg-hover);
+  border: var(--_border);
 }
 .container.dark:focus,
 .container.dark:hover {
-  --_background-color: var(--accent-color-darker);
+  --_background-color: var(--button-dark-bg-hover);
+  border: var(--_border);
 }
 .container:disabled {
   filter: opacity(80%);
@@ -95,14 +97,18 @@
   --_font-size: var(--fs-md);
 }
 .secondary-medium {
+  --_background-color: var(--button-secondary-hover-bg);
   --_width: 204px;
   --_height: 38px;
   --_font-size: var(--fs-md);
 }
 .secondary-medium:hover,
 .secondary-medium:focus {
-  --_background-color: var(--accent-color-darker);
-  --_color: var(--main-color-dark);
+  --_background-color: var(--button-secondary-hover-bg);
+  --_color: var(--button-secondary-hover-color);
+}
+.secondary-medium:disabled {
+  background-color: var(--button-secondary-hover-bg);
 }
 .secondary-medium.svg {
   --_border: 1px solid rgb(250 250 250 / 0.157);
@@ -222,7 +228,7 @@
 }
 
 .dark {
-  --_background-color: var(--main-color-dark);
+  --_background-color: var(--button-dark-bg);
 }
 
 @media screen and (min-width: 768px) {

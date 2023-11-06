@@ -1,3 +1,6 @@
+.container {
+  display: flex;
+}
 .logo {
   fill: var(--logo-main);
   stroke: var(--logo-stroke);

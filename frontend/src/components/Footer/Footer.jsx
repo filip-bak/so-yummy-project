@@ -11,15 +11,15 @@ export const Footer = () => {
                 <div className={css.bg}></div>
                 <div className={css.containerMain}>
                     <div className={css.containerContent}>
-                        <FooterLogo />  
-                        <FooterNav /> 
+                        <FooterLogo />
+                        <FooterNav />
                         <FooterSubscribeForm />
                     </div>
                     <FooterFollowUs />
-                </div>  
+                </div>
                 <div className={css.bg2}></div>
             </div>
 
-                
+
     );
   };

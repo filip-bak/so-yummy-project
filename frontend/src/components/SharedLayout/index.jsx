@@ -10,6 +10,7 @@ const SharedLayout = () => {
   return (
     <div className={styles.container}>
       <Navigation />
+
       <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>

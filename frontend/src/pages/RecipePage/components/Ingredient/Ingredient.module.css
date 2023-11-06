@@ -1,0 +1,145 @@
+.item {
+  background-color: var(--accent-color-lighter);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 10px 14px 10px 10px;
+  height: 86px;
+  width: 343px;
+}
+
+.image_container {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.image {
+  padding: 4px;
+  height: 65px;
+  width: 65px;
+}
+
+.ingredient {
+  color: var(--subtitle-color);
+  font-size: 12px;
+  font-weight: 500;
+  margin-left: 8px;
+}
+
+.measure_container {
+  background-color: var(--accent-color-darker);
+  border-radius: 4px;
+  margin-right: 5px;
+  padding: 4px;
+  display: flex;
+  justify-content: center;
+  width: 80px;
+}
+
+.measure {
+  color: var(--text-color-lighter);
+  font-size: 10px;
+  font-weight: 500;
+  margin: auto;
+  min-width: 40px;
+  width: fit-content;
+  padding: 4px;
+}
+
+.button_container {
+  width: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.add_button {
+  border: 1px solid #c4c1c1;
+  border-radius: 4px;
+  background: none;
+  height: 18px;
+  padding-block: 0;
+  padding-inline: 0;
+  width: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  border: none;
+  fill: var(--accent-color-darker);
+  cursor: pointer;
+  height: 10px;
+  width: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .item {
+    padding: 16px 32px 16px 24px;
+    height: 178px;
+    width: 704px;
+  }
+
+  .image {
+    padding: 17px;
+    height: 146px;
+    width: 144px;
+  }
+
+  .ingredient {
+    font-size: 24px;
+    line-height: 1;
+    margin-left: 24px;
+  }
+
+  .measure_container {
+    margin-right: 20px;
+    padding: 5px;
+    width: 140px;
+  }
+
+  .measure {
+    font-size: 18px;
+    min-width: 60px;
+  }
+
+  .button_container {
+    width: 100px;
+  }
+
+  .add_button {
+    height: 35px;
+    width: 35px;
+    cursor: pointer;
+  }
+
+  .icon {
+    height: 20px;
+    width: 20px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .item {
+    padding: 0px 40px 0px 32px;
+    height: 182px;
+    width: 1240px;
+  }
+
+  .image {
+    padding: 26px;
+    height: 180px;
+    width: 180px;
+  }
+
+  .ingredient {
+    margin-left: 40px;
+  }
+
+  .measure_container {
+    margin-right: 60px;
+    padding: 5px;
+    width: 180px;
+  }
+}

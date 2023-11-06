@@ -1,0 +1,158 @@
+.title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: var(--fs-xl);
+  line-height: 28px;
+  letter-spacing: -0.02em;
+  font-feature-settings: "liga" off;
+  margin-bottom: 40px;
+  color: var(--main-color-light);
+}
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.field {
+  outline: none;
+  width: 100%;
+  border: 1px solid;
+  border-color: rgba(250, 250, 250, 0.3);
+  border-radius: 6px;
+  padding: 12px 40px;
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  color: var(--main-color-dark);
+  background-color: transparent;
+  color: var(--main-color-light);
+}
+.field::placeholder {
+  color: var(--main-color-light);
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: var(-fs-md);
+  line-height: auto;
+  letter-spacing: -0.02em;
+  opacity: 0.8;
+}
+
+.field:hover,
+.field:focus {
+  border-color: var(--main-color-light);
+  background-color: transparent;
+}
+.field:hover + svg,
+.field:focus + svg {
+  color: var(--text-color-lighter);
+}
+.field-error {
+  border: 1px solid var(--error-invalid);
+}
+
+.registerLink {
+  font-size: var(--fs-md);
+  text-decoration-line: underline;
+  display: inline-block;
+  color: var(--text-color-lighter);
+  transition: color 250ms ease;
+  position: relative;
+  transform: translateX(-50%);
+  top: 58px;
+  left: 50%;
+}
+
+@media screen and (min-width: 768px) {
+  .registerLink {
+    font-size: var(--fs-base);
+    position: relative;
+    top: 75px;
+  }
+  .registerLink:hover {
+    color: var(--accent-color-darker);
+  }
+
+  .title {
+    font-size: var(--fs-2xl);
+    line-height: 30px;
+    margin-bottom: 32px;
+    letter-spacing: -0.02em;
+  }
+  .field {
+    font-size: var(--fs-lg);
+  }
+
+  .field::placeholder {
+    font-size: var(--fs-lg);
+    letter-spacing: -0.02em;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .fields {
+    gap: 24px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .fields {
+    width: 400px;
+    margin-bottom: 44px;
+  }
+}
+
+.background {
+  width: 285px;
+  height: 250px;
+  background-image: url("/src/images/Order-food-pana.svg");
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 100% 250px;
+  position: absolute;
+  top: -220px;
+  left: 32px;
+  z-index: -1;
+}
+
+@media screen and (min-width: 768px) {
+  .background {
+    width: 409px;
+    height: 359px;
+    background-size: 100% 359px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .background {
+    top: -340px;
+    left: 50px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .background {
+    width: 532px;
+    height: 468px;
+    background-size: 100% 468px;
+    background-image: url("/src/images/Order-food-pana.svg");
+    display: flex;
+    position: absolute;
+    left: -647px;
+    top: -5%;
+  }
+}
+
+.loader {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  width: 50px;
+  height: 50px;
+}
+@media screen and (min-width: 1440px) {
+  .loader {
+    top: 20px;
+    width: 70px;
+    height: 70px;
+  }
+}
