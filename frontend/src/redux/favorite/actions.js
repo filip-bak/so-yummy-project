@@ -75,19 +75,13 @@ const testData = [
 
 export const fetchFavorite = createAsyncThunk(
   "favorite/fetchAll",
-  async (_, thunkAPI) => {
+  async (currentPage, thunkAPI) => {
     try {
-      const response = testData;
-      const favorite = response.map(item => ({
-        title: item.title,
-        image: item.thumb,
-        id: item.id,
-        description: item.description,
-        time: item.time,
-      }));
+      const { data } = await axios.get(`/favorite/paginate?${currentPage}`);
       return {
-        currentPage: 1,
-        favorite,
+        currentPage: data.currentPage,
+        totalPages: data.totalPages,
+        favorite: data.favorites,
       };
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
