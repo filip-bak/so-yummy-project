@@ -3,10 +3,12 @@ import css from "./RecipeIngredientsList.module.css";
 import { selectRecipe } from "redux/recipe/selectors";
 import { Ingredient } from "pages/RecipePage/components/Ingredient/Ingredient";
 import { selectShoppingList } from "redux/shoppingList/selectors";
+import PropTypes from "prop-types";
 
 export const RecipeIngredientsList = () => {
   const recipe = useSelector(selectRecipe);
   const shoppingList = useSelector(selectShoppingList);
+  const screenWidth = window.innerWidth;
 
   return (
     <div className={css.container}>
@@ -31,9 +33,13 @@ export const RecipeIngredientsList = () => {
                 item => item.recipeId === recipe._id && item.id === _id
               ) !== undefined
             }
+            screenWidth={screenWidth}
           />
         ))}
       </ul>
     </div>
   );
+};
+RecipeIngredientsList.propTypes = {
+  screenWidth: PropTypes.number.isRequired,
 };

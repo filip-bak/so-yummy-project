@@ -5,6 +5,10 @@ import {
   addIngredientToShoppingList,
   removeIngredientFromShoppingList,
 } from "redux/shoppingList/action";
+import defaultImageSmall from "images/defaults/ingredientsDefault57x57.jpg";
+import defaultImageMedium from "images/defaults/ingredientsDefault112x112.jpg";
+import defaultImageLarge from "images/defaults/ingredientsDefault128x128.jpg";
+import PropTypes from "prop-types";
 
 export const Ingredient = ({
   recipeId,
@@ -13,6 +17,7 @@ export const Ingredient = ({
   name,
   measure,
   inShoppingList,
+  screenWidth,
 }) => {
   const dispatch = useDispatch();
 
@@ -25,11 +30,22 @@ export const Ingredient = ({
       removeIngredientFromShoppingList({ recipeId, ingredientId: itemId })
     );
   };
+  let selectedDefaultImage = defaultImageSmall;
+
+  if (screenWidth >= 768 && screenWidth < 1440) {
+    selectedDefaultImage = defaultImageMedium;
+  } else if (screenWidth >= 1440) {
+    selectedDefaultImage = defaultImageLarge;
+  }
 
   return (
     <li className={css.item}>
       <div className={css.image_container}>
-        <img src={image} className={css.image} alt="an ingredient"></img>
+        <img
+          src={image || selectedDefaultImage}
+          className={css.image}
+          alt="an ingredient"
+        ></img>
         <p className={css.ingredient}>{name}</p>
       </div>
       <div className={css.measure_container}>
@@ -55,4 +71,13 @@ export const Ingredient = ({
       </div>
     </li>
   );
+};
+Ingredient.propTypes = {
+  recipeId: PropTypes.string.isRequired,
+  itemId: PropTypes.string.isRequired,
+  image: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  measure: PropTypes.string.isRequired,
+  inShoppingList: PropTypes.bool.isRequired,
+  screenWidth: PropTypes.number.isRequired,
 };

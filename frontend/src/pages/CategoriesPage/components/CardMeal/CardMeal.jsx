@@ -1,5 +1,6 @@
 import styles from "./CardMeal.module.css";
 import { useNavigate } from "react-router-dom";
+import defaultImage from "images/defaults/defaultImageStandard.jpg";
 
 export const CardMeal = ({ meal }) => {
   const navigate = useNavigate();
@@ -9,7 +10,11 @@ export const CardMeal = ({ meal }) => {
         className={styles.container}
         onClick={() => navigate(`/recipes/${meal?._id}`)}
       >
-        <img src={meal?.thumb} alt={meal?.title} className={styles.image}></img>
+        <img
+          src={meal?.thumb || defaultImage}
+          alt={meal?.title}
+          className={styles.image}
+        ></img>
         <p className={styles.label}>{meal?.title}</p>
       </div>
     </li>
