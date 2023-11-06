@@ -22,7 +22,7 @@ export const RecipeDescriptionFields = () => {
   let cookingTimes = [];
   for (let i = 5; i <= 120; i = i + 5) {
     cookingTimes.push(
-      <option className={css.cooking_time} value="cookingTime">
+      <option className={css.cooking_time} value="cookingTime" key={i}>
         {i}
       </option>
     );
@@ -69,7 +69,7 @@ export const RecipeDescriptionFields = () => {
             name="categoryType"
           >
             {categories.map(category => (
-              <option className={css.category} value={category}>
+              <option className={css.category} value={category} key={category}>
                 {category}
               </option>
             ))}
