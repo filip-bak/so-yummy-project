@@ -1,22 +1,16 @@
-import styles from "./PopUp.module.css";
 import Button from "components/Button";
 import icons from "../../images/icons.svg";
-import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { logout } from "redux/auth/actions";
+import styles from "./PopUp.module.css";
 
 export function PopUp(props) {
-  let navigate = useNavigate();
-  const dispatch = useDispatch();
-
   const routeProfile = () => {
     props.userModalEdit(true);
   };
 
   const routLogOut = () => {
-    dispatch(logout());
-    navigate("/welcome");
+    props.onLogout(true);
   };
+
   return props.trigger ? (
     <div className={styles.container}>
       <Button onClick={routeProfile} className={styles.editBtn}>

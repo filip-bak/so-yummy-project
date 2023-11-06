@@ -26,7 +26,7 @@ const UserEditModal = ({ onClose }) => {
   const handleSubmit = e => {
     e.preventDefault();
     const { name, avatar } = e.target.elements;
-    console.log(avatar.files[0]);
+
     if (avatar.files[0]) {
       disptach(updateUserAvatar(avatar));
     }
