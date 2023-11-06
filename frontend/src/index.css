@@ -46,6 +46,7 @@
   --recipe-sentence: #000000cc;
 
   --footer-bg: #22252a;
+  --footer-link-hover: #8baa36;
 
   /* INPUT STATE COLOR */
   --white-color: #ffffff;
@@ -139,6 +140,7 @@
   --recipe-sentence: #fafafa;
 
   --footer-bg: #8baa36;
+  --footer-link-hover: #2a2c36;
 }
 
 body {
