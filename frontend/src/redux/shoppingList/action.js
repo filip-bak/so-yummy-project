@@ -6,35 +6,49 @@ export const fetchShoppingList = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const res = await axios.get(`/shopping-list`);
-      return res.data.map(ingredient => ({
-        image: ingredient.thb,
-        name: ingredient.ttl,
-        itemId: ingredient._id,
-        measure: ingredient.measure,
-      }));
+      return flattenShoppingListItems(res.data);
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
     }
   }
 );
+
+const flattenShoppingListItems = result => {
+  const shoppingList = [];
+  result.ingredients.forEach(recipe => {
+    recipe.ingredients.forEach(ingredient => {
+      shoppingList.push({
+        image: ingredient.thb,
+        name: ingredient.ttl,
+        id: ingredient.id,
+        measure: ingredient.measure,
+        recipeId: recipe.recipeId,
+      });
+    });
+  });
+  return shoppingList;
+};
 
 export const addIngredientToShoppingList = createAsyncThunk(
   "shoppingList/addRecipeToShoppingList",
   async (payload, thunkAPI) => {
     try {
       await axios.post(`/shopping-list/add`, payload);
+      const res = await axios.get(`/shopping-list`);
+      return flattenShoppingListItems(res.data);
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
     }
   }
 );
 
-export const removeRecipeFromShoppingList = createAsyncThunk(
+export const removeIngredientFromShoppingList = createAsyncThunk(
   "shoppingList/removeRecipeFromShoppingList",
-  async (recipeId, thunkAPI) => {
+  async ({ recipeId, ingredientId }, thunkAPI) => {
     try {
-      const res = await axios.delete(`/shopping-list/${recipeId}`);
-      return res.data;
+      await axios.delete(`/shopping-list/${ingredientId}/${recipeId}`);
+      const res = await axios.get(`/shopping-list`);
+      return flattenShoppingListItems(res.data);
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
     }

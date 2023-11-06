@@ -60,10 +60,30 @@ export const logout = createAsyncThunk("auth/Logout", async (_, thunkApi) => {
 
 export const updateUser = createAsyncThunk(
   "auth/UpdateUser",
-  async (_, thunkApi) => {
+  async (userName, thunkApi) => {
     try {
-      const res = await axios.patch("/users");
+      const res = await axios.patch("/users", { name: userName });
 
+      return res.data;
+    } catch (err) {
+      return thunkApi.rejectWithValue(err.message);
+    }
+  }
+);
+
+export const updateUserAvatar = createAsyncThunk(
+  "auth/updateUserAvatar",
+  async (data, thunkApi) => {
+    try {
+      const form = new FormData();
+      form.append("image", data.files[0]);
+
+      const res = await axios.post("/users/upload", form, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      console.log(res);
       return res.data;
     } catch (err) {
       return thunkApi.rejectWithValue(err.message);

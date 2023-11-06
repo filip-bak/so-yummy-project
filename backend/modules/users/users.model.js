@@ -37,6 +37,14 @@ const userSchema = new mongoose.Schema(
       type: String,
       default: null,
     },
+    favorites: {
+      type: Array,
+      default: [],
+    },
+    shoppingList: {
+      type: Array,
+      default: [],
+    },
   },
   { versionKey: false, timestamps: false }
 );

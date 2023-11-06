@@ -111,6 +111,7 @@
   .add_button {
     height: 35px;
     width: 35px;
+    cursor: pointer;
   }
 
   .icon {

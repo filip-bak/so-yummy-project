@@ -5,8 +5,10 @@ import icon from "../../../images/icons.svg";
 import Switch from "components/Switch";
 import NavList from "../NavList";
 import MobileNavigation from "../MobileNavigation";
+import UserEditModal from "components/UserEditModal";
 import { useSelector } from "react-redux";
 import {
+  selectAvatarUrl,
   selectGlobalLoading,
   selectIsRefreshing,
   selectUser,
@@ -18,12 +20,12 @@ import { useLocation } from "react-router-dom";
 
 const Navigation = () => {
   const [btnPopUp, setBtnPopUp] = useState(false);
+  const [userModalOpen, setUserModalOpen] = useState(false);
 
   const location = useLocation();
   const isDarkRecipePage = location.pathname.startsWith("/recipes/");
-  const isDarkMainPage = location.pathname.startsWith("/");
-
-  const isProfileImg = false;
+  const isDarkMainPage = location.pathname === "/";
+  const avatarURL = useSelector(selectAvatarUrl);
 
   const isRefreshing = useSelector(selectIsRefreshing);
   const isLoading = useSelector(selectGlobalLoading);
@@ -79,8 +81,8 @@ const Navigation = () => {
         />
         <div>
           <div onClick={popUpToggle} className={styles.profile}>
-            {isProfileImg ? (
-              <img className={styles.img} src="" alt="Profile" />
+            {avatarURL ? (
+              <img className={styles.img} src={avatarURL} alt="Profile" />
             ) : (
               <div className={styles.img}>
                 <svg className={styles["user-icon"]}>
@@ -100,7 +102,7 @@ const Navigation = () => {
               ""
             )}
           </div>
-          <PopUp trigger={btnPopUp} />
+          <PopUp trigger={btnPopUp} userModalEdit={setUserModalOpen} />
         </div>
 
         <Switch id="switch" className={styles["theme-switch"]} />
@@ -116,6 +118,11 @@ const Navigation = () => {
           </svg>
         </button>
       </div>
+      {userModalOpen && (
+        <div style={{ position: "absolute" }}>
+          <UserEditModal onClose={() => setUserModalOpen(false)} />
+        </div>
+      )}
       <MobileNavigation handleClose={handleClose} />
     </nav>
   );
