@@ -8,7 +8,6 @@ import {
 import defaultImageSmall from "images/defaults/ingredientsDefault57x57.jpg";
 import defaultImageMedium from "images/defaults/ingredientsDefault112x112.jpg";
 import defaultImageLarge from "images/defaults/ingredientsDefault128x128.jpg";
-import PropTypes from "prop-types";
 
 export const Ingredient = ({
   recipeId,
@@ -71,13 +70,4 @@ export const Ingredient = ({
       </div>
     </li>
   );
-};
-Ingredient.propTypes = {
-  recipeId: PropTypes.string.isRequired,
-  itemId: PropTypes.string.isRequired,
-  image: PropTypes.string,
-  name: PropTypes.string.isRequired,
-  measure: PropTypes.string.isRequired,
-  inShoppingList: PropTypes.bool.isRequired,
-  screenWidth: PropTypes.number.isRequired,
 };

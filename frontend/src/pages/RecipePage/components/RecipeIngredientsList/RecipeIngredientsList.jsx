@@ -3,7 +3,6 @@ import css from "./RecipeIngredientsList.module.css";
 import { selectRecipe } from "redux/recipe/selectors";
 import { Ingredient } from "pages/RecipePage/components/Ingredient/Ingredient";
 import { selectShoppingList } from "redux/shoppingList/selectors";
-import PropTypes from "prop-types";
 
 export const RecipeIngredientsList = () => {
   const recipe = useSelector(selectRecipe);
@@ -39,7 +38,4 @@ export const RecipeIngredientsList = () => {
       </ul>
     </div>
   );
-};
-RecipeIngredientsList.propTypes = {
-  screenWidth: PropTypes.number.isRequired,
 };

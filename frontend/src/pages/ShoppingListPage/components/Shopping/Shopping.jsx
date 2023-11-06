@@ -3,7 +3,6 @@ import css from "./Shopping.module.css";
 import { selectShoppingList } from "redux/shoppingList/selectors";
 import { ShoppingListItem } from "pages/ShoppingListPage/components/ShoppingListItem/ShoppingListItem";
 import { useState, useEffect } from "react";
-import PropTypes from "prop-types";
 
 export const Shopping = () => {
   const shoppingList = useSelector(selectShoppingList);
@@ -44,7 +43,4 @@ export const Shopping = () => {
       </ul>
     </div>
   );
-};
-Shopping.propTypes = {
-  screenWidth: PropTypes.number.isRequired,
 };
