@@ -1,26 +1,25 @@
 import css from "./RecipeIngredientsFields.module.css";
 import icons from "../../../../images/icons.svg";
-import { useState } from "react";
+import { fetchIngredients } from "redux/recipe/actions";
+import { throttle } from "throttle-debounce";
 
-export const RecipeIngredientsFields = () => {
-  const defaultValues = {
-    name: "",
-    amount: 0,
-    amountType: "tbs",
-    expanded: false,
-  };
+export const RecipeIngredientsFields = ({
+  ingredients,
+  setIngredients,
+  defaultValues,
+}) => {
   const amounts = ["tbs", "tsp", "kg", "g", "pcs", "ml"];
-
-  const [ingredients, setIngredients] = useState([defaultValues]);
-
-  const handleOnClickIngredient = index => {
-    ingredients[index].expanded = !ingredients[index].expanded;
-    setIngredients([...ingredients]);
-  };
 
   const hideIngredientDropDown = index => {
     ingredients[index].expanded = false;
-    setIngredients([...ingredients]);
+    ingredients[index].suggestions = [];
+    setIngredients(ingredients);
+  };
+
+  const showIngredientDropDown = (evt, index) => {
+    ingredients[index].expanded = true;
+    setIngredients(ingredients);
+    updateSuggestions(evt, index);
   };
 
   const handleAdditionalIngredient = () => {
@@ -28,7 +27,7 @@ export const RecipeIngredientsFields = () => {
       return false;
     }
     ingredients.push(defaultValues);
-    setIngredients([...ingredients]);
+    setIngredients(ingredients);
   };
 
   const handleDeletionOflIngredient = () => {
@@ -36,7 +35,7 @@ export const RecipeIngredientsFields = () => {
       return false;
     }
     ingredients.pop();
-    setIngredients([...ingredients]);
+    setIngredients(ingredients);
   };
 
   const handleIngredientRemoval = index => {
@@ -44,12 +43,33 @@ export const RecipeIngredientsFields = () => {
       return false;
     }
     ingredients.splice(index, 1);
-    setIngredients([...ingredients]);
+    setIngredients(ingredients);
   };
+
+  const handleIngredientNameChange = async (evt, index) => {
+    ingredients[index].name = evt.target.value;
+    setIngredients(ingredients);
+    updateSuggestions(evt, index);
+  };
+
+  const updateSuggestions = throttle(250, async (evt, index) => {
+    if (evt.target.value.trim().length > 1) {
+      ingredients[index].suggestions = await fetchIngredients(evt.target.value);
+    } else {
+      ingredients[index].suggestions = [];
+    }
+    setIngredients(ingredients);
+  });
 
   const handleIngredientFieldChange = (field, evt, index) => {
     ingredients[index][field] = evt.target.value;
-    setIngredients([...ingredients]);
+    setIngredients(ingredients);
+  };
+
+  const chooseIngredient = (suggestion, index) => {
+    ingredients[index].name = suggestion.ttl;
+    ingredients[index].id = suggestion._id;
+    setIngredients(ingredients);
   };
 
   return (
@@ -88,16 +108,23 @@ export const RecipeIngredientsFields = () => {
                   placeholder="Ingredient"
                   type="text"
                   name="ingredient-name"
-                  onClick={() => handleOnClickIngredient(index)}
                   onBlur={() => hideIngredientDropDown(index)}
+                  onFocus={evt => showIngredientDropDown(evt, index)}
                   value={ingredient.name}
-                  onChange={event =>
-                    handleIngredientFieldChange("name", event, index)
-                  }
+                  onChange={event => handleIngredientNameChange(event, index)}
                 />
               </label>
               {ingredient.expanded && (
-                <div className={css.ingredient_drop_down}></div>
+                <div className={css.ingredient_drop_down}>
+                  {ingredient.suggestions.map(suggestion => (
+                    <p
+                      onMouseDown={() => chooseIngredient(suggestion, index)}
+                      key={suggestion._id}
+                    >
+                      {suggestion.ttl}
+                    </p>
+                  ))}
+                </div>
               )}
             </div>
 

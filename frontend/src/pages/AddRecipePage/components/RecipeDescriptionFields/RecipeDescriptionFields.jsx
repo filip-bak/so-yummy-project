@@ -22,7 +22,7 @@ export const RecipeDescriptionFields = () => {
   let cookingTimes = [];
   for (let i = 5; i <= 120; i = i + 5) {
     cookingTimes.push(
-      <option className={css.cooking_time} value="cookingTime" key={i}>
+      <option className={css.cooking_time} value={i} key={i}>
         {i}
       </option>
     );
