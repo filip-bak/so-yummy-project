@@ -56,23 +56,24 @@
 }
 
 .icon {
-  background-color: var(--accent-color-darker);
+  background-color: var(--delete-primary-bg);
   border-radius: 4px;
   cursor: pointer;
-  fill: var(--accent-color-darker);
+  fill: transparent;
   height: 24px;
-  stroke: var(--text-color-lighter);
+  stroke: var(--delete-primary-stroke);
   width: 24px;
   position: absolute;
   top: 0;
   right: 0;
   margin: 0;
+  transition: stroke 150ms, stroke 150ms;
 }
 
 .icon:focus,
 .icon:hover {
-  background-color: var(--main-color-dark);
-  fill: var(--main-color-dark);
+  background-color: var(--delete-primary-hover-bg);
+  stroke: var(--delete-primary-hover-stroke);
 }
 
 .button {

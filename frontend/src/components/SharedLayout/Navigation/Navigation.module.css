@@ -82,6 +82,16 @@
   height: 32px;
   transition: stroke 150ms;
 }
+@media screen and (min-width: 768px) {
+  .burger-menu-icon {
+    stroke: #22252a;
+  }
+}
+@media screen and (min-width: 890px) {
+  .burger-menu-icon {
+    stroke: var(--main-color-dark);
+  }
+}
 
 .name {
   color: var(--main-color-dark);
