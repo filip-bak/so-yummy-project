@@ -1,16 +1,16 @@
 import styled from "styled-components";
-import pathToDishMobileX1 from "../../images/mainPage/HeroMain-dish-mobile-1x.webp";
-import pathToDishMobileX2 from "../../images/mainPage/HeroMain-dish-mobile-2x.webp";
-import pathToDishTabletX1 from "../../images/mainPage/HeroMain-dish-tablet-1x.webp";
-import pathToDishTabletX2 from "../../images/mainPage/HeroMain-dish-tablet-2x.webp";
-import pathToDishDesktopX1 from "../../images/mainPage/HeroMain-dish-desktop-1x.webp";
-import pathToDishDesktopX2 from "../../images/mainPage/HeroMain-dish-desktop-2x.webp";
-import leafsMobileX1 from "../../images/mainPage/HeroMain-leafs-mobile-1x.webp";
-import leafsMobileX2 from "../../images/mainPage/HeroMain-leafs-mobile-2x.webp";
-import leafsTabletX1 from "../../images/mainPage/HeroMain-leafs-tablet-1x.webp";
-import leafsTabletX2 from "../../images/mainPage/HeroMain-leafs-tablet-2x.webp";
-import leafsDesktopX1 from "../../images/mainPage/HeroMain-leafs-desktop-1x.webp";
-import leafsDesktopX2 from "../../images/mainPage/HeroMain-leafs-desktop-2x.webp";
+import pathToDishMobileX1 from "../../../images/mainPage/HeroMain-dish-desktop-1x.webp";
+import pathToDishMobileX2 from "../../../images/mainPage/HeroMain-dish-mobile-2x.webp";
+import pathToDishTabletX1 from "../../../images/mainPage/HeroMain-dish-tablet-1x.webp";
+import pathToDishTabletX2 from "../../../images/mainPage/HeroMain-dish-tablet-2x.webp";
+import pathToDishDesktopX1 from "../../../images/mainPage/HeroMain-dish-desktop-1x.webp";
+import pathToDishDesktopX2 from "../../../images/mainPage/HeroMain-dish-desktop-2x.webp";
+import leafsMobileX1 from "../../../images/mainPage/HeroMain-leafs-mobile-1x.webp";
+import leafsMobileX2 from "../../../images/mainPage/HeroMain-leafs-mobile-2x.webp";
+import leafsTabletX1 from "../../../images/mainPage/HeroMain-leafs-tablet-1x.webp";
+import leafsTabletX2 from "../../../images/mainPage/HeroMain-leafs-tablet-2x.webp";
+import leafsDesktopX1 from "../../../images/mainPage/HeroMain-leafs-desktop-1x.webp";
+import leafsDesktopX2 from "../../../images/mainPage/HeroMain-leafs-desktop-2x.webp";
 
 export const Section = styled.div`
   width: 100%;
@@ -38,7 +38,7 @@ export const Section = styled.div`
       background-image: url(${leafsTabletX2}), url(${pathToDishTabletX2});
     }
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 1440px) {
     height: 900px;
     padding-top: 226px;
     background-image: url(${leafsDesktopX1}), url(${pathToDishDesktopX1});
@@ -52,6 +52,15 @@ export const Section = styled.div`
   }
 `;
 
+export const SearchBarBox = styled.div`
+  & form {
+    margin: 0;
+
+    @media (min-width: 768px) {
+      align-items: flex-start;
+    }
+  }
+`;
 // export const Background = styled.section`
 
 // width: 0;
@@ -63,37 +72,34 @@ export const Section = styled.div`
 // `;
 
 export const Title = styled.h1`
-  font-family: "Poppins", sans-serif;
-  color: var(--text-secondary);
-  font-weight: 600;
-  padding-top: 68px;
+  color: var(--main-logo);
   font-style: normal;
-  font-size: 60px;
+  font-weight: 400;
+  font-size: var(--fs-6xl);
   line-height: 60px;
   text-align: center;
-  letter-spacing: -0.005em;
+  letter-spacing: -0.5px;
   margin-bottom: 14px;
   @media (min-width: 768px) {
     text-align: start;
-    font-size: 72px;
+    font-size: var(--fs-7xl);
     line-height: 72px;
-    padding-top: 205px;
   }
-  @media (min-width: 1280px) {
-    padding-top: 162px;
-    font-size: 100px;
+  @media (min-width: 1440px) {
+    font-size: var(--fs-8xl);
     line-height: 1;
   }
 `;
 
 export const Span = styled.span`
-  color: var(--button-background-primary);
+  color: var(--main-logo-accent);
 `;
 
 export const TextHero = styled.p`
   display: block;
-  font-family: "Poppins", sans-serif;
-  color: var(--text-secondary);
+  width: 248px;
+  margin-inline: auto;
+  color: var(--main-color-dark);
   font-weight: 500;
   font-size: 14px;
   line-height: 1.28;
@@ -102,10 +108,13 @@ export const TextHero = styled.p`
   text-align: center;
   letter-spacing: -0.02em;
   @media (min-width: 768px) {
-    text-align: start;
+    width: 362px;
+    margin-inline: 0;
     margin-bottom: 50px;
+    text-align: start;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 1440px) {
+    width: 465px;
     font-size: 18px;
     line-height: 1.34;
   }
@@ -142,7 +151,7 @@ export const CustomButtonStyles = styled.button`
     font-size: 16px;
   }
 
-  @media (min-width: 1280px) {
+  @media (min-width: 1440px) {
     height: 70px;
   }
 `;

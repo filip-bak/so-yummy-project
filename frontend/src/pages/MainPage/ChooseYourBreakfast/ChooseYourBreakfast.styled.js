@@ -6,7 +6,7 @@ export const SeeRecipe = styled.div`
   width: 225px;
   height: 92px;
   border-radius: 8px;
-  background: var(--background-primary);
+  background-color: var(--hero-tag-bg);
   position: absolute;
   top: 435px;
   right: 34px;
@@ -16,17 +16,17 @@ export const SeeRecipe = styled.div`
     top: 372px;
     right: 32px;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 1440px) {
     width: 298px;
     height: 114px;
-    top: 472px;
+    top: 445px;
     right: 122px;
   }
 `;
 export const TextSeeRecipe = styled.p`
-  font-family: "Poppins", sans-serif;
+  text-align: left;
   font-weight: 400;
-  color: var(--text-secondary);
+  color: var(--hero-tag-text);
   font-style: normal;
   font-size: 12px;
   line-height: 1.5;
@@ -43,44 +43,42 @@ export const TextSeeRecipe = styled.p`
     font-size: 14px;
     line-height: 1.28;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 1440px) {
     line-height: 1.42;
   }
 `;
 export const IconSpanTextLink = styled(BsArrowRight)`
-  color: var(--text-primary);
+  color: var(--hero-tag-text);
   width: 18px;
   height: 18px;
   margin-left: 4px;
   margin-right: 8px;
 `;
+export const LinkDiv = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+`;
+
 export const TextLink = styled(NavLink)`
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
   font-style: normal;
   font-size: 10px;
   line-height: 1.2;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
-  text-align: center;
   letter-spacing: 0.2px;
-  color: var(--text-primary);
-  padding-bottom: 11px;
+  color: var(--hero-tag-text);
   cursor: pointer;
+  text-decoration: none;
 
   &:hover {
-    color: green;
+    color: var(--hero-tag-accent);
 
     ${IconSpanTextLink} {
       color: var(--button-background-primary);
     }
   }
-
-  @media (min-width: 768px) {
-    padding-bottom: 15px;
-  }
 `;
 export const SpanSeeRecipe = styled.span`
-  color: var(--button-background-primary);
+  color: var(--hero-tag-accent);
 `;

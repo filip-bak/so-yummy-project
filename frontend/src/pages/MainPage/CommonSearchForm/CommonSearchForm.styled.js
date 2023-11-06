@@ -11,7 +11,7 @@ const SearchFormBox = styled(Form)`
     width: 362px;
     height: 59px;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 1440px) {
     width: 510px;
     height: 70px;
   }
@@ -50,7 +50,7 @@ const SearchFormInput = styled(Field)`
     /* background-color: #ffffff; */
   }
 
-  @media (min-width: 1280px) {
+  @media (min-width: 1440px) {
     height: 70px;
     padding-left: 48px;
     font-size: 16px;

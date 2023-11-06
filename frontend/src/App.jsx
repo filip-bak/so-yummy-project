@@ -3,7 +3,7 @@ import AuthSharedLayout from "components/AuthSharedLayout";
 import SharedLayout from "components/SharedLayout";
 import CategoriesPage from "pages/CategoriesPage";
 import FavoritePage from "pages/FavoritePage/FavoritePage";
-import MainPage from "pages/MainPage";
+import MainPage from "pages/MainPage/MainPage";
 import MyRecipesPage from "pages/MyRecipesPage/MyRecipesPage";
 import NotFoundPage from "pages/NotFoundPage";
 import RecipePage from "pages/RecipePage/RecipePage";

@@ -1,16 +1,28 @@
-import React from "react";
+import { useEffect } from "react";
 
-import HeroMain from "../../components/HeroMain";
-import ChooseYourBreakfast from "../../components/ChooseYourBreakfast";
+import ChooseYourBreakfast from "./ChooseYourBreakfast";
+import HeroMain from "./HeroMain";
 
+import { useDispatch } from "react-redux";
+import { fetchRecipesForMainPage } from "redux/recipes/actions";
 import { HeroMainContainer } from "./MainPage.styled";
+import MainRecipes from "./MainRecipes";
 
 const MainPage = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchRecipesForMainPage());
+  }, [dispatch]);
+
   return (
-    <HeroMainContainer>
-      <HeroMain />
-      <ChooseYourBreakfast />
-    </HeroMainContainer>
+    <>
+      <HeroMainContainer>
+        <HeroMain />
+        <ChooseYourBreakfast />
+      </HeroMainContainer>
+      <MainRecipes />
+    </>
   );
 };
 export default MainPage;
