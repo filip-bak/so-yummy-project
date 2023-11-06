@@ -6,7 +6,11 @@ import Switch from "components/Switch";
 import NavList from "../NavList";
 import MobileNavigation from "../MobileNavigation";
 import { useSelector } from "react-redux";
-import { selectIsRefreshing, selectUser } from "redux/auth/selectors";
+import {
+  selectGlobalLoading,
+  selectIsRefreshing,
+  selectUser,
+} from "redux/auth/selectors";
 import Loader from "components/Loader";
 import { PopUp } from "components/PopUp/PopUp";
 import { useState } from "react";
@@ -16,6 +20,8 @@ const Navigation = () => {
   const isProfileImg = false;
 
   const isRefreshing = useSelector(selectIsRefreshing);
+  const isLoading = useSelector(selectGlobalLoading);
+
   const user = useSelector(selectUser);
 
   const handleClick = () => {
@@ -50,11 +56,20 @@ const Navigation = () => {
       <NavList />
 
       <div className={styles.box}>
+        {/* Refresh user loader */}
+        <Loader
+          refresh={true}
+          color="#3498db"
+          width={"100%"}
+          height={"100%"}
+          visible={isRefreshing}
+        />
+        {/* Global loader */}
         <Loader
           refresh={true}
           width={"100%"}
           height={"100%"}
-          visible={isRefreshing}
+          visible={isLoading}
         />
         <div>
           <div onClick={popUpToggle} className={styles.profile}>
