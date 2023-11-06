@@ -17,10 +17,12 @@ import Loader from "components/Loader";
 import { PopUp } from "components/PopUp/PopUp";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { LogoutModal } from "components/LogoutModal/LogoutModal";
 
 const Navigation = () => {
   const [btnPopUp, setBtnPopUp] = useState(false);
   const [userModalOpen, setUserModalOpen] = useState(false);
+  const [logoutModalOpen, setLogoutModalOpen] = useState(false);
 
   const location = useLocation();
   const isDarkRecipePage = location.pathname.startsWith("/recipes/");
@@ -58,6 +60,7 @@ const Navigation = () => {
   const popUpToggle = () => {
     setBtnPopUp(prev => !prev);
   };
+
   return (
     <nav className={styles.container}>
       <Logo className={styles.logo} />
@@ -102,7 +105,11 @@ const Navigation = () => {
               ""
             )}
           </div>
-          <PopUp trigger={btnPopUp} userModalEdit={setUserModalOpen} />
+          <PopUp
+            trigger={btnPopUp}
+            userModalEdit={setUserModalOpen}
+            onLogout={setLogoutModalOpen}
+          />
         </div>
 
         <Switch id="switch" className={styles["theme-switch"]} />
@@ -119,10 +126,14 @@ const Navigation = () => {
         </button>
       </div>
       {userModalOpen && (
-        <div style={{ position: "absolute" }}>
+        <div className={styles.backdrop}>
           <UserEditModal onClose={() => setUserModalOpen(false)} />
         </div>
       )}
+      <LogoutModal
+        onClose={() => setLogoutModalOpen(false)}
+        open={logoutModalOpen}
+      />
       <MobileNavigation handleClose={handleClose} />
     </nav>
   );

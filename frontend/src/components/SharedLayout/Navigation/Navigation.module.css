@@ -134,3 +134,7 @@
     display: block;
   }
 }
+
+.backdrop {
+  position: absolute;
+}
