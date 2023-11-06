@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import {
   addIngredientToShoppingList,
   fetchShoppingList,
-  removeRecipeFromShoppingList,
+  removeIngredientFromShoppingList,
 } from "./action";
 
 const handlePending = state => {
@@ -23,16 +23,6 @@ const initialState = {
 const shoppingListSlice = createSlice({
   name: "shoppingList",
   initialState: initialState,
-  reducers: {
-    removeFromShoppingList: {
-      reducer(state, action) {
-        return {
-          ...state,
-          items: state.items.filter(item => item.itemId !== action.payload),
-        };
-      },
-    },
-  },
   extraReducers: builder => {
     builder
       .addCase(fetchShoppingList.pending, handlePending)
@@ -42,17 +32,15 @@ const shoppingListSlice = createSlice({
       .addCase(fetchShoppingList.rejected, handleRejected)
       .addCase(addIngredientToShoppingList.pending, handlePending)
       .addCase(addIngredientToShoppingList.fulfilled, (state, action) => {
-        state.items.push(action.payload);
+        state.items = action.payload;
       })
       .addCase(addIngredientToShoppingList.rejected, handleRejected)
 
-      .addCase(removeRecipeFromShoppingList.pending, handlePending)
-      .addCase(removeRecipeFromShoppingList.fulfilled, (state, action) => {
-        state.items = state.items.filter(
-          item => item._id !== action.payload._id
-        );
+      .addCase(removeIngredientFromShoppingList.pending, handlePending)
+      .addCase(removeIngredientFromShoppingList.fulfilled, (state, action) => {
+        state.items = action.payload;
       })
-      .addCase(removeRecipeFromShoppingList.rejected, handleRejected);
+      .addCase(removeIngredientFromShoppingList.rejected, handleRejected);
   },
 });
 

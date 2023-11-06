@@ -16,11 +16,12 @@ export const Shopping = () => {
         </ul>
       </div>
       <ul className={css.results}>
-        {shoppingList.map(({ image, name, itemId, measure }) => (
+        {shoppingList.map(({ image, name, id, measure, recipeId }) => (
           <ShoppingListItem
-            itemId={itemId}
+            recipeId={recipeId}
+            itemId={id}
             image={image}
-            key={itemId}
+            key={id + recipeId}
             name={name}
             measure={measure}
           />

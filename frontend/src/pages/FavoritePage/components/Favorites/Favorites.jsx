@@ -7,14 +7,15 @@ import { selectFavorite } from "redux/favorite/selectors";
 export const Favorites = () => {
   const favorites = useSelector(selectFavorite);
   const resultsPerPage = 4;
-
+  console.log(favorites);
   return (
     <div className={css.container}>
       <ul className={css.results}>
-        {favorites.map(({ image, id, title, description, time }) => (
+        {favorites.map(({ preview, _id, title, description, time }) => (
           <FavoriteItem
-            image={image}
-            key={id}
+            image={preview}
+            key={_id}
+            id={_id}
             title={title}
             description={description}
             time={time}

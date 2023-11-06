@@ -23,7 +23,8 @@
 .recipe_container button {
   color: var(--recipe-header-black);
 }
-.recipe_container button:hover {
+.recipe_container button:hover,
+.recipe_container button:focus {
   color: var(--recipe-header-button-hover);
 }
 
