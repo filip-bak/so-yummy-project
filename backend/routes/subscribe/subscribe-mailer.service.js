@@ -5,7 +5,12 @@ const sendSubscribeMail = async (email) => {
   const mailOptions = {
     to: email,
     subject: 'Thank You for Subscribing to SoYummy Newsletter!',
-    // text:""
+    text:`  SoYummy Newsletter!
+    Dear Subscriber,
+    Thank you for subscribing to SoYummy's newsletter! We are thrilled to have you on board. Get ready to indulge in a world of delightful recipes, culinary tips, and exclusive offers delivered right to your inbox.
+    Stay tuned for mouthwatering updates and exciting culinary adventures!
+    Warm regards,
+    The SoYummy Team`,
     html: `
       <h2>SoYummy Newsletter!<h2>
       <h4>Dear Subscriber,</h4>
