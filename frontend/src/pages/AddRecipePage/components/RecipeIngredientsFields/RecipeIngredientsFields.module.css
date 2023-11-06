@@ -1,0 +1,307 @@
+.container {
+  width: 343px;
+  margin-bottom: 44px;
+}
+
+.title {
+  color: var(--subtitle-color);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.title_container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.count_container {
+  border: 1px solid #969595;
+  border-radius: 18px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 28px;
+  width: 92px;
+}
+
+.decrease_button {
+  background-color: transparent;
+  border: none;
+  height: 14px;
+  padding: 0;
+  width: 14px;
+}
+
+.increase_button {
+  background-color: transparent;
+  border: none;
+  height: 14px;
+  padding: 0;
+  width: 14px;
+}
+
+.icon_minus {
+  stroke: #969595;
+  width: 14px;
+  height: 14px;
+}
+
+.icon_plus {
+  stroke: var(--accent-color-darker);
+  width: 14px;
+  height: 14px;
+}
+
+.count {
+  color: #333;
+  font-size: 14px;
+}
+
+.ingredient {
+  display: flex;
+  height: 53px;
+  width: 343px;
+}
+
+.ingredient:not(:last-child) {
+  margin-bottom: 18px;
+}
+
+.ingredient_container {
+  position: relative;
+}
+
+.ingredient_input {
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 8px;
+  color: #424242;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  margin-right: 14px;
+  padding: 16px;
+  width: 194px;
+}
+
+.ingredient_input:focus,
+.ingredient_input:hover {
+  outline: none;
+}
+
+.ingredient_container:after {
+  content: ">";
+  font: 17px "Consolas", monospace;
+  color: var(--accent-color-darker);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  left: 160px;
+  top: 16px;
+  position: absolute;
+  pointer-events: none;
+}
+
+.amount_container {
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 6px;
+  display: flex;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  padding: 16px;
+  position: relative;
+  width: 84px;
+}
+
+.amount_container:after {
+  content: ">";
+  font: 17px "Consolas", monospace;
+  color: var(--accent-color-darker);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  right: 9px;
+  top: 16px;
+  position: absolute;
+  pointer-events: none;
+}
+
+.amount_input {
+  background-color: #f5f5f5;
+  border: none;
+  color: #424242;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  width: 21px;
+}
+
+.amount_input:focus,
+.amount_input:hover,
+.amount_select_box:focus,
+.amount_select_box:hover {
+  outline: none;
+}
+
+.amount_select_box {
+  background-color: #f5f5f5;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.ingredient_drop_down {
+  background-color: #fff;
+  height: 154px;
+  overflow: scroll;
+  overflow-x: hidden;
+  scrollbar-color: #969595;
+  width: 194px;
+  z-index: 1;
+  position: relative;
+}
+
+.cross_button {
+  background-color: transparent;
+  border: none;
+  height: 18px;
+  margin-left: 33px;
+  margin-top: 16px;
+  padding: 0;
+  width: 18px;
+}
+
+.icon_cross {
+  stroke: #000;
+  width: 18px;
+  height: 18px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 704px;
+    margin-bottom: 100px;
+  }
+
+  .title_container {
+    margin-bottom: 32px;
+  }
+
+  .count_container {
+    height: 32px;
+    width: 110px;
+  }
+
+  .decrease_button {
+    height: 16px;
+    width: 16px;
+  }
+
+  .increase_button {
+    height: 16px;
+    width: 16px;
+  }
+
+  .icon_minus {
+    width: 16px;
+    height: 16px;
+  }
+
+  .icon_plus {
+    width: 16px;
+    height: 16px;
+  }
+
+  .count {
+    font-size: 16px;
+  }
+
+  .ingredient {
+    height: 59px;
+    width: 398px;
+  }
+
+  .ingredient:not(:last-child) {
+    margin-bottom: 24px;
+  }
+
+  .ingredient_input {
+    font-size: 18px;
+    margin-right: 32px;
+    width: 398px;
+  }
+
+  .ingredient_container:after {
+    font: 22px "Consolas", monospace;
+    left: 360px;
+  }
+
+  .amount_container {
+    align-items: center;
+    font-size: 18px;
+    padding: 16px 18px;
+    width: 97px;
+  }
+
+  .amount_container:after {
+    font: 22px "Consolas", monospace;
+    right: 5px;
+  }
+
+  .amount_input {
+    font-size: 18px;
+  }
+
+  .amount_select_box {
+    font-size: 18px;
+  }
+
+  .ingredient_drop_down {
+    height: 172px;
+    width: 398px;
+  }
+
+  .cross_button {
+    height: 20px;
+    margin-left: 157px;
+    width: 18px;
+  }
+
+  .icon_cross {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    width: 609px;
+  }
+
+  .ingredient_container {
+    margin-right: 32px;
+    width: 398px;
+  }
+
+  .ingredient {
+    width: 609px;
+  }
+
+  .amount_container {
+    width: 99px;
+  }
+
+  .cross_button {
+    margin-left: 60px;
+  }
+}

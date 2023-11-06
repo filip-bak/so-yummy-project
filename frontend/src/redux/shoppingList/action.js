@@ -20,15 +20,9 @@ export const fetchShoppingList = createAsyncThunk(
 
 export const addIngredientToShoppingList = createAsyncThunk(
   "shoppingList/addRecipeToShoppingList",
-  async ({ id, name, image, measure }, thunkAPI) => {
+  async (payload, thunkAPI) => {
     try {
-      const data = {
-        ttl: name,
-        itemId: id,
-        thb: image,
-        measure,
-      };
-      await axios.post(`/shopping-list`, data);
+      await axios.post(`/shopping-list/add`, payload);
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
     }
