@@ -14,7 +14,7 @@ export const FavoriteList = () => {
 
   useEffect(() => {
     dispatch(fetchFavorite(currentPage));
-  }, [dispatch]);
+  }, [dispatch, currentPage]);
 
   return (
     <>

@@ -1,9 +1,9 @@
-import css from "./FavoriteItem.module.css";
-import icons from "../../../../images/icons.svg";
 import Button from "components/Button";
-import { useNavigate, useParams } from "react-router";
-import { removeFromFavorite } from "redux/favorite/actions";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router";
+import { removeFromFavorite } from "redux/favorite/actions";
+import icons from "../../../../images/icons.svg";
+import css from "./FavoriteItem.module.css";
 
 export const FavoriteItem = ({ image, title, id, description, time }) => {
   const navigate = useNavigate();
