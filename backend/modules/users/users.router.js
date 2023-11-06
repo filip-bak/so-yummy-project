@@ -9,6 +9,8 @@ const { authMiddleware } = require("../auth/auth.middleware");
 const multer = require("multer");
 const path = require("path");
 const { cloudinary } = require("./users.cloudinary");
+const { User } = require("./users.model");
+const { updateUser } = require("./users.service");
 
 const usersRouter = Router();
 
@@ -31,21 +33,39 @@ usersRouter.patch(
 
 usersRouter.post(
   "/upload",
+  authMiddleware,
   usersController.upload.single("image"),
   async (req, res) => {
     try {
-      cloudinary.uploader.upload(req.file.path),
+      const { email } = req.user;
+      const { width = 250, height = 250 } = req.body;
+
+      const uploadOptions = {
+        width,
+        height,
+        crop: "fill",
+      };
+
+      cloudinary.uploader.upload(
+        req.file.path,
+        uploadOptions,
         async (err, result) => {
           if (err) {
-            console.log(err);
+            console.error(err);
             return res.status(500).json({
               message: "Error",
             });
           }
-        };
-      res.status(200).json({
-        message: "Uploaded",
-      });
+          const imageUrl = result.secure_url;
+
+          await updateUser(email, { avatarURL: imageUrl });
+
+          res.status(200).json({
+            message: "Uploaded",
+            avatarURL: imageUrl,
+          });
+        }
+      );
     } catch (error) {
       console.log(error);
       res.send({
