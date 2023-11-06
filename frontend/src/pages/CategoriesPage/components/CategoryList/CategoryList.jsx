@@ -16,7 +16,6 @@ export const CategoryList = () => {
     dispatch(fetchRecipesCategoryList());
   }, [dispatch]);
 
-
   const handleChange = (event, newValue) => {
     navigate(`/categories/${newValue}`);
   };
