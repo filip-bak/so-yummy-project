@@ -5,3 +5,13 @@ export const selectIsLoggedIn = state => state.auth.isLoggedIn;
 export const selectIsLoading = state => state.auth.isLoading;
 export const selectIsRefreshing = state => state.auth.isRefreshing;
 export const selectError = state => state.auth.isError;
+
+export const selectGlobalLoading = state => {
+  return (
+    state.auth.isLoading ||
+    state.recipe.isLoading ||
+    state.recipes.isLoading ||
+    state.favorite.isLoading ||
+    state.myRecipes.isLoading
+  );
+};

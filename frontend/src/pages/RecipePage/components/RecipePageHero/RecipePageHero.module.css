@@ -2,12 +2,12 @@
   cursor: pointer;
   fill: none;
   height: 14px;
-  stroke: var(--description-color);
+  stroke: var(--recipe-header-black);
   width: 14px;
 }
 
 .dish_time {
-  color: var(--description-color);
+  color: var(--recipe-header-black);
   font-size: 10px;
   font-weight: 600;
   line-height: 1.4;
@@ -20,6 +20,13 @@
   align-items: center;
   /* width: 303px; */
 }
+.recipe_container button {
+  color: var(--recipe-header-black);
+}
+.recipe_container button:hover,
+.recipe_container button:focus {
+  color: var(--recipe-header-button-hover);
+}
 
 .recipe_title {
   color: var(--accent-color-darker);
@@ -29,7 +36,7 @@
 }
 
 .recipe_description {
-  color: var(--main-color-dark);
+  color: var(--recipe-header-black);
   font-size: 12px;
   font-weight: 400;
   margin-bottom: 24px;

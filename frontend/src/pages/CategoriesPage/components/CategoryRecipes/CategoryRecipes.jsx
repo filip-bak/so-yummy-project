@@ -1,20 +1,16 @@
+import { Box, Tab, Tabs, ThemeProvider, createTheme } from "@mui/material";
+import { Pagination } from "components/Pagination/Pagination";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams, useSearchParams } from "react-router-dom";
+import { fetchRecipesByCategory } from "redux/recipes/actions";
 import {
-  fetchRecipesByCategory,
-  fetchRecipesCategoryList,
-} from "redux/recipes/actions";
-import {
-  selectRecipes,
   selectCategories,
+  selectRecipes,
   selectResultsPerPage,
   selectTotalPages,
 } from "redux/recipes/selectors";
-import { setResultsPerPage } from "redux/recipes/slice";
-import { useDispatch, useSelector } from "react-redux";
-import { useParams, useNavigate, useSearchParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { Box, Tab, Tabs, ThemeProvider, createTheme } from "@mui/material";
 import { CardMeal } from "../CardMeal/CardMeal";
-import { Pagination } from "components/Pagination/Pagination";
 import styles from "./CategoryRecipes.module.css";
 
 const localTheme = createTheme({
@@ -28,25 +24,25 @@ const localTheme = createTheme({
   },
 });
 
+const toCapitalCase = str => {
+  return str
+    .split(" ")
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+};
+
 export const CategoryRecipes = () => {
   const [searchParams] = useSearchParams();
-  const totalCount = useSelector(selectTotalPages);
-  const resultsPerPage = useSelector(selectResultsPerPage);
-  const dispatch = useDispatch();
   const { categoryName } = useParams();
+
+  const [flag, setFlag] = useState(false);
+  const totalCount = useSelector(selectTotalPages);
+  const dispatch = useDispatch();
+  const resultsPerPage = useSelector(selectResultsPerPage);
   const categoryList = useSelector(selectCategories);
   const items = useSelector(selectRecipes);
   const navigate = useNavigate();
-  const [flag, setFlag] = useState(false);
   const currentPage = searchParams.get("currentPage") ?? 1;
-  const isValidCategory = categoryList?.includes(categoryName);
-
-  useEffect(() => {
-    if (!isValidCategory) {
-      navigate(`/categories/Beef`);
-      dispatch(fetchRecipesCategoryList());
-    }
-  }, [dispatch, isValidCategory, navigate]);
 
   useEffect(() => {
     dispatch(
@@ -55,8 +51,16 @@ export const CategoryRecipes = () => {
         currentPage: currentPage,
       })
     );
-    dispatch(setResultsPerPage(8));
   }, [dispatch, currentPage, categoryName]);
+
+  useEffect(() => {
+    if (
+      categoryList.length > 0 &&
+      !categoryList.includes(toCapitalCase(categoryName))
+    ) {
+      return navigate(`/categories/beef`);
+    }
+  }, [categoryName, categoryList, navigate]);
 
   const handleChange = (event, newValue) => {
     navigate(`/categories/${newValue}`);
@@ -85,7 +89,7 @@ export const CategoryRecipes = () => {
         >
           <Tabs
             onChange={handleChange}
-            value={categoryName}
+            value={categoryName.toLowerCase()}
             variant="scrollable"
             scrollButtons={true}
             allowScrollButtonsMobile
@@ -146,7 +150,7 @@ export const CategoryRecipes = () => {
                   fontStyle: "normal",
                 }}
                 key={categ}
-                value={categ}
+                value={categ.toLowerCase()}
                 label={categ}
               />
             ))}

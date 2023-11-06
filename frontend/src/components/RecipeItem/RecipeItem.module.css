@@ -3,6 +3,7 @@
   position: relative;
   width: 343px;
   height: 323px;
+  cursor: pointer;
 }
 
 .container > .label {

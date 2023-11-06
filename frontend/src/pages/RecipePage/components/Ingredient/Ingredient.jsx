@@ -1,15 +1,29 @@
 import css from "./Ingredient.module.css";
 import icons from "../../../../images/icons.svg";
 import { useDispatch } from "react-redux";
-import { fetchRecipeById } from "redux/recipe/actions";
-import { addIngredientToShoppingList } from "redux/shoppingList/action";
+import {
+  addIngredientToShoppingList,
+  removeIngredientFromShoppingList,
+} from "redux/shoppingList/action";
 
-export const Ingredient = ({ recipeId, image, name, measure }) => {
+export const Ingredient = ({
+  recipeId,
+  itemId,
+  image,
+  name,
+  measure,
+  inShoppingList,
+}) => {
   const dispatch = useDispatch();
 
-  const handleClick = () => {
-    dispatch(addIngredientToShoppingList({ name, image, measure }));
-    dispatch(fetchRecipeById(recipeId));
+  const handleAddToShoppingList = () => {
+    dispatch(addIngredientToShoppingList({ recipeId, ingredientId: itemId }));
+  };
+
+  const handleRemovalFromShoppingList = () => {
+    dispatch(
+      removeIngredientFromShoppingList({ recipeId, ingredientId: itemId })
+    );
   };
 
   return (
@@ -24,10 +38,19 @@ export const Ingredient = ({ recipeId, image, name, measure }) => {
         </center>
       </div>
       <div className={css.button_container}>
-        <button className={css.add_button} onClick={handleClick}>
-          <svg className={css.icon}>
-            <use href={`${icons}#icon-pick`} />
-          </svg>
+        <button
+          className={css.add_button}
+          onClick={() =>
+            inShoppingList
+              ? handleRemovalFromShoppingList()
+              : handleAddToShoppingList()
+          }
+        >
+          {inShoppingList && (
+            <svg className={css.icon}>
+              <use href={`${icons}#icon-pick`} />
+            </svg>
+          )}
         </button>
       </div>
     </li>
