@@ -33,4 +33,6 @@ export const PaginationNav = ({ increasePage, handlePageChange, disabled }) => {
 
 PaginationNav.propTypes = {
   increasePage: PropTypes.bool.isRequired,
+  handlePageChange: PropTypes.func.isRequired,
+  disabled: PropTypes.bool.isRequired,
 };

@@ -9,6 +9,8 @@ export const RecipePreparationFields = () => {
         name="preparation"
         rows="20"
         placeholder="Enter recipe here..."
+        required
+        minLength="10"
       ></textarea>
     </div>
   );

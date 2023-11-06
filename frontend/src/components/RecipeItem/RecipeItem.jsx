@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import css from "./RecipeItem.module.css";
+import PropTypes from "prop-types";
 
 export const RecipeItem = ({ recipeId, image, title }) => {
   const navigate = useNavigate();
@@ -14,4 +15,10 @@ export const RecipeItem = ({ recipeId, image, title }) => {
       </div>
     </li>
   );
+};
+
+RecipeItem.propTypes = {
+  recipeId: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 };

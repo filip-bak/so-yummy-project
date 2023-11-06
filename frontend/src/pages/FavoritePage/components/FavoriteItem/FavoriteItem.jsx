@@ -4,6 +4,7 @@ import { useNavigate } from "react-router";
 import { removeFromFavorite } from "redux/favorite/actions";
 import icons from "../../../../images/icons.svg";
 import css from "./FavoriteItem.module.css";
+import PropTypes from "prop-types";
 
 export const FavoriteItem = ({ image, title, id, description, time }) => {
   const navigate = useNavigate();
@@ -42,4 +43,12 @@ export const FavoriteItem = ({ image, title, id, description, time }) => {
       </div>
     </li>
   );
+};
+
+FavoriteItem.propTypes = {
+  image: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  time: PropTypes.number.isRequired,
 };
