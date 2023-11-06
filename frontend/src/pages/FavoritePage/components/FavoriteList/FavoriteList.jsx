@@ -4,14 +4,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchFavorite } from "redux/favorite/actions";
 import { selectFavorite } from "redux/favorite/selectors";
 import { Favorites } from "../Favorites/Favorites";
+import { useSearchParams } from "react-router-dom";
 
 export const FavoriteList = () => {
   const favorite = useSelector(selectFavorite);
+  const [searchParams] = useSearchParams();
   const dispatch = useDispatch();
+  const currentPage = searchParams.get("currentPage") || 1;
 
   useEffect(() => {
-    dispatch(fetchFavorite());
-  }, [dispatch]);
+    dispatch(fetchFavorite(currentPage));
+  }, [dispatch, currentPage]);
 
   return (
     <>

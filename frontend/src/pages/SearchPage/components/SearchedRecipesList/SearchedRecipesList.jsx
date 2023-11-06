@@ -4,11 +4,13 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import { fetchRecipes } from "redux/recipes/actions";
-import { selectRecipes } from "redux/recipes/selectors";
+import { selectRecipes, selectResultsPerPage } from "redux/recipes/selectors";
 
 export const SearchedRecipesList = () => {
   const dispatch = useDispatch();
-  const { items, resultsPerPage } = useSelector(selectRecipes);
+  const items = useSelector(selectRecipes);
+  const resultsPerPage = useSelector(selectResultsPerPage);
+
   const [searchParams] = useSearchParams();
 
   const query = searchParams.get("query");
@@ -28,7 +30,7 @@ export const SearchedRecipesList = () => {
 
   return (
     <>
-      {items.length > 0 ? (
+      {items?.length > 0 && query !== null ? (
         <SearchResults />
       ) : (
         <NoContent infoParagraph={noContentMessage} />

@@ -1,0 +1,119 @@
+.section {
+  min-height: 100vh;
+  width: 100vw;
+  background-image: url("../../images/mobile/bg-register-dark.png");
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 100% 490px;
+}
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .section {
+    background-image: url("../../images/mobile/bg-register-dark-2x.png");
+  }
+}
+
+.container {
+  width: 335px;
+  padding: 32px 28px;
+  grid-area: main;
+  background-color: rgb(42, 44, 54);
+  border-radius: 30px;
+  box-shadow: 0px 4px 48px 0px rgba(0, 0, 0, 0.1);
+  display: flex;
+  position: absolute;
+  top: 63%;
+  left: 50%;
+  flex-direction: column;
+  align-items: center;
+  transform: translate(-50%, -50%);
+}
+
+@media screen and (min-width: 768px) {
+  .section {
+    background-image: url("../../images/tablet/bg-register-dark.png");
+    background-size: 100% 606px;
+  }
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .section {
+      background-image: url("../../images/tablet/bg-register-dark-2x.png");
+    }
+  }
+
+  .container {
+    width: 500px;
+    display: flex;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 44px 28px;
+  }
+  .containerSignin {
+    width: 335px;
+    height: 315px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .section {
+    background-image: url("../../images/desktop/bg-register-dark.png");
+    background-size: 100% 325px;
+    display: flex;
+    align-items: flex-end;
+  }
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .section {
+      background-image: url("../../images/desktop/bg-register-dark-2x.png");
+    }
+  }
+  .container {
+    gap: 115px;
+    top: 59%;
+    left: 65%;
+    flex-direction: row;
+    justify-content: center;
+    width: 500px;
+  }
+}
+/*
+.background {
+  width: 285px;
+  height: 250px;
+  background-image: url("../../images/Order-food-pana.svg");
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 100% 250px;
+  position: absolute;
+  top: -220px;
+  left: 32px;
+  z-index: -1;
+}
+
+@media screen and (min-width: 768px) {
+  .background {
+    width: 409px;
+    height: 359px;
+    background-size: 100% 359px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .background {
+    top: -340px;
+    left: 50px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .background {
+    width: 532px;
+    height: 468px;
+    background-size: 100% 468px;
+    background-image: url("../../images/Order-panaDesk.svg");
+    display: flex;
+    position: absolute;
+    left: -647px;
+    top: 20px;
+  }
+} */

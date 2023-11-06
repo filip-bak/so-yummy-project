@@ -1,0 +1,87 @@
+.container {
+  width: 161px;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 18px;
+  border-radius: 8px;
+  border: 1px solid var(--accent-color-darker);
+  background: var(--main-color-light);
+  position: absolute;
+  top: 60px;
+  right: 60px;
+  z-index: 2;
+}
+
+.editBtn {
+  all: unset;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--main-color-light);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 500;
+  line-height: 22.4px;
+  cursor: pointer;
+}
+.editBtn:hover span,
+.editBtn:focus span {
+  color: var(--accent-color-darker);
+}
+.editBtn:hover svg,
+.editBtn:focus svg {
+  fill: var(--accent-color-darker);
+  stroke: var(--accent-color-darker);
+}
+.icon {
+  stroke: black;
+  fill: white;
+  width: 14px;
+  height: 14px;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.editText {
+  color: var(--main-color-dark);
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22.4px;
+}
+
+.icon2 {
+  height: 18px;
+  width: 18px;
+  stroke: white;
+  fill: white;
+}
+.logoutBtn {
+  padding: 12px 24px 12px 27px;
+  width: 125px;
+  border-radius: 24px 44px;
+  border: none;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  background-color: #8baa36;
+  font-size: 14px;
+  color: #fafafa;
+  transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logoutBtn:hover,
+.logoutBtn:focus {
+  background-color: #22252a;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    width: 177px;
+    height: 134px;
+    gap: 32px;
+  }
+  .logoutBtn {
+    width: 141px;
+    padding: 12px 32px 12px 35px;
+  }
+}

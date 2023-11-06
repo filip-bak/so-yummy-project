@@ -1,9 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { login, logout, refreshUser, register, updateUser } from "./actions";
+import {
+  login,
+  logout,
+  refreshUser,
+  register,
+  updateUser,
+  updateUserAvatar,
+} from "./actions";
 
 const initialState = {
-  user: { name: null, email: null, token: null, isVerified: false },
+  user: { name: null, email: null },
   token: null,
+  avatar: null,
   isLoggedIn: false,
   isLoading: false,
   isRefreshing: false,
@@ -28,10 +36,18 @@ const handleReject = (state, action) => {
 const authSlice = createSlice({
   name: "auth",
   initialState,
+  reducers: {
+    resetError: state => {
+      state.isError = null;
+    },
+  },
   extraReducers: builder => {
     builder
       .addCase(register.pending, handlePending)
-      .addCase(register.fulfilled, handleFulfilled)
+      .addCase(register.fulfilled, (state, action) => {
+        handleFulfilled(state, action);
+        state.avatar = action.payload.user.avatarURL;
+      })
       .addCase(register.rejected, handleReject)
 
       .addCase(login.pending, handlePending)
@@ -42,6 +58,7 @@ const authSlice = createSlice({
       .addCase(logout.fulfilled, state => {
         state.user = initialState.user;
         state.token = null;
+        state.avatar = null;
         state.isLoading = false;
         state.isLoggedIn = false;
       })
@@ -54,12 +71,20 @@ const authSlice = createSlice({
       })
       .addCase(updateUser.rejected, handleReject)
 
+      .addCase(updateUserAvatar.pending, handlePending)
+      .addCase(updateUserAvatar.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.avatar = action.payload?.avatarURL;
+      })
+      .addCase(updateUserAvatar.rejected, handleReject)
+
       .addCase(refreshUser.pending, state => {
         state.isError = null;
         state.isRefreshing = true;
       })
       .addCase(refreshUser.fulfilled, (state, action) => {
-        state.user = action.payload;
+        state.user = action.payload.user;
+        state.avatar = action.payload.avatar;
         state.isRefreshing = false;
         state.isLoggedIn = true;
       })

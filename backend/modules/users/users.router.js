@@ -8,24 +8,9 @@ const {
 const { authMiddleware } = require("../auth/auth.middleware");
 const multer = require("multer");
 const path = require("path");
-
-const uploadDir = path.join(process.cwd(), "public");
-
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, uploadDir);
-  },
-  filename: (req, file, cb) => {
-    cb(null, file.originalname);
-  },
-  limits: {
-    fileSize: 1048576,
-  },
-});
-
-const upload = multer({
-  storage: storage,
-});
+const { cloudinary } = require("./users.cloudinary");
+const { User } = require("./users.model");
+const { updateUser } = require("./users.service");
 
 const usersRouter = Router();
 
@@ -45,12 +30,51 @@ usersRouter.patch(
   userNameValidator,
   usersController.updateUserNameHandler
 );
-// usersRouter.patch(
-//   "/avatars",
-//   authMiddleware,
-//   upload.single("avatar"),
-//   usersController.updateUserAvatarHandler
-// );
+
+usersRouter.post(
+  "/upload",
+  authMiddleware,
+  usersController.upload.single("image"),
+  async (req, res) => {
+    try {
+      const { email } = req.user;
+      const { width = 250, height = 250 } = req.body;
+
+      const uploadOptions = {
+        width,
+        height,
+        crop: "fill",
+      };
+
+      cloudinary.uploader.upload(
+        req.file.path,
+        uploadOptions,
+        async (err, result) => {
+          if (err) {
+            console.error(err);
+            return res.status(500).json({
+              message: "Error",
+            });
+          }
+          const imageUrl = result.secure_url;
+
+          await updateUser(email, { avatarURL: imageUrl });
+
+          res.status(200).json({
+            message: "Uploaded",
+            avatarURL: imageUrl,
+          });
+        }
+      );
+    } catch (error) {
+      console.log(error);
+      res.send({
+        message: error.message,
+      });
+    }
+  }
+);
+
 module.exports = {
   usersRouter,
 };
