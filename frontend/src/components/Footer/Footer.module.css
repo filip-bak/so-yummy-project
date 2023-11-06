@@ -19,13 +19,13 @@
   background-image: url(../../images/mobile/footer-pasta2-mob.png);
   background-repeat: no-repeat;
   position: absolute;
-  top: 354px;
-  right: 0px;
   display: block;
+  top: 400px;
+  right: 0px;
   z-index: -2;
 
-  width: 178px;
-  height: 172px;
+  width: 68px;
+  height: 109px;
 }
 .containerMain {
   background-color: var(--footer-bg);
@@ -57,9 +57,10 @@
   }
   .bg2 {
     background-image: url(../../images/tablet/footer-pasta2-tab.png);
-    top: 250px;
-    width: 290px;
-    height: 313px;
+    top: 330px;
+
+    width: 147px;
+    height: 180px;
   }
   .containerMain {
     margin-bottom: 32px;
@@ -82,9 +83,9 @@
   }
   .bg2 {
     background-image: url(../../images/desktop/footer-pasta2-desk.png);
-    top: 142px;
-    width: 438px;
-    height: 474px;
+    top: 266px;
+    width: 238px;
+    height: 270px;
   }
   .containerMain {
     margin-bottom: 50px;
