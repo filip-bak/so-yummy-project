@@ -76,10 +76,10 @@ const UserEditModal = ({ onClose }) => {
                 <input name="name" className={css.UserNameInput} />
 
                 <svg className={css.Pencil}>
-                  <use href={`${icon}#icon-pencil`}></use>
+                  <use href={`${icon}#icon-pencil2`}></use>
                 </svg>
                 <svg className={css.User}>
-                  <use href={`${icon}#icon-input-user`}></use>
+                  <use href={`${icon}#icon-user2`}></use>
                 </svg>
               </label>
               <Button variant="secondary" size="large" type="submit">
