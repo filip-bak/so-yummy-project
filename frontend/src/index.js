@@ -7,12 +7,14 @@ import { PersistGate } from "redux-persist/integration/react";
 import { App } from "./App";
 import "./index.css";
 import Loader from "components/Loader";
+import ScrollToTop from "components/ScrollToTop/index.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter basename="/so-yummy-project">
       <Provider store={store}>
-        <PersistGate loading={<Loader />} persistor={persistor}>
+        <PersistGate loading={<Loader visible={true} />} persistor={persistor}>
+          <ScrollToTop />
           <App />
         </PersistGate>
       </Provider>
