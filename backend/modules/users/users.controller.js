@@ -1,14 +1,6 @@
 const userDao = require("./users.service");
 const authService = require("../auth/auth.service");
-const jimp = require("jimp");
-const mimetypes = require("mime-types");
-const { v4 } = require("uuid");
-const path = require("path");
-const fs = require("fs/promises");
-const User = require("./users.model");
 const { sendUserVerificationMail } = require("./users-mailer.service");
-const { CloudinaryStorage } = require("multer-storage-cloudinary");
-const { cloudinary } = require("./users.cloudinary");
 
 const multer = require("multer");
 
@@ -31,8 +23,8 @@ const signupHandler = async (req, res, next) => {
       },
     });
   } catch (e) {
+    console.error(e);
     const { message } = e;
-
     if (e instanceof userDao.DuplicatedKeyError) {
       return res.status(409).send({ message });
     }
@@ -43,13 +35,17 @@ const signupHandler = async (req, res, next) => {
 
 const loginHandler = async (req, res, next) => {
   try {
-    const userEntity = await userDao.getUser({ email: req.body.email });
-    const userPasswordValidate = await userEntity?.validatePassword(
-      req.body.password
-    );
+    const { email, password } = req.body;
+    const userEntity = await userDao.getUser({ email });
 
-    if (!userEntity || !userPasswordValidate) {
+    if (!userEntity) {
       return res.status(401).send({ message: "Wrong credentials." });
+    }
+
+    const userPasswordValidate = await userEntity.validatePassword(password);
+
+    if (!userPasswordValidate) {
+      return res.status(401).send({ message: "Wrong password." });
     }
 
     if (!userEntity.verified) {
@@ -67,6 +63,7 @@ const loginHandler = async (req, res, next) => {
     return res.status(200).send({
       user: userPayload,
       token,
+      avatarURL: userEntity.avatarURL,
     });
   } catch (e) {
     return next(e);
