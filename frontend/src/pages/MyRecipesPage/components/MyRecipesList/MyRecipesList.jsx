@@ -15,7 +15,7 @@ export const MyRecipesList = () => {
 
   return (
     <>
-      {myRecipes.length > 0 ? (
+      {myRecipes?.length > 0 ? (
         <MyRecipes />
       ) : (
         <NoContent infoParagraph="You don't have own recipes yet..." />

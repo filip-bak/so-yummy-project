@@ -77,17 +77,11 @@ export const fetchMyRecipes = createAsyncThunk(
   "myRecipes/fetchAll",
   async (_, thunkAPI) => {
     try {
-      const response = testData;
-      const myRecipes = response.map(item => ({
-        title: item.title,
-        image: item.thumb,
-        id: item.id,
-        description: item.description,
-        time: item.time,
-      }));
+      const { data } = await axios.get("/recipes/my/own");
+
       return {
         currentPage: 1,
-        myRecipes,
+        myRecipes: data.recipes,
       };
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
@@ -133,7 +127,7 @@ export const removeMyRecipe = createAsyncThunk(
   "favorite/removeMyRecipe",
   async (myRecipeId, thunkAPI) => {
     try {
-      const res = await axios.delete(`/ownRecipes/${myRecipeId}`);
+      const res = await axios.delete(`/recipes/recipe/${myRecipeId}`);
       return res.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
