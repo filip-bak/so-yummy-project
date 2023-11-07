@@ -1,13 +1,15 @@
-import css from "./Ingredient.module.css";
-import icons from "../../../../images/icons.svg";
+import usePlaceholderImage from "hooks/usePlaceholder";
+import defaultImageMedium from "images/defaults/ingredientsDefault112x112.jpg";
+import defaultImageLarge from "images/defaults/ingredientsDefault128x128.jpg";
+import defaultImageSmall from "images/defaults/ingredientsDefault57x57.jpg";
 import { useDispatch } from "react-redux";
+import { selectIsLoading } from "redux/recipe/selectors";
 import {
   addIngredientToShoppingList,
   removeIngredientFromShoppingList,
 } from "redux/shoppingList/action";
-import defaultImageSmall from "images/defaults/ingredientsDefault57x57.jpg";
-import defaultImageMedium from "images/defaults/ingredientsDefault112x112.jpg";
-import defaultImageLarge from "images/defaults/ingredientsDefault128x128.jpg";
+import icons from "../../../../images/icons.svg";
+import css from "./Ingredient.module.css";
 
 export const Ingredient = ({
   recipeId,
@@ -30,18 +32,23 @@ export const Ingredient = ({
     );
   };
   let selectedDefaultImage = defaultImageSmall;
-
   if (screenWidth >= 768 && screenWidth < 1440) {
     selectedDefaultImage = defaultImageMedium;
   } else if (screenWidth >= 1440) {
     selectedDefaultImage = defaultImageLarge;
   }
 
+  const displayedImage = usePlaceholderImage(
+    image,
+    selectedDefaultImage,
+    selectIsLoading
+  );
+
   return (
     <li className={css.item}>
       <div className={css.image_container}>
         <img
-          src={image || selectedDefaultImage}
+          src={displayedImage}
           className={css.image}
           alt="an ingredient"
         ></img>

@@ -6,7 +6,6 @@ import useRecipeMediaLayout from "../../../../hooks/useRecipeMediaLayout";
 import { useNavigate } from "react-router-dom";
 import { selectRecipes } from "redux/recipes/selectors";
 import { useSelector } from "react-redux";
-import defaultImage from "images/defaults/defaultImageStandard.jpg";
 
 const MainRecipesList = () => {
   const recipes = useSelector(selectRecipes);
@@ -33,7 +32,7 @@ const MainRecipesList = () => {
                     <RecipeItem
                       key={_id}
                       title={title}
-                      image={preview || defaultImage}
+                      image={preview}
                       recipeId={_id}
                     />
                   ))}
