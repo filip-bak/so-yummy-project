@@ -1,23 +1,23 @@
+import Loader from "components/Loader";
 import Logo from "components/Logo";
-import styles from "./Navigation.module.css";
-import mobileStyles from "../MobileNavigation/MobileNavigation.module.css";
-import icon from "../../../images/icons.svg";
+import { LogoutModal } from "components/LogoutModal/LogoutModal";
+import { PopUp } from "components/PopUp/PopUp";
 import Switch from "components/Switch";
-import NavList from "../NavList";
-import MobileNavigation from "../MobileNavigation";
 import UserEditModal from "components/UserEditModal";
+import { useState } from "react";
 import { useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
 import {
   selectAvatarUrl,
   selectGlobalLoading,
   selectIsRefreshing,
   selectUser,
 } from "redux/auth/selectors";
-import Loader from "components/Loader";
-import { PopUp } from "components/PopUp/PopUp";
-import { useState } from "react";
-import { useLocation } from "react-router-dom";
-import { LogoutModal } from "components/LogoutModal/LogoutModal";
+import icon from "../../../images/icons.svg";
+import MobileNavigation from "../MobileNavigation";
+import mobileStyles from "../MobileNavigation/MobileNavigation.module.css";
+import NavList from "../NavList";
+import styles from "./Navigation.module.css";
 
 const Navigation = () => {
   const [btnPopUp, setBtnPopUp] = useState(false);

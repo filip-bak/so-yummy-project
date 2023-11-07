@@ -32,6 +32,7 @@ app.use("/api/popular-recipes", popularRecipesRouter);
 app.use("/api/ingredients", ingredientsRouter);
 app.use("/api/shopping-list", shoppingRouter);
 app.use("/api/subscribe", subscribeRouter);
+
 app.use((req, res) => {
   res.status(404).json({ message: "Not found" });
 });

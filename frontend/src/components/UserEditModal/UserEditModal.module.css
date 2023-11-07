@@ -27,9 +27,9 @@
   flex-direction: column;
   background: var(--main-color-light);
   padding: 25px 12px;
-  @media (min-width: 478px) {
-    padding: 50px 40px;
-  }
+}
+@media (min-width: 478px) {
+  padding: 50px 40px;
 }
 
 .ModalForm {
@@ -50,12 +50,12 @@
   background-color: transparent;
   background: var(--main-color-light);
   color: var(--main-color-dark);
-  @media (min-width: 478px) {
-    width: 14px;
-    height: 14px;
-    top: 24px;
-    right: 24px;
-  }
+}
+@media (min-width: 478px) {
+  width: 14px;
+  height: 14px;
+  top: 24px;
+  right: 24px;
 }
 
 .PictureIcon {
@@ -73,9 +73,9 @@
   align-items: center;
 
   margin-bottom: 50px;
-  @media (min-width: 478px) {
-    margin-bottom: 52px;
-  }
+}
+@media (min-width: 478px) {
+  margin-bottom: 52px;
 }
 
 .ModalForm {
@@ -94,12 +94,12 @@
   fill: #8baa36;
   stroke: #fafafa;
   cursor: pointer;
-  @media (min-width: 478px) {
-    top: 131px;
-    left: 258px;
-    fill: #8baa36;
-    stroke: #fafafa;
-  }
+}
+@media (min-width: 478px) {
+  top: 131px;
+  left: 258px;
+  fill: #8baa36;
+  stroke: #fafafa;
 }
 
 .FilesInput {
@@ -128,15 +128,14 @@
   transition-property: border-color;
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
-  @media (min-width: 478px) {
-    width: 400px;
-    height: 58px;
-    padding-left: 51px;
-    margin-bottom: 32px;
-    font-size: 18px;
-    line-height: 27px;
-  }
+}
+@media (min-width: 478px) {
+  width: 400px;
+  height: 58px;
+  padding-left: 51px;
+  margin-bottom: 32px;
+  font-size: 18px;
+  line-height: 27px;
 }
 
 .Pencil {
@@ -149,14 +148,14 @@
   stroke-width: 1;
   stroke: black;
   fill: var(--main-color-dark);
-  @media (min-width: 478px) {
-    top: 20px;
-    width: 19px;
-    height: 19px;
-    left: 363px;
-    width: 18px;
-    height: 18px;
-  }
+}
+@media (min-width: 478px) {
+  top: 20px;
+  width: 19px;
+  height: 19px;
+  left: 363px;
+  width: 18px;
+  height: 18px;
 }
 
 .User {
@@ -168,13 +167,12 @@
   right: 100px;
   stroke: black;
   fill: var(--user-color-dark);
-
-  @media (min-width: 478px) {
-    width: 24px;
-    height: 24px;
-    left: 19px;
-    top: 17px;
-  }
+}
+@media (min-width: 478px) {
+  width: 24px;
+  height: 24px;
+  left: 19px;
+  top: 17px;
 }
 
 .SubmitBtn {
@@ -198,13 +196,13 @@
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
   width: 282px;
-  @media (min-width: 478px) {
-    padding-top: 18px;
-    padding-bottom: 18px;
-    font-size: 16px;
-    line-height: 18px;
-    width: 400px;
-  }
+}
+@media (min-width: 478px) {
+  padding-top: 18px;
+  padding-bottom: 18px;
+  font-size: 16px;
+  line-height: 18px;
+  width: 400px;
 }
 .SubmitBtn:hover {
   color: #dad6d6;

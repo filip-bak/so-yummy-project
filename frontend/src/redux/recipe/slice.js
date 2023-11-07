@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { addRecipe, fetchRecipeById } from "./actions";
+import { addRecipe, fetchRecipeById, updateRecipePicture } from "./actions";
 
 const initialState = {
   recipe: null,
@@ -35,7 +35,14 @@ const recipeSlice = createSlice({
         state.error = null;
         state.recipe = action.payload;
       })
-      .addCase(addRecipe.rejected, handleRejected);
+      .addCase(addRecipe.rejected, handleRejected)
+
+      .addCase(updateRecipePicture.pending, handlePending)
+      .addCase(updateRecipePicture.fulfilled, state => {
+        state.isLoading = false;
+        state.error = null;
+      })
+      .addCase(updateRecipePicture.rejected, handleRejected);
   },
 });
 

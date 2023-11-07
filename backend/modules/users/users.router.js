@@ -67,7 +67,7 @@ usersRouter.post(
         }
       );
     } catch (error) {
-      console.log(error);
+      console.error(error);
       res.send({
         message: error.message,
       });

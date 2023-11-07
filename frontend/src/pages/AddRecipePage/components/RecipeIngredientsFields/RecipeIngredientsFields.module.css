@@ -108,20 +108,29 @@
   pointer-events: none;
 }
 
+.amount_select_box_container {
+  width: 37px;
+}
+
 .amount_container {
   background-color: var(--add-recipe-input-bg);
   border: none;
   border-radius: 6px;
   display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 14px;
   font-weight: 400;
   line-height: 1;
-  padding: 16px;
-  position: relative;
+  padding: 16px 5px;
+  /* position: relative; */
   width: 84px;
 }
+.amount_select_box_container {
+  position: relative;
+}
 
-.amount_container:after {
+.amount_select_box_container:after {
   content: ">";
   font: 17px "Consolas", monospace;
   color: var(--accent-color-darker);
@@ -129,8 +138,8 @@
   -moz-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
-  right: 9px;
-  top: 16px;
+  right: -5px;
+  top: -2px;
   position: absolute;
   pointer-events: none;
 }
@@ -161,6 +170,10 @@
   font-weight: 400;
   line-height: 1;
   margin-bottom: 2px;
+}
+
+.amount_select_box {
+  appearance: none;
 }
 
 .ingredient_drop_down {
@@ -255,7 +268,6 @@
 
   .amount_container {
     align-items: center;
-    font-size: 18px;
     padding: 16px 18px;
     width: 97px;
   }
@@ -273,6 +285,10 @@
 
   .amount_select_box {
     font-size: 14px;
+  }
+
+  .amount_select_box_container:after {
+    right: -7px;
   }
 
   .ingredient_drop_down {
