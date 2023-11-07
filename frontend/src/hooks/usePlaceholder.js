@@ -1,10 +1,7 @@
-import { useSelector } from "react-redux";
-
-const usePlaceholderImage = (image, placeholderImageURL, isLoadingSelector) => {
-  const isLoading = useSelector(isLoadingSelector);
+const usePlaceholderImage = (image, placeholderImageURL) => {
   const isNoImg = image === "thumb";
 
-  return isLoading || isNoImg ? placeholderImageURL : image;
+  return isNoImg ? placeholderImageURL : image;
 };
 
 export default usePlaceholderImage;

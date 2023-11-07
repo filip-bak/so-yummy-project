@@ -2,15 +2,14 @@ import usePlaceholderImage from "hooks/usePlaceholder";
 import defaultImageMedium from "images/defaults/ingredientsDefault112x112.jpg";
 import defaultImageLarge from "images/defaults/ingredientsDefault128x128.jpg";
 import defaultImageSmall from "images/defaults/ingredientsDefault57x57.jpg";
+import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
-import { selectIsLoading } from "redux/recipe/selectors";
 import {
   addIngredientToShoppingList,
   removeIngredientFromShoppingList,
 } from "redux/shoppingList/action";
 import icons from "../../../../images/icons.svg";
 import css from "./Ingredient.module.css";
-import PropTypes from "prop-types";
 
 export const Ingredient = ({
   recipeId,
@@ -39,11 +38,7 @@ export const Ingredient = ({
     selectedDefaultImage = defaultImageLarge;
   }
 
-  const displayedImage = usePlaceholderImage(
-    image,
-    selectedDefaultImage,
-    selectIsLoading
-  );
+  const displayedImage = usePlaceholderImage(image, selectedDefaultImage);
 
   return (
     <li className={css.item}>

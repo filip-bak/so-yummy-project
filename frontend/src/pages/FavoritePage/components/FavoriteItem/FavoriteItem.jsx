@@ -1,23 +1,18 @@
 import Button from "components/Button";
+import usePlaceholderImage from "hooks/usePlaceholder";
+import defaultImage from "images/defaults/defaultImageStandard.jpg";
+import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
 import { removeFromFavorite } from "redux/favorite/actions";
 import icons from "../../../../images/icons.svg";
 import css from "./FavoriteItem.module.css";
-import defaultImage from "images/defaults/defaultImageStandard.jpg";
-import { selectIsLoading } from "redux/recipes/selectors";
-import usePlaceholderImage from "hooks/usePlaceholder";
-import PropTypes from "prop-types";
 
 export const FavoriteItem = ({ image, title, id, description, time }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const displayedImage = usePlaceholderImage(
-    image,
-    defaultImage,
-    selectIsLoading
-  );
+  const displayedImage = usePlaceholderImage(image, defaultImage);
 
   const handleSeeRecipe = () => {
     navigate(`/recipes/${id}`);

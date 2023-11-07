@@ -1,17 +1,12 @@
-import styles from "./CardMeal.module.css";
-import { useNavigate } from "react-router-dom";
-import defaultImage from "images/defaults/defaultImageStandard.jpg";
-import { selectIsLoading } from "redux/recipes/selectors";
 import usePlaceholderImage from "hooks/usePlaceholder";
+import defaultImage from "images/defaults/defaultImageStandard.jpg";
+import { useNavigate } from "react-router-dom";
+import styles from "./CardMeal.module.css";
 
 export const CardMeal = ({ meal }) => {
   const navigate = useNavigate();
 
-  const displayedImage = usePlaceholderImage(
-    meal.preview,
-    defaultImage,
-    selectIsLoading
-  );
+  const displayedImage = usePlaceholderImage(meal.preview, defaultImage);
 
   return (
     <li className={styles.item} key={meal?._id}>

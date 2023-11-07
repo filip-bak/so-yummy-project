@@ -1,18 +1,13 @@
-import { useNavigate } from "react-router-dom";
-import css from "./RecipeItem.module.css";
 import usePlaceholderImage from "hooks/usePlaceholder";
 import defaultImage from "images/defaults/defaultImageStandard.jpg";
-import { selectIsLoading } from "redux/recipes/selectors";
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
+import css from "./RecipeItem.module.css";
 
 export const RecipeItem = ({ recipeId, image, title }) => {
   const navigate = useNavigate();
 
-  const displayedImage = usePlaceholderImage(
-    image,
-    defaultImage,
-    selectIsLoading
-  );
+  const displayedImage = usePlaceholderImage(image, defaultImage);
 
   return (
     <li className={css.item}>
