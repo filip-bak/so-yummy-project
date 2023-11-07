@@ -1,7 +1,7 @@
 const authService = require("./auth.service");
 const usersDao = require("../users/users.service");
 
-const extractTokenFromHeaders = (headers) => {
+const extractTokenFromHeaders = headers => {
   return headers.authorization?.replace("Bearer ", "");
 };
 
@@ -23,6 +23,7 @@ const authMiddleware = async (req, res, next) => {
     req.user = userEntity;
     return next();
   } catch (e) {
+    console.error(e);
     return res.status(401).send({ message: e.message });
   }
 };

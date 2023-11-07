@@ -45,7 +45,7 @@ const loginHandler = async (req, res, next) => {
     const userPasswordValidate = await userEntity.validatePassword(password);
 
     if (!userPasswordValidate) {
-      return res.status(401).send({ message: "Wrong password." });
+      return res.status(401).send({ message: "Wrong credentials." });
     }
 
     if (!userEntity.verified) {
@@ -66,6 +66,7 @@ const loginHandler = async (req, res, next) => {
       avatarURL: userEntity.avatarURL,
     });
   } catch (e) {
+    console.error(e);
     return next(e);
   }
 };
