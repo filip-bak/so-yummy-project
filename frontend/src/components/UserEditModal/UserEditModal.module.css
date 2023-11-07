@@ -25,6 +25,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background: var(--main-color-light);
   padding: 25px 12px;
   @media (min-width: 478px) {
     padding: 50px 40px;
@@ -47,6 +48,8 @@
   right: 18px;
   cursor: pointer;
   background-color: transparent;
+  background: var(--main-color-light);
+  color: var(--main-color-dark);
   @media (min-width: 478px) {
     width: 14px;
     height: 14px;
@@ -144,7 +147,8 @@
   top: 15px;
   stroke: black;
   stroke-width: 1;
-  fill: white;
+  stroke: black;
+  fill: var(--main-color-dark);
   @media (min-width: 478px) {
     top: 20px;
     width: 19px;
@@ -163,7 +167,8 @@
   left: 15px;
   right: 100px;
   stroke: black;
-  fill: white;
+  fill: var(--user-color-dark);
+
   @media (min-width: 478px) {
     width: 24px;
     height: 24px;
@@ -212,5 +217,5 @@
   right: 0px;
   width: 24px;
   height: 24px;
-  stroke: #23262a;
+  stroke: var(--main-color-dark);
 }

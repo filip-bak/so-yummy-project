@@ -7,6 +7,7 @@ import { selectShoppingList } from "redux/shoppingList/selectors";
 export const RecipeIngredientsList = () => {
   const recipe = useSelector(selectRecipe);
   const shoppingList = useSelector(selectShoppingList);
+  const screenWidth = window.innerWidth;
 
   return (
     <div className={css.container}>
@@ -31,6 +32,7 @@ export const RecipeIngredientsList = () => {
                 item => item.recipeId === recipe._id && item.id === _id
               ) !== undefined
             }
+            screenWidth={screenWidth}
           />
         ))}
       </ul>

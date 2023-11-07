@@ -13,6 +13,8 @@
   --text-color-lighter: #fafafa;
   --text-color-darker: #d9d9d9;
   --description-color: #23262a;
+  --register-color-light: #fafafa;
+  --signin-color-light: #fafafa;
 
   --logo-main: #8baa36;
   --logo-stroke: #fafafa;
@@ -33,9 +35,13 @@
   --hero-tag-text: #3e4462;
   --hero-name-unique: #79991f;
 
+
   --add-recipe-input: #00000080;
   --add-recipe-input-bg: #d9d9d9;
   --add-recipe-select-option-bg: #fff;
+
+  --Ingredient-check-icon: #8baa36;
+
 
   --delete-secondary-bg: #8baa36;
   --delete-secondary-stroke: #fafafa;
@@ -114,6 +120,10 @@
   --text-color-lighter: #fafafa;
   --text-color-darker: #d9d9d9;
   --description-color: rgba(250, 250, 250, 0.6);
+  --user-color-dark:rgba(220, 215, 215);
+  --register-color-light:  #fafafa;
+  --signin-color-light:  #fafafa;
+ 
 
   /* BUTTON */
   --button-bg: #8baa36;

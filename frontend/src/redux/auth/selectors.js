@@ -12,6 +12,7 @@ export const selectGlobalLoading = state => {
     state.recipe.isLoading ||
     state.recipes.isLoading ||
     state.favorite.isLoading ||
-    state.myRecipes.isLoading
+    state.myRecipes.isLoading ||
+    state.shoppingList.isLoading
   );
 };
