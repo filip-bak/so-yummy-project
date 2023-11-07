@@ -13,7 +13,9 @@ const RestrictedRoute = ({ component: Component, redirect = "/" }) => {
   return isAuthenticated ? (
     <Navigate to={redirectTo} state={{ from: location }} replace />
   ) : (
-    <Suspense fallback={<Loader />}>{Component}</Suspense>
+    <Suspense fallback={<Loader visible={true} refresh={true} />}>
+      {Component}
+    </Suspense>
   );
 };
 

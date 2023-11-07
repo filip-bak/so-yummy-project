@@ -1,5 +1,5 @@
-import css from "./RecipeDescriptionFields.module.css";
 import icons from "../../../../images/icons.svg";
+import css from "./RecipeDescriptionFields.module.css";
 
 export const RecipeDescriptionFields = () => {
   const categories = [

@@ -15,7 +15,7 @@ const SharedLayout = () => {
 
       <Navigation />
 
-      <Suspense fallback={<Loader visible={true} />}>
+      <Suspense fallback={<Loader visible={true} refresh={true} />}>
         <Outlet />
       </Suspense>
       <Footer />
