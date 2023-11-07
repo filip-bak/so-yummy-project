@@ -2,11 +2,17 @@ import { createSlice } from "@reduxjs/toolkit";
 import {
   addIngredientToShoppingList,
   fetchShoppingList,
-  removeRecipeFromShoppingList,
+  removeIngredientFromShoppingList,
 } from "./action";
 
 const handlePending = state => {
   state.isLoading = true;
+};
+
+const handleFulfilled = (state, action) => {
+  state.items = action.payload;
+  state.isLoading = false;
+  state.error = null;
 };
 
 const handleRejected = (state, action) => {
@@ -23,36 +29,18 @@ const initialState = {
 const shoppingListSlice = createSlice({
   name: "shoppingList",
   initialState: initialState,
-  reducers: {
-    removeFromShoppingList: {
-      reducer(state, action) {
-        return {
-          ...state,
-          items: state.items.filter(item => item.itemId !== action.payload),
-        };
-      },
-    },
-  },
   extraReducers: builder => {
     builder
       .addCase(fetchShoppingList.pending, handlePending)
-      .addCase(fetchShoppingList.fulfilled, (state, action) => {
-        state.items = action.payload;
-      })
+      .addCase(fetchShoppingList.fulfilled, handleFulfilled)
       .addCase(fetchShoppingList.rejected, handleRejected)
       .addCase(addIngredientToShoppingList.pending, handlePending)
-      .addCase(addIngredientToShoppingList.fulfilled, (state, action) => {
-        state.items.push(action.payload);
-      })
+      .addCase(addIngredientToShoppingList.fulfilled, handleFulfilled)
       .addCase(addIngredientToShoppingList.rejected, handleRejected)
 
-      .addCase(removeRecipeFromShoppingList.pending, handlePending)
-      .addCase(removeRecipeFromShoppingList.fulfilled, (state, action) => {
-        state.items = state.items.filter(
-          item => item._id !== action.payload._id
-        );
-      })
-      .addCase(removeRecipeFromShoppingList.rejected, handleRejected);
+      .addCase(removeIngredientFromShoppingList.pending, handlePending)
+      .addCase(removeIngredientFromShoppingList.fulfilled, handleFulfilled)
+      .addCase(removeIngredientFromShoppingList.rejected, handleRejected);
   },
 });
 

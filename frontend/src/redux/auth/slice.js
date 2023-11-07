@@ -51,7 +51,10 @@ const authSlice = createSlice({
       .addCase(register.rejected, handleReject)
 
       .addCase(login.pending, handlePending)
-      .addCase(login.fulfilled, handleFulfilled)
+      .addCase(login.fulfilled, (state, action) => {
+        handleFulfilled(state, action);
+        state.avatar = action.payload.avatarURL;
+      })
       .addCase(login.rejected, handleReject)
 
       .addCase(logout.pending, handlePending)

@@ -1,21 +1,53 @@
-import css from "./Ingredient.module.css";
-import icons from "../../../../images/icons.svg";
+import usePlaceholderImage from "hooks/usePlaceholder";
+import defaultImageMedium from "images/defaults/ingredientsDefault112x112.jpg";
+import defaultImageLarge from "images/defaults/ingredientsDefault128x128.jpg";
+import defaultImageSmall from "images/defaults/ingredientsDefault57x57.jpg";
+import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
-import { fetchRecipeById } from "redux/recipe/actions";
-import { addIngredientToShoppingList } from "redux/shoppingList/action";
+import {
+  addIngredientToShoppingList,
+  removeIngredientFromShoppingList,
+} from "redux/shoppingList/action";
+import icons from "../../../../images/icons.svg";
+import css from "./Ingredient.module.css";
 
-export const Ingredient = ({ recipeId, itemId, image, name, measure }) => {
+export const Ingredient = ({
+  recipeId,
+  itemId,
+  image,
+  name,
+  measure,
+  inShoppingList,
+  screenWidth,
+}) => {
   const dispatch = useDispatch();
 
-  const handleClick = () => {
+  const handleAddToShoppingList = () => {
     dispatch(addIngredientToShoppingList({ recipeId, ingredientId: itemId }));
-    dispatch(fetchRecipeById(recipeId));
   };
+
+  const handleRemovalFromShoppingList = () => {
+    dispatch(
+      removeIngredientFromShoppingList({ recipeId, ingredientId: itemId })
+    );
+  };
+  let selectedDefaultImage = defaultImageSmall;
+  if (screenWidth >= 768 && screenWidth < 1440) {
+    selectedDefaultImage = defaultImageMedium;
+  } else if (screenWidth >= 1440) {
+    selectedDefaultImage = defaultImageLarge;
+  }
+
+  const displayedImage = usePlaceholderImage(image, selectedDefaultImage);
 
   return (
     <li className={css.item}>
       <div className={css.image_container}>
-        <img src={image} className={css.image} alt="an ingredient"></img>
+        <img
+          src={displayedImage}
+          className={css.image}
+          alt="an ingredient"
+        ></img>
         <p className={css.ingredient}>{name}</p>
       </div>
       <div className={css.measure_container}>
@@ -24,12 +56,30 @@ export const Ingredient = ({ recipeId, itemId, image, name, measure }) => {
         </center>
       </div>
       <div className={css.button_container}>
-        <button className={css.add_button} onClick={handleClick}>
-          <svg className={css.icon}>
-            <use href={`${icons}#icon-pick`} />
-          </svg>
+        <button
+          className={css.add_button}
+          onClick={() =>
+            inShoppingList
+              ? handleRemovalFromShoppingList()
+              : handleAddToShoppingList()
+          }
+        >
+          {inShoppingList && (
+            <svg className={css.icon}>
+              <use href={`${icons}#icon-pick`} />
+            </svg>
+          )}
         </button>
       </div>
     </li>
   );
+};
+
+Ingredient.propTypes = {
+  image: PropTypes.string.isRequired,
+  recipeId: PropTypes.string.isRequired,
+  itemId: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  measure: PropTypes.string.isRequired,
+  inShoppingList: PropTypes.bool.isRequired,
 };

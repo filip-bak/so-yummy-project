@@ -78,3 +78,9 @@
 .mobile-close {
   transform: translateY(0);
 }
+.bottomImage {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}

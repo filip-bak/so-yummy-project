@@ -1,4 +1,5 @@
 import css from "./PopularRecipe.module.css";
+import defaultImage from "images/defaults/defaultImageSmall.jpg";
 
 const popularRecipes = [
   {
@@ -47,7 +48,7 @@ export const PopularRecipe = () => {
           <li className={css.popular_recipe} key={index}>
             <div className={css.image_container}>
               <img
-                src={popularRecipe.thumb}
+                src={popularRecipe.thumb || defaultImage}
                 className={css.image}
                 alt="a dish"
               ></img>

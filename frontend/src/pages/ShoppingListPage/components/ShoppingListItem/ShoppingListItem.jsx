@@ -1,20 +1,44 @@
-import css from "./ShoppingListItem.module.css";
-import icons from "../../../../images/icons.svg";
+import usePlaceholderImage from "hooks/usePlaceholder";
+import defaultImageSmall from "images/defaults/ingredientsDefault60x60.jpg";
+import defaultImageMedium from "images/defaults/ingredientsDefault93x97.jpg";
+import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
-import { removeFromShoppingList } from "redux/shoppingList/slice";
+import { removeIngredientFromShoppingList } from "redux/shoppingList/action";
+import icons from "../../../../images/icons.svg";
+import css from "./ShoppingListItem.module.css";
 
-export const ShoppingListItem = ({ itemId, image, name, measure }) => {
+export const ShoppingListItem = ({
+  recipeId,
+  itemId,
+  image,
+  name,
+  measure,
+  screenWidth,
+}) => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
-    dispatch(removeFromShoppingList(itemId));
+    dispatch(
+      removeIngredientFromShoppingList({ ingredientId: itemId, recipeId })
+    );
   };
+  let selectedDefaultImage = defaultImageSmall;
+
+  if (screenWidth >= 768) {
+    selectedDefaultImage = defaultImageMedium;
+  }
+
+  const displayedImage = usePlaceholderImage(image, selectedDefaultImage);
 
   return (
     <li className={css.item}>
       <div className={css.container}>
         <div className={css.image_container}>
-          <img src={image} className={css.image} alt="an ingredient"></img>
+          <img
+            src={displayedImage}
+            className={css.image}
+            alt="an ingredient"
+          ></img>
         </div>
         <p className={css.ingredient}>{name}</p>
         <div className={css.measure_container}>
@@ -30,4 +54,12 @@ export const ShoppingListItem = ({ itemId, image, name, measure }) => {
       </div>
     </li>
   );
+};
+
+ShoppingListItem.propTypes = {
+  recipeId: PropTypes.string.isRequired,
+  itemId: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  measure: PropTypes.string.isRequired,
 };

@@ -2,9 +2,12 @@ import { useSelector } from "react-redux";
 import css from "./RecipeIngredientsList.module.css";
 import { selectRecipe } from "redux/recipe/selectors";
 import { Ingredient } from "pages/RecipePage/components/Ingredient/Ingredient";
+import { selectShoppingList } from "redux/shoppingList/selectors";
 
 export const RecipeIngredientsList = () => {
   const recipe = useSelector(selectRecipe);
+  const shoppingList = useSelector(selectShoppingList);
+  const screenWidth = window.innerWidth;
 
   return (
     <div className={css.container}>
@@ -24,6 +27,12 @@ export const RecipeIngredientsList = () => {
             key={_id}
             name={ttl}
             measure={measure}
+            inShoppingList={
+              shoppingList.find(
+                item => item.recipeId === recipe._id && item.id === _id
+              ) !== undefined
+            }
+            screenWidth={screenWidth}
           />
         ))}
       </ul>

@@ -11,10 +11,11 @@ export const Favorites = () => {
   return (
     <div className={css.container}>
       <ul className={css.results}>
-        {favorites.map(({ image, id, title, description, time }) => (
+        {favorites.map(({ preview, _id, title, description, time }) => (
           <FavoriteItem
-            image={image}
-            key={id}
+            image={preview}
+            key={_id}
+            id={_id}
             title={title}
             description={description}
             time={time}
