@@ -12,10 +12,11 @@ export const MyRecipes = () => {
   return (
     <div className={css.container}>
       <ul className={css.results}>
-        {myRecipes.map(({ image, id, title, description, time }) => (
+        {myRecipes.map(({ preview, _id, title, description, time }) => (
           <MyRecipeItem
-            image={image || defaultImage}
-            key={id}
+            image={preview || defaultImage}
+            key={_id}
+            id={_id}
             title={title}
             description={description}
             time={time}

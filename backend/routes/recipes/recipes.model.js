@@ -44,7 +44,7 @@ const recipeSchema = Schema(
     },
     owner: {
       type: mongoose.SchemaTypes.ObjectId,
-      ref: "User",
+      ref: "users",
     },
   },
   { versionKey: false, timestamps: true }
