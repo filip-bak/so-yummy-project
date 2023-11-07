@@ -11,7 +11,7 @@ import ScrollToTop from "components/ScrollToTop/index.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter basename="/so-yummy-project">
+    <BrowserRouter>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <ScrollToTop />
