@@ -143,22 +143,31 @@ export const RecipeIngredientsFields = ({
                   }
                 />
               </label>
-              <select
-                className={css.amount_select_box}
-                id="amountType"
-                name="amountType"
-                value={ingredient.amountType}
-                required
-                onChange={event =>
-                  handleIngredientFieldChange("amountType", event, index)
-                }
-              >
-                {amounts.map(amount => (
-                  <option className={css.amount} value={amount} key={amount}>
-                    {amount}
-                  </option>
-                ))}
-              </select>
+
+              <div className={css.amount_select_box_container}>
+                <label htmlFor="amountType">
+                  <select
+                    className={css.amount_select_box}
+                    id="amountType"
+                    name="amountType"
+                    value={ingredient.amountType}
+                    required
+                    onChange={event =>
+                      handleIngredientFieldChange("amountType", event, index)
+                    }
+                  >
+                    {amounts.map(amount => (
+                      <option
+                        className={css.amount}
+                        value={amount}
+                        key={amount}
+                      >
+                        {amount}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              </div>
             </div>
             <button
               className={css.cross_button}
