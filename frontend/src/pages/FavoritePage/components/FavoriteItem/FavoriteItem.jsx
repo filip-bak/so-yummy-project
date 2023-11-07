@@ -7,6 +7,7 @@ import css from "./FavoriteItem.module.css";
 import defaultImage from "images/defaults/defaultImageStandard.jpg";
 import { selectIsLoading } from "redux/recipes/selectors";
 import usePlaceholderImage from "hooks/usePlaceholder";
+import PropTypes from "prop-types";
 
 export const FavoriteItem = ({ image, title, id, description, time }) => {
   const navigate = useNavigate();
@@ -48,4 +49,12 @@ export const FavoriteItem = ({ image, title, id, description, time }) => {
       </div>
     </li>
   );
+};
+
+FavoriteItem.propTypes = {
+  image: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  time: PropTypes.number.isRequired,
 };

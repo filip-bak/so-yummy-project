@@ -5,10 +5,14 @@ import styles from "./SharedLayout.module.css";
 import PolicyAndTerms from "components/PolicyAndTerms";
 import { Footer } from "components/Footer/Footer";
 import Navigation from "./Navigation";
+import { ToastContainer } from "react-toastify";
 
 const SharedLayout = () => {
   return (
     <div className={styles.container}>
+      <script src="dist/notiflix-aio-3.2.6.min.js"></script>
+      <ToastContainer />
+
       <Navigation />
 
       <Suspense fallback={<Loader />}>

@@ -17,9 +17,12 @@
 }
 
 .photo_input {
-  width: 279px;
-  height: 268px;
   visibility: hidden;
+}
+
+.photo_input:focus,
+.photo_input:hover {
+  border: none;
 }
 
 .icon {

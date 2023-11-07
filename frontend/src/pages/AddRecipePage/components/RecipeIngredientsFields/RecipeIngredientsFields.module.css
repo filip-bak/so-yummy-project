@@ -137,10 +137,10 @@
   background-color: #f5f5f5;
   border: none;
   color: #424242;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
   line-height: 1;
-  width: 21px;
+  width: 26px;
 }
 
 .amount_input:focus,
@@ -155,9 +155,10 @@
   border: none;
   color: #000;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
   line-height: 1;
+  margin-bottom: 2px;
 }
 
 .ingredient_drop_down {
@@ -259,11 +260,13 @@
   }
 
   .amount_input {
-    font-size: 18px;
+    font-size: 14px;
+    font-weight: 500;
+    width: 30px;
   }
 
   .amount_select_box {
-    font-size: 18px;
+    font-size: 14px;
   }
 
   .ingredient_drop_down {

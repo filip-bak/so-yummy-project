@@ -3,6 +3,7 @@ import css from "./RecipeItem.module.css";
 import usePlaceholderImage from "hooks/usePlaceholder";
 import defaultImage from "images/defaults/defaultImageStandard.jpg";
 import { selectIsLoading } from "redux/recipes/selectors";
+import PropTypes from "prop-types";
 
 export const RecipeItem = ({ recipeId, image, title }) => {
   const navigate = useNavigate();
@@ -24,4 +25,10 @@ export const RecipeItem = ({ recipeId, image, title }) => {
       </div>
     </li>
   );
+};
+
+RecipeItem.propTypes = {
+  recipeId: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 };

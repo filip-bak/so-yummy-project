@@ -2,6 +2,7 @@ import css from "./MyRecipeItem.module.css";
 import icons from "../../../../images/icons.svg";
 import Button from "components/Button";
 import defaultImage from "images/defaults/defaultImageStandard.jpg";
+import PropTypes from "prop-types";
 
 export const MyRecipeItem = ({ image, title, id, description, time }) => {
   return (
@@ -28,4 +29,12 @@ export const MyRecipeItem = ({ image, title, id, description, time }) => {
       </div>
     </li>
   );
+};
+
+MyRecipeItem.propTypes = {
+  image: PropTypes.string,
+  title: PropTypes.string,
+  id: PropTypes.string,
+  description: PropTypes.string,
+  time: PropTypes.string,
 };

@@ -4,6 +4,7 @@ import icons from "../../../../images/icons.svg";
 import { useDispatch } from "react-redux";
 import { addToFavorite } from "redux/favorite/actions";
 import { useParams } from "react-router";
+import PropTypes from "prop-types";
 
 export const RecipePageHero = ({ title, description, time }) => {
   const dispatch = useDispatch();
@@ -32,4 +33,10 @@ export const RecipePageHero = ({ title, description, time }) => {
       </div>
     </section>
   );
+};
+
+RecipePageHero.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  time: PropTypes.string.isRequired,
 };

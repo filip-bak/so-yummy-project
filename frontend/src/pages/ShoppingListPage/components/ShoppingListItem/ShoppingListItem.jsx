@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { removeIngredientFromShoppingList } from "redux/shoppingList/action";
 import defaultImageSmall from "images/defaults/ingredientsDefault60x60.jpg";
 import defaultImageMedium from "images/defaults/ingredientsDefault93x97.jpg";
+import PropTypes from "prop-types";
 
 export const ShoppingListItem = ({
   recipeId,
@@ -49,4 +50,12 @@ export const ShoppingListItem = ({
       </div>
     </li>
   );
+};
+
+ShoppingListItem.propTypes = {
+  recipeId: PropTypes.string.isRequired,
+  itemId: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  measure: PropTypes.string.isRequired,
 };

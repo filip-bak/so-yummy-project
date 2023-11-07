@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import css from './FooterSubscribeForm.module.css'
 import  Button  from '../../Button/index'
 import icons from '../../../images/icons.svg'
+import axios from 'axios';
 
 
 
@@ -50,6 +51,18 @@ export const FooterSubscribeForm = () => {
         }
       };
 
+      const handleSubscribeClick = async () => {
+        try {
+          await axios.post('/subscribe', { email });
+          alert('Email sent successfully!'); 
+        } catch (error) {
+          console.error('Error sending email:', error);
+          alert('Error sending email. Please try again later.');
+        }
+      };
+
+
+
     return (
         <div className={css.subscribeContainer}>
             <div className={css.subscribeBox}>
@@ -79,6 +92,7 @@ export const FooterSubscribeForm = () => {
                 {isInputClicked && !isEmailValid && <div  className={css.subscribeError}>Incorrect e-mail address</div>}
                 <Button  variant="secondary" size="medium" type="submit"
                 disabled={!isEmailValid}
+                onClick={handleSubscribeClick}
                 >Subscribe</Button>
             </form>
         </div>

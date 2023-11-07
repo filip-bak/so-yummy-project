@@ -3,7 +3,7 @@ import css from "./SearchBar.module.css";
 import PropTypes from "prop-types";
 import { useSearchParams } from "react-router-dom";
 
-export const SearchBar = ({ children, onSubmit, dark }) => {
+export const SearchBar = ({ children, dark }) => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const handleQuerySubmit = evt => {
@@ -13,10 +13,6 @@ export const SearchBar = ({ children, onSubmit, dark }) => {
       params.set("queryType", evt.target.queryType?.value);
       return params;
     });
-    if (onSubmit) {
-      onSubmit(searchParams);
-      return;
-    }
   };
 
   return (
@@ -45,6 +41,6 @@ export const SearchBar = ({ children, onSubmit, dark }) => {
 };
 
 SearchBar.propTypes = {
-  handleSubmit: PropTypes.func,
   children: PropTypes.node,
+  dark: PropTypes.bool,
 };
