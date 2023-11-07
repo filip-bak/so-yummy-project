@@ -104,7 +104,7 @@
   font-size: 12px;
   font-weight: 400;
   padding-block: 4px;
-  /* width: 85px; */
+  width: 85px;
 }
 .select_box option {
   background-color: var(--add-recipe-select-option-bg);
@@ -114,7 +114,8 @@
   width: 5px;
   background-color: #cccccc;
 }
-/* .label_container:after {
+
+.label_container:after {
   content: ">";
   font: 17px "Consolas", monospace;
   color: var(--accent-color-darker);
@@ -123,10 +124,14 @@
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
   right: 10px;
-  top: 5px;
+  top: 2px;
   position: absolute;
   pointer-events: none;
-} */
+}
+
+.select_box {
+  appearance: none;
+}
 
 @media screen and (min-width: 768px) {
   .container {
