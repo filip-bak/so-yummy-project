@@ -18,6 +18,7 @@
 
 .photo_input {
   visibility: hidden;
+  position: absolute;
 }
 
 .photo_input:focus,
