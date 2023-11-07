@@ -5,7 +5,7 @@ import { RecipePreparationFields } from "../RecipePreparationFields/RecipePrepar
 import css from "./AddRecipeForm.module.css";
 import Button from "components/Button";
 import { useState } from "react";
-import { addRecipe } from "redux/recipe/actions";
+import { addRecipe, updateRecipePicture } from "redux/recipe/actions";
 import { toast } from "react-toastify";
 
 export const AddRecipeForm = () => {
@@ -23,25 +23,37 @@ export const AddRecipeForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    const form = e.currentTarget;
+    const {
+      title,
+      description,
+      categoryType,
+      cookingTime,
+      thumb,
+      preparation,
+    } = e.currentTarget.elements;
+
     const payload = {
-      title: form.elements.title.value,
-      description: form.elements.description.value,
-      category: form.elements.categoryType.value,
-      time: form.elements.cookingTime.value,
-      thumb: form.elements.thumb.name,
-      preview: form.elements.thumb.name,
+      title: title.value,
+      description: description.value,
+      category: categoryType.value,
+      time: cookingTime.value,
+      thumb: thumb.name,
+      preview: thumb.name,
       ingredients: ingredients
         .filter(ingredient => ingredient.id !== undefined)
         .map(ingredient => ({
           id: ingredient.id,
           measure: `${ingredient.amount} ${ingredient.amountType}`,
         })),
-      instructions: form.elements.preparation.value,
+      instructions: preparation.value,
     };
+    console.log(thumb);
     dispatch(addRecipe(payload)).then(() => {
       toast.success("Your recipe has been created.");
     });
+    if (thumb.files[0]) {
+      dispatch(updateRecipePicture(thumb));
+    }
   };
 
   return (
