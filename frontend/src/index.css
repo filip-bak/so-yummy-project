@@ -35,7 +35,13 @@
   --hero-tag-text: #3e4462;
   --hero-name-unique: #79991f;
 
+
+  --add-recipe-input: #00000080;
+  --add-recipe-input-bg: #d9d9d9;
+  --add-recipe-select-option-bg: #fff;
+
   --Ingredient-check-icon: #8baa36;
+
 
   --delete-secondary-bg: #8baa36;
   --delete-secondary-stroke: #fafafa;
@@ -146,6 +152,10 @@
   --hero-tag-bg: #2a2c36;
   --hero-tag-text: #fafafa;
   --hero-name-unique: #79991f;
+
+  --add-recipe-input: #fafafa;
+  --add-recipe-input-bg: #1e1f28;
+  --add-recipe-select-option-bg: #8baa36;
 
   --recipe-sentence: #fafafa;
 

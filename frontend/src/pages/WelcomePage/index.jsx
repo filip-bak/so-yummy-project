@@ -1,32 +1,33 @@
-import React from 'react';
-import AuthNav from './AuthNav';
-import css from "./WelcomePage.module.css"
+import React, { Suspense } from "react";
+import AuthNav from "./AuthNav";
+import css from "./WelcomePage.module.css";
 import icons from "../../images/icons.svg";
+import Loader from "components/Loader";
 
 const WelcomePage = () => {
   return (
-   <div className={css.container}>
+    <Suspense fallback={<Loader />}>
+      <div className={css.container}>
         <div className={css.logoContainer}>
-        {/* <Logo/> */}
+          {/* <Logo/> */}
           <svg className={css.logo}>
-          <use href={`${icons}#icon-logo`} />
-        </svg>
+            <use href={`${icons}#icon-logo`} />
+          </svg>
         </div>
-      <div className={css.content}>
-        <div className={css.title}>
-          Welcome to the app! <br />
+        <div className={css.content}>
+          <div className={css.title}>
+            Welcome to the app! <br />
+          </div>
+          <div className={css.description}>
+            This app offers more than just a collection of recipes - it is
+            designed to be your very own digital cookbook. You can easily save
+            and retrieve your own recipes at any time.
+          </div>
         </div>
-        <div className={css.description}>
-          This app offers more than just a collection of recipes - it is
-          designed to be your very own digital cookbook. You can easily
-          save and retrieve your own recipes at any time.
-        </div>
+        <AuthNav />
       </div>
-     <AuthNav/>
-      </div>
-
+    </Suspense>
   );
-}
-
+};
 
 export default WelcomePage;

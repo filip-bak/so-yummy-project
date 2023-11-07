@@ -31,6 +31,7 @@
   stroke: var(--text-color-lighter);
   width: 64px;
   height: 64px;
+  cursor: pointer;
 }
 
 .icon_container {
@@ -53,7 +54,7 @@
   background-color: var(--main-color-light);
   border: none;
   border-bottom: 1px solid #e0e0e0;
-  color: #424242;
+  color: var(--add-recipe-input);
   font-size: 14px;
   font-weight: 400;
   line-height: 1;
@@ -74,7 +75,7 @@
 
 .label {
   border-bottom: 1px solid #e0e0e0;
-  color: #969595;
+  color: var(--add-recipe-input);
   display: flex;
   font-size: 14px;
   font-weight: 400;
@@ -95,18 +96,25 @@
 }
 
 .select_box {
-  background-color: #f5f5f5;
+  background-color: transparent;
   border: none;
-  border-radius: 6px;
-  color: #000;
+  text-align: center;
+  color: var(--add-recipe-input);
   cursor: pointer;
   font-size: 12px;
   font-weight: 400;
-  padding: 8px 10px;
-  width: 85px;
+  padding-block: 4px;
+  /* width: 85px; */
+}
+.select_box option {
+  background-color: var(--add-recipe-select-option-bg);
 }
 
-.label_container:after {
+.select_box::-webkit-scrollbar {
+  width: 5px;
+  background-color: #cccccc;
+}
+/* .label_container:after {
   content: ">";
   font: 17px "Consolas", monospace;
   color: var(--accent-color-darker);
@@ -118,7 +126,7 @@
   top: 5px;
   position: absolute;
   pointer-events: none;
-}
+} */
 
 @media screen and (min-width: 768px) {
   .container {
@@ -154,7 +162,7 @@
 
   .select_box {
     font-size: 14px;
-    width: 94px;
+    /* width: 94px; */
   }
 }
 

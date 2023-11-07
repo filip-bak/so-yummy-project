@@ -14,7 +14,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter basename="/so-yummy-project">
       <Provider store={store}>
-        <PersistGate loading={<Loader visible={true} />} persistor={persistor}>
+        <PersistGate loading={null} persistor={persistor}>
           <ScrollToTop />
           <App />
         </PersistGate>
