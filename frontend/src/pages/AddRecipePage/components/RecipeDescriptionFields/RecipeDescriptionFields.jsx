@@ -30,22 +30,22 @@ export const RecipeDescriptionFields = () => {
 
   return (
     <div className={css.container}>
-      <div className={css.photo_container}>
-        <input
-          className={css.photo_input}
-          type="file"
-          accept="image/*,.png,.jpg,.web"
-          name="thumb"
-          id="thumb"
-        />
-        <label htmlFor="thumb">
+      <label htmlFor="thumb">
+        <div className={css.photo_container}>
+          <input
+            className={css.photo_input}
+            type="file"
+            accept="image/*,.png,.jpg,.web"
+            name="thumb"
+            id="thumb"
+          />
           <div className={css.icon_container}>
             <svg className={css.icon}>
               <use href={`${icons}#icon-photo-add-recipe`} />
             </svg>
           </div>
-        </label>
-      </div>
+        </div>
+      </label>
       <div className={css.labels_container}>
         <label className={css.recipe_label}>
           <input

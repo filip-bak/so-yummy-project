@@ -59,7 +59,7 @@
   font-weight: 400;
   line-height: 1;
   margin-bottom: 24px;
-  padding-bottom: 19px;
+  padding-bottom: 17px;
   width: 100%;
 }
 
@@ -69,18 +69,13 @@
 }
 
 .label {
-  display: block;
-  width: 343px;
-}
-
-.label {
   border-bottom: 1px solid #e0e0e0;
   color: var(--add-recipe-input);
   display: flex;
   font-size: 14px;
   font-weight: 400;
   line-height: 1;
-  padding-bottom: 19px;
+  padding-bottom: 13px;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 24px;
