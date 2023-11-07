@@ -7,7 +7,6 @@ import { PersistGate } from "redux-persist/integration/react";
 import { App } from "./App";
 import "react-toastify/dist/ReactToastify.css";
 import "./index.css";
-import Loader from "components/Loader";
 import ScrollToTop from "components/ScrollToTop/index.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
