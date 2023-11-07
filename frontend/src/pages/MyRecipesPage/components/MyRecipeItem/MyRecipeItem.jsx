@@ -1,6 +1,7 @@
 import css from "./MyRecipeItem.module.css";
 import icons from "../../../../images/icons.svg";
 import Button from "components/Button";
+import defaultImage from "images/defaults/defaultImageStandard.jpg";
 import PropTypes from "prop-types";
 
 export const MyRecipeItem = ({ image, title, id, description, time }) => {
@@ -8,7 +9,11 @@ export const MyRecipeItem = ({ image, title, id, description, time }) => {
     <li className={css.item} key={id}>
       <div className={css.container}>
         <div className={css.image_container}>
-          <img src={image} className={css.image} alt="a dish"></img>
+          <img
+            src={image || defaultImage}
+            className={css.image}
+            alt="a dish"
+          ></img>
         </div>
         <div className={css.info_container}>
           <h3 className={css.dish_title}>{title}</h3>

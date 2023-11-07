@@ -1,11 +1,15 @@
-import css from "./Ingredient.module.css";
-import icons from "../../../../images/icons.svg";
+import usePlaceholderImage from "hooks/usePlaceholder";
+import defaultImageMedium from "images/defaults/ingredientsDefault112x112.jpg";
+import defaultImageLarge from "images/defaults/ingredientsDefault128x128.jpg";
+import defaultImageSmall from "images/defaults/ingredientsDefault57x57.jpg";
+import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
 import {
   addIngredientToShoppingList,
   removeIngredientFromShoppingList,
 } from "redux/shoppingList/action";
-import PropTypes from "prop-types";
+import icons from "../../../../images/icons.svg";
+import css from "./Ingredient.module.css";
 
 export const Ingredient = ({
   recipeId,
@@ -14,6 +18,7 @@ export const Ingredient = ({
   name,
   measure,
   inShoppingList,
+  screenWidth,
 }) => {
   const dispatch = useDispatch();
 
@@ -26,11 +31,23 @@ export const Ingredient = ({
       removeIngredientFromShoppingList({ recipeId, ingredientId: itemId })
     );
   };
+  let selectedDefaultImage = defaultImageSmall;
+  if (screenWidth >= 768 && screenWidth < 1440) {
+    selectedDefaultImage = defaultImageMedium;
+  } else if (screenWidth >= 1440) {
+    selectedDefaultImage = defaultImageLarge;
+  }
+
+  const displayedImage = usePlaceholderImage(image, selectedDefaultImage);
 
   return (
     <li className={css.item}>
       <div className={css.image_container}>
-        <img src={image} className={css.image} alt="an ingredient"></img>
+        <img
+          src={displayedImage}
+          className={css.image}
+          alt="an ingredient"
+        ></img>
         <p className={css.ingredient}>{name}</p>
       </div>
       <div className={css.measure_container}>

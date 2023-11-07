@@ -9,6 +9,12 @@ const handlePending = state => {
   state.isLoading = true;
 };
 
+const handleFulfilled = (state, action) => {
+  state.items = action.payload;
+  state.isLoading = false;
+  state.error = null;
+};
+
 const handleRejected = (state, action) => {
   state.isLoading = false;
   state.error = action.payload;
@@ -26,20 +32,14 @@ const shoppingListSlice = createSlice({
   extraReducers: builder => {
     builder
       .addCase(fetchShoppingList.pending, handlePending)
-      .addCase(fetchShoppingList.fulfilled, (state, action) => {
-        state.items = action.payload;
-      })
+      .addCase(fetchShoppingList.fulfilled, handleFulfilled)
       .addCase(fetchShoppingList.rejected, handleRejected)
       .addCase(addIngredientToShoppingList.pending, handlePending)
-      .addCase(addIngredientToShoppingList.fulfilled, (state, action) => {
-        state.items = action.payload;
-      })
+      .addCase(addIngredientToShoppingList.fulfilled, handleFulfilled)
       .addCase(addIngredientToShoppingList.rejected, handleRejected)
 
       .addCase(removeIngredientFromShoppingList.pending, handlePending)
-      .addCase(removeIngredientFromShoppingList.fulfilled, (state, action) => {
-        state.items = action.payload;
-      })
+      .addCase(removeIngredientFromShoppingList.fulfilled, handleFulfilled)
       .addCase(removeIngredientFromShoppingList.rejected, handleRejected);
   },
 });

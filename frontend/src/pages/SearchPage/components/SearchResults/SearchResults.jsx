@@ -9,6 +9,7 @@ import {
   selectTotalPages,
 } from "redux/recipes/selectors";
 import { setResultsPerPage } from "redux/recipes/slice";
+import defaultImage from "images/defaults/defaultImageStandard.jpg";
 
 export const SearchResults = () => {
   const dispatch = useDispatch();
@@ -39,7 +40,12 @@ export const SearchResults = () => {
     <div className={css.container}>
       <ul className={css.results}>
         {items.map(({ image, id, title }) => (
-          <RecipeItem image={image} key={id} title={title} recipeId={id} />
+          <RecipeItem
+            image={image || defaultImage}
+            key={id}
+            title={title}
+            recipeId={id}
+          />
         ))}
       </ul>
       {totalCount > resultsPerPage && (
