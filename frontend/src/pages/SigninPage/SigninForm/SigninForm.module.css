@@ -73,7 +73,7 @@
   height: 18px;
   flex-shrink: 0;
   opacity: 0.8;
-  stroke: var(--main-color-light);
+  stroke: var(--signin-color-light);
   fill: transparent;
 }
 
@@ -89,10 +89,15 @@
   height: 18px;
   flex-shrink: 0;
   opacity: 0.8;
-  stroke: var(--main-color-light);
+  stroke: var(--signin-color-light);
   fill: transparent;
 }
-
+.fieldFocused svg {
+  stroke: var(--signin-color-lighter);
+}
+.fieldError svg {
+  stroke: red;
+}
 @media screen and (min-width: 768px) {
   .registerLink {
     font-size: var(--fs-base);
@@ -130,12 +135,6 @@
     width: 24px;
     height: 24px;
   }
-}
-.fieldFocused svg {
-  stroke: var(--background-color-lighter);
-}
-.fieldError svg {
-  stroke: red;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1439px) {
