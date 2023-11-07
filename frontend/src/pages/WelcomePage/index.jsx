@@ -1,8 +1,6 @@
-import React from "react";
+import icons from "../../images/icons.svg";
 import AuthNav from "./AuthNav";
 import css from "./WelcomePage.module.css";
-import icons from "../../images/icons.svg";
-import Loader from "components/Loader";
 
 const WelcomePage = () => {
   return (
