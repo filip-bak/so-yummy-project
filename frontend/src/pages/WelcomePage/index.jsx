@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 import AuthNav from "./AuthNav";
 import css from "./WelcomePage.module.css";
 import icons from "../../images/icons.svg";

@@ -1,10 +1,9 @@
-import { Outlet, useLocation } from "react-router-dom";
-import css from "./AuthSharedLayout.module.css";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { resetError } from "redux/auth/slice";
-import { Suspense, useEffect } from "react";
+import { Outlet, useLocation } from "react-router-dom";
 import { selectError } from "redux/auth/selectors";
-import Loader from "components/Loader";
+import { resetError } from "redux/auth/slice";
+import css from "./AuthSharedLayout.module.css";
 
 const AuthSharedLayout = () => {
   const dispatch = useDispatch();
@@ -23,13 +22,11 @@ const AuthSharedLayout = () => {
   }, [location.pathname, dispatch]);
 
   return (
-    <Suspense fallback={<Loader />}>
-      <section className={css.section}>
-        <div className={css.container}>
-          <Outlet />
-        </div>
-      </section>
-    </Suspense>
+    <section className={css.section}>
+      <div className={css.container}>
+        <Outlet />
+      </div>
+    </section>
   );
 };
 

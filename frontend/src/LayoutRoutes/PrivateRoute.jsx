@@ -9,6 +9,8 @@ const PrivateRoute = ({ component: Component, redirect = "/welcome" }) => {
   const isRefreshing = useSelector(selectIsRefreshing);
   const shouldRedirect = !isRefreshing && !token;
 
+  console.log("shouldRedirect", shouldRedirect);
+
   return shouldRedirect ? (
     <Navigate to={redirect} state={{ from: location }} replace />
   ) : (
