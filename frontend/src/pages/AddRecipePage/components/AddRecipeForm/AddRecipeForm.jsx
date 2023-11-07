@@ -47,7 +47,6 @@ export const AddRecipeForm = () => {
         })),
       instructions: preparation.value,
     };
-    console.log(thumb);
     dispatch(addRecipe(payload)).then(() => {
       toast.success("Your recipe has been created.");
     });

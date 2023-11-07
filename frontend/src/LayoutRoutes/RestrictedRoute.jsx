@@ -9,8 +9,6 @@ const RestrictedRoute = ({ component: Component, redirect = "/" }) => {
   const isAuthenticated = useSelector(selectToken);
   const redirectTo = location.state?.from || redirect;
 
-  console.log("isAuthenticated", isAuthenticated);
-
   return isAuthenticated ? (
     <Navigate to={redirectTo} state={{ from: location }} replace />
   ) : (
