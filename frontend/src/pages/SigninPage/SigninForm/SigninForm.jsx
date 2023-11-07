@@ -8,6 +8,8 @@ import { login } from "redux/auth/actions";
 import { selectError, selectIsLoading } from "redux/auth/selectors";
 import * as Yup from "yup";
 import css from "./SigninForm.module.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const initialValue = {
   email: "",
@@ -36,13 +38,17 @@ export const SigninForm = () => {
     const status = await dispatch(login(formData));
 
     if (status.error?.message !== "Rejected") {
+      toast.success("Logged in successfully!");
       navigate("/");
+    } else {
+      toast.error("Email or password is wrong");
     }
 
     setIsSubmit(false);
 
     resetForm();
   };
+
   return (
     <div className={css.registerFormWrapper}>
       <div className={css.background}></div>
@@ -94,7 +100,6 @@ export const SigninForm = () => {
               size="large"
               unique="short"
               type="submit"
-              onClick={() => setIsSubmit(true)}
             >
               Sign In
             </Button>
@@ -107,7 +112,7 @@ export const SigninForm = () => {
       ) : (
         <p className={`error`}>{isError?.message}</p>
       )}
-
+        <ToastContainer />
       <Link className={css.registerLink} to={"/register"}>
         Registration
       </Link>
