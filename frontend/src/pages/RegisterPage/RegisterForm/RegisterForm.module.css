@@ -6,7 +6,7 @@
   letter-spacing: -0.02em;
   font-feature-settings: "liga" off;
   margin-bottom: 18px;
-  color: var(--main-color-light);
+  color: var(--register-color-light);
 }
 .fields {
   display: flex;
@@ -27,10 +27,10 @@
   letter-spacing: -0.02em;
   color: rgb(42, 44, 54);
   background-color: transparent;
-  color: var(--main-color-light);
+  color: var(--register-color-light);
 }
 .field::placeholder {
-  color: var(--main-color-light);
+  color: var(--register-color-light);
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: var(--fs-md);
