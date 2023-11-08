@@ -1,14 +1,14 @@
+import Button from "components/Button";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
+import { addRecipe } from "redux/recipe/actions";
+import { selectRecipeImage } from "redux/recipe/selectors";
+import { resetRecipeImage } from "redux/recipe/slice";
 import { RecipeDescriptionFields } from "../RecipeDescriptionFields/RecipeDescriptionFields";
 import { RecipeIngredientsFields } from "../RecipeIngredientsFields/RecipeIngredientsFields";
 import { RecipePreparationFields } from "../RecipePreparationFields/RecipePreparationFields";
 import css from "./AddRecipeForm.module.css";
-import Button from "components/Button";
-import { useEffect, useState } from "react";
-import { addRecipe, updateRecipePicture } from "redux/recipe/actions";
-import { toast } from "react-toastify";
-import { selectRecipeImage } from "redux/recipe/selectors";
-import { resetRecipeImage } from "redux/recipe/slice";
 
 export const AddRecipeForm = () => {
   const dispatch = useDispatch();
@@ -16,7 +16,7 @@ export const AddRecipeForm = () => {
 
   useEffect(() => {
     dispatch(resetRecipeImage());
-  }, []);
+  }, [dispatch]);
 
   const defaultValues = {
     name: "",
