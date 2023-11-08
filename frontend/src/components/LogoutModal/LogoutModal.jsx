@@ -4,9 +4,8 @@ import icons from "../../images/icons.svg";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { logout } from "redux/auth/actions";
-import React from 'react';
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import React from "react";
+import { notifySuccess } from "shared/notification";
 
 export function LogoutModal({ onClose, open }) {
   let navigate = useNavigate();
@@ -15,7 +14,7 @@ export function LogoutModal({ onClose, open }) {
   const routLogOut = () => {
     dispatch(logout());
     navigate("/welcome");
-    toast.success("Wylogowano");
+    notifySuccess("Logged out successfully.");
   };
   // const handleModalClose = () => {
   //   onClose();
@@ -36,7 +35,6 @@ export function LogoutModal({ onClose, open }) {
           <Button variant="secondary" onClick={routLogOut}>
             Log out
           </Button>
-          <ToastContainer/>
           <Button variant="secondary" unique="reverse" onClick={onClose}>
             Cancel
           </Button>

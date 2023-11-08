@@ -1,26 +1,21 @@
-import React, { useState } from 'react';
-import css from './FooterSubscribeForm.module.css';
-import Button from '../../Button/index';
-import icons from '../../../images/icons.svg';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
-const notify = () => {
-  toast.success('Subscription successful');
-}
+import React, { useState } from "react";
+import css from "./FooterSubscribeForm.module.css";
+import Button from "../../Button/index";
+import icons from "../../../images/icons.svg";
+import { notifySuccess } from "shared/notification";
 
 export const FooterSubscribeForm = () => {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
   const [isEmailValid, setIsEmailValid] = useState(false);
   const [isInputClicked, setIsInputClicked] = useState(false);
 
-  const handleEmailChange = (event) => {
+  const handleEmailChange = event => {
     const newEmail = event.target.value;
     setEmail(newEmail);
     setIsEmailValid(validateEmail(newEmail));
   };
 
-  const validateEmail = (email) => {
+  const validateEmail = email => {
     const validatedEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return validatedEmail.test(email);
   };
@@ -28,12 +23,12 @@ export const FooterSubscribeForm = () => {
   const handleInputClick = () => {
     setIsInputClicked(true);
   };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
+    notifySuccess("Subscription confirmed.");
     if (isEmailValid) {
       // Usunięto kod powiadomienia push
-      setEmail('');
+      setEmail("");
     }
   };
 
@@ -42,11 +37,16 @@ export const FooterSubscribeForm = () => {
       <div className={css.subscribeBox}>
         <h2 className={css.subscribeTitle}>Subscribe to our Newsletter</h2>
         <p className={css.subscribeDescription}>
-          Subscribe to our newsletter. Be in touch with latest news and special offers, etc.
+          Subscribe to our newsletter. Be in touch with latest news and special
+          offers, etc.
         </p>
       </div>
 
-      <form autoComplete="off" className={css.subscribeForm} onSubmit={handleSubmit}>
+      <form
+        autoComplete="off"
+        className={css.subscribeForm}
+        onSubmit={handleSubmit}
+      >
         <Button
           id="email"
           variant="secondary"
@@ -65,13 +65,18 @@ export const FooterSubscribeForm = () => {
           </svg>
           Enter your email address
         </Button>
-        {isInputClicked && !isEmailValid && <div className={css.subscribeError}>Incorrect e-mail address</div>}
-        <Button onClick={notify} variant="secondary" size="medium" type="submit" disabled={!isEmailValid}>
+        {isInputClicked && !isEmailValid && (
+          <div className={css.subscribeError}>Incorrect e-mail address</div>
+        )}
+        <Button
+          variant="secondary"
+          size="medium"
+          type="submit"
+          disabled={!isEmailValid}
+        >
           Subscribe
         </Button>
       </form>
-      <ToastContainer />
     </div>
   );
 };
-

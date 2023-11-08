@@ -1,7 +1,6 @@
 import Button from "components/Button";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { toast } from "react-toastify";
 import { addRecipe } from "redux/recipe/actions";
 import { selectRecipeImage } from "redux/recipe/selectors";
 import { resetRecipeImage } from "redux/recipe/slice";
@@ -9,6 +8,7 @@ import { RecipeDescriptionFields } from "../RecipeDescriptionFields/RecipeDescri
 import { RecipeIngredientsFields } from "../RecipeIngredientsFields/RecipeIngredientsFields";
 import { RecipePreparationFields } from "../RecipePreparationFields/RecipePreparationFields";
 import css from "./AddRecipeForm.module.css";
+import { notifySuccess } from "shared/notification";
 
 export const AddRecipeForm = () => {
   const dispatch = useDispatch();
@@ -55,7 +55,7 @@ export const AddRecipeForm = () => {
       instructions: preparation.value,
     };
     dispatch(addRecipe(payload)).then(() => {
-      toast.success("Your recipe has been created.");
+      notifySuccess("Your recipe has been created.");
     });
     e.currentTarget.reset();
     setIngredients([defaultValues]);
