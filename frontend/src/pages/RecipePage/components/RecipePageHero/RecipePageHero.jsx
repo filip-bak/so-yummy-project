@@ -36,7 +36,7 @@ export const RecipePageHero = ({ title, description, time }) => {
 };
 
 RecipePageHero.propTypes = {
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  time: PropTypes.number.isRequired,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  time: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };

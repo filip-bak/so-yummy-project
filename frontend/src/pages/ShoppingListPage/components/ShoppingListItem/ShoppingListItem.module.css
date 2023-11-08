@@ -72,7 +72,7 @@
 
 .icon {
   cursor: pointer;
-  stroke: #1f242e;
+  stroke: var(--main-color-dark);
   height: 14px;
   width: 14px;
 }
