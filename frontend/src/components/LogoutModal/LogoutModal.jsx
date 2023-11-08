@@ -4,6 +4,8 @@ import icons from "../../images/icons.svg";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { logout } from "redux/auth/actions";
+import React from "react";
+import { notifySuccess } from "shared/notification";
 
 export function LogoutModal({ onClose, open }) {
   let navigate = useNavigate();
@@ -12,6 +14,7 @@ export function LogoutModal({ onClose, open }) {
   const routLogOut = () => {
     dispatch(logout());
     navigate("/welcome");
+    notifySuccess("Logged out successfully.");
   };
   // const handleModalClose = () => {
   //   onClose();

@@ -11,6 +11,7 @@ import { selectTheme } from "redux/theme/selectors";
 import { lazy } from "react";
 import PrivateRoute from "LayoutRoutes/PrivateRoute";
 import RestrictedRoute from "LayoutRoutes/RestrictedRoute";
+import AppToastContainer from "components/AppToastContainer";
 
 const baseUrl = process.env.REACT_APP_BACKEND_URL;
 axios.defaults.baseURL = baseUrl;
@@ -94,6 +95,7 @@ export const App = () => {
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
+      <AppToastContainer />
     </>
   );
 };

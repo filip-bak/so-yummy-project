@@ -9,6 +9,7 @@ import { selectError, selectIsLoading } from "redux/auth/selectors";
 import * as Yup from "yup";
 import css from "./SigninForm.module.css";
 import icons from "../../../images/icons.svg";
+import { notifyError, notifySuccess } from "shared/notification";
 
 const initialValue = {
   email: "",
@@ -40,12 +41,16 @@ export const SigninForm = () => {
 
     if (status.error?.message !== "Rejected") {
       navigate("/");
+      notifySuccess("Logged in successfully!");
+    } else {
+      notifyError("Email or password is wrong");
     }
 
     setIsSubmit(false);
 
     resetForm();
   };
+
   return (
     <div className={css.registerFormWrapper}>
       <div className={css.background}></div>
@@ -124,7 +129,6 @@ export const SigninForm = () => {
               size="large"
               unique="short"
               type="submit"
-              onClick={() => setIsSubmit(true)}
             >
               Sign In
             </Button>
@@ -137,7 +141,6 @@ export const SigninForm = () => {
       ) : (
         <p className={`error`}>{isError?.message}</p>
       )}
-
       <Link className={css.registerLink} to={"/register"}>
         Registration
       </Link>
