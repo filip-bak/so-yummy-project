@@ -33,16 +33,10 @@
   .followUsList {
     gap: 18px;
   }
-  .followUsItem {
-  }
-  .followUsIcon {
-  }
 }
 
 @media screen and (min-width: 1440px) {
   .followUsBox {
     margin-top: 41px;
-  }
-  .followUsList {
   }
 }

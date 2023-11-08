@@ -3,6 +3,7 @@ import { addRecipe, fetchRecipeById, updateRecipePicture } from "./actions";
 
 const initialState = {
   recipe: null,
+  recipeImage: null,
   isLoading: false,
   error: null,
   ingredients: [],
@@ -20,6 +21,11 @@ const handleRejected = (state, action) => {
 const recipeSlice = createSlice({
   name: "recipe",
   initialState: initialState,
+  reducers: {
+    resetRecipeImage: state => {
+      state.recipeImage = null;
+    },
+  },
   extraReducers: builder => {
     builder
       .addCase(fetchRecipeById.pending, handlePending)
@@ -38,7 +44,8 @@ const recipeSlice = createSlice({
       .addCase(addRecipe.rejected, handleRejected)
 
       .addCase(updateRecipePicture.pending, handlePending)
-      .addCase(updateRecipePicture.fulfilled, state => {
+      .addCase(updateRecipePicture.fulfilled, (state, action) => {
+        state.recipeImage = action.payload.recipeImage;
         state.isLoading = false;
         state.error = null;
       })
@@ -46,4 +53,5 @@ const recipeSlice = createSlice({
   },
 });
 
+export const { resetRecipeImage } = recipeSlice.actions;
 export const recipeReducer = recipeSlice.reducer;

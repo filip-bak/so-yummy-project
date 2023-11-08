@@ -14,10 +14,20 @@
   background-color: var(--accent-color-darker);
   border-radius: 8px;
   cursor: pointer;
+  overflow: hidden;
 }
 
+.photo_uploaded {
+  position: relative;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
 .photo_input {
   visibility: hidden;
+  position: absolute;
 }
 
 .photo_input:focus,
@@ -59,7 +69,7 @@
   font-weight: 400;
   line-height: 1;
   margin-bottom: 24px;
-  padding-bottom: 19px;
+  padding-bottom: 17px;
   width: 100%;
 }
 
@@ -69,18 +79,13 @@
 }
 
 .label {
-  display: block;
-  width: 343px;
-}
-
-.label {
   border-bottom: 1px solid #e0e0e0;
   color: var(--add-recipe-input);
   display: flex;
   font-size: 14px;
   font-weight: 400;
   line-height: 1;
-  padding-bottom: 19px;
+  padding-bottom: 13px;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 24px;
@@ -88,11 +93,6 @@
 
 .label_container {
   position: relative;
-}
-
-.select_box:focus,
-.select_box:hover {
-  outline: none;
 }
 
 .select_box {
@@ -105,6 +105,10 @@
   font-weight: 400;
   padding-block: 4px;
   width: 85px;
+}
+.select_box:focus,
+.select_box:hover {
+  outline: none;
 }
 .select_box option {
   background-color: var(--add-recipe-select-option-bg);

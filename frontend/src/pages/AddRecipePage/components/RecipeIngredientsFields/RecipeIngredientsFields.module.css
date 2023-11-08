@@ -175,6 +175,9 @@
 .amount_select_box {
   appearance: none;
 }
+.amount_select_box option {
+  background-color: var(--add-recipe-select-option-bg);
+}
 
 .ingredient_drop_down {
   background-color: var(--add-recipe-select-option-bg);
