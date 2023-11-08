@@ -6,6 +6,8 @@
   height: 100vh;
   top: -100%;
   right: 0;
+  left: 0;
+  overflow: hidden;
   background-color: var(--mobile-nav-bg);
   grid-template-areas:
     "logo  ... close"
