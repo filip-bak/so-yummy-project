@@ -120,7 +120,11 @@ const Navigation = () => {
           }`}
           onClick={handleClick}
         >
-          <svg className={styles["burger-menu-icon"]}>
+          <svg
+            className={`${styles["burger-menu-icon"]} ${
+              isDarkMainPage && styles["dark-main"]
+            }`}
+          >
             <use href={`${icon}#icon-burger-menu`}></use>
           </svg>
         </button>

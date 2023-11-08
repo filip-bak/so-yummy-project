@@ -48,8 +48,8 @@ export const FavoriteItem = ({ image, title, id, description, time }) => {
 
 FavoriteItem.propTypes = {
   image: PropTypes.string,
-  title: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  time: PropTypes.number.isRequired,
+  title: PropTypes.string,
+  id: PropTypes.string,
+  description: PropTypes.string,
+  time: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
