@@ -7,7 +7,7 @@ const {
 } = require("./users.validators");
 const { authMiddleware } = require("../auth/auth.middleware");
 const multer = require("multer");
-const path = require("path");
+// const path = require("path");
 const { cloudinary } = require("./users.cloudinary");
 const { User } = require("./users.model");
 const { updateUser } = require("./users.service");
@@ -38,14 +38,18 @@ usersRouter.post(
   async (req, res) => {
     try {
       const { email } = req.user;
-      const { width = 250, height = 250 } = req.body;
 
       const uploadOptions = {
-        width,
-        height,
+        width: 250,
+        height: 250,
         crop: "fill",
       };
 
+      if (!req.file) {
+        return res.status(400).json({
+          message: "File not provided.",
+        });
+      }
       cloudinary.uploader.upload(
         req.file.path,
         uploadOptions,
@@ -60,7 +64,7 @@ usersRouter.post(
 
           await updateUser(email, { avatarURL: imageUrl });
 
-          res.status(200).json({
+          return res.status(200).json({
             message: "Uploaded",
             avatarURL: imageUrl,
           });
@@ -68,8 +72,8 @@ usersRouter.post(
       );
     } catch (error) {
       console.error(error);
-      res.send({
-        message: error.message,
+      return res.status(500).json({
+        message: "Upload failed",
       });
     }
   }

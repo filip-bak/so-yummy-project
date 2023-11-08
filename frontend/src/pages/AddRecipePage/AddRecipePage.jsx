@@ -1,9 +1,9 @@
-import css from "./AddRecipePage.module.css";
 import { MainPageTitle } from "components/MainPageTitle/MainPageTitle";
+import { useEffect, useState } from "react";
+import css from "./AddRecipePage.module.css";
 import { AddRecipeForm } from "./components/AddRecipeForm/AddRecipeForm";
 import { FollowUs } from "./components/FollowUs/FollowUs";
 import { PopularRecipe } from "./components/PopularRecipe/PopularRecipe";
-import { useEffect, useState } from "react";
 
 const AddRecipesPage = () => {
   const [showFollowUs, setShowFollowUs] = useState(false);
