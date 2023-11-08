@@ -72,6 +72,7 @@
 .switch {
   grid-area: theme;
   align-self: flex-end;
+  display: flex;
 }
 
 .mobile-open {
