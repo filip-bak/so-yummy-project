@@ -5,7 +5,6 @@ import { Outlet } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import Navigation from "./Navigation";
 import styles from "./SharedLayout.module.css";
-import Loader from "components/Loader";
 
 const SharedLayout = () => {
   return (
@@ -15,7 +14,7 @@ const SharedLayout = () => {
 
       <Navigation />
 
-      <Suspense fallback={<Loader />}>
+      <Suspense>
         <Outlet />
       </Suspense>
 

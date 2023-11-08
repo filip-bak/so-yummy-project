@@ -2,7 +2,6 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 100vh;
 }
 .backgroundImage1 {
   position: absolute;
@@ -59,3 +58,11 @@
     height: 474px;
   }
 }
+
+/* .loader {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+} */

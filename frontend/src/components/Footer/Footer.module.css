@@ -1,7 +1,7 @@
 .containerFooter {
+  position: relative;
   margin-top: 100px;
   position: relative;
-  z-index: -1;
 }
 .bg {
   background-image: url(../../images/mobile/footer-pasta1-mob.png);
@@ -11,7 +11,7 @@
   left: 0;
   display: block;
   z-index: -2;
-
+  pointer-events: none;
   width: 256px;
   height: 392px;
 }
@@ -24,6 +24,7 @@
   right: 0px;
   z-index: -2;
 
+  pointer-events: none;
   width: 68px;
   height: 109px;
 }
@@ -70,7 +71,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
-    padding: 50px 94px 0 32px;
+    padding: 50px 82px 0 32px;
   }
 }
 
@@ -92,6 +93,6 @@
     padding-bottom: 50px;
   }
   .containerContent {
-    padding: 64px 100px 0;
+    padding: 64px 96px 0;
   }
 }
