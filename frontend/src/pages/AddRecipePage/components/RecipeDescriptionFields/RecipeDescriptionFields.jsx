@@ -57,7 +57,7 @@ export const RecipeDescriptionFields = ({ recipeImage }) => {
               </svg>
             </div>
           </label>
-          <img className={css.photo_uploaded} src={recipeImage} />
+          <img className={css.photo_uploaded} src={recipeImage} alt="Recipe" />
         </div>
       ) : (
         <div className={css.photo_container}>
