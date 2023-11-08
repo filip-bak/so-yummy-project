@@ -25,9 +25,9 @@
   font-size: 14px;
   line-height: 1.5;
   letter-spacing: -0.02em;
-  color: var(--main-color-dark);
   background-color: transparent;
   color: var(--signin-color-light);
+  transition: color 150ms, border-color 150ms;
 }
 .field::placeholder {
   color: var(--signin-color-light);
@@ -41,11 +41,11 @@
 
 .field:hover,
 .field:focus {
-  border-color: var(--main-color-light);
+  border-color: var(--auth-border-hover);
   background-color: transparent;
 }
 
-.field-error {
+.field.field-error {
   border: 1px solid var(--error-invalid);
 }
 
