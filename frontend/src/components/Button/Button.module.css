@@ -84,7 +84,7 @@
 }
 .secondary.reverse {
   --_background-color: var(--text-color-darker);
-  --_color: var(--description-color);
+  --_color: var(--button-reverse-color);
 }
 .secondary.reverse:hover,
 .secondary.reverse:focus {

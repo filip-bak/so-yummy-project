@@ -75,7 +75,7 @@
 
   --button-secondary-hover-bg: #8baa36;
   --button-secondary-hover-color: #22252a;
-
+  --button-reverse-color: #23262a;
   /* FONTS */
   --font-family: "Poppins", sans-serif;
 
@@ -135,6 +135,7 @@
 
   --button-secondary-hover-bg: #1e1f28;
   --button-secondary-hover-color: #8baa36;
+  --button-reverse-color: #23262a;
 
   --delete-secondary-bg: #1e1f28;
   --delete-secondary-stroke: #fafafa;
