@@ -10,10 +10,11 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-
-  @media (min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
+}
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .container {
     background-image: url("../../images/mobile/bg-welcome-2x.jpg");
   }
 }
@@ -96,10 +97,11 @@
 
   .container {
     background-image: url("../../images/tablet/bg-welcome.jpg");
-
-    @media (min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
+  }
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .container {
       background-image: url("../../images/tablet/bg-welcome-2x.jpg");
     }
   }
@@ -117,10 +119,11 @@
   }
   .container {
     background-image: url("../../images/desktop/bg-welcome.jpg");
-
-    @media (min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
+  }
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .container {
       background-image: url("../../images/desktop/bg-welcome-2x.jpg");
     }
   }

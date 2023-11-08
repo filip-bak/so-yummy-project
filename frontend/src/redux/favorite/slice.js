@@ -1,10 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {
-  addToFavorite,
-  fetchFavorite,
-  fetchNewFavoritePage,
-  removeFromFavorite,
-} from "./actions";
+import { addToFavorite, fetchFavorite, removeFromFavorite } from "./actions";
 
 const initialState = {
   items: [],
@@ -39,15 +34,6 @@ const favoriteSlice = createSlice({
       })
       .addCase(fetchFavorite.rejected, handleRejected)
 
-      .addCase(fetchNewFavoritePage.pending, handlePending)
-      .addCase(fetchNewFavoritePage.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.error = null;
-        state.items = action.payload.favorite;
-        state.currentPage = action.payload.currentPage;
-      })
-      .addCase(fetchNewFavoritePage.rejected, handleRejected)
-
       .addCase(addToFavorite.pending, handlePending)
       .addCase(addToFavorite.fulfilled, (state, action) => {
         state.isLoading = false;
@@ -61,10 +47,9 @@ const favoriteSlice = createSlice({
         state.isLoading = false;
         state.error = null;
 
-        const index = state.items.findIndex(
-          recipe => recipe._id === action.payload._id
+        state.items = state.items.filter(
+          recipe => recipe._id !== action.payload.id
         );
-        state.items.splice(index, 1);
       })
       .addCase(removeFromFavorite.rejected, handleRejected);
   },

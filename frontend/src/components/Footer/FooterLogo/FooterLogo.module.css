@@ -30,8 +30,6 @@
 }
 
 @media screen and (min-width: 768px) {
-  .logoContainer {
-  }
   .logoBox {
     justify-content: flex-start;
     align-items: center;
@@ -71,14 +69,6 @@
 }
 
 @media screen and (min-width: 1440px) {
-  .logoContainer {
-  }
-  .logoBox {
-  }
-  .logoIcon {
-  }
-  .logoTitle {
-  }
   .logoBenefitsList {
     color: var(--text-color-lighter);
     font-size: var(--fs-lg);
@@ -90,8 +80,6 @@
     margin-right: 149px;
     margin-block-start: 40px;
     max-width: 418px;
-  }
-  .logoBenefitsItem {
   }
   .logoBenefitsItem:not(:last-child) {
     margin-bottom: 12px;
