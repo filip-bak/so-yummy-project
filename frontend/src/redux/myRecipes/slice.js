@@ -58,10 +58,9 @@ const myRecipesSlice = createSlice({
         state.isLoading = false;
         state.error = null;
 
-        const index = state.items.findIndex(
-          recipe => recipe._id === action.payload._id
+        state.items = state.items.filter(
+          recipe => recipe._id !== action.payload._id
         );
-        state.items.splice(index, 1);
       })
       .addCase(removeMyRecipe.rejected, handleRejected);
   },

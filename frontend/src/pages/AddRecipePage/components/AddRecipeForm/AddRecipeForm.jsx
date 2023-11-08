@@ -1,15 +1,22 @@
-import { useDispatch } from "react-redux";
+import Button from "components/Button";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
+import { addRecipe } from "redux/recipe/actions";
+import { selectRecipeImage } from "redux/recipe/selectors";
+import { resetRecipeImage } from "redux/recipe/slice";
 import { RecipeDescriptionFields } from "../RecipeDescriptionFields/RecipeDescriptionFields";
 import { RecipeIngredientsFields } from "../RecipeIngredientsFields/RecipeIngredientsFields";
 import { RecipePreparationFields } from "../RecipePreparationFields/RecipePreparationFields";
 import css from "./AddRecipeForm.module.css";
-import Button from "components/Button";
-import { useState } from "react";
-import { addRecipe, updateRecipePicture } from "redux/recipe/actions";
-import { toast } from "react-toastify";
 
 export const AddRecipeForm = () => {
   const dispatch = useDispatch();
+  const recipeImage = useSelector(selectRecipeImage);
+
+  useEffect(() => {
+    dispatch(resetRecipeImage());
+  }, [dispatch]);
 
   const defaultValues = {
     name: "",
@@ -38,7 +45,7 @@ export const AddRecipeForm = () => {
       category: categoryType.value,
       time: cookingTime.value,
       thumb: thumb.name,
-      preview: thumb.name,
+      preview: recipeImage || thumb.name,
       ingredients: ingredients
         .filter(ingredient => ingredient.id !== undefined)
         .map(ingredient => ({
@@ -50,9 +57,8 @@ export const AddRecipeForm = () => {
     dispatch(addRecipe(payload)).then(() => {
       toast.success("Your recipe has been created.");
     });
-    if (thumb.files[0]) {
-      dispatch(updateRecipePicture(thumb));
-    }
+    e.currentTarget.reset();
+    setIngredients([defaultValues]);
   };
 
   return (
@@ -63,7 +69,7 @@ export const AddRecipeForm = () => {
       onSubmit={handleSubmit}
     >
       <div className={css.button}>
-        <RecipeDescriptionFields />
+        <RecipeDescriptionFields recipeImage={recipeImage} />
         <RecipeIngredientsFields
           setIngredients={setIngredients}
           ingredients={[...ingredients]}

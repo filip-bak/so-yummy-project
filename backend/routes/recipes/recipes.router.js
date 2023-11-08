@@ -13,7 +13,8 @@ const { authMiddleware } = require("../../modules/auth/auth.middleware");
 const { upload } = require("../../modules/users/users.controller");
 const { cloudinary } = require("../../modules/users/users.cloudinary");
 const { Recipe } = require("./recipes.model");
-const { getRecipes, getRecipe } = require("./recipes.service");
+const { getRecipes } = require("./recipes.service");
+const { Types } = require("mongoose");
 
 const router = express.Router();
 
@@ -36,8 +37,12 @@ router.get("/my/own", authMiddleware, async (req, res) => {
 
 router.delete("/recipe/:id", authMiddleware, async (req, res, next) => {
   try {
-    const { id } = req.params;
-    const recipe = await Recipe.findByIdAndRemove(id).populate("owner", "_id");
+    const id = req.params;
+    const objectId = new Types.ObjectId(id);
+    const recipe = await Recipe.findByIdAndRemove(objectId).populate(
+      "owner",
+      "_id"
+    );
 
     if (!recipe) {
       throw new Error("Recipe not found");
@@ -59,7 +64,6 @@ router.post(
   upload.single("recipeImage"),
   async (req, res) => {
     try {
-      const { _id } = req.user;
       const { width = 350, height = 350 } = req.body;
 
       const uploadOptions = {
@@ -79,15 +83,8 @@ router.post(
             });
           }
           const imageUrl = result.secure_url;
-          const recipe = await Recipe.findOneAndUpdate(
-            {
-              owner: _id,
-            },
-            {
-              preview: imageUrl,
-            }
-          ).populate("owner", "_id");
-          await res.status(200).json({
+
+          return res.status(200).json({
             message: "Uploaded",
             recipeImage: imageUrl,
           });
@@ -95,7 +92,7 @@ router.post(
       );
     } catch (error) {
       console.error(error);
-      res.send({
+      res.status(500).send({
         message: error.message,
       });
     }
