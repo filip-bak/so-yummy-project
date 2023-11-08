@@ -3,6 +3,7 @@ import css from "./RecipePreparation.module.css";
 import { selectRecipe } from "redux/recipe/selectors";
 import { useEffect, useState } from "react";
 import defaultImage from "images/defaults/defaultImageStandard.jpg";
+import usePlaceholderImage from "hooks/usePlaceholder";
 
 export const RecipePreparation = () => {
   const recipe = useSelector(selectRecipe);
@@ -16,6 +17,8 @@ export const RecipePreparation = () => {
         .filter(sentence => !sentence.startsWith("STEP "))
     );
   }, [recipe]);
+
+  const displayedImage = usePlaceholderImage(recipe.thumb, defaultImage);
 
   return (
     <div className={css.container}>
@@ -32,11 +35,7 @@ export const RecipePreparation = () => {
           ))}
         </ul>
       </div>
-      <img
-        src={recipe.thumb || defaultImage}
-        className={css.image}
-        alt="a dish"
-      ></img>
+      <img src={displayedImage} className={css.image} alt="a dish"></img>
     </div>
   );
 };

@@ -47,7 +47,7 @@ export const FavoriteItem = ({ image, title, id, description, time }) => {
 };
 
 FavoriteItem.propTypes = {
-  image: PropTypes.string.isRequired,
+  image: PropTypes.string,
   title: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
