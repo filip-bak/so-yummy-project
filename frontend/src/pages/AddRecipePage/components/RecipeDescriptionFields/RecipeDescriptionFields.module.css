@@ -95,11 +95,6 @@
   position: relative;
 }
 
-.select_box:focus,
-.select_box:hover {
-  outline: none;
-}
-
 .select_box {
   background-color: transparent;
   border: none;
@@ -111,6 +106,10 @@
   padding-block: 4px;
   /* width: 85px; */
 }
+.select_box:focus,
+.select_box:hover {
+  outline: none;
+}
 .select_box option {
   background-color: var(--add-recipe-select-option-bg);
 }
@@ -118,6 +117,9 @@
 .select_box::-webkit-scrollbar {
   width: 5px;
   background-color: #cccccc;
+}
+.select_box::-webkit-scrollbar-thumb {
+  background-color: rgb(134, 134, 134);
 }
 /* .label_container:after {
   content: ">";

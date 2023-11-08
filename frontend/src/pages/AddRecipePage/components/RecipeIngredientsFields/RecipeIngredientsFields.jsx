@@ -116,7 +116,7 @@ export const RecipeIngredientsFields = ({
                   onChange={event => handleIngredientNameChange(event, index)}
                 />
               </label>
-              {ingredient.expanded && (
+              {ingredient.expanded && ingredient.suggestions.length > 0 && (
                 <div className={css.ingredient_drop_down}>
                   {ingredient.suggestions.map(suggestion => (
                     <p

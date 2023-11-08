@@ -51,13 +51,12 @@ export const RecipeDescriptionFields = ({ recipeImage }) => {
               id="thumb"
               onChange={handleSendRecipePicture}
             />
-            <div className={css.icon_container}>
-              <svg className={css.icon}>
-                <use href={`${icons}#icon-photo-add-recipe`} />
-              </svg>
-            </div>
+            <img
+              className={css.photo_uploaded}
+              src={recipeImage}
+              alt="Recipe"
+            />
           </div>
-          <img className={css.photo_uploaded} src={recipeImage} alt="Recipe" />
         </label>
       ) : (
         <label htmlFor="thumb">

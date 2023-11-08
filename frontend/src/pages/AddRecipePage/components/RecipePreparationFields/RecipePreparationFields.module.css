@@ -10,15 +10,18 @@
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  height: 154px;
-  overflow: scroll;
+  overflow: auto;
   overflow-x: hidden;
   padding: 16px;
   margin-bottom: 18px;
   margin-top: 24px;
   scrollbar-color: #969595;
-  width: 343px;
+  min-width: 343px;
   color: var(--add-recipe-input);
+  resize: both;
+  max-width: 100%;
+  min-height: 154px;
+  max-height: 600px;
 }
 
 .text_area:focus,
