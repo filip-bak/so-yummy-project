@@ -1,15 +1,22 @@
-import { useDispatch } from "react-redux";
+import Button from "components/Button";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
+import { addRecipe } from "redux/recipe/actions";
+import { selectRecipeImage } from "redux/recipe/selectors";
+import { resetRecipeImage } from "redux/recipe/slice";
 import { RecipeDescriptionFields } from "../RecipeDescriptionFields/RecipeDescriptionFields";
 import { RecipeIngredientsFields } from "../RecipeIngredientsFields/RecipeIngredientsFields";
 import { RecipePreparationFields } from "../RecipePreparationFields/RecipePreparationFields";
 import css from "./AddRecipeForm.module.css";
-import Button from "components/Button";
-import { useState } from "react";
-import { addRecipe } from "redux/recipe/actions";
-import { toast } from "react-toastify";
 
 export const AddRecipeForm = () => {
   const dispatch = useDispatch();
+  const recipeImage = useSelector(selectRecipeImage);
+
+  useEffect(() => {
+    dispatch(resetRecipeImage());
+  }, [dispatch]);
 
   const defaultValues = {
     name: "",
@@ -23,25 +30,35 @@ export const AddRecipeForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    const form = e.currentTarget;
+    const {
+      title,
+      description,
+      categoryType,
+      cookingTime,
+      thumb,
+      preparation,
+    } = e.currentTarget.elements;
+
     const payload = {
-      title: form.elements.title.value,
-      description: form.elements.description.value,
-      category: form.elements.categoryType.value,
-      time: form.elements.cookingTime.value,
-      thumb: form.elements.thumb.name,
-      preview: form.elements.thumb.name,
+      title: title.value,
+      description: description.value,
+      category: categoryType.value,
+      time: cookingTime.value,
+      thumb: thumb.name,
+      preview: recipeImage || thumb.name,
       ingredients: ingredients
         .filter(ingredient => ingredient.id !== undefined)
         .map(ingredient => ({
           id: ingredient.id,
           measure: `${ingredient.amount} ${ingredient.amountType}`,
         })),
-      instructions: form.elements.preparation.value,
+      instructions: preparation.value,
     };
     dispatch(addRecipe(payload)).then(() => {
       toast.success("Your recipe has been created.");
     });
+    e.currentTarget.reset();
+    setIngredients([defaultValues]);
   };
 
   return (
@@ -52,7 +69,7 @@ export const AddRecipeForm = () => {
       onSubmit={handleSubmit}
     >
       <div className={css.button}>
-        <RecipeDescriptionFields />
+        <RecipeDescriptionFields recipeImage={recipeImage} />
         <RecipeIngredientsFields
           setIngredients={setIngredients}
           ingredients={[...ingredients]}

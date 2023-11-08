@@ -16,10 +16,10 @@
   transform: rotate(180deg);
 }
 
-@media screen and (min-width: 768px) {
-  /* Tu wszystko jest tak samo jak w mobile  */
-}
+/* @media screen and (min-width: 768px) { */
+/* Tu wszystko jest tak samo jak w mobile  */
+/* } */
 
-@media screen and (min-width: 1440px) {
-  /* Tu wszystko jest tak samo jak w mobile  */
-}
+/* @media screen and (min-width: 1440px) { */
+/* Tu wszystko jest tak samo jak w mobile  */
+/* } */

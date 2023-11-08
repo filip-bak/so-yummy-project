@@ -24,7 +24,6 @@ const handlePending = (state, action) => {
 };
 const handleFulfilled = (state, action) => {
   state.user = action.payload.user;
-  state.token = action.payload.token;
   state.isLoading = false;
   state.isLoggedIn = true;
 };
@@ -53,6 +52,7 @@ const authSlice = createSlice({
       .addCase(login.pending, handlePending)
       .addCase(login.fulfilled, (state, action) => {
         handleFulfilled(state, action);
+        state.token = action.payload.token;
         state.avatar = action.payload.avatarURL;
       })
       .addCase(login.rejected, handleReject)
@@ -94,6 +94,7 @@ const authSlice = createSlice({
       .addCase(refreshUser.rejected, (state, action) => {
         state.isRefreshing = false;
         state.isError = action.payload;
+        state.token = null;
       });
   },
 });

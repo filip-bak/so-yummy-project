@@ -1,11 +1,11 @@
-import { Outlet } from "react-router-dom";
-import { Suspense } from "react";
-import Loader from "components/Loader";
-import styles from "./SharedLayout.module.css";
-import PolicyAndTerms from "components/PolicyAndTerms";
 import { Footer } from "components/Footer/Footer";
-import Navigation from "./Navigation";
+import PolicyAndTerms from "components/PolicyAndTerms";
+import { Suspense } from "react";
+import { Outlet } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import Navigation from "./Navigation";
+import styles from "./SharedLayout.module.css";
+import Loader from "components/Loader";
 
 const SharedLayout = () => {
   return (
@@ -15,13 +15,12 @@ const SharedLayout = () => {
 
       <Navigation />
 
-      <Suspense fallback={<Loader visible={true} />}>
+      <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>
+
       <Footer />
       <PolicyAndTerms />
-      {/* <div className={styles.backgroundImage1}></div> */}
-      {/* <div className={styles.backgroundImage2}></div> */}
     </div>
   );
 };

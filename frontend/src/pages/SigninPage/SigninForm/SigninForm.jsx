@@ -8,8 +8,9 @@ import { login } from "redux/auth/actions";
 import { selectError, selectIsLoading } from "redux/auth/selectors";
 import * as Yup from "yup";
 import css from "./SigninForm.module.css";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import icons from "../../../images/icons.svg";
 
 const initialValue = {
   email: "",
@@ -33,6 +34,8 @@ export const SigninForm = () => {
   const navigate = useNavigate();
   const isLoading = useSelector(selectIsLoading);
   const isError = useSelector(selectError);
+  const [isEmailFocused, setIsEmailFocused] = useState(false);
+  const [isPasswordFocused, setIsPasswordFocused] = useState(false);
 
   const handleSubmit = async (formData, { resetForm }) => {
     const status = await dispatch(login(formData));
@@ -64,35 +67,62 @@ export const SigninForm = () => {
           <form autoComplete="off" noValidate onSubmit={handleSubmit}>
             <div className={css.title}>Sign In</div>
             <div className={css.fields}>
-              <label className={css.label} htmlFor="signin-email">
-                <Field
-                  className={`${css.field} ${
-                    errors.email && touched.email ? css["field-error"] : ""
-                  } `}
-                  id="signin-email"
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  autoComplete="off"
-                  required
-                />
-                <ErrorMessage name="email" component="p" className="error" />
-              </label>
-              <label className={css.label} htmlFor="signin-password">
-                <Field
-                  id="signin-password"
-                  className={`${css.field} ${
-                    errors.password && touched.password
-                      ? css["field-error"]
-                      : ""
-                  } `}
-                  type="password"
-                  name="password"
-                  placeholder="Password"
-                  required
-                />
-                <ErrorMessage name="password" component="p" className="error" />
-              </label>
+              <div
+                className={`${css.fieldWithIconEmail} ${
+                  isEmailFocused ? css.fieldFocused : ""
+                } ${errors.email && touched.email ? css.fieldError : ""}`}
+              >
+                <label className={css.labelEmail} htmlFor="signin-email">
+                  <svg className={css.emailIcon}>
+                    <use href={`${icons}#icon-input-envelope`} />
+                  </svg>
+                  <Field
+                    className={`${css.field} ${
+                      errors.email && touched.email ? css["field-error"] : ""
+                    } `}
+                    id="signin-email"
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    autoComplete="off"
+                    required
+                    onFocus={() => setIsEmailFocused(true)}
+                    onBlur={() => setIsEmailFocused(false)}
+                  />
+
+                  <ErrorMessage name="email" component="p" className="error" />
+                </label>
+              </div>
+              <div
+                className={`${css.fieldWithIconPassword} ${
+                  isPasswordFocused ? css.fieldFocused : ""
+                } ${errors.password && touched.password ? css.fieldError : ""}`}
+              >
+                <label className={css.label} htmlFor="signin-password">
+                  <svg className={css.passwordIcon}>
+                    <use href={`${icons}#icon-input-padlock`} />
+                  </svg>
+                  <Field
+                    id="signin-password"
+                    className={`${css.field} ${
+                      errors.password && touched.password
+                        ? css["field-error"]
+                        : ""
+                    } `}
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    required
+                    onFocus={() => setIsPasswordFocused(true)}
+                    onBlur={() => setIsPasswordFocused(false)}
+                  />
+                  <ErrorMessage
+                    name="password"
+                    component="p"
+                    className="error"
+                  />
+                </label>
+              </div>
             </div>
 
             <Button
@@ -112,7 +142,7 @@ export const SigninForm = () => {
       ) : (
         <p className={`error`}>{isError?.message}</p>
       )}
-        <ToastContainer />
+      <ToastContainer />
       <Link className={css.registerLink} to={"/register"}>
         Registration
       </Link>

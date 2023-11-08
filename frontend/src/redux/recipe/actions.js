@@ -35,3 +35,23 @@ export const fetchIngredients = async query => {
     throw e;
   }
 };
+
+export const updateRecipePicture = createAsyncThunk(
+  "recipe/updateRecipePicture",
+  async (data, thunkAPI) => {
+    try {
+      const form = new FormData();
+      form.append("recipeImage", data?.files[0]);
+
+      const res = await axios.post(`/recipes/upload`, form, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      console.log(res.data);
+      return res.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+);

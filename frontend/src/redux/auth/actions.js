@@ -89,6 +89,24 @@ export const updateUserAvatar = createAsyncThunk(
     }
   }
 );
+export const AddRecipePicture = createAsyncThunk(
+  "auth/addRecipePicture",
+  async (data, thunkApi) => {
+    try {
+      const form = new FormData();
+      form.append("image", data.files[0]);
+
+      const res = await axios.post("/recipe", form, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      return res.data;
+    } catch (err) {
+      return thunkApi.rejectWithValue(err.message);
+    }
+  }
+);
 
 export const refreshUser = createAsyncThunk(
   "auth/RefreshUser",

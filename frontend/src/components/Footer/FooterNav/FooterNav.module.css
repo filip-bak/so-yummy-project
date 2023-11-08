@@ -40,11 +40,6 @@
   .navItem:not(:last-child) {
     margin-bottom: 20px;
   }
-  .navItem {
-  }
-
-  .navLink {
-  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -53,9 +48,5 @@
   }
   .navItem:not(:last-child) {
     margin-bottom: 24px;
-  }
-  .navItem {
-  }
-  .navLink {
   }
 }
