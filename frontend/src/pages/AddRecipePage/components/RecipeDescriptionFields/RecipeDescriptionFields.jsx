@@ -41,42 +41,41 @@ export const RecipeDescriptionFields = ({ recipeImage }) => {
   return (
     <div className={css.container}>
       {recipeImage ? (
-        <div className={css.photo_container}>
-          <input
-            className={css.photo_input}
-            type="file"
-            accept="image/*,.png,.jpg,.web"
-            name="thumb"
-            id="thumb"
-            onChange={handleSendRecipePicture}
-          />
-          <label htmlFor="thumb">
-            <div className={css.icon_container}>
-              <svg className={css.icon}>
-                <use href={`${icons}#icon-photo-add-recipe`} />
-              </svg>
-            </div>
-          </label>
-          <img className={css.photo_uploaded} src={recipeImage} alt="Recipe" />
-        </div>
+        <label htmlFor="thumb">
+          <div className={css.photo_container}>
+            <input
+              className={css.photo_input}
+              type="file"
+              accept="image/*,.png,.jpg,.web"
+              name="thumb"
+              id="thumb"
+              onChange={handleSendRecipePicture}
+            />
+            <img
+              className={css.photo_uploaded}
+              src={recipeImage}
+              alt="Recipe"
+            />
+          </div>
+        </label>
       ) : (
-        <div className={css.photo_container}>
-          <input
-            className={css.photo_input}
-            type="file"
-            accept="image/*,.png,.jpg,.web"
-            name="thumb"
-            id="thumb"
-            onChange={handleSendRecipePicture}
-          />
-          <label htmlFor="thumb">
+        <label htmlFor="thumb">
+          <div className={css.photo_container}>
+            <input
+              className={css.photo_input}
+              type="file"
+              accept="image/*,.png,.jpg,.web"
+              name="thumb"
+              id="thumb"
+              onChange={handleSendRecipePicture}
+            />
             <div className={css.icon_container}>
               <svg className={css.icon}>
                 <use href={`${icons}#icon-photo-add-recipe`} />
               </svg>
             </div>
-          </label>
-        </div>
+          </div>
+        </label>
       )}
 
       <div className={css.labels_container}>
