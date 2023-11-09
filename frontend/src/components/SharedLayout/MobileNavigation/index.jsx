@@ -4,14 +4,14 @@ import NavList from "../NavList";
 import styles from "./MobileNavigation.module.css";
 import Switch from "components/Switch";
 import icons from "../../../images/icons.svg";
-import mobileImage from "../../../images/mobileMenu/spinachMenu-mobile@1x.png"
-import tabletImage from "../../../images/mobileMenu/spinachMenu-tablet@1x.png"
+import mobileImage from "../../../images/mobileMenu/spinachMenu-mobile@1x.png";
+import tabletImage from "../../../images/mobileMenu/spinachMenu-tablet@1x.png";
 
 const MobileNavigation = ({ handleClose }) => {
   const [isMobile, setIsMobile] = useState(false);
 
   const checkIsMobile = () => {
-    setIsMobile(window.innerWidth <= 768);
+    setIsMobile(window.innerWidth < 768);
   };
 
   useEffect(() => {
@@ -38,12 +38,13 @@ const MobileNavigation = ({ handleClose }) => {
       </button>
 
       <Switch id="switch-mobile" className={styles.switch} />
-
-      <img
-        src={isMobile ? mobileImage : tabletImage}
-        alt={isMobile ? "Mobile Image" : "Tablet Image"}
-        className={`${styles.bottomImage} position-absolute`}
+      <div className={styles.placeholder}>
+        <img
+          src={isMobile ? mobileImage : tabletImage}
+          alt="Leaf"
+          className={`${styles.bottomImage}`}
         />
+      </div>
     </div>
   );
 };

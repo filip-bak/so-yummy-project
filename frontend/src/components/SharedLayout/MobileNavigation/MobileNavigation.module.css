@@ -1,23 +1,27 @@
 .container {
-  padding: 18px 16px;
+  --_padding-block: 18px;
+  --_padding-inline: 16px;
+  padding: var(--_padding-block) var(--_padding-inline);
   position: fixed;
   display: grid;
   width: 100%;
   height: 100vh;
   top: -100%;
   right: 0;
+  left: 0;
+  overflow: auto;
   background-color: var(--mobile-nav-bg);
   grid-template-areas:
-    "logo  ... close"
-    "....  nav ...."
-    "theme ... ....";
+    "logo  ...  close"
+    "....  nav  ...."
+    "theme ... leaf";
   z-index: 1000;
 
   transition: transform 700ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 @media screen and (min-width: 768px) {
   .container {
-    padding: 18px 32px;
+    --_padding-inline: 32px;
   }
 }
 @media screen and (min-width: 1440px) {
@@ -70,6 +74,7 @@
 .switch {
   grid-area: theme;
   align-self: flex-end;
+  display: flex;
 }
 
 .mobile-open {
@@ -78,9 +83,18 @@
 .mobile-close {
   transform: translateY(0);
 }
+
+.placeholder {
+  position: relative;
+  grid-area: leaf;
+}
 .bottomImage {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: calc(var(--_padding-block) * -1);
+  right: calc(var(--_padding-inline) * -1);
+  max-width: none;
+  /* bottom: -18px;
+  right: -16px; */
+
   z-index: -1;
 }
