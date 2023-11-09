@@ -9,7 +9,7 @@ const Logo = ({ reverse = false, className }) => {
 
   return (
     <Link className={styles.container} to="/">
-      <svg className={`${logoClass} ${className}`}>
+      <svg className={`${logoClass} ${className ? className : ""}`}>
         <use href={`${icon}#icon-logo`}></use>
       </svg>
     </Link>
