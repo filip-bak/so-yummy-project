@@ -14,19 +14,16 @@ const getRecipes = async filter => {
     throw new UnknownDatabaseError();
   }
 };
-const getRecipe = async filter => {
-  try {
-    return await Recipe.findOne(filter);
-  } catch (e) {
-    console.error(e);
-    throw new UnknownDatabaseError();
-  }
-};
 
-const getCategoryPage = async (category, skip, limit) => {
+const getCategoryPage = async (category, skip, limit, userId) => {
   const regex = new RegExp(category, "i");
-  const totalCount = await Recipe.countDocuments({ category: regex });
-  const recipesPages = await Recipe.find({ category: regex })
+  const totalCount = await Recipe.countDocuments({
+    category: regex,
+  });
+  const recipesPages = await Recipe.find({
+    category: regex,
+    $or: [{ owner: userId }, { owner: { $exists: false } }],
+  })
     .sort({ popularity: -1 })
     .skip(skip)
     .limit(limit);
@@ -53,6 +50,5 @@ module.exports = {
   getCategories,
   getCategoryPage,
   addRecipe,
-  getRecipe,
   getRecipes,
 };

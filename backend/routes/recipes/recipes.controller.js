@@ -25,14 +25,19 @@ const getCategoryHandler = async (req, res) => {
 
 const getCategoryPageHandler = async (req, res) => {
   const { category } = req.params;
-
+  const { _id } = req.user;
   let { page = 1, limit = 8 } = req.query;
 
   const skip = (page - 1) * limit;
 
   limit = parseInt(limit) > 8 ? 8 : parseInt(limit);
 
-  const [recipes, totalCount] = await getCategoryPage(category, skip, limit);
+  const [recipes, totalCount] = await getCategoryPage(
+    category,
+    skip,
+    limit,
+    _id
+  );
 
   return res.json({
     totalCount,
@@ -107,7 +112,9 @@ const getRecipeByIdHandler = async (req, res) => {
 };
 
 const getRecipesHandler = async (req, res) => {
-  const result = await Recipe.find({}, "-createdAt -updatedAt");
+  const { _id } = req.user;
+  const params = { $or: [{ owner: _id }, { owner: { $exists: false } }] };
+  const result = await Recipe.find(params, "-createdAt -updatedAt");
   res.json(sortRecipes(result));
 };
 

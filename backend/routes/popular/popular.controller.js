@@ -14,6 +14,7 @@ const getPopularRecipesHandler = async (req, res) => {
         count: { $size: "$favorites" },
       },
     },
+    { $match: { owner: { $exists: false } } },
     { $sort: { count: -1 } },
     { $skip: 0 },
     { $limit: 4 },

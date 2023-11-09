@@ -1,8 +1,9 @@
 const { Recipe } = require("../recipes/recipes.model");
 const { Ingredient } = require("../ingredients/ingredients.model");
 
-const searchRecipes = async (params, page, recipesPerPage) => {
+const searchRecipes = async (params, page, recipesPerPage, userId) => {
   const queryParams = await getQueryParams(params);
+  queryParams.$or = [{ owner: userId }, { owner: { $exists: false } }];
   const totalCount = await Recipe.countDocuments(queryParams).exec();
   const recipes = await Recipe.find(queryParams)
     .select("_id title thumb")

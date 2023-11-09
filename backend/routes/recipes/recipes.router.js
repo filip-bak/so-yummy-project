@@ -18,12 +18,12 @@ const { Types } = require("mongoose");
 
 const router = express.Router();
 
-router.get("/", asyncWrapper(getSearchRecipesHandler));
+router.get("/", authMiddleware, asyncWrapper(getSearchRecipesHandler));
 router.post("/", authMiddleware, asyncWrapper(addRecipeHandler));
-router.get("/main-page", asyncWrapper(getRecipesHandler));
-router.get("/category-list", asyncWrapper(getCategoryHandler));
-router.get("/:category", asyncWrapper(getCategoryPageHandler));
-router.get("/recipe/:id", asyncWrapper(getRecipeByIdHandler));
+router.get("/main-page", authMiddleware, asyncWrapper(getRecipesHandler));
+router.get("/category-list", authMiddleware, asyncWrapper(getCategoryHandler));
+router.get("/:category", authMiddleware, asyncWrapper(getCategoryPageHandler));
+router.get("/recipe/:id", authMiddleware, asyncWrapper(getRecipeByIdHandler));
 
 router.get("/my/own", authMiddleware, async (req, res) => {
   const { _id } = req.user;

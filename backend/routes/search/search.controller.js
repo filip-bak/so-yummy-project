@@ -2,6 +2,7 @@ const { searchRecipes } = require("./search.service");
 const Joi = require("joi");
 
 const getSearchRecipesHandler = async (req, res) => {
+  const { _id } = req.user;
   const validationResult = validateQueryParams(req);
   if (validationResult.error) {
     return res.status(400).json(validationResult.error.details[0].message);
@@ -13,7 +14,8 @@ const getSearchRecipesHandler = async (req, res) => {
     const [recipes, totalCount] = await searchRecipes(
       queryParams,
       req.query.page,
-      req.query.resultsPerPage
+      req.query.resultsPerPage,
+      _id
     );
     return res.json({ recipes, totalCount });
   } catch (error) {
