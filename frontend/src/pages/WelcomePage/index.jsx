@@ -1,4 +1,4 @@
-import icons from "../../images/icons.svg";
+import Logo from "components/Logo";
 import AuthNav from "./AuthNav";
 import css from "./WelcomePage.module.css";
 
@@ -6,10 +6,7 @@ const WelcomePage = () => {
   return (
     <div className={css.container}>
       <div className={css.logoContainer}>
-        {/* <Logo/> */}
-        <svg className={css.logo}>
-          <use href={`${icons}#icon-logo`} />
-        </svg>
+        <Logo />
       </div>
       <div className={css.content}>
         <div className={css.title}>

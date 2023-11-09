@@ -11,6 +11,7 @@
   left: 0;
   overflow: auto;
   background-color: var(--mobile-nav-bg);
+  grid-template-columns: 1fr 2fr 1fr;
   grid-template-areas:
     "logo  ...  close"
     "....  nav  ...."
@@ -31,20 +32,20 @@
 }
 
 .logo-box {
-  width: 44px;
-  height: 44px;
-}
-.logo {
-  align-self: center;
-  grid-area: logo;
   width: 40px;
   height: 40px;
+  display: flex;
+  grid-area: logo;
 }
 @media screen and (min-width: 768px) and (max-width: 1439px) {
-  .logo {
+  .logo-box {
     width: 44px;
     height: 44px;
   }
+}
+.logo {
+  width: 100%;
+  height: 100%;
 }
 .modal {
   grid-area: nav;
