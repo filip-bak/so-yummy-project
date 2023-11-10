@@ -186,7 +186,7 @@ export const RecipeIngredientsFields = ({
 };
 
 RecipeIngredientsFields.propTypes = {
-  ingredients: PropTypes.array.isRequired,
-  setIngredients: PropTypes.func.isRequired,
-  defaultValues: PropTypes.object.isRequired,
+  ingredients: PropTypes.array,
+  setIngredients: PropTypes.func,
+  defaultValues: PropTypes.object,
 };
