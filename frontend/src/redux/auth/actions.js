@@ -1,4 +1,5 @@
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const { createAsyncThunk } = require("@reduxjs/toolkit");
 
@@ -15,6 +16,8 @@ export const register = createAsyncThunk(
     try {
       const res = await axios.post("/users/signup", registerData);
       setToken(res.data.token);
+      toast.success("Check your email, we've sent you a verification link");
+
       return res.data;
     } catch (err) {
       if (err.response.status === 409) {
