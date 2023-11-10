@@ -2,12 +2,12 @@ import { useSelector } from "react-redux";
 import css from "./MyRecipes.module.css";
 import { selectMyRecipes } from "redux/myRecipes/selectors";
 import { MyRecipeItem } from "pages/MyRecipesPage/components/MyRecipeItem/MyRecipeItem";
-import { Pagination } from "components/Pagination/Pagination";
+// import { Pagination } from "components/Pagination/Pagination";
 import defaultImage from "images/defaults/defaultImageStandard.jpg";
 
 export const MyRecipes = () => {
   const myRecipes = useSelector(selectMyRecipes);
-  const resultsPerPage = 4;
+  // const resultsPerPage = 4;
 
   return (
     <div className={css.container}>
@@ -23,12 +23,12 @@ export const MyRecipes = () => {
           />
         ))}
       </ul>
-      {myRecipes.length > resultsPerPage && (
+      {/* {myRecipes.length > resultsPerPage && (
         <Pagination
           recipesCount={myRecipes.length}
           resultsPerPage={resultsPerPage}
         />
-      )}
+      )} */}
     </div>
   );
 };

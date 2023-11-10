@@ -23,7 +23,7 @@ export const RecipeItem = ({ recipeId, image, title }) => {
 };
 
 RecipeItem.propTypes = {
-  recipeId: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+  recipeId: PropTypes.string,
+  image: PropTypes.string,
+  title: PropTypes.string,
 };

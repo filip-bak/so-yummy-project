@@ -57,9 +57,9 @@ export const ShoppingListItem = ({
 };
 
 ShoppingListItem.propTypes = {
-  recipeId: PropTypes.string.isRequired,
-  itemId: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  measure: PropTypes.string.isRequired,
+  recipeId: PropTypes.string,
+  itemId: PropTypes.string,
+  image: PropTypes.string,
+  name: PropTypes.string,
+  measure: PropTypes.string,
 };

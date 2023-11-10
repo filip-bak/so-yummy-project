@@ -76,10 +76,10 @@ export const Ingredient = ({
 };
 
 Ingredient.propTypes = {
-  image: PropTypes.string.isRequired,
-  recipeId: PropTypes.string.isRequired,
-  itemId: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  measure: PropTypes.string.isRequired,
-  inShoppingList: PropTypes.bool.isRequired,
+  image: PropTypes.string,
+  recipeId: PropTypes.string,
+  itemId: PropTypes.string,
+  name: PropTypes.string,
+  measure: PropTypes.string,
+  inShoppingList: PropTypes.bool,
 };
