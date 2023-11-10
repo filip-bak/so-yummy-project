@@ -10,7 +10,7 @@
   flex-shrink: 0;
 }
 .title {
-  color: #000;
+  color: var(--main-color-dark);
   font-feature-settings: "liga" off;
   font-family: Poppins;
   font-size: 18px;
@@ -22,7 +22,7 @@
 }
 .description {
   width: 206px;
-  color: #000;
+  color: var(--main-color-dark);
   text-align: center;
   font-feature-settings: "liga" off;
   font-family: Poppins;
