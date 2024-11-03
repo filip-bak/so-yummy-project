@@ -1,11 +1,11 @@
 import css from "./MyRecipeItem.module.css";
-import icons from "../../../../images/icons.svg";
-import Button from "components/Button";
-import defaultImage from "images/defaults/defaultImageStandard.jpg";
+import icons from "@images/icons.svg";
+import Button from "@components/Button";
+import defaultImage from "@images/defaults/defaultImageStandard.jpg";
 import PropTypes from "prop-types";
-import usePlaceholderImage from "hooks/usePlaceholder";
+import usePlaceholderImage from "@hooks/usePlaceholder";
 import { useDispatch } from "react-redux";
-import { removeMyRecipe } from "redux/myRecipes/actions";
+import { removeMyRecipe } from "@redux/myRecipes/actions";
 import { useNavigate } from "react-router-dom";
 
 export const MyRecipeItem = ({ image, title, id, description, time }) => {
@@ -21,7 +21,7 @@ export const MyRecipeItem = ({ image, title, id, description, time }) => {
   };
 
   return (
-    <li className={css.item} key={id}>
+    <li className={css.item}>
       <div className={css.container}>
         <div className={css.image_container}>
           <img src={displayedImage} className={css.image} alt="a dish"></img>

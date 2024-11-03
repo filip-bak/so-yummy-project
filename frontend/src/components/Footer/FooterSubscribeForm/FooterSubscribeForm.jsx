@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import css from "./FooterSubscribeForm.module.css";
-import Button from "../../Button/index";
-import icons from "../../../images/icons.svg";
+import Button from "@components/Button";
+import icons from "@images/icons.svg";
 import axios from "axios";
 import { toast } from "react-toastify";
 

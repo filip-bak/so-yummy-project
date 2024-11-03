@@ -1,6 +1,6 @@
 import css from "./RecipeIngredientsFields.module.css";
-import icons from "../../../../images/icons.svg";
-import { fetchIngredients } from "redux/recipe/actions";
+import icons from "@images/icons.svg";
+import { fetchIngredients } from "@redux/recipe/actions";
 import { throttle } from "throttle-debounce";
 import PropTypes from "prop-types";
 

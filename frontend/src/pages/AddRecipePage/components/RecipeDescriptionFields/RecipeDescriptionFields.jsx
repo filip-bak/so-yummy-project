@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
-import icons from "../../../../images/icons.svg";
+import icons from "@images/icons.svg";
 import css from "./RecipeDescriptionFields.module.css";
-import { updateRecipePicture } from "redux/recipe/actions";
+import { updateRecipePicture } from "@redux/recipe/actions";
 
 export const RecipeDescriptionFields = ({ recipeImage }) => {
   const dispatch = useDispatch();

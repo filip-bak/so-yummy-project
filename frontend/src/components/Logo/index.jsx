@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import icon from "../../images/icons.svg";
+import icon from "@images/icons.svg";
 import styles from "./Logo.module.css";
 import { Link } from "react-router-dom";
 

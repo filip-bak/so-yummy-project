@@ -1,8 +1,8 @@
 import css from "./PaginationNav.module.css";
 import PropTypes from "prop-types";
-import icons from "../../images/icons.svg";
+import icons from "@images/icons.svg";
 import { useSelector } from "react-redux";
-import { selectCurrentPage } from "redux/recipes/selectors";
+import { selectCurrentPage } from "@redux/recipes/selectors";
 
 export const PaginationNav = ({ increasePage, handlePageChange, disabled }) => {
   const currentPage = useSelector(selectCurrentPage);

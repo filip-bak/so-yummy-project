@@ -1,14 +1,14 @@
-import Button from "components/Button";
-import Loader from "components/Loader";
+import Button from "@components/Button";
+import Loader from "@components/Loader";
 import { ErrorMessage, Field, Formik } from "formik";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { register } from "redux/auth/actions";
-import { selectError, selectIsLoading } from "redux/auth/selectors";
+import { register } from "@redux/auth/actions";
+import { selectError, selectIsLoading } from "@redux/auth/selectors";
 import * as Yup from "yup";
 import css from "./RegisterForm.module.css";
-import icons from "../../../images/icons.svg";
+import icons from "@images/icons.svg";
 
 const initialValue = {
   name: "",

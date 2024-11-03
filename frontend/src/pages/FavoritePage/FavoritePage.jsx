@@ -1,5 +1,5 @@
 import css from "./FavoritePage.module.css";
-import { MainPageTitle } from "components/MainPageTitle/MainPageTitle";
+import { MainPageTitle } from "@components/MainPageTitle/MainPageTitle";
 import { FavoriteList } from "./components/FavoriteList/FavoriteList";
 
 const FavoritePage = () => {

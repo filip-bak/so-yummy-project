@@ -1,4 +1,4 @@
-const { useMediaQuery } = require("@mui/material");
+import { useMediaQuery } from "@mui/material";
 
 const useRecipeMediaLayout = () => {
   const isTablet = useMediaQuery("(min-width:765px) and (max-width:1439px)");

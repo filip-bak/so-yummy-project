@@ -1,4 +1,4 @@
-import Button from "components/Button";
+import Button from "@components/Button";
 import css from "./SearchBar.module.css";
 import PropTypes from "prop-types";
 import { useSearchParams } from "react-router-dom";

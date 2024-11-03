@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
-import { useScreenWidth } from "../../../hooks";
+import { useScreenWidth } from "@hooks";
 
 import Container from "../Container";
 
-import { SearchBar } from "components/SearchBar/SearchBar";
+import { SearchBar } from "@components/SearchBar/SearchBar";
 import { SearchBarBox, Span, TextHero, Title } from "./HeroMain.styled";
 
 export const HeroMain = () => {

@@ -1,5 +1,5 @@
 import css from "./ShoppingListPage.module.css";
-import { MainPageTitle } from "components/MainPageTitle/MainPageTitle";
+import { MainPageTitle } from "@components/MainPageTitle/MainPageTitle";
 import { ShoppingList } from "./components/ShoppingList/ShoppingList";
 
 const ShoppingListPage = () => {

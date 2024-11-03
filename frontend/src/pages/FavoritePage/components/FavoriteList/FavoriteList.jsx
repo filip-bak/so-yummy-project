@@ -1,8 +1,8 @@
-import { NoContent } from "components/NoContent/NoContent";
+import { NoContent } from "@components/NoContent/NoContent";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchFavorite } from "redux/favorite/actions";
-import { selectFavorite } from "redux/favorite/selectors";
+import { fetchFavorite } from "@redux/favorite/actions";
+import { selectFavorite } from "@redux/favorite/selectors";
 import { Favorites } from "../Favorites/Favorites";
 import { useSearchParams } from "react-router-dom";
 

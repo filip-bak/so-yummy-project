@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchRecipesCategoryList } from "redux/recipes/actions";
-import { selectCategories } from "redux/recipes/selectors";
+import { fetchRecipesCategoryList } from "@redux/recipes/actions";
+import { selectCategories } from "@redux/recipes/selectors";
 import { useNavigate, useParams } from "react-router-dom";
 import { Box, Tab, Tabs } from "@mui/material";
 

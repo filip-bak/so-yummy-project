@@ -1,5 +1,5 @@
 import css from "./FollowUs.module.css";
-import icons from "../../../../images/icons.svg";
+import icons from "@images/icons.svg";
 import { Link } from "react-router-dom";
 
 export const FollowUs = () => {

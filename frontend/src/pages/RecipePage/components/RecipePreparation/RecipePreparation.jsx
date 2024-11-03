@@ -1,9 +1,9 @@
 import { useSelector } from "react-redux";
 import css from "./RecipePreparation.module.css";
-import { selectRecipe } from "redux/recipe/selectors";
+import { selectRecipe } from "@redux/recipe/selectors";
 import { useEffect, useState } from "react";
-import defaultImage from "images/defaults/defaultImageStandard.jpg";
-import usePlaceholderImage from "hooks/usePlaceholder";
+import defaultImage from "@images/defaults/defaultImageStandard.jpg";
+import usePlaceholderImage from "@hooks/usePlaceholder";
 
 export const RecipePreparation = () => {
   const recipe = useSelector(selectRecipe);

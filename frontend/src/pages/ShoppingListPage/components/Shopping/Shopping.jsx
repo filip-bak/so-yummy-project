@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import css from "./Shopping.module.css";
-import { selectShoppingList } from "redux/shoppingList/selectors";
-import { ShoppingListItem } from "pages/ShoppingListPage/components/ShoppingListItem/ShoppingListItem";
+import { selectShoppingList } from "@redux/shoppingList/selectors";
+import { ShoppingListItem } from "../ShoppingListItem/ShoppingListItem";
 import { useState, useEffect } from "react";
 
 export const Shopping = () => {

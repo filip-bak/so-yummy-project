@@ -1,9 +1,9 @@
-import Button from "components/Button";
+import Button from "@components/Button";
 import styles from "./LogoutModal.module.css";
-import icons from "../../images/icons.svg";
+import icons from "@images/icons.svg";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { logout } from "redux/auth/actions";
+import { logout } from "@redux/auth/actions";
 
 export function LogoutModal({ onClose, open }) {
   let navigate = useNavigate();

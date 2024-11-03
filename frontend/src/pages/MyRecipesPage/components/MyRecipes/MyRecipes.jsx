@@ -1,9 +1,9 @@
 import { useSelector } from "react-redux";
 import css from "./MyRecipes.module.css";
-import { selectMyRecipes } from "redux/myRecipes/selectors";
-import { MyRecipeItem } from "pages/MyRecipesPage/components/MyRecipeItem/MyRecipeItem";
-// import { Pagination } from "components/Pagination/Pagination";
-import defaultImage from "images/defaults/defaultImageStandard.jpg";
+import { selectMyRecipes } from "@redux/myRecipes/selectors";
+import { MyRecipeItem } from "@pages/MyRecipesPage/components/MyRecipeItem/MyRecipeItem";
+// import { Pagination } from "@components/Pagination/Pagination";
+import defaultImage from "@images/defaults/defaultImageStandard.jpg";
 
 export const MyRecipes = () => {
   const myRecipes = useSelector(selectMyRecipes);
@@ -15,7 +15,7 @@ export const MyRecipes = () => {
         {myRecipes.map(({ preview, _id, title, description, time }) => (
           <MyRecipeItem
             image={preview || defaultImage}
-            key={_id}
+            key={`${_id}`}
             id={_id}
             title={title}
             description={description}

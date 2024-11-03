@@ -1,11 +1,11 @@
-import { RecipeItem } from "components/RecipeItem/RecipeItem";
+import Button from "@components/Button";
+import useRecipeMediaLayout from "@hooks/useRecipeMediaLayout";
+import { selectRecipes } from "@redux/recipes/selectors";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import MainTitle from "../MainTitle";
 import styles from "./MainRecipesList.module.css";
-import Button from "components/Button";
-import useRecipeMediaLayout from "../../../../hooks/useRecipeMediaLayout";
-import { useNavigate } from "react-router-dom";
-import { selectRecipes } from "redux/recipes/selectors";
-import { useSelector } from "react-redux";
+import { RecipeItem } from "@components/RecipeItem/RecipeItem";
 
 const MainRecipesList = () => {
   const recipes = useSelector(selectRecipes);
@@ -30,7 +30,7 @@ const MainRecipesList = () => {
                   .slice(0, recipeLayoutNumber)
                   ?.map(({ _id, title, preview }) => (
                     <RecipeItem
-                      key={_id}
+                      key={`${_id}`}
                       title={title}
                       image={preview}
                       recipeId={_id}

@@ -1,11 +1,11 @@
-import Button from "components/Button";
-import usePlaceholderImage from "hooks/usePlaceholder";
-import defaultImage from "images/defaults/defaultImageStandard.jpg";
+import Button from "@components/Button";
+import usePlaceholderImage from "@hooks/usePlaceholder";
+import defaultImage from "@images/defaults/defaultImageStandard.jpg";
 import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
-import { removeFromFavorite } from "redux/favorite/actions";
-import icons from "../../../../images/icons.svg";
+import { removeFromFavorite } from "@redux/favorite/actions";
+import icons from "@images/icons.svg";
 import css from "./FavoriteItem.module.css";
 
 export const FavoriteItem = ({ image, title, id, description, time }) => {
@@ -22,7 +22,7 @@ export const FavoriteItem = ({ image, title, id, description, time }) => {
     dispatch(removeFromFavorite(id));
   };
   return (
-    <li className={css.item} key={id}>
+    <li className={css.item}>
       <div className={css.container}>
         <div className={css.image_container}>
           <img src={displayedImage} className={css.image} alt="a dish"></img>

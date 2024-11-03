@@ -1,9 +1,9 @@
-import Loader from "components/Loader";
-import Logo from "components/Logo";
-import { LogoutModal } from "components/LogoutModal/LogoutModal";
-import { PopUp } from "components/PopUp/PopUp";
-import Switch from "components/Switch";
-import UserEditModal from "components/UserEditModal";
+import Loader from "@components/Loader";
+import Logo from "@components/Logo";
+import { LogoutModal } from "@components/LogoutModal/LogoutModal";
+import { PopUp } from "@components/PopUp/PopUp";
+import Switch from "@components/Switch";
+import UserEditModal from "@components/UserEditModal";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
@@ -12,8 +12,8 @@ import {
   selectGlobalLoading,
   selectIsRefreshing,
   selectUser,
-} from "redux/auth/selectors";
-import icon from "../../../images/icons.svg";
+} from "@redux/auth/selectors";
+import icon from "@images/icons.svg";
 import MobileNavigation from "../MobileNavigation";
 import mobileStyles from "../MobileNavigation/MobileNavigation.module.css";
 import NavList from "../NavList";

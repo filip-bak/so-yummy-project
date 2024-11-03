@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
 import css from "./RecipeIngredientsList.module.css";
-import { selectRecipe } from "redux/recipe/selectors";
-import { Ingredient } from "pages/RecipePage/components/Ingredient/Ingredient";
-import { selectShoppingList } from "redux/shoppingList/selectors";
+import { selectRecipe } from "@redux/recipe/selectors";
+import { Ingredient } from "@pages/RecipePage/components/Ingredient/Ingredient";
+import { selectShoppingList } from "@redux/shoppingList/selectors";
 
 export const RecipeIngredientsList = () => {
   const recipe = useSelector(selectRecipe);
@@ -24,7 +24,7 @@ export const RecipeIngredientsList = () => {
             recipeId={recipe._id}
             itemId={_id}
             image={thb}
-            key={_id}
+            key={`${_id}`}
             name={ttl}
             measure={measure}
             inShoppingList={

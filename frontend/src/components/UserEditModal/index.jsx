@@ -1,10 +1,10 @@
-import Button from "components/Button";
+import Button from "@components/Button";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { updateUser, updateUserAvatar } from "redux/auth/actions";
-import icon from "../../images/icons.svg";
+import { updateUser, updateUserAvatar } from "@redux/auth/actions";
+import icon from "@images/icons.svg";
 import css from "./UserEditModal.module.css";
-import { selectAvatarUrl } from "redux/auth/selectors";
+import { selectAvatarUrl } from "@redux/auth/selectors";
 
 const UserEditModal = ({ onClose }) => {
   const disptach = useDispatch();

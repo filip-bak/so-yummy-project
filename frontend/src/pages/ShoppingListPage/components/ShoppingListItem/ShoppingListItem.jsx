@@ -1,10 +1,10 @@
-import usePlaceholderImage from "hooks/usePlaceholder";
-import defaultImageSmall from "images/defaults/ingredientsDefault60x60.jpg";
-import defaultImageMedium from "images/defaults/ingredientsDefault93x97.jpg";
+import usePlaceholderImage from "@hooks/usePlaceholder";
+import defaultImageSmall from "@images/defaults/ingredientsDefault60x60.jpg";
+import defaultImageMedium from "@images/defaults/ingredientsDefault93x97.jpg";
 import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
-import { removeIngredientFromShoppingList } from "redux/shoppingList/action";
-import icons from "../../../../images/icons.svg";
+import { removeIngredientFromShoppingList } from "@redux/shoppingList/action";
+import icons from "@images/icons.svg";
 import css from "./ShoppingListItem.module.css";
 
 export const ShoppingListItem = ({

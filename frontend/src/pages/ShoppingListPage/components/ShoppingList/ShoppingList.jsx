@@ -1,9 +1,9 @@
-import { NoContent } from "components/NoContent/NoContent";
+import { NoContent } from "@components/NoContent/NoContent";
 import { useDispatch, useSelector } from "react-redux";
-import { selectShoppingList } from "redux/shoppingList/selectors";
+import { selectShoppingList } from "@redux/shoppingList/selectors";
 import { Shopping } from "../Shopping/Shopping";
 import { useEffect } from "react";
-import { fetchShoppingList } from "redux/shoppingList/action";
+import { fetchShoppingList } from "@redux/shoppingList/action";
 
 export const ShoppingList = () => {
   const shoppingList = useSelector(selectShoppingList);

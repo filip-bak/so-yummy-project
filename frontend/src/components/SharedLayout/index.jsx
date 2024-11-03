@@ -1,5 +1,5 @@
-import { Footer } from "components/Footer/Footer";
-import PolicyAndTerms from "components/PolicyAndTerms";
+import { Footer } from "@components/Footer/Footer";
+import PolicyAndTerms from "@components/PolicyAndTerms";
 import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 import Navigation from "./Navigation";

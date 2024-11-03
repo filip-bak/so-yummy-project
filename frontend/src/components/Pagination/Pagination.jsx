@@ -1,4 +1,4 @@
-import { PaginationNav } from "components/PaginationNav/PaginationNav";
+import { PaginationNav } from "@components/PaginationNav/PaginationNav";
 import css from "./Pagination.module.css";
 import PropTypes from "prop-types";
 import { useEffect } from "react";

@@ -1,10 +1,10 @@
-import { NoContent } from "components/NoContent/NoContent";
-import { SearchResults } from "pages/SearchPage/components/SearchResults/SearchResults";
+import { NoContent } from "@components/NoContent/NoContent";
+import { SearchResults } from "@pages/SearchPage/components/SearchResults/SearchResults";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
-import { fetchRecipes } from "redux/recipes/actions";
-import { selectRecipes, selectResultsPerPage } from "redux/recipes/selectors";
+import { fetchRecipes } from "@redux/recipes/actions";
+import { selectRecipes, selectResultsPerPage } from "@redux/recipes/selectors";
 
 export const SearchedRecipesList = () => {
   const dispatch = useDispatch();

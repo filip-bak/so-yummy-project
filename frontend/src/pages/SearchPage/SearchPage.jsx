@@ -1,11 +1,11 @@
 import css from "./SearchPage.module.css";
-import { MainPageTitle } from "components/MainPageTitle/MainPageTitle";
-import { SearchBar } from "components/SearchBar/SearchBar";
-import { SearchType } from "pages/SearchPage/components/SearchType/SearchType";
-import { SearchedRecipesList } from "pages/SearchPage/components/SearchedRecipesList/SearchedRecipesList";
+import { MainPageTitle } from "@components/MainPageTitle/MainPageTitle";
+import { SearchBar } from "@components/SearchBar/SearchBar";
+import { SearchType } from "@pages/SearchPage/components/SearchType/SearchType";
+import { SearchedRecipesList } from "@pages/SearchPage/components/SearchedRecipesList/SearchedRecipesList";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { setResultsPerPage } from "redux/recipes/slice";
+import { setResultsPerPage } from "@redux/recipes/slice";
 
 const SearchPage = () => {
   const dispatch = useDispatch();
