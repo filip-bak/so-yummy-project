@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { Navigate, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { selectIsRefreshing, selectToken } from "redux/auth/selectors";
+import { selectIsRefreshing, selectToken } from "@redux/auth/selectors";
 
 const PrivateRoute = ({ component: Component, redirect = "/welcome" }) => {
   const location = useLocation();

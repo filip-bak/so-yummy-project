@@ -1,10 +1,10 @@
 import styles from "./CategoriesPage.module.css";
-import { MainPageTitle } from "components/MainPageTitle/MainPageTitle";
+import { MainPageTitle } from "@components/MainPageTitle/MainPageTitle";
 import { CategoryRecipes } from "./components/CategoryRecipes/CategoryRecipes";
 import { useDispatch } from "react-redux";
-import { fetchRecipesCategoryList } from "redux/recipes/actions";
+import { fetchRecipesCategoryList } from "@redux/recipes/actions";
 import { useEffect } from "react";
-import { setResultsPerPage } from "redux/recipes/slice";
+import { setResultsPerPage } from "@redux/recipes/slice";
 
 const CategoriesPage = () => {
   const dispatch = useDispatch();

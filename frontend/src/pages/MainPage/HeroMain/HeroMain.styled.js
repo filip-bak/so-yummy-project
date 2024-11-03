@@ -1,16 +1,16 @@
 import styled from "styled-components";
-import pathToDishMobileX1 from "../../../images/mainPage/HeroMain-dish-desktop-1x.webp";
-import pathToDishMobileX2 from "../../../images/mainPage/HeroMain-dish-mobile-2x.webp";
-import pathToDishTabletX1 from "../../../images/mainPage/HeroMain-dish-tablet-1x.webp";
-import pathToDishTabletX2 from "../../../images/mainPage/HeroMain-dish-tablet-2x.webp";
-import pathToDishDesktopX1 from "../../../images/mainPage/HeroMain-dish-desktop-1x.webp";
-import pathToDishDesktopX2 from "../../../images/mainPage/HeroMain-dish-desktop-2x.webp";
-import leafsMobileX1 from "../../../images/mainPage/HeroMain-leafs-mobile-1x.webp";
-import leafsMobileX2 from "../../../images/mainPage/HeroMain-leafs-mobile-2x.webp";
-import leafsTabletX1 from "../../../images/mainPage/HeroMain-leafs-tablet-1x.webp";
-import leafsTabletX2 from "../../../images/mainPage/HeroMain-leafs-tablet-2x.webp";
-import leafsDesktopX1 from "../../../images/mainPage/HeroMain-leafs-desktop-1x.webp";
-import leafsDesktopX2 from "../../../images/mainPage/HeroMain-leafs-desktop-2x.webp";
+import pathToDishMobileX1 from "@images/mainPage/HeroMain-dish-desktop-1x.webp";
+import pathToDishMobileX2 from "@images/mainPage/HeroMain-dish-mobile-2x.webp";
+import pathToDishTabletX1 from "@images/mainPage/HeroMain-dish-tablet-1x.webp";
+import pathToDishTabletX2 from "@images/mainPage/HeroMain-dish-tablet-2x.webp";
+import pathToDishDesktopX1 from "@images/mainPage/HeroMain-dish-desktop-1x.webp";
+import pathToDishDesktopX2 from "@images/mainPage/HeroMain-dish-desktop-2x.webp";
+import leafsMobileX1 from "@images/mainPage/HeroMain-leafs-mobile-1x.webp";
+import leafsMobileX2 from "@images/mainPage/HeroMain-leafs-mobile-2x.webp";
+import leafsTabletX1 from "@images/mainPage/HeroMain-leafs-tablet-1x.webp";
+import leafsTabletX2 from "@images/mainPage/HeroMain-leafs-tablet-2x.webp";
+import leafsDesktopX1 from "@images/mainPage/HeroMain-leafs-desktop-1x.webp";
+import leafsDesktopX2 from "@images/mainPage/HeroMain-leafs-desktop-2x.webp";
 
 export const Section = styled.div`
   width: 100%;

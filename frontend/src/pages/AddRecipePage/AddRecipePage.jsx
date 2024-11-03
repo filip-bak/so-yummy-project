@@ -1,4 +1,4 @@
-import { MainPageTitle } from "components/MainPageTitle/MainPageTitle";
+import { MainPageTitle } from "@components/MainPageTitle/MainPageTitle";
 import { useEffect, useState } from "react";
 import css from "./AddRecipePage.module.css";
 import { AddRecipeForm } from "./components/AddRecipeForm/AddRecipeForm";

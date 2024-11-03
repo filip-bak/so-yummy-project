@@ -1,8 +1,8 @@
-import { Pagination } from "components/Pagination/Pagination";
+import { Pagination } from "@components/Pagination/Pagination";
 import css from "./Favorites.module.css";
 import { FavoriteItem } from "../FavoriteItem/FavoriteItem";
 import { useSelector } from "react-redux";
-import { selectFavorite } from "redux/favorite/selectors";
+import { selectFavorite } from "@redux/favorite/selectors";
 
 export const Favorites = () => {
   const favorites = useSelector(selectFavorite);
@@ -14,7 +14,7 @@ export const Favorites = () => {
         {favorites.map(({ preview, _id, title, description, time }) => (
           <FavoriteItem
             image={preview}
-            key={_id}
+            key={`${_id}`}
             id={_id}
             title={title}
             description={description}

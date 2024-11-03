@@ -1,5 +1,5 @@
-import usePlaceholderImage from "hooks/usePlaceholder";
-import defaultImage from "images/defaults/defaultImageStandard.jpg";
+import usePlaceholderImage from "@hooks/usePlaceholder";
+import defaultImage from "@images/defaults/defaultImageStandard.jpg";
 import { useNavigate } from "react-router-dom";
 import styles from "./CardMeal.module.css";
 

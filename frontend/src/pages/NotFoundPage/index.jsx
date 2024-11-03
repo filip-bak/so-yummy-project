@@ -1,7 +1,7 @@
-import pageNotFoundImage from "../../images/page404/page-not-found-mobile.png";
-import pageNotFoundImage2 from "../../images/page404/page-not-found-tablet&desktop.png";
+import pageNotFoundImage from "@images/page404/page-not-found-mobile.png";
+import pageNotFoundImage2 from "@images/page404/page-not-found-tablet&desktop.png";
 import styles from "./NotFoundPage.module.css";
-import { MainPageTitle } from "../../components/MainPageTitle/MainPageTitle";
+import { MainPageTitle } from "@components/MainPageTitle/MainPageTitle";
 
 const NotFoundPage = () => {
   return (

@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 import styles from "./Switch.module.css";
-import { selectTheme } from "redux/theme/selectors";
+import { selectTheme } from "@redux/theme/selectors";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleTheme } from "redux/theme/slice";
+import { toggleTheme } from "@redux/theme/slice";
 
 const Switch = ({ id = "switch", onChange, className }) => {
   const dispatch = useDispatch();

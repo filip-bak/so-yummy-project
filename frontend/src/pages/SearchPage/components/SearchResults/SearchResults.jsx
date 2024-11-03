@@ -1,15 +1,15 @@
 import css from "./SearchResults.module.css";
-import { RecipeItem } from "components/RecipeItem/RecipeItem";
-import { Pagination } from "components/Pagination/Pagination";
+import { RecipeItem } from "@components/RecipeItem/RecipeItem";
+import { Pagination } from "@components/Pagination/Pagination";
 import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   selectRecipes,
   selectResultsPerPage,
   selectTotalPages,
-} from "redux/recipes/selectors";
-import { setResultsPerPage } from "redux/recipes/slice";
-import defaultImage from "images/defaults/defaultImageStandard.jpg";
+} from "@redux/recipes/selectors";
+import { setResultsPerPage } from "@redux/recipes/slice";
+import defaultImage from "@images/defaults/defaultImageStandard.jpg";
 
 export const SearchResults = () => {
   const dispatch = useDispatch();

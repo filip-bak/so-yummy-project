@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { Suspense } from "react";
 import { useSelector } from "react-redux";
 import { Navigate, useLocation } from "react-router-dom";
-import { selectToken } from "redux/auth/selectors";
+import { selectToken } from "@redux/auth/selectors";
 
 const RestrictedRoute = ({ component: Component, redirect = "/" }) => {
   const location = useLocation();

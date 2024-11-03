@@ -1,10 +1,10 @@
-import Button from "components/Button";
+import Button from "@components/Button";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
-import { addRecipe } from "redux/recipe/actions";
-import { selectRecipeImage } from "redux/recipe/selectors";
-import { resetRecipeImage } from "redux/recipe/slice";
+import { addRecipe } from "@redux/recipe/actions";
+import { selectRecipeImage } from "@redux/recipe/selectors";
+import { resetRecipeImage } from "@redux/recipe/slice";
 import { RecipeDescriptionFields } from "../RecipeDescriptionFields/RecipeDescriptionFields";
 import { RecipeIngredientsFields } from "../RecipeIngredientsFields/RecipeIngredientsFields";
 import { RecipePreparationFields } from "../RecipePreparationFields/RecipePreparationFields";

@@ -1,4 +1,4 @@
-import Logo from "components/Logo";
+import Logo from "@components/Logo";
 import AuthNav from "./AuthNav";
 import css from "./WelcomePage.module.css";
 

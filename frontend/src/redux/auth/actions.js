@@ -1,7 +1,7 @@
 import axios from "axios";
 import { toast } from "react-toastify";
 
-const { createAsyncThunk } = require("@reduxjs/toolkit");
+import { createAsyncThunk } from "@reduxjs/toolkit";
 
 const setToken = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;

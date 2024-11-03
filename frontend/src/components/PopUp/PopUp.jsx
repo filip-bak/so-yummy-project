@@ -1,5 +1,5 @@
-import Button from "components/Button";
-import icons from "../../images/icons.svg";
+import Button from "@components/Button";
+import icons from "@images/icons.svg";
 import styles from "./PopUp.module.css";
 
 export function PopUp(props) {

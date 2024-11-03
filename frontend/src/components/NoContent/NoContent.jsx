@@ -1,6 +1,6 @@
 import css from "./NoContent.module.css";
 import PropTypes from "prop-types";
-import vegetables from "../../images/vegetables-350.png";
+import vegetables from "@images/vegetables-350.png";
 
 export const NoContent = ({ infoParagraph }) => {
   return (

@@ -1,15 +1,15 @@
 import { Box, Tab, Tabs, ThemeProvider, createTheme } from "@mui/material";
-import { Pagination } from "components/Pagination/Pagination";
+import { Pagination } from "@components/Pagination/Pagination";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
-import { fetchRecipesByCategory } from "redux/recipes/actions";
+import { fetchRecipesByCategory } from "@redux/recipes/actions";
 import {
   selectCategories,
   selectRecipes,
   selectResultsPerPage,
   selectTotalPages,
-} from "redux/recipes/selectors";
+} from "@redux/recipes/selectors";
 import { CardMeal } from "../CardMeal/CardMeal";
 import styles from "./CategoryRecipes.module.css";
 

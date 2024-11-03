@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import css from "./SearchType.module.css";
-import { setQueryType } from "redux/recipes/slice";
+import { setQueryType } from "@redux/recipes/slice";
 import { useSearchParams } from "react-router-dom";
 
 export const SearchType = () => {

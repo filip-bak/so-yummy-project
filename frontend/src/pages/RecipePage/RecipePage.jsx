@@ -1,11 +1,11 @@
 import css from "./RecipePage.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { selectRecipe } from "redux/recipe/selectors";
+import { selectRecipe } from "@redux/recipe/selectors";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
-import { fetchRecipeById } from "redux/recipe/actions";
+import { fetchRecipeById } from "@redux/recipe/actions";
 import { RecipePageHero } from "./components/RecipePageHero/RecipePageHero";
-import { RecipeIngredientsList } from "./components/RecipeIngredientsList/RecipeIngredientsList.jsx";
+import { RecipeIngredientsList } from "./components/RecipeIngredientsList/RecipeIngredientsList";
 import { RecipePreparation } from "./components/RecipePreparation/RecipePreparation";
 
 export const RecipePage = () => {

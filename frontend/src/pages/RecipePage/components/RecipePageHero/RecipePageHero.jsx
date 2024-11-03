@@ -1,8 +1,8 @@
 import css from "./RecipePageHero.module.css";
-import Button from "components/Button";
-import icons from "../../../../images/icons.svg";
+import Button from "@components/Button";
+import icons from "@images/icons.svg";
 import { useDispatch } from "react-redux";
-import { addToFavorite } from "redux/favorite/actions";
+import { addToFavorite } from "@redux/favorite/actions";
 import { useParams } from "react-router";
 import PropTypes from "prop-types";
 

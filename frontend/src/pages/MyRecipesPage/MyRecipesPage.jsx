@@ -1,5 +1,5 @@
 import css from "./MyRecipesPage.module.css";
-import { MainPageTitle } from "components/MainPageTitle/MainPageTitle";
+import { MainPageTitle } from "@components/MainPageTitle/MainPageTitle";
 import { MyRecipesList } from "./components/MyRecipesList/MyRecipesList";
 
 const MyRecipesPage = () => {
