@@ -1,10 +1,13 @@
-import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 
 export const fetchRecipes = createAsyncThunk(
   "recipes/fetchAll",
   async ({ query, queryType, currentPage, resultsPerPage }, thunkAPI) => {
     try {
+      const maintenanceCheck = checkMaintenance(thunkAPI);
+      if (maintenanceCheck) return maintenanceCheck;
+
       const fieldName = queryType === "query" ? "title" : "ingredient";
       const params = {
         [fieldName]: query,
@@ -34,6 +37,9 @@ export const fetchRecipesForMainPage = createAsyncThunk(
   "recipes/fetchRecipesForMainPage",
   async (_, thunkAPI) => {
     try {
+      const maintenanceCheck = checkMaintenance(thunkAPI);
+      if (maintenanceCheck) return maintenanceCheck;
+
       const res = await axios.get("/recipes/main-page");
       return res.data;
     } catch (e) {
@@ -46,6 +52,9 @@ export const fetchRecipesByCategory = createAsyncThunk(
   "recipes/fetchRecipesByCategory",
   async ({ category, currentPage }, thunkAPI) => {
     try {
+      const maintenanceCheck = checkMaintenance(thunkAPI);
+      if (maintenanceCheck) return maintenanceCheck;
+
       const params = {
         page: currentPage,
       };
@@ -65,6 +74,9 @@ export const fetchRecipesCategoryList = createAsyncThunk(
   "recipes/fetchRecipesCategoryList",
   async (_, thunkAPI) => {
     try {
+      const maintenanceCheck = checkMaintenance(thunkAPI);
+      if (maintenanceCheck) return maintenanceCheck;
+
       const res = await axios.get(`/recipes/category-list`);
       return res.data;
     } catch (e) {

@@ -5,6 +5,9 @@ export const fetchFavorite = createAsyncThunk(
   "favorite/fetchAll",
   async (currentPage, thunkAPI) => {
     try {
+      const maintenanceCheck = checkMaintenance(thunkAPI);
+      if (maintenanceCheck) return maintenanceCheck;
+
       const { data } = await axios.get(`/favorite/paginate?${currentPage}`);
       return {
         currentPage: data.currentPage,
@@ -19,7 +22,7 @@ export const fetchFavorite = createAsyncThunk(
 
 // export const fetchNewFavoritePage = createAsyncThunk(
 //   "favorite/fetchNewPage",
-//   async ({ newCurrentPage }, thunkAPI) => {
+//   async ({ newCurrentPage }, thunkApi) => {
 //     try {
 //       const response = testData;
 //       const favorite = response.map(item => ({
@@ -34,7 +37,7 @@ export const fetchFavorite = createAsyncThunk(
 //         favorite,
 //       };
 //     } catch (e) {
-//       return thunkAPI.rejectWithValue(e.message);
+//       return thunkApi.rejectWithValue(e.message);
 //     }
 //   }
 // );
@@ -42,6 +45,9 @@ export const addToFavorite = createAsyncThunk(
   "favorite/addToFavorite",
   async (recipeId, thunkAPI) => {
     try {
+      const maintenanceCheck = checkMaintenance(thunkAPI);
+      if (maintenanceCheck) return maintenanceCheck;
+
       const res = await axios.post(`/favorite/${recipeId}`);
       return res.data;
     } catch (e) {
@@ -53,6 +59,9 @@ export const addToFavorite = createAsyncThunk(
 export const removeFromFavorite = createAsyncThunk(
   "favorite/removeFromFavorite",
   async (recipeId, thunkAPI) => {
+    const maintenancecheck = checkmaintenance(thunkAPI);
+    if (maintenancecheck) return maintenancecheck;
+
     try {
       const res = await axios.delete(`/favorite/${recipeId}`);
       return res.data;

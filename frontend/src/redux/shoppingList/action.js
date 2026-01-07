@@ -5,6 +5,9 @@ export const fetchShoppingList = createAsyncThunk(
   "shoppingList/fetchShoppingList",
   async (_, thunkAPI) => {
     try {
+      const maintenanceCheck = checkMaintenance(thunkAPI);
+      if (maintenanceCheck) return maintenanceCheck;
+
       const res = await axios.get(`/shopping-list`);
       return flattenShoppingListItems(res.data);
     } catch (e) {
@@ -33,6 +36,9 @@ export const addIngredientToShoppingList = createAsyncThunk(
   "shoppingList/addRecipeToShoppingList",
   async (payload, thunkAPI) => {
     try {
+      const maintenanceCheck = checkMaintenance(thunkAPI);
+      if (maintenanceCheck) return maintenanceCheck;
+
       await axios.post(`/shopping-list/add`, payload);
       const res = await axios.get(`/shopping-list`);
       return flattenShoppingListItems(res.data);
@@ -46,6 +52,9 @@ export const removeIngredientFromShoppingList = createAsyncThunk(
   "shoppingList/removeRecipeFromShoppingList",
   async ({ recipeId, ingredientId }, thunkAPI) => {
     try {
+      const maintenanceCheck = checkMaintenance(thunkAPI);
+      if (maintenanceCheck) return maintenanceCheck;
+
       await axios.delete(`/shopping-list/${ingredientId}/${recipeId}`);
       const res = await axios.get(`/shopping-list`);
       return flattenShoppingListItems(res.data);

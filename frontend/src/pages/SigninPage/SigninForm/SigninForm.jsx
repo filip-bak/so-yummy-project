@@ -9,6 +9,7 @@ import { selectError, selectIsLoading } from "@redux/auth/selectors";
 import * as Yup from "yup";
 import css from "./SigninForm.module.css";
 import icons from "@images/icons.svg";
+import { toast } from "react-toastify";
 
 const initialValue = {
   email: "",
@@ -38,8 +39,10 @@ export const SigninForm = () => {
   const handleSubmit = async (formData, { resetForm }) => {
     const status = await dispatch(login(formData));
 
-    if (status.error?.message !== "Rejected") {
+    if (status.error?.message === "Rejected") {
       navigate("/");
+
+      toast.error("You cant login");
     }
 
     setIsSubmit(false);

@@ -9,12 +9,14 @@ import { selectError, selectIsLoading } from "@redux/auth/selectors";
 import * as Yup from "yup";
 import css from "./RegisterForm.module.css";
 import icons from "@images/icons.svg";
+import { toast } from "react-toastify";
 
 const initialValue = {
   name: "",
   email: "",
   password: "",
 };
+
 const validationSchema = Yup.object({
   name: Yup.string()
     .matches(
@@ -48,8 +50,9 @@ export const RegisterForm = () => {
   const handleSubmit = async (formData, { resetForm }) => {
     const status = await dispatch(register(formData));
 
-    if (status.error?.message !== "Rejected") {
-      navigate("/signin");
+    if (status.error?.message === "Rejected") {
+      navigate("/");
+      toast.error("You cant register");
     }
     setIsSubmit(false);
     resetForm();
@@ -66,7 +69,7 @@ export const RegisterForm = () => {
         validateOnChange={isSubmit}
         validateOnBlur={false}
       >
-        {({ handleSubmit, errors, touched, field }) => (
+        {({ handleSubmit, errors, touched }) => (
           <form autoComplete="off" noValidate onSubmit={handleSubmit}>
             <div className={css.title}>Registration</div>
             <div className={css.fields}>

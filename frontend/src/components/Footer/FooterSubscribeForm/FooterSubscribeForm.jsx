@@ -1,9 +1,8 @@
-import React, { useState } from "react";
-import css from "./FooterSubscribeForm.module.css";
 import Button from "@components/Button";
 import icons from "@images/icons.svg";
-import axios from "axios";
+import { useState } from "react";
 import { toast } from "react-toastify";
+import css from "./FooterSubscribeForm.module.css";
 
 export const FooterSubscribeForm = () => {
   const [email, setEmail] = useState("");
@@ -50,8 +49,8 @@ export const FooterSubscribeForm = () => {
 
   const handleSubscribeClick = async () => {
     try {
-      await axios.post("/subscribe", { email });
-      toast.success("Email sent successfully!");
+      //      await axios.post("/subscribe", { email });
+      toast.error("Email sent unsuccessfully!");
     } catch (error) {
       if (error.request.status === 409) {
         return toast.warning("You are already subscribed.");

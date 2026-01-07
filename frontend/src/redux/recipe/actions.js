@@ -4,6 +4,9 @@ import axios from "axios";
 export const addRecipe = createAsyncThunk(
   "recipe/addRecipe",
   async (payload, thunkAPI) => {
+    const maintenanceCheck = checkMaintenance(thunkAPI);
+    if (maintenanceCheck) return maintenanceCheck;
+
     try {
       const res = await axios.post(`/recipes/`, payload);
       return res.data;
@@ -17,6 +20,9 @@ export const fetchRecipeById = createAsyncThunk(
   "recipe/fetchRecipeById",
   async (recipeId, thunkAPI) => {
     try {
+      const maintenanceCheck = checkMaintenance(thunkAPI);
+      if (maintenanceCheck) return maintenanceCheck;
+
       const res = await axios.get(`/recipes/recipe/${recipeId}`);
       return res.data;
     } catch (e) {
@@ -28,6 +34,9 @@ export const fetchRecipeById = createAsyncThunk(
 // The query bellow is used in the AddIngredient form, which uses local state instead of Redux
 export const fetchIngredients = async query => {
   try {
+    const maintenanceCheck = checkMaintenance(thunkAPI);
+    if (maintenanceCheck) return maintenanceCheck;
+
     const res = await axios.get(`/ingredients?query=${query}`);
     return res.data;
   } catch (e) {
@@ -40,6 +49,9 @@ export const updateRecipePicture = createAsyncThunk(
   "recipe/updateRecipePicture",
   async (data, thunkAPI) => {
     try {
+      const maintenanceCheck = checkMaintenance(thunkAPI);
+      if (maintenanceCheck) return maintenanceCheck;
+
       const form = new FormData();
       form.append("recipeImage", data?.files[0]);
 

@@ -77,6 +77,9 @@ export const fetchMyRecipes = createAsyncThunk(
   "myRecipes/fetchAll",
   async (_, thunkAPI) => {
     try {
+      const maintenanceCheck = checkMaintenance(thunkAPI);
+      if (maintenanceCheck) return maintenanceCheck;
+
       const { data } = await axios.get("/recipes/my/own");
 
       return {
@@ -92,6 +95,9 @@ export const fetchMyRecipes = createAsyncThunk(
 export const fetchMyRecipesNewPage = createAsyncThunk(
   "myRecipes/fetchNewPage",
   async ({ newCurrentPage }, thunkAPI) => {
+    const maintenanceCheck = checkMaintenance(thunkAPI);
+    if (maintenanceCheck) return maintenanceCheck;
+
     try {
       const response = testData;
       const myRecipes = response.map(item => ({
@@ -115,6 +121,9 @@ export const addMyRecipe = createAsyncThunk(
   "favorite/addMyRecipe",
   async (recipieData, thunkAPI) => {
     try {
+      const maintenanceCheck = checkMaintenance(thunkAPI);
+      if (maintenanceCheck) return maintenanceCheck;
+
       const res = await axios.post(`/ownRecipes`, recipieData);
       return res.data;
     } catch (e) {
@@ -126,6 +135,9 @@ export const addMyRecipe = createAsyncThunk(
 export const removeMyRecipe = createAsyncThunk(
   "favorite/removeMyRecipe",
   async (myRecipeId, thunkAPI) => {
+    const maintenanceCheck = checkMaintenance(thunkAPI);
+    if (maintenanceCheck) return maintenanceCheck;
+
     try {
       const res = await axios.delete(`/recipes/recipe/${myRecipeId}`);
       return res.data.recipe;

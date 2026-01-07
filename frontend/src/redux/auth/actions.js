@@ -2,6 +2,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { checkMaintenance } from "../utils/maintenance";
 
 const setToken = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -14,6 +15,9 @@ export const register = createAsyncThunk(
   "auth/Register",
   async (registerData, thunkApi) => {
     try {
+      const maintenanceCheck = checkMaintenance(thunkApi);
+      if (maintenanceCheck) return maintenanceCheck;
+
       const res = await axios.post("/users/signup", registerData);
       setToken(res.data.token);
       toast.success("Check your email, we've sent you a verification link");
@@ -35,6 +39,9 @@ export const login = createAsyncThunk(
   "auth/Login",
   async (loginData, thunkApi) => {
     try {
+      const maintenanceCheck = checkMaintenance(thunkApi);
+      if (maintenanceCheck) return maintenanceCheck;
+
       const res = await axios.post("/users/login", loginData);
       setToken(res.data.token);
 
@@ -52,6 +59,9 @@ export const login = createAsyncThunk(
 
 export const logout = createAsyncThunk("auth/Logout", async (_, thunkApi) => {
   try {
+    const maintenanceCheck = checkMaintenance(thunkApi);
+    if (maintenanceCheck) return maintenanceCheck;
+
     const res = await axios.post("/users/logout");
     clearToken();
 
@@ -64,6 +74,9 @@ export const logout = createAsyncThunk("auth/Logout", async (_, thunkApi) => {
 export const updateUser = createAsyncThunk(
   "auth/UpdateUser",
   async (userName, thunkApi) => {
+    const maintenanceCheck = checkMaintenance(thunkApi);
+    if (maintenanceCheck) return maintenanceCheck;
+
     try {
       const res = await axios.patch("/users", { name: userName });
 
@@ -78,6 +91,9 @@ export const updateUserAvatar = createAsyncThunk(
   "auth/updateUserAvatar",
   async (data, thunkApi) => {
     try {
+      const maintenanceCheck = checkMaintenance(thunkApi);
+      if (maintenanceCheck) return maintenanceCheck;
+
       const form = new FormData();
       form.append("image", data.files[0]);
 
@@ -95,6 +111,9 @@ export const updateUserAvatar = createAsyncThunk(
 export const AddRecipePicture = createAsyncThunk(
   "auth/addRecipePicture",
   async (data, thunkApi) => {
+    const maintenanceCheck = checkMaintenance(thunkApi);
+    if (maintenanceCheck) return maintenanceCheck;
+
     try {
       const form = new FormData();
       form.append("image", data.files[0]);
@@ -114,6 +133,9 @@ export const AddRecipePicture = createAsyncThunk(
 export const refreshUser = createAsyncThunk(
   "auth/RefreshUser",
   async (_, thunkApi) => {
+    const maintenanceCheck = checkMaintenance(thunkApi);
+    if (maintenanceCheck) return maintenanceCheck;
+
     const state = thunkApi.getState();
     const token = state.auth.token;
 

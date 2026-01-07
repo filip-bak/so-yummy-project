@@ -4,14 +4,13 @@ import { useEffect } from "react";
 import AuthSharedLayout from "@components/AuthSharedLayout";
 import SharedLayout from "@components/SharedLayout";
 
-import { useDispatch, useSelector } from "react-redux";
-import { Route, Routes } from "react-router-dom";
-import { refreshUser } from "@redux/auth/actions";
-import { selectTheme } from "@redux/theme/selectors";
-import { lazy } from "react";
 import PrivateRoute from "@/LayoutRoutes/PrivateRoute";
 import RestrictedRoute from "@/LayoutRoutes/RestrictedRoute";
-import { ToastContainer } from "react-toastify";
+import { selectTheme } from "@redux/theme/selectors";
+import { lazy } from "react";
+import { useSelector } from "react-redux";
+import { Route, Routes } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
 
 const baseUrl = import.meta.env.VITE_BACKEND_URL;
 axios.defaults.baseURL = baseUrl;
@@ -27,21 +26,30 @@ const AddRecipePage = lazy(() => import("@pages/AddRecipePage/AddRecipePage"));
 const SearchPage = lazy(() => import("@pages/SearchPage/SearchPage"));
 const FavoritePage = lazy(() => import("@pages/FavoritePage/FavoritePage"));
 const RecipePage = lazy(() => import("@pages/RecipePage/RecipePage"));
-const ShoppingListPage = lazy(() =>
-  import("@pages/ShoppingListPage/ShoppingListPage")
+const ShoppingListPage = lazy(
+  () => import("@pages/ShoppingListPage/ShoppingListPage")
 );
 
 export const App = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const theme = useSelector(selectTheme);
 
-  useEffect(() => {
-    dispatch(refreshUser());
-  }, [dispatch]);
+  // useEffect(() => {
+  // dispatch(refreshUser());
+  //}, [dispatch]);
 
   useEffect(() => {
     document.querySelector("body").setAttribute("data-theme", theme);
   }, [theme]);
+
+  toast.error("This website is offline. All features are disabled.", {
+    autoClose: false,
+    closeButton: false,
+    draggable: false,
+    pauseOnHover: false,
+    pauseOnFocusLoss: false,
+    closeOnClick: false,
+  });
 
   return (
     <>
